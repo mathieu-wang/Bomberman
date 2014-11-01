@@ -68,24 +68,21 @@ class Board(QtGui.QFrame):
         self.timer.start(Board.Speed, self)
 
     def shapeAt(self, x, y):
-        return self.board[(y * Board.BoardWidth) + x]
+        return self.board[y][x]
 
         
     def setShapeAt(self, x, y, shape):
-        self.board[(y * Board.BoardWidth) + x] = shape
+        self.board[y][x] = shape
         
 
     def squareWidth(self):
         return self.contentsRect().width() / Board.BoardWidth
         
-
     def squareHeight(self):
         return self.contentsRect().height() / Board.BoardHeight
 
     def clearBoard(self):
-        
-        for i in range(Board.BoardHeight * Board.BoardWidth):
-            self.board.append(Tile.Empty)
+        self.board = [[Tile.Empty for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
 
     def initializeBomberman(self):
 
@@ -158,9 +155,6 @@ class Board(QtGui.QFrame):
 
         elif key == QtCore.Qt.Key_Space:
             self.setBomb()
-            
-        elif key == QtCore.Qt.Key_D:
-            self.oneLineDown()
             
         else:
             super(Board, self).keyPressEvent(event)
