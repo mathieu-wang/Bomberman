@@ -168,7 +168,7 @@ class Board(QtGui.QFrame):
                 return
             self.tryMove(self.curX,self.curY+1)
 
-        elif key == QtCore.Qt.Key_Space:
+        elif key == QtCore.Qt.Key_B:
             self.setBomb()
             
         else:
