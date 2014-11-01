@@ -1,8 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+
+
 import sys
 from PyQt4 import QtCore, QtGui
+
+#This is a comment!
 
 class Game(QtGui.QMainWindow):
     
