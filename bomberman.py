@@ -11,7 +11,6 @@ class Game(QtGui.QMainWindow):
         
         self.initUI()
         
-        
     def initUI(self):    
 
         self.board = Board(self)
@@ -24,7 +23,6 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Bomberman')        
         self.show()
         
-
     def center(self):
 
         screen = QtGui.QDesktopWidget().screenGeometry()
@@ -39,6 +37,8 @@ class Board(QtGui.QFrame):
     BoardWidth = 31
     BoardHeight = 13
     Speed = 300
+    BombTime = 3000
+    BombRadius = 2
 
     def __init__(self, parent):
         super(Board, self).__init__(parent)
@@ -51,6 +51,7 @@ class Board(QtGui.QFrame):
         self.curX = 0
         self.curY = 0
         self.board = []
+        self.bombQueue = []
 
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.isStarted = False
@@ -63,8 +64,9 @@ class Board(QtGui.QFrame):
 
         self.isStarted = True
         self.clearBoard()
+        self.clearBombs()
         self.setConcrete()
-        self.initializeBomberman()
+        self.setBomberman()
 
         self.timer.start(Board.Speed, self)
 
@@ -73,6 +75,11 @@ class Board(QtGui.QFrame):
 
     def setTileAt(self, x, y, tile):
         self.board[y][x].push(tile)
+        self.update()
+
+    def popTileAt(self, x, y):
+        self.board[y][x].pop()
+        self.update()
         
     def squareWidth(self):
         return self.contentsRect().width() / Board.BoardWidth
@@ -83,13 +90,16 @@ class Board(QtGui.QFrame):
     def clearBoard(self):
         self.board = [[Tile() for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
 
+    def clearBombs(self):
+        self.bombQueue = []
+
     def setConcrete(self):
         for y in range(Board.BoardHeight):
             for x in range(Board.BoardWidth):
                 if x % 2 != 0 and y % 2 != 0:
                     self.setTileAt(x,y,Tile.Concrete)
 
-    def initializeBomberman(self):
+    def setBomberman(self):
 
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
@@ -167,18 +177,32 @@ class Board(QtGui.QFrame):
     def tryMove(self, newX, newY):
         if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb):
             return False
-        if (self.tileAt(self.curX,self.curY) != Tile.Bomb):
-            self.setTileAt(self.curX,self.curY,Tile.Empty)
+        self.popTileAt(self.curX,self.curY)
         self.curX = newX
         self.curY = newY
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
-        self.update()
         
         return True
 
     def setBomb(self):
+        self.bombQueue.append((self.curX,self.curY))
+        tempTile = self.tileAt(self.curX,self.curY)
+        self.popTileAt(self.curX,self.curY)
         self.setTileAt(self.curX,self.curY,Tile.Bomb)
-        self.update()
+        self.setTileAt(self.curX,self.curY,tempTile)
+        QtCore.QTimer.singleShot(Board.BombTime, self.detonateBomb)
+
+    def timerEvent(self, event):
+        
+        if event.timerId() == self.timer.timerId():
+            pass
+        else:
+            super(Board, self).timerEvent(event)
+
+    def detonateBomb(self):
+        bombX, bombY = self.bombQueue.pop(0)
+        self.popTileAt(bombX,bombY)
+
 
 class Tile(object):
 
