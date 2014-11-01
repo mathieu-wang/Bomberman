@@ -63,18 +63,17 @@ class Board(QtGui.QFrame):
 
         self.isStarted = True
         self.clearBoard()
+        self.setConcrete()
         self.initializeBomberman()
 
         self.timer.start(Board.Speed, self)
 
-    def shapeAt(self, x, y):
-        return self.board[y][x]
+    def tileAt(self, x, y):
+        return self.board[y][x].peek()
 
+    def setTileAt(self, x, y, tile):
+        self.board[y][x].push(tile)
         
-    def setShapeAt(self, x, y, shape):
-        self.board[y][x] = shape
-        
-
     def squareWidth(self):
         return self.contentsRect().width() / Board.BoardWidth
         
@@ -82,11 +81,17 @@ class Board(QtGui.QFrame):
         return self.contentsRect().height() / Board.BoardHeight
 
     def clearBoard(self):
-        self.board = [[Tile.Empty for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
+        self.board = [[Tile() for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
+
+    def setConcrete(self):
+        for y in range(Board.BoardHeight):
+            for x in range(Board.BoardWidth):
+                if x % 2 != 0 and y % 2 != 0:
+                    self.setTileAt(x,y,Tile.Concrete)
 
     def initializeBomberman(self):
 
-        self.setShapeAt(self.curX,self.curY,Tile.Bomberman)
+        self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def paintEvent(self, event):
         
@@ -97,7 +102,7 @@ class Board(QtGui.QFrame):
 
         for i in range(Board.BoardHeight):
             for j in range(Board.BoardWidth):
-                shape = self.shapeAt(j, Board.BoardHeight - i - 1)
+                shape = self.tileAt(j, Board.BoardHeight - i - 1)
                 
                 self.drawSquare(painter,
                     rect.left() + j * self.squareWidth(),
@@ -160,24 +165,23 @@ class Board(QtGui.QFrame):
             super(Board, self).keyPressEvent(event)
 
     def tryMove(self, newX, newY):
-        if (self.shapeAt(newX,newY) == Tile.Concrete or self.shapeAt(newX,newY) == Tile.Brick or self.shapeAt(newX,newY) == Tile.Bomb):
+        if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb):
             return False
-        if (self.shapeAt(self.curX,self.curY) != Tile.Bomb):
-            self.setShapeAt(self.curX,self.curY,Tile.Empty)
+        if (self.tileAt(self.curX,self.curY) != Tile.Bomb):
+            self.setTileAt(self.curX,self.curY,Tile.Empty)
         self.curX = newX
         self.curY = newY
-        self.setShapeAt(self.curX,self.curY,Tile.Bomberman)
+        self.setTileAt(self.curX,self.curY,Tile.Bomberman)
         self.update()
         
         return True
 
     def setBomb(self):
-        self.setShapeAt(self.curX,self.curY,Tile.Bomb)
+        self.setTileAt(self.curX,self.curY,Tile.Bomb)
         self.update()
 
-
 class Tile(object):
-    
+
     Empty = 0
     Concrete = 1
     Brick = 2
@@ -185,6 +189,24 @@ class Tile(object):
     Bomberman = 4
     Powerup = 5
     Exit = 6
+
+    def __init__(self):
+        self.stack = [Tile.Empty]
+
+    def isEmpty(self):
+        return self.stack == [Tile.Empty]
+
+    def push(self, tile):
+        self.stack.append(tile)
+
+    def peek(self):
+        return self.stack[len(self.stack)-1]
+
+    def pop(self):
+        return self.stack.pop()
+
+    def size(self):
+        return len(self.stack)
 
 def main():
 
