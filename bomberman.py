@@ -12,12 +12,9 @@ class Game(QtGui.QMainWindow):
     
     def __init__(self):
         super(Game, self).__init__()
-        
         self.initUI()
         
-        
     def initUI(self):    
-
         self.board = Board(self)
         self.setCentralWidget(self.board)
         
@@ -28,7 +25,6 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Bomberman')        
         self.show()
         
-
     def center(self):
 
         screen = QtGui.QDesktopWidget().screenGeometry()
@@ -43,6 +39,10 @@ class Board(QtGui.QFrame):
     BoardWidth = 31
     BoardHeight = 13
     Speed = 300
+    BombTime = 3000
+    FlashTime = 700
+    BombRadius = 3
+    NumberBricks = 8
 
     def __init__(self, parent):
         super(Board, self).__init__(parent)
@@ -55,6 +55,7 @@ class Board(QtGui.QFrame):
         self.curX = 0
         self.curY = 0
         self.board = []
+        self.bombQueue = []
 
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.isStarted = False
@@ -67,8 +68,10 @@ class Board(QtGui.QFrame):
 
         self.isStarted = True
         self.clearBoard()
+        self.clearBombs()
         self.setConcrete()
-        self.initializeBomberman()
+        self.setBrick()
+        self.setBomberman()
 
         self.timer.start(Board.Speed, self)
 
@@ -77,7 +80,18 @@ class Board(QtGui.QFrame):
 
     def setTileAt(self, x, y, tile):
         self.board[y][x].push(tile)
-        
+        self.update()
+
+    def setTileAtWithoutUpdate(self, x, y, tile):
+        self.board[y][x].push(tile)
+
+    def popTileAt(self, x, y):
+        self.board[y][x].pop()
+        self.update()
+
+    def popTileAtWithoutUpdate(self, x, y):
+        self.board[y][x].pop()
+
     def squareWidth(self):
         return self.contentsRect().width() / Board.BoardWidth
         
@@ -87,13 +101,21 @@ class Board(QtGui.QFrame):
     def clearBoard(self):
         self.board = [[Tile() for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
 
+    def clearBombs(self):
+        self.bombQueue = []
+
     def setConcrete(self):
         for y in range(Board.BoardHeight):
             for x in range(Board.BoardWidth):
                 if x % 2 != 0 and y % 2 != 0:
                     self.setTileAt(x,y,Tile.Concrete)
 
-    def initializeBomberman(self):
+    def setBrick(self):
+        self.setTileAt(2,2,Tile.Brick)
+        self.setTileAt(6,6,Tile.Brick)
+        self.setTileAt(10,10,Tile.Brick)
+
+    def setBomberman(self):
 
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
@@ -115,7 +137,7 @@ class Board(QtGui.QFrame):
     def drawSquare(self, painter, x, y, shape):
         
         colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
-                      0xFFCC00, 0xCC66CC, 0x66CCCC, 0xDAAA00]
+                      0xFFCC00, 0xCC66CC, 0x66CCCC, 0xFF9900]
 
         color = QtGui.QColor(colorTable[shape])
         painter.fillRect(x + 1, y + 1, self.squareWidth() - 2, 
@@ -162,7 +184,7 @@ class Board(QtGui.QFrame):
                 return
             self.tryMove(self.curX,self.curY+1)
 
-        elif key == QtCore.Qt.Key_B:
+        elif key == QtCore.Qt.Key_Space:
             self.setBomb()
             
         else:
@@ -171,18 +193,97 @@ class Board(QtGui.QFrame):
     def tryMove(self, newX, newY):
         if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb):
             return False
-        if (self.tileAt(self.curX,self.curY) != Tile.Bomb):
-            self.setTileAt(self.curX,self.curY,Tile.Empty)
+        self.popTileAt(self.curX,self.curY)
         self.curX = newX
         self.curY = newY
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
-        self.update()
         
         return True
 
     def setBomb(self):
+        self.bombQueue.append((self.curX,self.curY))
+        tempTile = self.tileAt(self.curX,self.curY)
+        self.popTileAt(self.curX,self.curY)
         self.setTileAt(self.curX,self.curY,Tile.Bomb)
-        self.update()
+        self.setTileAt(self.curX,self.curY,tempTile)
+        QtCore.QTimer.singleShot(Board.BombTime, self.detonateBomb)
+
+    def timerEvent(self, event):
+        
+        if event.timerId() == self.timer.timerId():
+            pass
+        else:
+            super(Board, self).timerEvent(event)
+
+    def detonateBomb(self):
+
+        x, y = self.bombQueue.pop(0)
+        self.popTileAt(x,y)
+
+        flashList = []
+        popList = []
+
+        # NORTH
+        for i in range(1,Board.BombRadius+1):
+            modY = y + i
+            if (modY < Board.BoardHeight-1):
+                northTile = self.tileAt(x,modY)
+                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                    break
+                flashList.append((x,modY))
+                if (northTile == Tile.Brick):
+                    popList.append((x,modY))
+                    break
+        # SOUTH
+        for i in range(1,Board.BombRadius+1):
+            modY = y - i
+            if (modY < Board.BoardHeight-1):
+                northTile = self.tileAt(x,modY)
+                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                    break
+                flashList.append((x,modY))
+                if (northTile == Tile.Brick):
+                    popList.append((x,modY))
+                    break
+        # EAST
+        for i in range(1,Board.BombRadius+1):
+            modX = x + i
+            if (modX < Board.BoardHeight-1):
+                northTile = self.tileAt(modX,y)
+                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                    break
+                flashList.append((modX,y))
+                if (northTile == Tile.Brick):
+                    popList.append((modX,y))
+                    break        
+        # WEST
+        for i in range(1,Board.BombRadius+1):
+            modX = x - i
+            if (modX < Board.BoardHeight-1):
+                northTile = self.tileAt(modX,y)
+                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                    break
+                flashList.append((modX,y))
+                if (northTile == Tile.Brick):
+                    popList.append((modX,y))
+                    break        
+
+        self.startFlash(flashList)
+        self.endFlash(flashList)
+        self.destroyTiles(popList)
+
+    def startFlash(self,flashList):
+        for x,y in flashList:
+            self.setTileAt(x,y,Tile.Flash)
+
+    def endFlash(self,flashList):
+         for x,y in flashList:
+            self.popTileAtWithoutUpdate(x,y)
+    
+    def destroyTiles(self,popList):
+        for x,y in popList:
+            self.popTileAtWithoutUpdate(x,y)
+
 
 class Tile(object):
 
@@ -193,6 +294,7 @@ class Tile(object):
     Bomberman = 4
     Powerup = 5
     Exit = 6
+    Flash = 7
 
     def __init__(self):
         self.stack = [Tile.Empty]
