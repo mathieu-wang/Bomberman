@@ -79,7 +79,7 @@ class Board(QtGui.QFrame):
             for x in range(Board.BoardWidth):
                 if x == 0 or x == 30 or y == 0 or y == 12:
                     self.setTileAt(x,y,Tile.Concrete)
-                if x % 2 == 0 and y % 2 == 0:
+                elif x % 2 == 0 and y % 2 == 0:
                     self.setTileAt(x,y,Tile.Concrete)
 
     def setBrick(self):
