@@ -83,9 +83,9 @@ class Board(QtGui.QFrame):
                     self.setTileAt(x,y,Tile.Concrete)
 
     def setBrick(self):
-        self.setTileAt(2,2,Tile.Brick)
-        self.setTileAt(6,6,Tile.Brick)
-        self.setTileAt(10,10,Tile.Brick)
+        self.setTileAt(2,3,Tile.Brick)
+        self.setTileAt(6,5,Tile.Brick)
+        self.setTileAt(10,9,Tile.Brick)
 
     def setBomberman(self):
 
