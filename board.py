@@ -1,36 +1,6 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-
-
 import sys
 from PyQt4 import QtCore, QtGui
-
-#This is a comment!
-
-class Game(QtGui.QMainWindow):
-    
-    def __init__(self):
-        super(Game, self).__init__()
-        self.initUI()
-        
-    def initUI(self):    
-        self.board = Board(self)
-        self.setCentralWidget(self.board)
-        
-        self.board.start()
-        
-        self.resize(1116,468) # Standard res
-        self.center()
-        self.setWindowTitle('Bomberman')        
-        self.show()
-        
-    def center(self):
-
-        screen = QtGui.QDesktopWidget().screenGeometry()
-        size = self.geometry()
-        self.move((screen.width()-size.width())/2, 
-            (screen.height()-size.height())/2)
+from tile import Tile
 
 class Board(QtGui.QFrame):
 
@@ -285,43 +255,3 @@ class Board(QtGui.QFrame):
     def destroyTiles(self,popList):
         for x,y in popList:
             self.popTileAtWithoutUpdate(x,y)
-
-
-class Tile(object):
-
-    Empty = 0
-    Concrete = 1
-    Brick = 2
-    Bomb = 3
-    Bomberman = 4
-    Powerup = 5
-    Exit = 6
-    Flash = 7
-
-    def __init__(self):
-        self.stack = [Tile.Empty]
-
-    def isEmpty(self):
-        return self.stack == [Tile.Empty]
-
-    def push(self, tile):
-        self.stack.append(tile)
-
-    def peek(self):
-        return self.stack[len(self.stack)-1]
-
-    def pop(self):
-        return self.stack.pop()
-
-    def size(self):
-        return len(self.stack)
-
-def main():
-
-    app = QtGui.QApplication([])
-    game = Game()    
-    sys.exit(app.exec_())
-
-if __name__ == '__main__':
-
-    main()
