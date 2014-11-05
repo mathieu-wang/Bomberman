@@ -52,8 +52,8 @@ class Board(QtGui.QFrame):
 
         self.timer = QtCore.QBasicTimer()
 
-        self.curX = 0
-        self.curY = 0
+        self.curX = 1
+        self.curY = 11
         self.board = []
         self.bombQueue = []
 
@@ -107,7 +107,9 @@ class Board(QtGui.QFrame):
     def setConcrete(self):
         for y in range(Board.BoardHeight):
             for x in range(Board.BoardWidth):
-                if x % 2 != 0 and y % 2 != 0:
+                if x == 0 or x == 30 or y == 0 or y == 12:
+                    self.setTileAt(x,y,Tile.Concrete)
+                if x % 2 == 0 and y % 2 == 0:
                     self.setTileAt(x,y,Tile.Concrete)
 
     def setBrick(self):
