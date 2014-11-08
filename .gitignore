@@ -15,4 +15,9 @@ hs_err_pid*
 .DS_Store
 *.pyc
 .idea/
+
+# db file
 db.sqlite
+
+# virtual environment
+venv/
