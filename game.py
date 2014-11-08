@@ -6,8 +6,7 @@
 import sys
 from PyQt4 import QtCore, QtGui
 from board import Board
-
-#This is a comment!
+from login_menu import LoginMenu
 
 class Game(QtGui.QMainWindow):
     
@@ -16,15 +15,32 @@ class Game(QtGui.QMainWindow):
         self.initUI()
         
     def initUI(self):    
-        self.board = Board(self)
-        self.setCentralWidget(self.board)
-        
-        self.board.start()
-        
-        self.resize(1116,468) # Standard res
+
+        self.central_widget = QtGui.QStackedWidget()
+        self.setCentralWidget(self.central_widget)
+
+        self.show_login_menu()
+
+    def show_login_menu(self):
+
+        login_widget = LoginMenu(self)
+
+        login_widget.button.clicked.connect(self.show_board)
+        self.central_widget.addWidget(login_widget)
+        self.setWindowTitle('Login')
         self.center()
-        self.setWindowTitle('Bomberman')        
-        self.show()
+
+    def show_board(self):
+
+        self.board_widget = Board(self)
+
+        self.central_widget.addWidget(self.board_widget)
+        self.central_widget.setCurrentWidget(self.board_widget)
+
+        self.board_widget.start()
+        self.resize(1116,468) # Standard res
+        self.setWindowTitle('Bomberman')
+        self.center()     
         
     def center(self):
 
@@ -33,11 +49,11 @@ class Game(QtGui.QMainWindow):
         self.move((screen.width()-size.width())/2, 
             (screen.height()-size.height())/2)
 
-
 def main():
 
     app = QtGui.QApplication([])
-    game = Game()    
+    game = Game()
+    game.show()   
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
