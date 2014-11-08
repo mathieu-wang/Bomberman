@@ -25,7 +25,7 @@ class Game(QtGui.QMainWindow):
 
         login_widget = LoginMenu(self)
 
-        login_widget.button.clicked.connect(self.show_board)
+        login_widget.successLogin.connect(self.show_board)
         self.central_widget.addWidget(login_widget)
         self.setWindowTitle('Login')
         self.center()
