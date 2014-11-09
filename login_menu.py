@@ -1,5 +1,7 @@
 from PyQt4 import QtCore, QtGui
+
 from database import Database
+
 
 class LoginMenu(QtGui.QWidget):
 

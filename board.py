@@ -1,6 +1,7 @@
-import sys
 from PyQt4 import QtCore, QtGui
+
 from tile import Tile
+
 
 class Board(QtGui.QFrame):
 

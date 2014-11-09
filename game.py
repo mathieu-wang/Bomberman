@@ -4,9 +4,12 @@
 
 
 import sys
-from PyQt4 import QtCore, QtGui
+
+from PyQt4 import QtGui
+
 from board import Board
 from login_menu import LoginMenu
+
 
 class Game(QtGui.QMainWindow):
     

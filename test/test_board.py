@@ -1,9 +1,11 @@
 import unittest
 import sys
+
+from PyQt4 import QtGui
+
 from board import Board
 from tile import Tile
 from game import Game
-from PyQt4 import QtGui
 
 
 class TestBoard(unittest.TestCase):
@@ -104,7 +106,7 @@ class TestBoard(unittest.TestCase):
 
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "Brick did not get destroyed by bomb")
 
-    def test_detonateBombDestroysMultipleBricks(self):
+    def test_detonateBomb_destroys_multiple_bricks(self):
         self.board.setTileAt(1, 2, Tile.Brick)
         self.board.setTileAt(1, 3, Tile.Brick)
         self.board.curX = 1
@@ -117,7 +119,7 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "Closer Brick did not get destroyed by bomb")
         self.assertEqual(self.board.tileAt(1, 3), Tile.Brick, "Further Brick got destroyed by bomb")
 
-    def test_detonateBombDestroysOnlyClosestBrickInTheSameDirection(self):
+    def test_detonateBomb_destroys_only_closest_brick_in_the_same_direction(self):
         self.board.setTileAt(1, 2, Tile.Brick)
         self.board.setTileAt(2, 1, Tile.Brick)
         self.board.curX = 1
