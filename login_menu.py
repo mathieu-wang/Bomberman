@@ -1,4 +1,5 @@
 from PyQt4 import QtCore, QtGui
+from database import Database
 
 class LoginMenu(QtGui.QWidget):
 
@@ -7,6 +8,7 @@ class LoginMenu(QtGui.QWidget):
 	def __init__(self, parent=None):
 		super(LoginMenu, self).__init__(parent)
 		self.initUI()
+		self.db = Database()
 
 	def initUI(self):
 
@@ -21,8 +23,10 @@ class LoginMenu(QtGui.QWidget):
 		self.yourName = QtGui.QLineEdit('Your name')
 		self.username = QtGui.QLineEdit('Username')
 		self.password = QtGui.QLineEdit('Password')
+		self.password.setEchoMode(QtGui.QLineEdit.Password)
 		self.loginUsername = QtGui.QLineEdit('Username')
 		self.loginPassword = QtGui.QLineEdit('Password')
+		self.loginPassword.setEchoMode(QtGui.QLineEdit.Password)
 
 		grid.addWidget(self.title1, 0, 0)
 		grid.addWidget(self.empty, 0, 1)
@@ -44,7 +48,28 @@ class LoginMenu(QtGui.QWidget):
 		self.signUpButton.clicked.connect(self.signUp)
 
 	def login(self):
-		print self.loginUsername.text()
-		self.successLogin.emit()
+
+		username = str(self.loginUsername.text())
+		password = str(self.loginPassword.text())
+
+		if self.db.checkUser(username,password):
+			self.successLogin.emit()
+		else:
+			QtGui.QMessageBox.warning(self,'Warning!','Wrong username or password',QtGui.QMessageBox.Ok)
+
 	def signUp(self):
-		pass
+
+		name = str(self.yourName.text())
+		username = str(self.username.text())
+		password = str(self.password.text())
+
+		if (not self.db.isValidUsername(username)):
+			invalidUsernameMessage = '''Usernames must be at least 6 characters long.'''
+			QtGui.QMessageBox.warning(self,'Warning!',invalidUsernameMessage,QtGui.QMessageBox.Ok)
+		elif (not self.db.isValidPassword(password)):
+			invalidPasswordMessage = '''Invalid password. The password must be at least 8 characters long and contain the following:\n - 1 Upper case letter\n - 1 Lower case letter\n - 1 Digit\n - 1 Special character'''
+			QtGui.QMessageBox.warning(self,'Warning!',invalidPasswordMessage,QtGui.QMessageBox.Ok)
+		elif self.db.createUser(name,username,password):
+			self.successLogin.emit()
+		else:
+			QtGui.QMessageBox.warning(self,'Warning!','The username has been taken',QtGui.QMessageBox.Ok)
