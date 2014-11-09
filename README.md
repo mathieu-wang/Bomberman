@@ -5,3 +5,6 @@ Dependencies:
 - SIP
 - Qt
 - PyQt4
+
+To execute the unit tests:
+python -m unittest discover

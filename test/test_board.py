@@ -1,16 +1,31 @@
 import unittest
+import sys
 from board import Board
 from tile import Tile
 from game import Game
 from PyQt4 import QtGui
 
+
 class TestBoard(unittest.TestCase):
+    app = None
+
+    @classmethod
+    def setUpClass(cls):
+        global app
+        app = QtGui.QApplication([])
 
     def setUp(self):
-        self.app = QtGui.QApplication([])
         self.game = Game()
         self.board = Board(self.game)
         self.board.start()
+
+    def tearDown(self):
+        self.board.destroy()
+        self.game.destroy()
+
+    @classmethod
+    def tearDownClass(cls):
+        app.quit()
 
     def test_initialize_board_with_concrete_walls(self):
         self.assertEqual(self.board.board[0][0].peek(), Tile.Concrete, "Corner tile should be Concrete, board not initialized properly")
@@ -131,4 +146,6 @@ class TestBoard(unittest.TestCase):
         self.assertTrue(self.board.tryMove(2, 2), "Was not able to move to an empty tile")
 
 if __name__ == '__main__':
+
     unittest.main()
+    sys.exit(app.exec_)
