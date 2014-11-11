@@ -7,6 +7,11 @@ Python package dependencies:
 - PyQt4
 - dataset
 
+# How to run
+```
+python game.py
+```
+
 # Installation
 
 ## Mac OS X
@@ -51,7 +56,7 @@ Install Dataset
 pip install dataset
 ```
 
-### How to run directly in Ubuntu 12.04
+### Run directly in Ubuntu 12.04 without installation using the virtualenv
 
 Inside the root directory, activate the python virtual environment:
 ```
