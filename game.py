@@ -9,6 +9,7 @@ from PyQt4 import QtGui
 
 from board import Board
 from login_menu import LoginMenu
+from main_menu import MainMenu
 
 
 class Game(QtGui.QMainWindow):
@@ -27,14 +28,22 @@ class Game(QtGui.QMainWindow):
     def show_login_menu(self):
 
         login_widget = LoginMenu(self)
-        login_widget.loginSuccessful.connect(self.show_board)
+        login_widget.loginSuccessSignal.connect(self.show_main_menu)
 
         self.central_widget.addWidget(login_widget)
         self.setWindowTitle('Login')
         self.center()
 
     def show_main_menu(self):
-        pass
+        
+        self.mainMenuWidget = MainMenu(self)
+        self.mainMenuWidget.playGameSignal.connect(self.show_board)
+        self.mainMenuWidget.quitGameSignal.connect(self.quit)
+
+        self.central_widget.addWidget(self.mainMenuWidget)
+        self.central_widget.setCurrentWidget(self.mainMenuWidget)
+        self.setWindowTitle('Main Menu')
+        self.center()
 
     def show_board(self):
 
@@ -42,7 +51,6 @@ class Game(QtGui.QMainWindow):
 
         self.central_widget.addWidget(self.board_widget)
         self.central_widget.setCurrentWidget(self.board_widget)
-
         self.board_widget.start()
         self.resize(1116,468) # Standard res
         self.setWindowTitle('Bomberman')
@@ -54,6 +62,9 @@ class Game(QtGui.QMainWindow):
         size = self.geometry()
         self.move((screen.width()-size.width())/2, 
             (screen.height()-size.height())/2)
+
+    def quit(self):
+        sys.exit()
 
 def main():
 

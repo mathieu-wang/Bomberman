@@ -5,7 +5,7 @@ from database import Database
 
 class LoginMenu(QtGui.QWidget):
 
-	loginSuccessful = QtCore.pyqtSignal()
+	loginSuccessSignal = QtCore.pyqtSignal()
 	
 	def __init__(self, parent=None):
 		super(LoginMenu, self).__init__(parent)
@@ -55,7 +55,7 @@ class LoginMenu(QtGui.QWidget):
 		password = str(self.loginPassword.text())
 
 		if self.db.checkUser(username,password):
-			self.loginSuccessful.emit()
+			self.loginSuccessSignal.emit()
 		else:
 			QtGui.QMessageBox.warning(self,'Warning!','Wrong username or password',QtGui.QMessageBox.Ok)
 
