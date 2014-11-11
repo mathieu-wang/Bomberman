@@ -56,7 +56,7 @@ Install Dataset
 pip install dataset
 ```
 
-### Run directly in Ubuntu 12.04 without installation using the virtualenv
+### Run on Ubuntu 12.04 without installation using virtualenv
 
 Inside the root directory, activate the python virtual environment:
 ```
