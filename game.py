@@ -27,10 +27,11 @@ class Game(QtGui.QMainWindow):
 
     def show_login_menu(self):
 
-        login_widget = LoginMenu(self)
-        login_widget.loginSuccessSignal.connect(self.show_main_menu)
+        self.login_widget = LoginMenu(self)
+        self.login_widget.loginSuccessSignal.connect(self.show_main_menu)
 
-        self.central_widget.addWidget(login_widget)
+        self.central_widget.addWidget(self.login_widget)
+        self.central_widget.setCurrentWidget(self.login_widget)
         self.setWindowTitle('Login')
         self.center()
 
@@ -38,6 +39,7 @@ class Game(QtGui.QMainWindow):
         
         self.mainMenuWidget = MainMenu(self)
         self.mainMenuWidget.playGameSignal.connect(self.show_board)
+        self.mainMenuWidget.logoutGameSignal.connect(self.show_login_menu)
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
 
         self.central_widget.addWidget(self.mainMenuWidget)
