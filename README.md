@@ -11,7 +11,7 @@ Python package dependencies:
 
 Inside the root directory, activate the python virtual environment:
 ```
-source /venv/bin/activate
+source venv/bin/activate
 ```
 
 Now `(venv)` should appear in front of your prompt. To start the game, run:
