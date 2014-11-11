@@ -1,0 +1,4 @@
+sqlalchemy >= 0.9.1
+alembic >= 0.6.2
+python-slugify >= 0.0.6
+PyYAML >= 3.10

@@ -1,0 +1,10 @@
+#!/home/michael/Team-12/venv/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'dataset==0.5.5','console_scripts','datafreeze'
+__requires__ = 'dataset==0.5.5'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('dataset==0.5.5', 'console_scripts', 'datafreeze')()
+    )

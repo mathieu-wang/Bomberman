@@ -1,0 +1,1 @@
+../../../../../share/pyshared/PyQt4/uic/pyuic.py

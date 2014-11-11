@@ -1,0 +1,1 @@
+../../../../share/pyshared/PyQt4/__init__.py

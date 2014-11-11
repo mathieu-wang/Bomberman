@@ -14,10 +14,9 @@ hs_err_pid*
 # Mac OS X
 .DS_Store
 *.pyc
+
+# IDE
 .idea/
 
 # db file
 db.sqlite
-
-# virtual environment
-venv/
