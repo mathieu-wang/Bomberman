@@ -20,7 +20,15 @@ Install the [brew package manager](http://brew.sh/) if not already present
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Install the pip package manage if not already present
+Install Python 2.7 using brew if not already present (the native Apple Python is not compatible)
+```
+brew install python
+```
+Add the brew PYTHONPATH to your environment variables by adding the following line to .bash_profile
+```
+export PATH=/usr/local/bin:$PATH
+```
+Install the pip package manager if not already present
 ```
 sudo easy_install pip
 ```
