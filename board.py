@@ -1,4 +1,5 @@
 from PyQt4 import QtCore, QtGui
+import random
 
 from tile import Tile
 
@@ -14,6 +15,7 @@ class Board(QtGui.QFrame):
     FlashTime = 700
     BombRadius = 3
     NumberBricks = 8
+    BrickPercent = 0.15
 
     def __init__(self, parent):
         super(Board, self).__init__(parent)
@@ -84,9 +86,14 @@ class Board(QtGui.QFrame):
                     self.setTileAt(x,y,Tile.Concrete)
 
     def setBrick(self):
-        self.setTileAt(2,3,Tile.Brick)
-        self.setTileAt(6,5,Tile.Brick)
-        self.setTileAt(10,9,Tile.Brick)
+        for y in range(Board.BoardHeight):
+            for x in range (Board.BoardWidth):
+                if (self.tileAt(x, y) != Tile.Concrete and not (x == 1 and y == Board.BoardHeight - 2) and not (x == 1 and y == Board.BoardHeight - 3) and not (x == 2 and y == Board.BoardHeight - 2)):
+                    if (random.random() <= Board.BrickPercent):
+                        self.setTileAt(x, y, Tile.Brick)
+        #self.setTileAt(2,3,Tile.Brick)
+        #self.setTileAt(6,5,Tile.Brick)
+        #self.setTileAt(10,9,Tile.Brick)
 
     def setBomberman(self):
 
