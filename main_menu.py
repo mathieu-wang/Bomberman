@@ -2,38 +2,38 @@ from PyQt4 import QtCore, QtGui
 
 class MainMenu(QtGui.QWidget):
 
-	playGameSignal = QtCore.pyqtSignal()
-	logoutGameSignal = QtCore.pyqtSignal()
-	quitGameSignal = QtCore.pyqtSignal()
-	
-	def __init__(self, parent=None):
-		super(MainMenu, self).__init__(parent)
-		self.initUI()
+    playGameSignal = QtCore.pyqtSignal()
+    logoutGameSignal = QtCore.pyqtSignal()
+    quitGameSignal = QtCore.pyqtSignal()
 
-	def initUI(self):
-		
-		playButton = QtGui.QPushButton('Play Bomberman', self)
-		playButton.move(115, 30)
-		playButton.clicked.connect(self.play)
+    def __init__(self, parent=None):
+        super(MainMenu, self).__init__(parent)
+        self.initUI()
 
-		logoutButton = QtGui.QPushButton('Logout', self)
-		logoutButton.move(139, 70)
-		logoutButton.clicked.connect(self.logout)
+    def initUI(self):
 
-		quitButton = QtGui.QPushButton('Quit', self)
-		quitButton.move(150, 110)
-		quitButton.clicked.connect(self.quit)
+        playButton = QtGui.QPushButton('Play Bomberman', self)
+        playButton.move(115, 30)
+        playButton.clicked.connect(self.play)
 
-		self.setGeometry(300, 300, 280, 170)
+        logoutButton = QtGui.QPushButton('Logout', self)
+        logoutButton.move(139, 70)
+        logoutButton.clicked.connect(self.logout)
 
-		self.show()
+        quitButton = QtGui.QPushButton('Quit', self)
+        quitButton.move(150, 110)
+        quitButton.clicked.connect(self.quit)
 
-	def play(self):
-		self.playGameSignal.emit()
+        self.setGeometry(300, 300, 280, 170)
 
-	def logout(self):
-		self.logoutGameSignal.emit()
+        self.show()
 
-	def quit(self):
-		self.quitGameSignal.emit()
+    def play(self):
+        self.playGameSignal.emit()
+
+    def logout(self):
+        self.logoutGameSignal.emit()
+
+    def quit(self):
+        self.quitGameSignal.emit()
 
