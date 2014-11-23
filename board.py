@@ -2,11 +2,14 @@ from PyQt4 import QtCore, QtGui
 import random
 
 from tile import Tile
+from bomberman import Bomberman
 
 
 class Board(QtGui.QFrame):
 
     msg2Statusbar = QtCore.pyqtSignal(str)
+
+    
 
     BoardWidth = 31
     BoardHeight = 13
@@ -19,7 +22,6 @@ class Board(QtGui.QFrame):
     SlowestMoveTime = 800
     BombTime = 3000
     FlashTime = 700
-    BombRadius = 3
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
@@ -34,7 +36,7 @@ class Board(QtGui.QFrame):
         self.initBoard()
         
     def initBoard(self):     
-
+        self.bomberman = Bomberman()
         self.timer = QtCore.QBasicTimer()
 
         self.curX = 1
@@ -317,7 +319,7 @@ class Board(QtGui.QFrame):
         popList = []
 
         # NORTH
-        for i in range(1,Board.BombRadius+1):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y + i
             if (modY < Board.BoardHeight-1):
                 northTile = self.tileAt(x,modY)
@@ -328,7 +330,7 @@ class Board(QtGui.QFrame):
                     popList.append((x,modY))
                     break
         # SOUTH
-        for i in range(1,Board.BombRadius+1):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y - i
             if (modY < Board.BoardHeight-1):
                 northTile = self.tileAt(x,modY)
@@ -339,7 +341,7 @@ class Board(QtGui.QFrame):
                     popList.append((x,modY))
                     break
         # EAST
-        for i in range(1,Board.BombRadius+1):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
             if (modX < Board.BoardHeight-1):
                 northTile = self.tileAt(modX,y)
@@ -350,7 +352,7 @@ class Board(QtGui.QFrame):
                     popList.append((modX,y))
                     break        
         # WEST
-        for i in range(1,Board.BombRadius+1):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
             if (modX < Board.BoardHeight-1):
                 northTile = self.tileAt(modX,y)
