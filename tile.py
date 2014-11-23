@@ -16,6 +16,14 @@ class Tile(object):
     Ovapi = 13
     Pass = 14
     Pontan = 15
+    puBomb = 16
+    puFlames = 17
+    puSpeed = 18
+    puWallPass = 19
+    puDetonator = 20
+    puBombPass = 21
+    puFlamePass = 22
+    puMystery = 23
 
     def __init__(self):
         self.stack = [Tile.Empty]
