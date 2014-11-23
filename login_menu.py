@@ -10,6 +10,7 @@ class LoginMenu(QtGui.QWidget):
         super(LoginMenu, self).__init__(parent)
         self.initUI()
         self.db = Database()
+        self.db.createUserAccountsForDemo()
 
     def initUI(self):
 
