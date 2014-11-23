@@ -18,8 +18,8 @@ class Game(QtGui.QMainWindow):
         self.central_widget = QtGui.QStackedWidget()
         self.setCentralWidget(self.central_widget)
 
-        self.show_main_menu()
-        #self.show_login_menu()
+        #self.show_main_menu()
+        self.show_login_menu()
 
     def show_login_menu(self):
 

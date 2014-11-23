@@ -40,6 +40,16 @@ class Database:
 
         return False
 
+    def hasUser(self, username):
+        user = self.userTable.find_one(username=username)
+
+        # Check if user exists
+        if user is None:
+            return False
+        else:
+            return True
+
+
     # def changePassword(self, username, password):
     #
     #     # Check if user exists
@@ -106,7 +116,13 @@ class Database:
         userAccounts = [userAccount1, userAccount2, userAccount3, userAccount4, userAccount5,
                         userAccount6, userAccount7, userAccount8, userAccount9, userAccount10]
         for userAccount in userAccounts:
-            self.userTable.insert(userAccount.__dict__)
+            if not self.hasUser(userAccount.username):
+                self.userTable.insert(userAccount.__dict__)
 
     def getUserAccount(self, username):
         return self.userTable.find_one(username=username)
+
+    # Get top players sorted by cumulative score.
+    # Same score is counted as two. Users with the same score are sorted alphabetically (by username).
+    def getTopTenUsers(self):
+        return self.userTable.find(_limit=10, order_by=['-cumulativeScore', 'username'])
