@@ -13,16 +13,21 @@ class Board(QtGui.QFrame):
     ViewWidth = 13
     ViewHeight = 13
     Speed = 300
+    FastMoveTime = 200
+    NormalMoveTime = 300
+    SlowMoveTime = 600
+    SlowestMoveTime = 800
     BombTime = 3000
     FlashTime = 700
     BombRadius = 3
-    NumberBricks = 8
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
     Level = 4
     Powerup = 0
+    NumberEnemies = 0
     NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
+    BombermanCanMove = True
 
     def __init__(self, parent):
         super(Board, self).__init__(parent)
@@ -55,7 +60,6 @@ class Board(QtGui.QFrame):
         self.setBrick()
         self.setEnemies()
         self.setBomberman()
-
         self.timer.start(Board.Speed, self)
 
     def tileAt(self, x, y):
@@ -97,8 +101,8 @@ class Board(QtGui.QFrame):
 
     def setExit(self):
         while True:
-            tempX = random.randint(1, self.BoardWidth) - 1
-            tempY = random.randint(1, self.BoardHeight) - 1
+            tempX = random.randint(1, Board.BoardWidth) - 1
+            tempY = random.randint(1, Board.BoardHeight) - 1
 
             if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
                 self.setTileAt(tempX, tempY, Tile.Exit)
@@ -109,8 +113,8 @@ class Board(QtGui.QFrame):
 
     def setPowerup(self):
         while True:
-            tempX = random.randint(1, self.BoardWidth) - 1
-            tempY = random.randint(1, self.BoardHeight) - 1
+            tempX = random.randint(1, Board.BoardWidth) - 1
+            tempY = random.randint(1, Board.BoardHeight) - 1
 
             if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
                 self.setTileAt(tempX, tempY, Tile.Powerup)
@@ -127,7 +131,6 @@ class Board(QtGui.QFrame):
                         self.setTileAt(x, y, Tile.Brick)
 
     def setBomberman(self):
-
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
@@ -183,11 +186,12 @@ class Board(QtGui.QFrame):
         for i in range(8):
             for j in range(self.NumEnemies[i]):
                 while True:
-                    tempX = random.randint(1, self.BoardWidth) - 1
-                    tempY = random.randint(1, self.BoardHeight) - 1
+                    tempX = random.randint(1, Board.BoardWidth) - 1
+                    tempY = random.randint(1, Board.BoardHeight) - 1
 
                     if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
                         self.setTileAt(tempX, tempY, i + 8)
+                        Board.NumberEnemies += 1
                         break
 
 
@@ -275,14 +279,19 @@ class Board(QtGui.QFrame):
             super(Board, self).keyPressEvent(event)
 
     def tryMove(self, newX, newY):
-        if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb):
+        if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
             return False
         self.popTileAt(self.curX,self.curY)
         self.curX = newX
         self.curY = newY
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
-        
+        Board.BombermanCanMove = False
+        QtCore.QTimer.singleShot(Board.NormalMoveTime, self.canMove)
+
         return True
+
+    def canMove(self):
+        Board.BombermanCanMove = True
 
     def setBomb(self):
         self.bombQueue.append((self.curX,self.curY))
