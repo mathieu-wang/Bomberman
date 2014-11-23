@@ -36,7 +36,7 @@ class Board(QtGui.QFrame):
         self.initBoard()
         
     def initBoard(self):     
-        self.bomberman = Bomberman()
+        self.bomberman = Bomberman() #initialize bomberman attributes
         self.timer = QtCore.QBasicTimer()
 
         self.curX = 1
@@ -281,7 +281,16 @@ class Board(QtGui.QFrame):
             super(Board, self).keyPressEvent(event)
 
     def tryMove(self, newX, newY):
-        if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
+        if (self.bomberman.wallPass == 1):
+            if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
+                return False
+        elif (self.bomberman.bombPass == 1):
+            if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or Board.BombermanCanMove == False):
+                return False
+        elif (self.bomberman.wallPass == 1 and self.bomberman.bombPass == 1):
+            if (self.tileAt(newX,newY) == Tile.Concrete or Board.BombermanCanMove == False):
+                return False
+        elif (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
             return False
         self.popTileAt(self.curX,self.curY)
         self.curX = newX
@@ -313,7 +322,12 @@ class Board(QtGui.QFrame):
     def detonateBomb(self):
 
         x, y = self.bombQueue.pop(0)
-        self.popTileAt(x,y)
+        if (self.tileAt(x,y) == Tile.Bomberman):
+            self.popTileAt(x,y)
+            self.popTileAt(x,y)
+            self.setTileAt(x,y,Tile.Bomberman)
+        else:
+            self.popTileAt(x,y)
 
         flashList = []
         popList = []
