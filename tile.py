@@ -8,6 +8,14 @@ class Tile(object):
     Powerup = 5
     Exit = 6
     Flash = 7
+    Balloom = 8
+    Oneal = 9
+    Doll = 10
+    Minvo = 11
+    Kondoria = 12
+    Ovapi = 13
+    Pass = 14
+    Pontan = 15
 
     def __init__(self):
         self.stack = [Tile.Empty]

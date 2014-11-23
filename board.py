@@ -17,7 +17,12 @@ class Board(QtGui.QFrame):
     FlashTime = 700
     BombRadius = 3
     NumberBricks = 8
-    BrickPercent = 0.15
+    BrickPercent = 0.12
+    PowerupCoordinate = [0, 0]
+    ExitCoordinate = [0, 0]
+    Level = 1
+    
+    NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
 
     def __init__(self, parent):
         super(Board, self).__init__(parent)
@@ -45,7 +50,10 @@ class Board(QtGui.QFrame):
         self.clearBoard()
         self.clearBombs()
         self.setConcrete()
+        self.setExit()
+        self.setPowerup()
         self.setBrick()
+        self.setEnemies()
         self.setBomberman()
 
         self.timer.start(Board.Speed, self)
@@ -87,19 +95,50 @@ class Board(QtGui.QFrame):
                 elif x % 2 == 0 and y % 2 == 0:
                     self.setTileAt(x,y,Tile.Concrete)
 
+    def setExit(self):
+        while True:
+            tempX = random.randint(1, self.BoardWidth) - 1
+            tempY = random.randint(1, self.BoardHeight) - 1
+
+            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
+                self.setTileAt(tempX, tempY, Tile.Exit)
+                self.setTileAt(tempX, tempY, Tile.Brick)
+                Board.ExitCoordinate[0] = tempX
+                Board.ExitCoordinate[1] = tempY
+                break
+
+    def setPowerup(self):
+        while True:
+            tempX = random.randint(1, self.BoardWidth) - 1
+            tempY = random.randint(1, self.BoardHeight) - 1
+
+            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
+                self.setTileAt(tempX, tempY, Tile.Powerup)
+                self.setTileAt(tempX, tempY, Tile.Brick)
+                Board.PowerupCoordinate[0] = tempX
+                Board.PowerupCoordinate[1] = tempY
+                break
+
     def setBrick(self):
         for y in range(Board.BoardHeight):
             for x in range (Board.BoardWidth):
-                if (self.tileAt(x, y) != Tile.Concrete and not (x == 1 and y == Board.BoardHeight - 2) and not (x == 1 and y == Board.BoardHeight - 3) and not (x == 2 and y == Board.BoardHeight - 2)):
+                if (self.tileAt(x, y) == Tile.Empty and not (x == 1 and y == Board.BoardHeight - 2) and not (x == 1 and y == Board.BoardHeight - 3) and not (x == 2 and y == Board.BoardHeight - 2)):
                     if (random.random() <= Board.BrickPercent):
                         self.setTileAt(x, y, Tile.Brick)
-        #self.setTileAt(2,3,Tile.Brick)
-        #self.setTileAt(6,5,Tile.Brick)
-        #self.setTileAt(10,9,Tile.Brick)
 
     def setBomberman(self):
 
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
+
+    def setEnemies(self):
+        for i in range(self.NumEnemies[0]):
+            while True:
+                tempX = random.randint(1, self.BoardWidth) - 1
+                tempY = random.randint(1, self.BoardHeight) - 1
+
+                if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
+                    self.setTileAt(tempX, tempY, Tile.Balloom)
+                    break
 
     def paintEvent(self, event):
 
@@ -131,7 +170,8 @@ class Board(QtGui.QFrame):
     def drawSquare(self, painter, x, y, shape):
         
         colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
-                      0xFFCC00, 0xCC66CC, 0x66CCCC, 0xFF9900]
+                      0xFFCC00, 0xCC66CC, 0x66CCCC, 0xFF9900,
+                      0x0033CC]
 
         color = QtGui.QColor(colorTable[shape])
         painter.fillRect(x + 1, y + 1, self.squareWidth() - 2, 
