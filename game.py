@@ -4,6 +4,7 @@ import sys
 from board import Board
 from login_menu import LoginMenu
 from main_menu import MainMenu
+from leaderboard import Leaderboard
 
 
 class Game(QtGui.QMainWindow):
@@ -35,6 +36,7 @@ class Game(QtGui.QMainWindow):
         self.mainMenuWidget.playGameSignal.connect(self.show_board)
         self.mainMenuWidget.logoutGameSignal.connect(self.show_login_menu)
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
+        self.mainMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
 
         self.central_widget.addWidget(self.mainMenuWidget)
         self.central_widget.setCurrentWidget(self.mainMenuWidget)
@@ -51,7 +53,17 @@ class Game(QtGui.QMainWindow):
         self.resize(468,468) # Standard res
         self.setWindowTitle('Bomberman')
         self.center()     
-        
+
+    def show_leaderboard(self):
+
+        self.leaderboardWidget = Leaderboard(self)
+
+        self.central_widget.addWidget(self.leaderboardWidget)
+        self.central_widget.setCurrentWidget(self.leaderboardWidget)
+        self.setWindowTitle('Leaderboard')
+        self.center()
+
+
     def center(self):
 
         screen = QtGui.QDesktopWidget().screenGeometry()
