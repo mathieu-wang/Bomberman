@@ -10,6 +10,8 @@ class Board(QtGui.QFrame):
 
     BoardWidth = 31
     BoardHeight = 13
+    ViewWidth = 13
+    ViewHeight = 13
     Speed = 300
     BombTime = 3000
     FlashTime = 700
@@ -66,10 +68,10 @@ class Board(QtGui.QFrame):
         self.board[y][x].pop()
 
     def squareWidth(self):
-        return self.contentsRect().width() / Board.BoardWidth
+        return self.contentsRect().width() / Board.ViewWidth
         
     def squareHeight(self):
-        return self.contentsRect().height() / Board.BoardHeight
+        return self.contentsRect().height() / Board.ViewHeight
 
     def clearBoard(self):
         self.board = [[Tile() for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
@@ -100,18 +102,30 @@ class Board(QtGui.QFrame):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def paintEvent(self, event):
-        
+
+        # Check for bomberman X pos for moving viewPort
+        print self.curX
+        if self.curX <= 6:
+            viewXFirst = 0
+            viewXLast = 12
+        elif self.curX >= 24:
+            viewXFirst = 18
+            viewXLast = 30
+        else:
+            viewXFirst = self.curX - 6
+            viewXLast = self.curX + 6
+
         painter = QtGui.QPainter(self)
         rect = self.contentsRect()
 
-        boardTop = rect.bottom() - Board.BoardHeight * self.squareHeight()
+        boardTop = rect.bottom() - Board.ViewHeight * self.squareHeight()
 
         for i in range(Board.BoardHeight):
-            for j in range(Board.BoardWidth):
+            for j in range(viewXFirst,viewXLast+1):
                 shape = self.tileAt(j, Board.BoardHeight - i - 1)
                 
                 self.drawSquare(painter,
-                    rect.left() + j * self.squareWidth(),
+                    rect.left() + (j-viewXFirst) * self.squareWidth(),
                     boardTop + i * self.squareHeight(), shape)
 
     def drawSquare(self, painter, x, y, shape):

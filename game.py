@@ -1,11 +1,5 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-
-
-import sys
-
 from PyQt4 import QtGui
+import sys
 
 from board import Board
 from login_menu import LoginMenu
@@ -54,7 +48,7 @@ class Game(QtGui.QMainWindow):
         self.central_widget.addWidget(self.board_widget)
         self.central_widget.setCurrentWidget(self.board_widget)
         self.board_widget.start()
-        self.resize(1116,468) # Standard res
+        self.resize(468,468) # Standard res
         self.setWindowTitle('Bomberman')
         self.center()     
         
@@ -66,6 +60,7 @@ class Game(QtGui.QMainWindow):
             (screen.height()-size.height())/2)
 
     def quit(self):
+        
         sys.exit()
 
 def main():
