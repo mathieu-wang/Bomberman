@@ -20,8 +20,8 @@ class Board(QtGui.QFrame):
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
-    Level = 1
-    
+    Level = 4
+    Powerup = 0
     NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
 
     def __init__(self, parent):
@@ -131,19 +131,69 @@ class Board(QtGui.QFrame):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
-        for i in range(self.NumEnemies[0]):
-            while True:
-                tempX = random.randint(1, self.BoardWidth) - 1
-                tempY = random.randint(1, self.BoardHeight) - 1
+        if self.Level == 1:
+            self.NumEnemies = [6, 0, 0, 0, 0, 0, 0, 0]
+            self.Powerup = 2
+        elif self.Level == 2:
+            self.NumEnemies = [3, 3, 0, 0, 0, 0, 0, 0]
+            self.Powerup = 1
+        elif self.Level == 3:
+            self.NumEnemies = [2, 2, 2, 0, 0, 0, 0, 0]
+            self.Powerup = 5
+        elif self.Level == 4:
+            self.NumEnemies = [1, 1, 2, 2, 0, 0, 0, 0]
+            self.Powerup = 3
+        elif self.Level == 5:
+            self.NumEnemies = [0, 0, 4, 3, 0, 0, 0, 0]
+            self.Powerup = 1
+        elif self.Level == 6:
+            self.NumEnemies = [0, 2, 3, 2, 0, 0, 0, 0]
+            self.Powerup = 1
+        elif self.Level == 7:
+            self.NumEnemies = [0, 2, 3, 0, 2, 0, 0, 0]
+            self.Powerup = 2
+        elif self.Level == 8:
+            self.NumEnemies = [0, 1, 2, 4, 0, 0, 0, 0]
+            self.Powerup = 5
+        elif self.Level == 9:
+            self.NumEnemies = [0, 1, 1, 4, 1, 0, 0, 0]
+            self.Powerup = 6
+        elif self.Level == 10:
+            self.NumEnemies = [0, 1, 1, 1, 3, 1, 0, 0]
+            self.Powerup = 4
+        elif self.Level == 11:
+            self.NumEnemies = [0, 1, 2, 3, 1, 1, 0, 0]
+            self.Powerup = 1
+        elif self.Level == 12:
+            self.NumEnemies = [0, 1, 1, 1, 4, 1, 0, 0]
+            self.Powerup = 1
+        elif self.Level == 13:
+            self.NumEnemies = [0, 0, 3, 3, 3, 0, 0, 0]
+            self.Powerup = 5
+        elif self.Level == 14:
+            self.NumEnemies = [0, 0, 0, 0, 0, 7, 1, 0]
+            self.Powerup = 6
+        elif self.Level == 15:
+            self.NumEnemies = [0, 0, 1, 3, 3, 0, 1, 0]
+            self.Powerup = 2
+        elif self.Level == 16:
+            self.NumEnemies = [0, 0, 0, 3, 4, 0, 1, 0]
+            self.Powerup = 4
 
-                if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
-                    self.setTileAt(tempX, tempY, Tile.Balloom)
-                    break
+        for i in range(8):
+            for j in range(self.NumEnemies[i]):
+                while True:
+                    tempX = random.randint(1, self.BoardWidth) - 1
+                    tempY = random.randint(1, self.BoardHeight) - 1
+
+                    if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
+                        self.setTileAt(tempX, tempY, i + 8)
+                        break
+
 
     def paintEvent(self, event):
 
         # Check for bomberman X pos for moving viewPort
-        print self.curX
         if self.curX <= 6:
             viewXFirst = 0
             viewXLast = 12
@@ -171,7 +221,7 @@ class Board(QtGui.QFrame):
         
         colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
                       0xFFCC00, 0xCC66CC, 0x66CCCC, 0xFF9900,
-                      0x0033CC]
+                      0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933]
 
         color = QtGui.QColor(colorTable[shape])
         painter.fillRect(x + 1, y + 1, self.squareWidth() - 2, 
