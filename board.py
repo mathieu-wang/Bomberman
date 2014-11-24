@@ -3,13 +3,12 @@ import random
 
 from tile import Tile
 from bomberman import Bomberman
+from enemy import Enemy
 
 
 class Board(QtGui.QFrame):
 
     msg2Statusbar = QtCore.pyqtSignal(str)
-
-    
 
     BoardWidth = 31
     BoardHeight = 13
@@ -20,16 +19,23 @@ class Board(QtGui.QFrame):
     NormalMoveTime = 300
     SlowMoveTime = 600
     SlowestMoveTime = 800
+    FastCanMove = True
+    NormalCanMove = True
+    SlowCanMove = True
+    SlowestCanMove = True
+    BombermanCanMove = True
     BombTime = 3000
     FlashTime = 700
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
-    Level = 4
+    Level = 15
     Powerup = 0
     NumberEnemies = 0
+    ListofEnemies = []
     NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
-    BombermanCanMove = True
+
+    print Enemy.getEnemy(8)['points']
 
     def __init__(self, parent):
         super(Board, self).__init__(parent)
@@ -61,6 +67,7 @@ class Board(QtGui.QFrame):
         self.setPowerup()
         self.setBrick()
         self.setEnemies()
+        print Board.ListofEnemies
         self.setBomberman()
         self.timer.start(Board.Speed, self)
 
@@ -193,6 +200,8 @@ class Board(QtGui.QFrame):
 
                     if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
                         self.setTileAt(tempX, tempY, i + 8)
+                        tempList = [tempX, tempY, random.randint(1,4), i + 8]
+                        Board.ListofEnemies.append(tempList)
                         Board.NumberEnemies += 1
                         break
 
@@ -227,6 +236,7 @@ class Board(QtGui.QFrame):
         
         colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
                       0xFFCC00, 0xCC66CC, 0x66CCCC, 0xFF9900,
+                      0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933]
 
         color = QtGui.QColor(colorTable[shape])
@@ -297,12 +307,30 @@ class Board(QtGui.QFrame):
         self.curY = newY
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
         Board.BombermanCanMove = False
-        QtCore.QTimer.singleShot(Board.NormalMoveTime, self.canMove)
+        QtCore.QTimer.singleShot(Board.NormalMoveTime, self.bombermanCanMove)
 
         return True
 
-    def canMove(self):
+    def tryMoveFast(self):
+        for i in range(Board.NumberEnemies):
+            if (Enemy.getEnemy(Board.ListofEnemies[i][3])['speed'] == 4):
+                print Board.ListofEnemies[i]
+
+    def bombermanCanMove(self):
         Board.BombermanCanMove = True
+
+    def fastCanMove(self):
+        Board.FastCanMove = True
+
+    def normalCanMove(self):
+        Board.NormalCanMove = True
+
+    def slowCanMove(self):
+        Board.SlowCanMove = True
+
+    def slowestCanMove(self):
+        Board.SlowestCanMove = True
+
 
     def setBomb(self):
         self.bombQueue.append((self.curX,self.curY))
