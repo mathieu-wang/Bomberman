@@ -68,6 +68,7 @@ class Board(QtGui.QFrame):
         self.setBrick()
         self.setEnemies()
         print Board.ListofEnemies
+        print Board.Powerup
         self.setBomberman()
         self.timer.start(Board.Speed, self)
 
@@ -145,52 +146,52 @@ class Board(QtGui.QFrame):
     def setEnemies(self):
         if self.Level == 1:
             self.NumEnemies = [6, 0, 0, 0, 0, 0, 0, 0]
-            self.Powerup = 2
+            Board.Powerup = 2
         elif self.Level == 2:
             self.NumEnemies = [3, 3, 0, 0, 0, 0, 0, 0]
-            self.Powerup = 1
+            Board.Powerup = 1
         elif self.Level == 3:
             self.NumEnemies = [2, 2, 2, 0, 0, 0, 0, 0]
-            self.Powerup = 5
+            Board.Powerup = 5
         elif self.Level == 4:
             self.NumEnemies = [1, 1, 2, 2, 0, 0, 0, 0]
-            self.Powerup = 3
+            Board.Powerup = 3
         elif self.Level == 5:
             self.NumEnemies = [0, 0, 4, 3, 0, 0, 0, 0]
-            self.Powerup = 1
+            Board.Powerup = 1
         elif self.Level == 6:
             self.NumEnemies = [0, 2, 3, 2, 0, 0, 0, 0]
-            self.Powerup = 1
+            Board.Powerup = 1
         elif self.Level == 7:
             self.NumEnemies = [0, 2, 3, 0, 2, 0, 0, 0]
-            self.Powerup = 2
+            Board.Powerup = 2
         elif self.Level == 8:
             self.NumEnemies = [0, 1, 2, 4, 0, 0, 0, 0]
-            self.Powerup = 5
+            Board.Powerup = 5
         elif self.Level == 9:
             self.NumEnemies = [0, 1, 1, 4, 1, 0, 0, 0]
-            self.Powerup = 6
+            Board.Powerup = 6
         elif self.Level == 10:
             self.NumEnemies = [0, 1, 1, 1, 3, 1, 0, 0]
-            self.Powerup = 4
+            Board.Powerup = 4
         elif self.Level == 11:
             self.NumEnemies = [0, 1, 2, 3, 1, 1, 0, 0]
-            self.Powerup = 1
+            Board.Powerup = 1
         elif self.Level == 12:
             self.NumEnemies = [0, 1, 1, 1, 4, 1, 0, 0]
-            self.Powerup = 1
+            Board.Powerup = 1
         elif self.Level == 13:
             self.NumEnemies = [0, 0, 3, 3, 3, 0, 0, 0]
-            self.Powerup = 5
+            Board.Powerup = 5
         elif self.Level == 14:
             self.NumEnemies = [0, 0, 0, 0, 0, 7, 1, 0]
-            self.Powerup = 6
+            Board.Powerup = 6
         elif self.Level == 15:
             self.NumEnemies = [0, 0, 1, 3, 3, 0, 1, 0]
-            self.Powerup = 2
+            Board.Powerup = 2
         elif self.Level == 16:
             self.NumEnemies = [0, 0, 0, 3, 4, 0, 1, 0]
-            self.Powerup = 4
+            Board.Powerup = 4
 
         for i in range(8):
             for j in range(self.NumEnemies[i]):
@@ -235,7 +236,7 @@ class Board(QtGui.QFrame):
     def drawSquare(self, painter, x, y, shape):
         
         colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
-                      0xFFCC00, 0xCC66CC, 0x66CCCC, 0xFF9900,
+                      0xFFCC00, 0x000000, 0x66CCCC, 0xFF9900,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933]
 
@@ -310,6 +311,9 @@ class Board(QtGui.QFrame):
         self.popTileAt(self.curX,self.curY)
         self.curX = newX
         self.curY = newY
+        if (self.tileAt(self.curX,self.curY) == Tile.Powerup):
+            self.popTileAt(newX, newY)
+            self.gainPowerUps(Board.Powerup)
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
         Board.BombermanCanMove = False
         QtCore.QTimer.singleShot(Board.NormalMoveTime, self.bombermanCanMove)
@@ -426,3 +430,21 @@ class Board(QtGui.QFrame):
     def destroyTiles(self,popList):
         for x,y in popList:
             self.popTileAtWithoutUpdate(x,y)
+
+    def gainPowerUps(self, powerUpNum):
+        if(powerUpNum == 1):
+            self.bomberman.numBombs = self.bomberman.numBombs + 1
+        if(powerUpNum == 2):
+            self.bomberman.rangeOfBombs = self.bomberman.rangeOfBombs + 1
+        if(powerUpNum == 3):
+            self.bomberman.speed = 4
+        if(powerUpNum == 4):
+            self.bomberman.wallPass = 1
+        if(powerUpNum == 5):
+            self.bomberman.hasDetonator = 1
+        if(powerUpNum == 6):
+            self.bomberman.bombPass = 1
+        if(powerUpNum == 7):
+            self.bomberman.flamePass = 1
+        if(powerUpNum == 8):
+            self.bomberman.invincible = 1
