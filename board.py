@@ -286,6 +286,10 @@ class Board(QtGui.QFrame):
 
         elif key == QtCore.Qt.Key_Space:
             self.setBomb()
+
+        elif key == QtCore.Qt.Key_B:
+            if (self.bomberman.hasDetonator == 1 and self.bombQueue):
+                self.detonateBomb()
             
         else:
             super(Board, self).keyPressEvent(event)
@@ -338,7 +342,8 @@ class Board(QtGui.QFrame):
         self.popTileAt(self.curX,self.curY)
         self.setTileAt(self.curX,self.curY,Tile.Bomb)
         self.setTileAt(self.curX,self.curY,tempTile)
-        QtCore.QTimer.singleShot(Board.BombTime, self.detonateBomb)
+        if (self.bomberman.hasDetonator == 0):
+            QtCore.QTimer.singleShot(Board.BombTime, self.detonateBomb)
 
     def timerEvent(self, event):
         
