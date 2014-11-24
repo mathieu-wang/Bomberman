@@ -285,7 +285,8 @@ class Board(QtGui.QFrame):
             self.tryMove(self.curX,self.curY+1)
 
         elif key == QtCore.Qt.Key_Space:
-            self.setBomb()
+            if (len(self.bombQueue) < self.bomberman.numBombs):
+                self.setBomb()
 
         elif key == QtCore.Qt.Key_B:
             if (self.bomberman.hasDetonator == 1 and self.bombQueue):
