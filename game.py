@@ -58,6 +58,7 @@ class Game(QtGui.QMainWindow):
     def show_leaderboard(self):
 
         self.leaderboardWidget = Leaderboard(self)
+        self.leaderboardWidget.backToMainMenuSignal.connect(self.show_main_menu)
 
         self.central_widget.addWidget(self.leaderboardWidget)
         self.central_widget.setCurrentWidget(self.leaderboardWidget)
