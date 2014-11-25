@@ -253,7 +253,7 @@ class Board(QtGui.QFrame):
     def drawSquare(self, painter, x, y, shape):
         
         colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
-                      0xFFCC00, 0x000000, 0x66CCCC, 0xFF9900,
+                      0xFFCC00, 0x000000, 0xFFFFFF, 0xFF9900,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933]
 

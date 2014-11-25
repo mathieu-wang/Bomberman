@@ -5,6 +5,7 @@ from database import Database
 class Leaderboard(QtGui.QWidget):
 
     backToMainMenuSignal = QtCore.pyqtSignal()
+    backToPauseMenuSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(Leaderboard, self).__init__(parent)
@@ -27,11 +28,16 @@ class Leaderboard(QtGui.QWidget):
         self.table.setHorizontalHeaderLabels(tableHeader)
         self.table.resizeColumnsToContents()
 
+        backPauseButton = QtGui.QPushButton('Back To Pause Menu', self)
+        backPauseButton.setFixedWidth(200)
+        backPauseButton.clicked.connect(self.backToPauseMenu)
+
         backButton = QtGui.QPushButton('Back To Main Menu', self)
         backButton.setFixedWidth(200)
         backButton.clicked.connect(self.backToMainMenu)
 
         vbox.addWidget(self.table)
+        vbox.addWidget(backPauseButton)
         vbox.addWidget(backButton)
 
     def fillData(self):
@@ -61,3 +67,6 @@ class Leaderboard(QtGui.QWidget):
 
     def backToMainMenu(self):
         self.backToMainMenuSignal.emit()
+
+    def backToPauseMenu(self):
+        self.backToPauseMenuSignal.emit()

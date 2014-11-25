@@ -73,6 +73,7 @@ class Game(QtGui.QMainWindow):
 
         self.leaderboardWidget = Leaderboard(self)
         self.leaderboardWidget.backToMainMenuSignal.connect(self.show_main_menu)
+        self.leaderboardWidget.backToPauseMenuSignal.connect(self.show_pause_menu)
 
         self.central_widget.addWidget(self.leaderboardWidget)
         self.central_widget.setCurrentWidget(self.leaderboardWidget)
