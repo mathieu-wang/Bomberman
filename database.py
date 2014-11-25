@@ -126,3 +126,8 @@ class Database:
     # Same score is counted as two. Users with the same score are sorted alphabetically (by username).
     def getTopTenUsers(self):
         return self.userTable.find(_limit=10, order_by=['-cumulativeScore', 'username'])
+
+    def getHighestUnlockedLevel(self, username):
+        print username
+        userAccount = self.getUserAccount(username)
+        return userAccount['maxLevelReached']

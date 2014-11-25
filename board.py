@@ -36,10 +36,12 @@ class Board(QtGui.QFrame):
     ListofEnemies = []
     NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
 
-    print Enemy.getEnemy(8)['points']
+    # print Enemy.getEnemy(8)['points']
 
-    def __init__(self, parent):
+    def __init__(self, parent, level=1):
         super(Board, self).__init__(parent)
+        Level = level
+        print "initializing board for level: " + str(level)
         self.initBoard()
         
     def initBoard(self):     
