@@ -15,40 +15,55 @@ class LoginMenu(QtGui.QWidget):
 
     def initUI(self):
 
-        grid = QtGui.QGridLayout()
-        self.setLayout(grid)
+        buttonWidth = 150
+        column1XCoordinate = 84
+        column2XCoordinate = 234
 
-        self.empty = QtGui.QLabel('     ')
-        self.title1 = QtGui.QLabel('Create Account Here!')
-        self.title2 = QtGui.QLabel('Login Here!')
-        self.loginButton = QtGui.QPushButton('Login')
-        self.signUpButton = QtGui.QPushButton('Sign Up')
-        self.yourName = QtGui.QLineEdit('Your name')
-        self.username = QtGui.QLineEdit('Username')
-        self.password = QtGui.QLineEdit('Password')
+        #first Column
+
+        self.signUpTitle = QtGui.QLabel('Create Account:', self)
+        self.signUpTitle.setFixedWidth(buttonWidth)
+        self.signUpTitle.setAlignment(QtCore.Qt.AlignHCenter)
+        self.signUpTitle.move(column1XCoordinate, 92)
+
+        self.yourName = QtGui.QLineEdit('Your Name', self)
+        self.yourName.setFixedWidth(buttonWidth)
+        self.yourName.move(column1XCoordinate, 142)
+
+        self.username = QtGui.QLineEdit('Username', self)
+        self.username.setFixedWidth(buttonWidth)
+        self.username.move(column1XCoordinate, 172)
+
+        self.password = QtGui.QLineEdit('Password', self)
         self.password.setEchoMode(QtGui.QLineEdit.Password)
-        self.loginUsername = QtGui.QLineEdit('Username')
-        self.loginPassword = QtGui.QLineEdit('Password')
-        self.loginPassword.setEchoMode(QtGui.QLineEdit.Password)
+        self.password.setFixedWidth(buttonWidth)
+        self.password.move(column1XCoordinate, 202)
 
-        grid.addWidget(self.title1, 0, 0)
-        grid.addWidget(self.empty, 0, 1)
-        grid.addWidget(self.title2, 0, 2)
-        grid.addWidget(self.yourName, 1, 0)
-        grid.addWidget(self.empty, 1, 1)
-        grid.addWidget(self.empty, 1, 2)
-        grid.addWidget(self.username, 2, 0)
-        grid.addWidget(self.empty, 2, 1)
-        grid.addWidget(self.loginUsername, 2, 2)
-        grid.addWidget(self.password, 3, 0)
-        grid.addWidget(self.empty, 3, 1)
-        grid.addWidget(self.loginPassword, 3, 2)
-        grid.addWidget(self.loginButton, 4, 2)
-        grid.addWidget(self.empty, 4, 1)
-        grid.addWidget(self.signUpButton, 4, 0)
-
-        self.loginButton.clicked.connect(self.login)
+        self.signUpButton = QtGui.QPushButton('SignUp', self)
+        self.signUpButton.setFixedWidth(buttonWidth)
+        self.signUpButton.move(column1XCoordinate, 232)
         self.signUpButton.clicked.connect(self.register)
+
+        #second Column
+
+        self.loginTitle = QtGui.QLabel('Login:', self)
+        self.loginTitle.setAlignment(QtCore.Qt.AlignHCenter)
+        self.loginTitle.setFixedWidth(buttonWidth)
+        self.loginTitle.move(column2XCoordinate, 92)
+
+        self.loginUsername = QtGui.QLineEdit('Username', self)
+        self.loginUsername.setFixedWidth(buttonWidth)
+        self.loginUsername.move(column2XCoordinate, 172)
+
+        self.loginPassword = QtGui.QLineEdit('Password', self)
+        self.loginPassword.setEchoMode(QtGui.QLineEdit.Password)
+        self.loginPassword.setFixedWidth(buttonWidth)
+        self.loginPassword.move(column2XCoordinate, 202)
+
+        self.loginButton = QtGui.QPushButton('Login', self)
+        self.loginButton.setFixedWidth(buttonWidth)
+        self.loginButton.move(column2XCoordinate, 232)
+        self.loginButton.clicked.connect(self.login)
 
         self.setFixedHeight(468)
         self.setFixedWidth(468)
