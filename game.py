@@ -5,6 +5,7 @@ from board import Board
 from login_menu import LoginMenu
 from main_menu import MainMenu
 from leaderboard import Leaderboard
+from level_menu import LevelMenu
 
 
 class Game(QtGui.QMainWindow):
@@ -34,7 +35,7 @@ class Game(QtGui.QMainWindow):
     def show_main_menu(self):
 
         self.mainMenuWidget = MainMenu(self)
-        self.mainMenuWidget.playGameSignal.connect(self.show_board)
+        self.mainMenuWidget.playGameSignal.connect(self.show_level_menu)
         self.mainMenuWidget.logoutGameSignal.connect(self.show_login_menu)
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
         self.mainMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
@@ -44,9 +45,20 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Main Menu')
         self.center()
 
-    def show_board(self):
+    def show_level_menu(self):
 
-        self.board_widget = Board(self)
+        self.levelMenuWidget = LevelMenu(self, self.login_widget.loggedUsername)
+        self.levelMenuWidget.backToMainMenuSignal.connect(self.show_main_menu)
+        self.levelMenuWidget.startLevelSignal.connect(self.show_board)
+
+        self.central_widget.addWidget(self.levelMenuWidget)
+        self.central_widget.setCurrentWidget(self.levelMenuWidget)
+        self.setWindowTitle('Choose Level')
+        self.center()
+
+    def show_board(self, level):
+
+        self.board_widget = Board(self, level)
 
         self.central_widget.addWidget(self.board_widget)
         self.central_widget.setCurrentWidget(self.board_widget)
