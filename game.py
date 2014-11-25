@@ -5,6 +5,7 @@ from board import Board
 from login_menu import LoginMenu
 from main_menu import MainMenu
 from leaderboard import Leaderboard
+from pause_menu import PauseMenu
 
 
 class Game(QtGui.QMainWindow):
@@ -52,6 +53,7 @@ class Game(QtGui.QMainWindow):
         self.central_widget.setCurrentWidget(self.board_widget)
         self.board_widget.start()
         self.resize(468,468) # Standard res
+        self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
         self.setWindowTitle('Bomberman')
         self.center()     
 
@@ -65,6 +67,21 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Leaderboard')
         self.center()
 
+    def show_pause_menu(self):
+
+        self.pauseMenuWidget = PauseMenu(self)
+        self.central_widget.addWidget(self.pauseMenuWidget)
+        self.central_widget.setCurrentWidget(self.pauseMenuWidget)
+
+        self.pauseMenuWidget.resumeGameSignal.connect(self.resume)
+        self.pauseMenuWidget.quitGameSignal.connect(self.quit)
+        self.pauseMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
+        #self.pauseMenuWidget.saveGameSignal.connect()
+        #self.pauseMenuWidget.loadGameSignal.connect()
+        self.pauseMenuWidget.backToMainMenuSignal.connect(self.show_main_menu)
+        self.setWindowTitle('Pause')
+        self.center()
+
 
     def center(self):
 
@@ -76,6 +93,11 @@ class Game(QtGui.QMainWindow):
     def quit(self):
         
         sys.exit()
+
+    def resume(self):
+
+        self.central_widget.setCurrentWidget(self.board_widget)
+        self.board_widget.pause()
 
 def main():
 

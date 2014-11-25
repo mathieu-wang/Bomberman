@@ -49,6 +49,9 @@ class LoginMenu(QtGui.QWidget):
         self.loginButton.clicked.connect(self.login)
         self.signUpButton.clicked.connect(self.register)
 
+        self.setFixedHeight(468)
+        self.setFixedWidth(468)
+
     def login(self):
 
         username = str(self.loginUsername.text())

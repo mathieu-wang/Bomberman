@@ -6,6 +6,7 @@ class MainMenu(QtGui.QWidget):
     logoutGameSignal = QtCore.pyqtSignal()
     quitGameSignal = QtCore.pyqtSignal()
     showLeaderboardSignal = QtCore.pyqtSignal()
+    showSettingsSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(MainMenu, self).__init__(parent)
@@ -13,30 +14,35 @@ class MainMenu(QtGui.QWidget):
 
     def initUI(self):
         buttonWidth = 150
-        buttonStartXCoordinate = 75
+        buttonStartXCoordinate = 159
 
         playButton = QtGui.QPushButton('Play Bomberman', self)
         playButton.setFixedWidth(buttonWidth)
-        playButton.move(buttonStartXCoordinate, 30)
+        playButton.move(buttonStartXCoordinate, 139)
         playButton.clicked.connect(self.play)
 
         logoutButton = QtGui.QPushButton('Logout', self)
         logoutButton.setFixedWidth(buttonWidth)
-        logoutButton.move(buttonStartXCoordinate, 70)
+        logoutButton.move(buttonStartXCoordinate, 259)
         logoutButton.clicked.connect(self.logout)
+
+        settingsButton = QtGui.QPushButton('Account Settings', self)
+        settingsButton.setFixedWidth(buttonWidth)
+        settingsButton.move(buttonStartXCoordinate, 179)
+        settingsButton.clicked.connect(self.settings)
 
         quitButton = QtGui.QPushButton('Quit', self)
         quitButton.setFixedWidth(buttonWidth)
-        quitButton.move(buttonStartXCoordinate, 110)
+        quitButton.move(buttonStartXCoordinate, 299)
         quitButton.clicked.connect(self.quit)
 
         showLeaderboardButton = QtGui.QPushButton('Leaderboard', self)
         showLeaderboardButton.setFixedWidth(buttonWidth)
-        showLeaderboardButton.move(buttonStartXCoordinate, 150)
+        showLeaderboardButton.move(buttonStartXCoordinate, 219)
         showLeaderboardButton.clicked.connect(self.showLeaderboard)
 
-        self.setFixedHeight(300)
-        self.setFixedWidth(300)
+        self.setFixedHeight(468)
+        self.setFixedWidth(468)
 
         self.show()
 
@@ -51,3 +57,6 @@ class MainMenu(QtGui.QWidget):
 
     def showLeaderboard(self):
         self.showLeaderboardSignal.emit()
+
+    def settings(self):
+        self.showSettingsSignal.emit()

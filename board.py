@@ -9,6 +9,7 @@ from enemy import Enemy
 class Board(QtGui.QFrame):
 
     msg2Statusbar = QtCore.pyqtSignal(str)
+    pauseGameSignal = QtCore.pyqtSignal()
 
     BoardWidth = 31
     BoardHeight = 13
@@ -68,9 +69,23 @@ class Board(QtGui.QFrame):
         self.setBrick()
         self.setEnemies()
         print Board.ListofEnemies
-        print Board.Powerup
         self.setBomberman()
         self.timer.start(Board.Speed, self)
+
+    def pause(self):
+
+        if not self.isStarted:
+            return
+
+        self.isPaused = not self.isPaused
+
+        if self.isPaused:
+            self.timer.stop()
+            self.pauseGameSignal.emit() #send signal to show pauseMenu
+        else:
+            self.timer.start(Board.Speed, self)
+
+        self.update()
 
     def tileAt(self, x, y):
         return self.board[y][x].peek()
@@ -258,9 +273,9 @@ class Board(QtGui.QFrame):
 
         key = event.key()
         
-        # if key == QtCore.Qt.Key_P:
-        #     self.pause()
-        #     return
+        if key == QtCore.Qt.Key_P:
+            self.pause()
+            return
             
         if self.isPaused:
             return
