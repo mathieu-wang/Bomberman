@@ -1,6 +1,7 @@
 from PyQt4 import QtCore, QtGui
 
 from database import Database
+from functools import partial
 
 class LevelMenu(QtGui.QWidget):
 
@@ -23,16 +24,11 @@ class LevelMenu(QtGui.QWidget):
 
         # Add enabled buttons
         for i in range(0, maxLevel):
-            levelButton = QtGui.QPushButton(str(i+1), self)
-            levelButton.clicked.connect(lambda j=i: self.startLevel(j+1))
+            level = i+1
+            levelButton = QtGui.QPushButton(str(level), self)
+            levelButton.setFixedWidth(50)
+            levelButton.clicked.connect(partial(self.startLevel, level))
             grid.addWidget(levelButton)
-            print "level: " + str(i+1)
-
-        for i in range(maxLevel, 50):
-            levelButton = QtGui.QPushButton(str(i+1), self)
-            levelButton.setEnabled(False)
-            grid.addWidget(levelButton)
-            print "level: " + str(i+1)
 
         backButton = QtGui.QPushButton('Back To Main Menu', self)
         backButton.setFixedWidth(200)
