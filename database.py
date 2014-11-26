@@ -1,4 +1,6 @@
 import dataset
+import cPickle as pickle
+
 from models import UserAccount
 
 class Database:
@@ -48,17 +50,6 @@ class Database:
             return False
         else:
             return True
-
-
-    # def changePassword(self, username, password):
-    #
-    #     # Check if user exists
-    #     if self.userTable.find_one(username=username):
-    #         return False
-    #
-    #     # Update to new password
-    #     if self.userTable.update(dict(username=username, password=password), [username]):
-    #         return True
 
     # Usernames must be at least 6 character long.
     # It must only contains UTF-8 characters and digits excluding all accented latin characters.
@@ -130,3 +121,36 @@ class Database:
     def getHighestUnlockedLevel(self, username):
         userAccount = self.getUserAccount(username)
         return userAccount['maxLevelReached']
+
+    def saveGame(self, gamename, board):
+
+        username = board.username
+        try:
+            with open('db.pkl', 'rb') as input:
+                game = pickle.load(input)
+        except:
+            with open('db.pkl', 'wb') as output:
+                game = {}
+                pickle.dump(game, output, pickle.HIGHEST_PROTOCOL)
+
+        if game is None:
+            game = {username:{gamename:board}}
+        elif username not in game:
+            game[username] = {gamename:board}
+        else:
+            game[username][gamename] = board
+
+        with open('db.pkl', 'wb') as output:
+            pickle.dump(game, output, pickle.HIGHEST_PROTOCOL)
+
+    def loadGame(self, username, gamename):
+
+        with open('db.pkl', 'rb') as input:
+            game = pickle.load(input)
+
+        if game is None:
+            return None
+        elif game[username] is None:
+            return None
+
+        return game[username]

@@ -5,7 +5,6 @@ from tile import Tile
 from bomberman import Bomberman
 from enemy import Enemy
 
-
 class Board(QtGui.QFrame):
 
     msg2Statusbar = QtCore.pyqtSignal(str)
@@ -30,7 +29,7 @@ class Board(QtGui.QFrame):
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
-    Level = 15
+    level = 15
     Powerup = 0
     NumberEnemies = 0
     ListofEnemies = []
@@ -38,9 +37,10 @@ class Board(QtGui.QFrame):
 
     # print Enemy.getEnemy(8)['points']
 
-    def __init__(self, parent, level=1):
+    def __init__(self, parent, username, level=1):
         super(Board, self).__init__(parent)
-        Level = level
+        self.username = username
+        self.level = level
         print "initializing board for level: " + str(level)
         self.initBoard()
         
@@ -161,52 +161,52 @@ class Board(QtGui.QFrame):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
-        if self.Level == 1:
+        if self.level == 1:
             self.NumEnemies = [6, 0, 0, 0, 0, 0, 0, 0]
             Board.Powerup = 2
-        elif self.Level == 2:
+        elif self.level == 2:
             self.NumEnemies = [3, 3, 0, 0, 0, 0, 0, 0]
             Board.Powerup = 1
-        elif self.Level == 3:
+        elif self.level == 3:
             self.NumEnemies = [2, 2, 2, 0, 0, 0, 0, 0]
             Board.Powerup = 5
-        elif self.Level == 4:
+        elif self.level == 4:
             self.NumEnemies = [1, 1, 2, 2, 0, 0, 0, 0]
             Board.Powerup = 3
-        elif self.Level == 5:
+        elif self.level == 5:
             self.NumEnemies = [0, 0, 4, 3, 0, 0, 0, 0]
             Board.Powerup = 1
-        elif self.Level == 6:
+        elif self.level == 6:
             self.NumEnemies = [0, 2, 3, 2, 0, 0, 0, 0]
             Board.Powerup = 1
-        elif self.Level == 7:
+        elif self.level == 7:
             self.NumEnemies = [0, 2, 3, 0, 2, 0, 0, 0]
             Board.Powerup = 2
-        elif self.Level == 8:
+        elif self.level == 8:
             self.NumEnemies = [0, 1, 2, 4, 0, 0, 0, 0]
             Board.Powerup = 5
-        elif self.Level == 9:
+        elif self.level == 9:
             self.NumEnemies = [0, 1, 1, 4, 1, 0, 0, 0]
             Board.Powerup = 6
-        elif self.Level == 10:
+        elif self.level == 10:
             self.NumEnemies = [0, 1, 1, 1, 3, 1, 0, 0]
             Board.Powerup = 4
-        elif self.Level == 11:
+        elif self.level == 11:
             self.NumEnemies = [0, 1, 2, 3, 1, 1, 0, 0]
             Board.Powerup = 1
-        elif self.Level == 12:
+        elif self.level == 12:
             self.NumEnemies = [0, 1, 1, 1, 4, 1, 0, 0]
             Board.Powerup = 1
-        elif self.Level == 13:
+        elif self.level == 13:
             self.NumEnemies = [0, 0, 3, 3, 3, 0, 0, 0]
             Board.Powerup = 5
-        elif self.Level == 14:
+        elif self.level == 14:
             self.NumEnemies = [0, 0, 0, 0, 0, 7, 1, 0]
             Board.Powerup = 6
-        elif self.Level == 15:
+        elif self.level == 15:
             self.NumEnemies = [0, 0, 1, 3, 3, 0, 1, 0]
             Board.Powerup = 2
-        elif self.Level == 16:
+        elif self.level == 16:
             self.NumEnemies = [0, 0, 0, 3, 4, 0, 1, 0]
             Board.Powerup = 4
 

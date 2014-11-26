@@ -6,8 +6,8 @@ class PauseMenu(QtGui.QWidget):
     resumeGameSignal = QtCore.pyqtSignal()
     quitGameSignal = QtCore.pyqtSignal()
     showLeaderboardSignal = QtCore.pyqtSignal(int)
-    saveGameSignal = QtCore.pyqtSignal()
-    loadGameSignal = QtCore.pyqtSignal()
+    saveMenuSignal = QtCore.pyqtSignal()
+    loadMenuSignal = QtCore.pyqtSignal()
     backToMainMenuSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
@@ -23,16 +23,6 @@ class PauseMenu(QtGui.QWidget):
         resumeButton.move(buttonStartXCoordinate, 94)
         resumeButton.clicked.connect(self.resume)
 
-        quitButton = QtGui.QPushButton('Quit Game', self)
-        quitButton.setFixedWidth(buttonWidth)
-        quitButton.move(buttonStartXCoordinate, 294)
-        quitButton.clicked.connect(self.quit)
-
-        backButton = QtGui.QPushButton('Back to Main Menu', self)
-        backButton.setFixedWidth(buttonWidth)
-        backButton.move(buttonStartXCoordinate, 254)
-        backButton.clicked.connect(self.back)
-
         saveButton = QtGui.QPushButton('Save Game', self)
         saveButton.setFixedWidth(buttonWidth)
         saveButton.move(buttonStartXCoordinate, 134)
@@ -47,6 +37,16 @@ class PauseMenu(QtGui.QWidget):
         showLeaderboardButton.setFixedWidth(buttonWidth)
         showLeaderboardButton.move(buttonStartXCoordinate, 214)
         showLeaderboardButton.clicked.connect(self.showLeaderboard)
+
+        backButton = QtGui.QPushButton('Back to Main Menu', self)
+        backButton.setFixedWidth(buttonWidth)
+        backButton.move(buttonStartXCoordinate, 254)
+        backButton.clicked.connect(self.back)
+
+        quitButton = QtGui.QPushButton('Quit Game', self)
+        quitButton.setFixedWidth(buttonWidth)
+        quitButton.move(buttonStartXCoordinate, 294)
+        quitButton.clicked.connect(self.quit)
 
         #self.setFixedHeight(300)
         #self.setFixedWidth(300)
@@ -66,7 +66,7 @@ class PauseMenu(QtGui.QWidget):
         self.backToMainMenuSignal.emit()
 
     def save(self):
-        self.saveGameSignal.emit()
+        self.saveMenuSignal.emit()
 
     def load(self):
-        self.loadGameSignal.emit()
+        self.loadMenuSignal.emit()

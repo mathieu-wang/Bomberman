@@ -8,7 +8,6 @@ class Enemy(object):
         self.direction = direction   # 0 - North, 1 - East, 2 - South, 3 - West
         self.canMove = canMove
 
-
     @staticmethod
     def getEnemy(type):
         if type == 8:
