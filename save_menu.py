@@ -3,16 +3,16 @@ from PyQt4 import QtCore, QtGui
 import datetime
 
 from database import Database
-import menu_constants
 
 class SaveMenu(QtGui.QWidget):
 
     returnToPauseMenuSignal = QtCore.pyqtSignal()
 
-    def __init__(self, board, parent=None):
+    def __init__(self, username, board, parent=None):
         super(SaveMenu, self).__init__(parent)
 
         self.board = board
+        self.username = username
         self.initUI()
 
     def initUI(self):
@@ -53,7 +53,7 @@ class SaveMenu(QtGui.QWidget):
             return
 
         db = Database()
-        db.saveGame(gameTitle, self.board)
+        db.saveGame(self.username, gameTitle, self.board)
 
         saveSuccessMessage = '''You game has been successfully saved as:\n\n''' + gameTitle + '''\n\nat ''' + datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
         QtGui.QMessageBox.information(self,'Success!',saveSuccessMessage,QtGui.QMessageBox.Ok);

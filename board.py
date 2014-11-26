@@ -29,7 +29,7 @@ class Board(QtGui.QFrame):
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
-    level = 15
+    Level = 15
     Powerup = 0
     NumberEnemies = 0
     ListofEnemies = []
@@ -37,7 +37,7 @@ class Board(QtGui.QFrame):
 
     # print Enemy.getEnemy(8)['points']
 
-    def __init__(self, parent, username, level=1):
+    def __init__(self, username, level=1, parent=None):
         super(Board, self).__init__(parent)
         self.username = username
         self.level = level
@@ -53,9 +53,10 @@ class Board(QtGui.QFrame):
         self.board = []
         self.bombQueue = []
 
-        self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.isStarted = False
         self.isPaused = False
+
+        self.setFocusPolicy(QtCore.Qt.StrongFocus)
 
     def start(self):
         
@@ -70,9 +71,87 @@ class Board(QtGui.QFrame):
         self.setPowerup()
         self.setBrick()
         self.setEnemies()
-        print Board.ListofEnemies
         self.setBomberman()
-        self.timer.start(Board.Speed, self)
+        self.timer.start(self.Speed, self)
+
+    def saveBoard(self):
+
+        savedBoard = {}
+
+        savedBoard['BoardWidth'] = self.BoardWidth
+        savedBoard['BoardHeight'] = self.BoardHeight
+        savedBoard['ViewWidth'] = self.ViewWidth
+        savedBoard['ViewHeight'] = self.ViewHeight
+        savedBoard['Speed'] = self.Speed
+        savedBoard['FastMoveTime'] = self.FastMoveTime
+        savedBoard['NormalMoveTime'] = self.NormalMoveTime
+        savedBoard['SlowMoveTime'] = self.SlowMoveTime
+        savedBoard['SlowestMoveTime'] = self.SlowestMoveTime
+        savedBoard['FastCanMove'] = self.FastCanMove
+        savedBoard['NormalCanMove'] = self.NormalCanMove
+        savedBoard['SlowCanMove'] = self.SlowCanMove
+        savedBoard['SlowestCanMove'] = self.SlowestCanMove
+        savedBoard['BombermanCanMove'] = self.BombermanCanMove
+        savedBoard['BombTime'] = self.BombTime
+        savedBoard['FlashTime'] = self.FlashTime
+        savedBoard['BrickPercent'] = self.BrickPercent
+        savedBoard['PowerupCoordinate'] = self.PowerupCoordinate
+        savedBoard['ExitCoordinate'] = self.ExitCoordinate
+        savedBoard['Level'] = self.Level
+        savedBoard['Powerup'] = self.Powerup
+        savedBoard['NumberEnemies'] = self.NumberEnemies
+        savedBoard['ListofEnemies'] = self.ListofEnemies
+        savedBoard['NumEnemies'] = self.NumEnemies
+
+        savedBoard['bomberman'] = self.bomberman 
+
+        savedBoard['curX'] = self.curX
+        savedBoard['curY'] = self.curY
+        savedBoard['board'] = self.board
+        savedBoard['bombQueue'] = self.bombQueue
+
+        savedBoard['isStarted'] = self.isStarted
+        savedBoard['isPaused'] = False
+
+        return savedBoard
+
+    def loadBoard(self, savedBoard):
+        self.BoardWidth = savedBoard['BoardWidth'] 
+        self.BoardHeight = savedBoard['BoardHeight']
+        self.ViewWidth = savedBoard['ViewWidth']
+        self.ViewHeight = savedBoard['ViewHeight']
+        self.Speed = savedBoard['Speed']
+        self.FastMoveTime = savedBoard['FastMoveTime']
+        self.NormalMoveTime = savedBoard['NormalMoveTime']
+        self.SlowMoveTime = savedBoard['SlowMoveTime']
+        self.SlowestMoveTime = savedBoard['SlowestMoveTime']
+        self.FastCanMove = savedBoard['FastCanMove']
+        self.NormalCanMove = savedBoard['NormalCanMove']
+        self.SlowCanMove = savedBoard['SlowCanMove']
+        self.SlowestCanMove = savedBoard['SlowestCanMove']
+        self.BombermanCanMove = savedBoard['BombermanCanMove']
+        self.BombTime = savedBoard['BombTime']
+        self.FlashTime = savedBoard['FlashTime']
+        self.BrickPercent = savedBoard['BrickPercent']
+        self.PowerupCoordinate = savedBoard['PowerupCoordinate']
+        self.ExitCoordinate = savedBoard['ExitCoordinate']
+        self.Level = savedBoard['Level']
+        self.Powerup = savedBoard['Powerup']
+        self.NumberEnemies = savedBoard['NumberEnemies']
+        self.ListofEnemies = savedBoard['ListofEnemies']
+        self.NumEnemies = savedBoard['NumEnemies']
+
+        self.bomberman = savedBoard['bomberman']
+
+        self.curX = savedBoard['curX']
+        self.curY = savedBoard['curY']
+        self.board = savedBoard['board']
+        self.bombQueue = savedBoard['bombQueue']
+
+        self.isStarted = savedBoard['isStarted']
+        self.isPaused = savedBoard['isPaused']
+
+        self.update()
 
     def pause(self):
 
@@ -83,9 +162,9 @@ class Board(QtGui.QFrame):
 
         if self.isPaused:
             self.timer.stop()
-            self.pauseGameSignal.emit() #send signal to show pauseMenu
+            self.pauseGameSignal.emit() # Send signal to show pauseMenu
         else:
-            self.timer.start(Board.Speed, self)
+            self.timer.start(self.Speed, self)
 
         self.update()
 
@@ -161,54 +240,7 @@ class Board(QtGui.QFrame):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
-        if self.level == 1:
-            self.NumEnemies = [6, 0, 0, 0, 0, 0, 0, 0]
-            Board.Powerup = 2
-        elif self.level == 2:
-            self.NumEnemies = [3, 3, 0, 0, 0, 0, 0, 0]
-            Board.Powerup = 1
-        elif self.level == 3:
-            self.NumEnemies = [2, 2, 2, 0, 0, 0, 0, 0]
-            Board.Powerup = 5
-        elif self.level == 4:
-            self.NumEnemies = [1, 1, 2, 2, 0, 0, 0, 0]
-            Board.Powerup = 3
-        elif self.level == 5:
-            self.NumEnemies = [0, 0, 4, 3, 0, 0, 0, 0]
-            Board.Powerup = 1
-        elif self.level == 6:
-            self.NumEnemies = [0, 2, 3, 2, 0, 0, 0, 0]
-            Board.Powerup = 1
-        elif self.level == 7:
-            self.NumEnemies = [0, 2, 3, 0, 2, 0, 0, 0]
-            Board.Powerup = 2
-        elif self.level == 8:
-            self.NumEnemies = [0, 1, 2, 4, 0, 0, 0, 0]
-            Board.Powerup = 5
-        elif self.level == 9:
-            self.NumEnemies = [0, 1, 1, 4, 1, 0, 0, 0]
-            Board.Powerup = 6
-        elif self.level == 10:
-            self.NumEnemies = [0, 1, 1, 1, 3, 1, 0, 0]
-            Board.Powerup = 4
-        elif self.level == 11:
-            self.NumEnemies = [0, 1, 2, 3, 1, 1, 0, 0]
-            Board.Powerup = 1
-        elif self.level == 12:
-            self.NumEnemies = [0, 1, 1, 1, 4, 1, 0, 0]
-            Board.Powerup = 1
-        elif self.level == 13:
-            self.NumEnemies = [0, 0, 3, 3, 3, 0, 0, 0]
-            Board.Powerup = 5
-        elif self.level == 14:
-            self.NumEnemies = [0, 0, 0, 0, 0, 7, 1, 0]
-            Board.Powerup = 6
-        elif self.level == 15:
-            self.NumEnemies = [0, 0, 1, 3, 3, 0, 1, 0]
-            Board.Powerup = 2
-        elif self.level == 16:
-            self.NumEnemies = [0, 0, 0, 3, 4, 0, 1, 0]
-            Board.Powerup = 4
+        self.NumEnemies, self.Powerup = Enemy.getEnemyListAndPowerUp(self.level)
 
         for i in range(8):
             for j in range(self.NumEnemies[i]):
@@ -356,7 +388,6 @@ class Board(QtGui.QFrame):
 
     def slowestCanMove(self):
         Board.SlowestCanMove = True
-
 
     def setBomb(self):
         self.bombQueue.append((self.curX,self.curY))

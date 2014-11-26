@@ -9,6 +9,7 @@ from pause_menu import PauseMenu
 from level_menu import LevelMenu
 from save_menu import SaveMenu
 from load_menu import LoadMenu
+from database import Database
 import global_constants
 
 class Game(QtGui.QMainWindow):
@@ -67,7 +68,7 @@ class Game(QtGui.QMainWindow):
 
     def show_board(self, level):
 
-        self.board_widget = Board(self, self.login_widget.loggedUsername, level)
+        self.board_widget = Board(self.login_widget.loggedUsername, level, self)
         
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
         self.board_widget.start()
@@ -113,7 +114,7 @@ class Game(QtGui.QMainWindow):
 
     def show_save_menu(self):
         
-        self.saveMenuWidget = SaveMenu(self.board_widget, self)
+        self.saveMenuWidget = SaveMenu(self.login_widget.loggedUsername, self.board_widget.saveBoard(), self)
 
         self.saveMenuWidget.returnToPauseMenuSignal.connect(self.resumeToPauseMenu)
 
@@ -124,7 +125,18 @@ class Game(QtGui.QMainWindow):
         self.center()
 
     def show_load_menu(self):
-        pass
+        
+        self.loadMenuWidget = LoadMenu(self.login_widget.loggedUsername, self)
+
+        self.loadMenuWidget.loadSavedGameSignal.connect(self.loadSavedGame)
+        self.loadMenuWidget.returnToPauseMenuSignal.connect(self.resumeToPauseMenu)
+
+        self.central_widget.addWidget(self.loadMenuWidget)
+        self.central_widget.setCurrentWidget(self.loadMenuWidget)
+
+        self.setWindowTitle('Load Game Menu')
+        self.center()
+
 
     def center(self):
 
@@ -140,12 +152,19 @@ class Game(QtGui.QMainWindow):
     def resumeToGame(self):
 
         self.central_widget.setCurrentWidget(self.board_widget)
-        self.board_widget.pause()
 
     def resumeToPauseMenu(self):
 
         self.central_widget.setCurrentWidget(self.pauseMenuWidget)
         self.board_widget.pause()
+
+    def loadSavedGame(self, gamename):
+        db = Database()
+        savedBoard = db.loadGame(self.login_widget.loggedUsername, str(gamename))
+
+        self.board_widget.loadBoard(savedBoard)
+
+        self.central_widget.setCurrentWidget(self.board_widget)
 
 def main():
 

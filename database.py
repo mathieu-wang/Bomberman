@@ -122,35 +122,64 @@ class Database:
         userAccount = self.getUserAccount(username)
         return userAccount['maxLevelReached']
 
-    def saveGame(self, gamename, board):
+    def saveGame(self, username, gamename, board):
 
-        username = board.username
+        try:
+            f = file('db.pkl', 'rb')
+            self.game = pickle.load(f)
+            f.close()
+        except:
+            self.game = {}
+            f = file('db.pkl', 'wb')
+            pickle.dump(self.game, f, protocol=pickle.HIGHEST_PROTOCOL)
+            f.close()
+
+        if self.game == {}:
+            self.game = {username:{gamename:board}}
+        elif username not in self.game.keys():
+            self.game[username] = {gamename:board}
+        else:
+            self.game[username][gamename] = board
+
+        f = file('db.pkl', 'wb')
+        pickle.dump(self.game, f, protocol=pickle.HIGHEST_PROTOCOL)
+        f.close()
+
+    def loadListSavedGames(self, username):
+
         try:
             with open('db.pkl', 'rb') as input:
-                game = pickle.load(input)
+                self.game = pickle.load(input)
         except:
             with open('db.pkl', 'wb') as output:
-                game = {}
-                pickle.dump(game, output, pickle.HIGHEST_PROTOCOL)
+                self.game = {}
+                pickle.dump(self.game, output, pickle.HIGHEST_PROTOCOL)
 
-        if game is None:
-            game = {username:{gamename:board}}
-        elif username not in game:
-            game[username] = {gamename:board}
-        else:
-            game[username][gamename] = board
+        if username not in self.game:
+            return None
 
-        with open('db.pkl', 'wb') as output:
-            pickle.dump(game, output, pickle.HIGHEST_PROTOCOL)
+        gameList = []
+
+        for g in self.game[username].keys():
+            gameList.append(g)
+
+        return gameList
 
     def loadGame(self, username, gamename):
 
-        with open('db.pkl', 'rb') as input:
-            game = pickle.load(input)
+        try:
+            f = file('db.pkl', 'rb')
+            self.game = pickle.load(f)
+            f.close()
+        except:
+            self.game = {}
+            f = file('db.pkl', 'wb')
+            pickle.dump(self.game, f, protocol=pickle.HIGHEST_PROTOCOL)
+            f.close()
 
-        if game is None:
+        if username not in self.game.keys():
             return None
-        elif game[username] is None:
+        elif gamename not in self.game[username].keys():
             return None
 
-        return game[username]
+        return self.game[username][gamename]
