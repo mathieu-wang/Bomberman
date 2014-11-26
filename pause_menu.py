@@ -1,10 +1,11 @@
 from PyQt4 import QtCore, QtGui
+import menu_constants
 
 class PauseMenu(QtGui.QWidget):
 
     resumeGameSignal = QtCore.pyqtSignal()
     quitGameSignal = QtCore.pyqtSignal()
-    showLeaderboardSignal = QtCore.pyqtSignal()
+    showLeaderboardSignal = QtCore.pyqtSignal(int)
     saveGameSignal = QtCore.pyqtSignal()
     loadGameSignal = QtCore.pyqtSignal()
     backToMainMenuSignal = QtCore.pyqtSignal()
@@ -59,7 +60,7 @@ class PauseMenu(QtGui.QWidget):
         self.quitGameSignal.emit()
 
     def showLeaderboard(self):
-        self.showLeaderboardSignal.emit()
+        self.showLeaderboardSignal.emit(menu_constants.PAUSE_MENU)
 
     def back(self):
         self.backToMainMenuSignal.emit()

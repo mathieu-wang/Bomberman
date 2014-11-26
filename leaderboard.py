@@ -4,11 +4,11 @@ from database import Database
 
 class Leaderboard(QtGui.QWidget):
 
-    backToMainMenuSignal = QtCore.pyqtSignal()
-    backToPauseMenuSignal = QtCore.pyqtSignal()
+    backSignal = QtCore.pyqtSignal(int)
 
-    def __init__(self, parent=None):
+    def __init__(self, parent, previousMenu):
         super(Leaderboard, self).__init__(parent)
+        self.previousMenu = previousMenu
         self.initUI()
         self.db = Database()
         self.fillData()
@@ -28,16 +28,11 @@ class Leaderboard(QtGui.QWidget):
         self.table.setHorizontalHeaderLabels(tableHeader)
         self.table.resizeColumnsToContents()
 
-        backPauseButton = QtGui.QPushButton('Back To Pause Menu', self)
-        backPauseButton.setFixedWidth(200)
-        backPauseButton.clicked.connect(self.backToPauseMenu)
-
-        backButton = QtGui.QPushButton('Back To Main Menu', self)
+        backButton = QtGui.QPushButton('Back', self)
         backButton.setFixedWidth(200)
-        backButton.clicked.connect(self.backToMainMenu)
+        backButton.clicked.connect(self.back)
 
         vbox.addWidget(self.table)
-        vbox.addWidget(backPauseButton)
         vbox.addWidget(backButton)
 
     def fillData(self):
@@ -65,8 +60,5 @@ class Leaderboard(QtGui.QWidget):
             self.table.setItem(i, 4, cumScoreItem)
             i += 1
 
-    def backToMainMenu(self):
-        self.backToMainMenuSignal.emit()
-
-    def backToPauseMenu(self):
-        self.backToPauseMenuSignal.emit()
+    def back(self):
+        self.backSignal.emit(self.previousMenu)

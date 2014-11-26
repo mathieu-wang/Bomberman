@@ -7,6 +7,7 @@ from main_menu import MainMenu
 from leaderboard import Leaderboard
 from pause_menu import PauseMenu
 from level_menu import LevelMenu
+import menu_constants
 
 
 class Game(QtGui.QMainWindow):
@@ -69,11 +70,13 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Bomberman')
         self.center()     
 
-    def show_leaderboard(self):
+    def show_leaderboard(self, previousMenu):
 
-        self.leaderboardWidget = Leaderboard(self)
-        self.leaderboardWidget.backToMainMenuSignal.connect(self.show_main_menu)
-        self.leaderboardWidget.backToPauseMenuSignal.connect(self.show_pause_menu)
+        self.leaderboardWidget = Leaderboard(self, previousMenu)
+        if previousMenu == menu_constants.MAIN_MENU:
+            self.leaderboardWidget.backSignal.connect(self.show_main_menu)
+        else:
+            self.leaderboardWidget.backSignal.connect(self.show_pause_menu)
 
         self.central_widget.addWidget(self.leaderboardWidget)
         self.central_widget.setCurrentWidget(self.leaderboardWidget)

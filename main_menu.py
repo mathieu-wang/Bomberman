@@ -1,11 +1,12 @@
 from PyQt4 import QtCore, QtGui
+import menu_constants
 
 class MainMenu(QtGui.QWidget):
 
     playGameSignal = QtCore.pyqtSignal()
     logoutGameSignal = QtCore.pyqtSignal()
     quitGameSignal = QtCore.pyqtSignal()
-    showLeaderboardSignal = QtCore.pyqtSignal()
+    showLeaderboardSignal = QtCore.pyqtSignal(int)
     showSettingsSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
@@ -56,7 +57,7 @@ class MainMenu(QtGui.QWidget):
         self.quitGameSignal.emit()
 
     def showLeaderboard(self):
-        self.showLeaderboardSignal.emit()
+        self.showLeaderboardSignal.emit(menu_constants.MAIN_MENU)
 
     def settings(self):
         self.showSettingsSignal.emit()
