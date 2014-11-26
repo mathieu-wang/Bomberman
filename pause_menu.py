@@ -1,5 +1,5 @@
 from PyQt4 import QtCore, QtGui
-import menu_constants
+import global_constants
 
 class PauseMenu(QtGui.QWidget):
 
