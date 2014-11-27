@@ -317,7 +317,7 @@ class Board(QtGui.QFrame):
 
             if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
                 self.setTileAt(tempX, tempY, Tile.Exit)
-                #self.setTileAt(tempX, tempY, Tile.Brick)
+                self.setTileAt(tempX, tempY, Tile.Brick)
                 Board.ExitCoordinate[0] = tempX
                 Board.ExitCoordinate[1] = tempY
                 break
@@ -329,7 +329,7 @@ class Board(QtGui.QFrame):
 
             if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
                 self.setTileAt(tempX, tempY, Tile.Powerup)
-                #self.setTileAt(tempX, tempY, Tile.Brick)
+                self.setTileAt(tempX, tempY, Tile.Brick)
                 Board.PowerupCoordinate[0] = tempX
                 Board.PowerupCoordinate[1] = tempY
                 break
@@ -684,14 +684,11 @@ class Board(QtGui.QFrame):
             
     def killEnemy(self, x, y):
         for i in range (Board.NumberEnemies):
-            print Board.NumberEnemies
-            print self.ListofEnemies
-            if (x == self.ListofEnemies[i][0] and y ==  self.ListofEnemies[i][1]):
+            if (x == Board.ListofEnemies[i][0] and y ==  Board.ListofEnemies[i][1]):
                 self.popTileAt(x, y)
-                del self.ListofEnemies[i]
+                del Board.ListofEnemies[i]
                 Board.NumberEnemies -= 1
                 Board.NumEnemies[i] -= 1
-
 
     def detonateBomb(self):
 
@@ -707,7 +704,7 @@ class Board(QtGui.QFrame):
         killedEnemies = [[] for i in range(self.bomberman.rangeOfBombs)]
 
         # NORTH
-        for i in range(1,self.bomberman.rangeOfBombs+5):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y + i
             if (modY < Board.BoardHeight-1):
                 northTile = self.tileAt(x,modY)
@@ -724,9 +721,9 @@ class Board(QtGui.QFrame):
                 if (Tile.isBomberman(northTile)):
                     self.death()
                 if (Tile.isExit(northTile) or Tile.isPowerup(northTile)):
-                    for j in range(self.NumberEnemies):
-                        self.popTileAt(self.ListofEnemies[j][0], self.ListofEnemies[j][1])
-                    self.ListofEnemies[:] = []
+                    for j in range(Board.NumberEnemies):
+                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
+                    Board.ListofEnemies[:] = []
                     Board.NumberEnemies = 0
 
                     # for j in range(8, 1, -1):
@@ -740,7 +737,7 @@ class Board(QtGui.QFrame):
                     #     Board.NumberEnemies += 1
 
         # SOUTH
-        for i in range(1,self.bomberman.rangeOfBombs+5):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y - i
             if (modY < Board.BoardHeight-1):
                 southTile = self.tileAt(x,modY)
@@ -757,13 +754,13 @@ class Board(QtGui.QFrame):
                 if (Tile.isBomberman(southTile)):
                     self.death()
                 if (Tile.isExit(southTile) or Tile.isPowerup(southTile)):
-                    for j in range(self.NumberEnemies):
-                        self.popTileAt(self.ListofEnemies[j][0], self.ListofEnemies[j][1])
-                    self.ListofEnemies[:] = []
+                    for j in range(Board.NumberEnemies):
+                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
+                    Board.ListofEnemies[:] = []
                     Board.NumberEnemies = 0
 
         # EAST
-        for i in range(1,self.bomberman.rangeOfBombs+5):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
             if (modX < Board.BoardWidth-1):
                 eastTile = self.tileAt(modX,y)
@@ -780,13 +777,13 @@ class Board(QtGui.QFrame):
                 if (Tile.isBomberman(eastTile)):
                     self.death()
                 if (Tile.isExit(eastTile) or Tile.isPowerup(eastTile)):
-                    for j in range(self.NumberEnemies):
-                        self.popTileAt(self.ListofEnemies[j][0], self.ListofEnemies[j][1])
-                    self.ListofEnemies[:] = []
+                    for j in range(Board.NumberEnemies):
+                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
+                    Board.ListofEnemies[:] = []
                     Board.NumberEnemies = 0
 
         # WEST
-        for i in range(1,self.bomberman.rangeOfBombs+5):
+        for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
             if (modX < Board.BoardWidth-1):
                 westTile = self.tileAt(modX,y)
@@ -803,9 +800,9 @@ class Board(QtGui.QFrame):
                 if (Tile.isBomberman(westTile)):
                     self.death()
                 if (Tile.isExit(westTile) or Tile.isPowerup(westTile)):
-                    for j in range(self.NumberEnemies):
-                        self.popTileAt(self.ListofEnemies[j][0], self.ListofEnemies[j][1])
-                    self.ListofEnemies[:] = []
+                    for j in range(Board.NumberEnemies):
+                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
+                    Board.ListofEnemies[:] = []
                     Board.NumberEnemies = 0
 
         self.startFlash(flashList)
