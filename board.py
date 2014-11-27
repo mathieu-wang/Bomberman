@@ -527,6 +527,7 @@ class Board(QtGui.QFrame):
             self.popTileAt(x,y)
         flashList = []
         popList = []
+        killedEnemies = [[] for i in range(self.bomberman.rangeOfBombs)]
 
         # NORTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
@@ -539,43 +540,52 @@ class Board(QtGui.QFrame):
                 if (northTile == Tile.Brick):
                     popList.append((x,modY))
                     break
+                if (Tile.isEnemy(northTile)):
+                    killedEnemies[i-1].append(northTile)
         # SOUTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y - i
             if (modY < Board.BoardHeight-1):
-                northTile = self.tileAt(x,modY)
-                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                southTile = self.tileAt(x,modY)
+                if (southTile == Tile.Concrete or southTile == Tile.Bomb):
                     break
                 flashList.append((x,modY))
-                if (northTile == Tile.Brick):
+                if (southTile == Tile.Brick):
                     popList.append((x,modY))
                     break
+                if (Tile.isEnemy(southTile)):
+                    killedEnemies[i-1].append(southTile)
         # EAST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
             if (modX < Board.BoardWidth-1):
-                northTile = self.tileAt(modX,y)
-                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                eastTile = self.tileAt(modX,y)
+                if (eastTile == Tile.Concrete or eastTile == Tile.Bomb):
                     break
                 flashList.append((modX,y))
-                if (northTile == Tile.Brick):
+                if (eastTile == Tile.Brick):
                     popList.append((modX,y))
-                    break        
+                    break
+                if (Tile.isEnemy(eastTile)):
+                    killedEnemies[i-1].append(eastTile)
         # WEST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
             if (modX < Board.BoardWidth-1):
-                northTile = self.tileAt(modX,y)
-                if (northTile == Tile.Concrete or northTile == Tile.Bomb):
+                westTile = self.tileAt(modX,y)
+                if (westTile == Tile.Concrete or westTile == Tile.Bomb):
                     break
                 flashList.append((modX,y))
-                if (northTile == Tile.Brick):
+                if (westTile == Tile.Brick):
                     popList.append((modX,y))
-                    break        
+                    break
+                if (Tile.isEnemy(westTile)):
+                    killedEnemies[i-1].append(westTile)
         
         self.startFlash(flashList)
         self.endFlash(flashList)
         self.destroyTiles(popList)
+        self.updateScore(killedEnemies)
 
 
     def startFlash(self, flashList):
@@ -608,3 +618,25 @@ class Board(QtGui.QFrame):
             self.bomberman.flamePass = 1
         if(powerUpNum == 8):
             self.bomberman.invincible = 1
+
+    def updateScore(self, killedEnemies):
+        # score in status bar
+        print self.getScoreOfKilledEnemies(killedEnemies)
+
+    # assume the list "killedEnemies" has the following format:
+    # [[enemies at distance = 1 from bomb], [enemies at distance = 2 from bomb], ... , [enemies at distance = range from bomb]]
+    # e.g.: [[Tile.Balloom, Tile.Oneal], [], [Tile.Doll]] means when the bomb exploded, there was a Balloom and an Oneal at distance 1,
+    # nothing at distance 2, and a Doll at distance 3 from the bomb.
+    # def getScoreOfKilledEnemies(self, killedEnemies):
+    def getScoreOfKilledEnemies(self, killedEnemies):
+        score = 0
+        multiplier = 1
+
+        for dist in range(len(killedEnemies)):
+            list = killedEnemies[dist]
+            sortedList = sorted(list)
+            for enemy in sortedList:
+                score += Enemy.getEnemy(enemy)['points'] * multiplier
+                multiplier *= 2
+
+        return score

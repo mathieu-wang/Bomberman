@@ -34,3 +34,7 @@ class Tile(object):
 
     def size(self):
         return len(self.stack)
+
+    @staticmethod
+    def isEnemy(tile):
+        return 8 <= tile <=15
