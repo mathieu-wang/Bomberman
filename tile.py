@@ -42,3 +42,11 @@ class Tile(object):
     @staticmethod
     def isBomberman(tile):
         return tile == Tile.Bomberman
+
+    @staticmethod
+    def isExit(tile):
+        return tile == Tile.Exit
+
+    @staticmethod
+    def isPowerup(tile):
+        return tile == Tile.Powerup
