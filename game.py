@@ -76,6 +76,9 @@ class Game(QtGui.QMainWindow):
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
 
+        self.board_widget.endGameSignal.connect(self.update_lives)
+        self.board_widget.gameOverSignal.connect(self.game_over)
+
         self.statusBar.resize(100, 468)
         self.coundownTimer = QtCore.QTimer()
         self.coundownTimer.start(1000)
@@ -186,6 +189,12 @@ class Game(QtGui.QMainWindow):
         self.coundownTimer.start(1000)
 
         self.central_widget.setCurrentWidget(self.board_widget)
+
+    def update_lives(self):
+        self.statusBar.livesLabel.setText('Lives: ' + str(self.board_widget.bomberman.lives))
+
+    def game_over(self):
+        self.show_main_menu()
 
 def main():
 
