@@ -67,6 +67,7 @@ class Board(QtGui.QFrame):
         self.curY = 11
         self.board = []
         self.bombQueue = []
+        self.bombFlashQueue = []
 
         self.isStarted = False
         self.isPaused = False
@@ -296,31 +297,61 @@ class Board(QtGui.QFrame):
         for i in range(Board.BoardHeight):
             for j in range(viewXFirst,viewXLast+1):
                 shape = self.tileAt(j, Board.BoardHeight - i - 1)
-                
-                self.drawSquare(painter,
-                    rect.left() + (j-viewXFirst) * self.squareWidth(),
-                    boardTop + i * self.squareHeight(), shape)
+
+                if(shape == Tile.Exit):
+                    exitPix = QtGui.QPixmap("./images/exit.png")
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                    boardTop + i * self.squareHeight(),exitPix)
+                elif(shape == Tile.Brick):
+                    brickPix = QtGui.QPixmap("./images/brick.png")
+                    scaledBrickPix = QtGui.QPixmap.scaled(brickPix,37,37,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                    boardTop + i * self.squareHeight(),scaledBrickPix)
+                elif(shape == Tile.Balloom):
+                    balloomPix = QtGui.QPixmap("./images/Balloom.png")
+                    scaledBalloomPix = QtGui.QPixmap.scaled(balloomPix,37,37,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                    boardTop + i * self.squareHeight(),scaledBalloomPix)
+                elif(shape == Tile.Bomb):
+                    bombPix = QtGui.QPixmap("./images/bomb.png")
+                    scaledBombPix = QtGui.QPixmap.scaled(bombPix,37,37,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                    boardTop + i * self.squareHeight(),scaledBombPix)
+                elif(shape == Tile.Concrete):
+                    concretePix = QtGui.QPixmap("./images/concrete.png")
+                    scaledConcretePix = QtGui.QPixmap.scaled(concretePix,37,37,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                    boardTop + i * self.squareHeight(),scaledConcretePix)
+                else:
+                    self.drawSquare(painter,
+                        rect.left() + (j-viewXFirst) * self.squareWidth(),
+                        boardTop + i * self.squareHeight(), shape)
 
     def drawSquare(self, painter, x, y, shape):
         
-        colorTable = [0x99CC33, 0x999999, 0x996633, 0xCC0000,
+        colorTable = [0x009700, 0x999999, 0x996633, 0xCC0000,
                       0xFFCC00, 0x000000, 0xFFFFFF, 0xFF9900,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933]
 
         color = QtGui.QColor(colorTable[shape])
-        painter.fillRect(x + 1, y + 1, self.squareWidth() - 2, 
-            self.squareHeight() - 2, color)
 
-        painter.setPen(color.light())
-        painter.drawLine(x, y + self.squareHeight() - 1, x, y)
-        painter.drawLine(x, y, x + self.squareWidth() - 1, y)
+        if (shape == Tile.Empty or shape == Tile.Flash):
+            painter.fillRect(x + 1, y + 1, self.squareWidth(), 
+            self.squareHeight(), color)
+        else:
+            painter.fillRect(x + 1, y + 1, self.squareWidth(), 
+                self.squareHeight(), color)
 
-        painter.setPen(color.dark())
-        painter.drawLine(x + 1, y + self.squareHeight() - 1,
-            x + self.squareWidth() - 1, y + self.squareHeight() - 1)
-        painter.drawLine(x + self.squareWidth() - 1, 
-            y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
+            painter.setPen(color.light())
+            painter.drawLine(x, y + self.squareHeight() - 1, x, y)
+            painter.drawLine(x, y, x + self.squareWidth() - 1, y)
+
+            painter.setPen(color.dark())
+            painter.drawLine(x + 1, y + self.squareHeight() - 1,
+                x + self.squareWidth() - 1, y + self.squareHeight() - 1)
+            painter.drawLine(x + self.squareWidth() - 1, 
+                y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
 
     def keyPressEvent(self, event):
 
@@ -433,7 +464,6 @@ class Board(QtGui.QFrame):
             self.setTileAt(x,y,Tile.Bomberman)
         else:
             self.popTileAt(x,y)
-
         flashList = []
         popList = []
 
@@ -481,22 +511,24 @@ class Board(QtGui.QFrame):
                 if (northTile == Tile.Brick):
                     popList.append((modX,y))
                     break        
-
+        
         self.startFlash(flashList)
         self.endFlash(flashList)
         self.destroyTiles(popList)
 
-    def startFlash(self,flashList):
+
+    def startFlash(self, flashList):
         for x,y in flashList:
             self.setTileAt(x,y,Tile.Flash)
 
-    def endFlash(self,flashList):
-         for x,y in flashList:
+    def endFlash(self, flashList):
+        for x,y in flashList:
             self.popTileAtWithoutUpdate(x,y)
     
     def destroyTiles(self,popList):
         for x,y in popList:
             self.popTileAtWithoutUpdate(x,y)
+        return True
 
     def gainPowerUps(self, powerUpNum):
         if(powerUpNum == 1):
