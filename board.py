@@ -9,6 +9,8 @@ class Board(QtGui.QFrame):
 
     msg2Statusbar = QtCore.pyqtSignal(str)
     pauseGameSignal = QtCore.pyqtSignal()
+    endGameSignal = QtCore.pyqtSignal()
+    gameOverSignal = QtCore.pyqtSignal()
 
     BoardWidth = 31
     BoardHeight = 13
@@ -41,18 +43,17 @@ class Board(QtGui.QFrame):
         super(Board, self).__init__(parent)
         self.username = username
         self.level = level
+        self.bomberman = Bomberman() #initialize bomberman attributes
         print "initializing board for level: " + str(level)
         self.initBoard()
         
     def initBoard(self):     
-        self.bomberman = Bomberman() #initialize bomberman attributes
         self.timer = QtCore.QBasicTimer()
 
         self.curX = 1
         self.curY = 11
         self.board = []
         self.bombQueue = []
-        self.bombFlashQueue = []
 
         self.isStarted = False
         self.isPaused = False
@@ -168,6 +169,24 @@ class Board(QtGui.QFrame):
             self.timer.start(self.Speed, self)
 
         self.update()
+
+    def death(self):
+
+        #stop timer
+        self.timer.stop()
+
+        #change attributes
+        self.bomberman.lives = self.bomberman.lives - 1
+        self.bomberman.hasDetonator = 0
+        self.bomberman.bombPass = 0
+        self.bomberman.wallPass = 0
+        self.bomberman.flamePass = 0
+
+        if(self.bomberman.lives == 0):
+            self.gameOverSignal.emit() # Send signal to end game
+        else:
+            self.endGameSignal.emit() # Send signal to end current board
+
 
     def tileAt(self, x, y):
         return self.board[y][x].peek()
@@ -285,22 +304,22 @@ class Board(QtGui.QFrame):
                     boardTop + i * self.squareHeight(),exitPix)
                 elif(shape == Tile.Brick):
                     brickPix = QtGui.QPixmap("./images/brick.png")
-                    scaledBrickPix = QtGui.QPixmap.scaled(brickPix,37,37,0)
+                    scaledBrickPix = QtGui.QPixmap.scaled(brickPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                     boardTop + i * self.squareHeight(),scaledBrickPix)
                 elif(shape == Tile.Balloom):
                     balloomPix = QtGui.QPixmap("./images/Balloom.png")
-                    scaledBalloomPix = QtGui.QPixmap.scaled(balloomPix,37,37,0)
+                    scaledBalloomPix = QtGui.QPixmap.scaled(balloomPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                     boardTop + i * self.squareHeight(),scaledBalloomPix)
                 elif(shape == Tile.Bomb):
                     bombPix = QtGui.QPixmap("./images/bomb.png")
-                    scaledBombPix = QtGui.QPixmap.scaled(bombPix,37,37,0)
+                    scaledBombPix = QtGui.QPixmap.scaled(bombPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                     boardTop + i * self.squareHeight(),scaledBombPix)
                 elif(shape == Tile.Concrete):
                     concretePix = QtGui.QPixmap("./images/concrete.png")
-                    scaledConcretePix = QtGui.QPixmap.scaled(concretePix,37,37,0)
+                    scaledConcretePix = QtGui.QPixmap.scaled(concretePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                     boardTop + i * self.squareHeight(),scaledConcretePix)
                 else:

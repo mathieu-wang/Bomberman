@@ -48,8 +48,8 @@ class PauseMenu(QtGui.QWidget):
         quitButton.move(buttonStartXCoordinate, 294)
         quitButton.clicked.connect(self.quit)
 
-        #self.setFixedHeight(300)
-        #self.setFixedWidth(300)
+        self.setFixedHeight(468)
+        self.setFixedWidth(468)
 
         self.show()
 
