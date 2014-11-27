@@ -28,7 +28,7 @@ class MainMenu(QtGui.QWidget):
         logoutButton.move(buttonStartXCoordinate, 259)
         logoutButton.clicked.connect(self.logout)
 
-        settingsButton = QtGui.QPushButton('Account Settings', self)
+        settingsButton = QtGui.QPushButton('Load Game', self)
         settingsButton.setFixedWidth(buttonWidth)
         settingsButton.move(buttonStartXCoordinate, 179)
         settingsButton.clicked.connect(self.settings)

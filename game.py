@@ -47,6 +47,7 @@ class Game(QtGui.QMainWindow):
         self.mainMenuWidget.logoutGameSignal.connect(self.show_login_menu)
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
         self.mainMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
+        self.mainMenuWidget.showSettingsSignal.connect(self.show_load_menu)
 
         self.central_widget.addWidget(self.mainMenuWidget)
         self.central_widget.setCurrentWidget(self.mainMenuWidget)
@@ -184,6 +185,7 @@ class Game(QtGui.QMainWindow):
         db = Database()
         savedBoard = db.loadGame(self.login_widget.loggedUsername, str(gamename))
 
+        self.show_board(1)
         self.board_widget.loadBoard(savedBoard)
 
         self.coundownTimer.start(1000)
