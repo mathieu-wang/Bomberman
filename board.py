@@ -29,6 +29,7 @@ class Board(QtGui.QFrame):
     endGameSignal = QtCore.pyqtSignal()
     gameOverSignal = QtCore.pyqtSignal()
 
+    Level = 15
     BoardWidth = 31
     BoardHeight = 13
     ViewWidth = 13
@@ -48,7 +49,6 @@ class Board(QtGui.QFrame):
     BrickPercent = 0.12
     PowerupCoordinate = [0, 0]
     ExitCoordinate = [0, 0]
-    Level = 15
     Powerup = 0
     NumberEnemies = 0
     ListofEnemies = []
@@ -60,6 +60,7 @@ class Board(QtGui.QFrame):
         super(Board, self).__init__(parent)
         self.username = username
         self.level = level
+        Board.Level = level
         self.bomberman = Bomberman() #initialize bomberman attributes
         print "initializing board for level: " + str(level)
         self.initBoard()
@@ -78,12 +79,29 @@ class Board(QtGui.QFrame):
         self.slowestTimer = QtCore.QTimer(self)
         self.slowestTimer.timeout.connect(lambda : self.moveEnemy(1))
 
+        Board.BoardWidth = 31
+        Board.BoardHeight = 13
+        Board.ViewWidth = 13
+        Board.ViewHeight = 13
+        Board.Speed = 300
+        Board.FastMoveTime = 200
+        Board.NormalMoveTime = 300
+        Board.SlowMoveTime = 600
+        Board.SlowestMoveTime = 800
+        Board.FastCanMove = True
+        Board.NormalCanMove = True
+        Board.SlowCanMove = True
+        Board.SlowestCanMove = True
+        Board.BombermanCanMove = True
+        Board.BombTime = 3000
+        Board.FlashTime = 700
+        Board.BrickPercent = 0.12
+        Board.PowerupCoordinate = [0, 0]
+        Board.ExitCoordinate = [0, 0]
+        Board.Powerup = 0
         Board.NumberEnemies = 0
         Board.ListofEnemies = []
         Board.NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
-        Board.PowerupCoordinate = [0, 0]
-        Board.ExitCoordinate = [0, 0]
-        Board.BombermanCanMove = True
 
         self.curX = 1
         self.curY = 11
@@ -182,6 +200,7 @@ class Board(QtGui.QFrame):
         Board.PowerupCoordinate = savedBoard['PowerupCoordinate']
         Board.ExitCoordinate = savedBoard['ExitCoordinate']
         Board.Level = savedBoard['Level']
+        self.level = savedBoard['Level']
         Board.Powerup = savedBoard['Powerup']
         Board.NumberEnemies = savedBoard['NumberEnemies']
         Board.ListofEnemies = savedBoard['ListofEnemies']
@@ -243,6 +262,7 @@ class Board(QtGui.QFrame):
 
         if(self.bomberman.lives == 0):
             self.gameOverSignal.emit() # Send signal to end game
+            return
         else:
             self.endGameSignal.emit() # Send signal to end current board
 
