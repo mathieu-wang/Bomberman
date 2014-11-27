@@ -5,9 +5,22 @@ from tile import Tile
 from bomberman import Bomberman
 from enemy import Enemy
 
+class StatusBar(QtGui.QDockWidget):
+    def __init__(self, parent=None):
+        super(StatusBar, self).__init__(parent)
+        self.livesLabel = QtGui.QLabel('Lives: 3', self)
+        self.livesLabel.setFixedWidth(100)
+        self.livesLabel.move(50, 0)
+
+        self.timeLeft = 200
+        self.timesLabel = QtGui.QLabel('Time Left: ' + str(self.timeLeft), self)
+        self.timesLabel.setFixedWidth(200)
+        self.timesLabel.move(200, 0)
+
 class Board(QtGui.QFrame):
 
-    msg2Statusbar = QtCore.pyqtSignal(str)
+    setBombermanLivesSignal = QtCore.pyqtSignal(int)
+    resetTimerSignal = QtCore.pyqtSignal()
     pauseGameSignal = QtCore.pyqtSignal()
 
     BoardWidth = 31
@@ -44,7 +57,9 @@ class Board(QtGui.QFrame):
         print "initializing board for level: " + str(level)
         self.initBoard()
         
-    def initBoard(self):     
+    def initBoard(self):
+        # self.statusBar = StatusBar(self)
+        # self.adjustSize()
         self.bomberman = Bomberman() #initialize bomberman attributes
         self.timer = QtCore.QBasicTimer()
 
