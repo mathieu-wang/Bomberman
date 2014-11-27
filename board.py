@@ -345,7 +345,7 @@ class Board(QtGui.QFrame):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
-        self.NumEnemies, self.Powerup = Enemy.getEnemyListAndPowerUp(self.level)
+        Board.NumEnemies, Board.Powerup = Enemy.getEnemyListAndPowerUp(self.level)
 
         for i in range(8):
             for j in range(self.NumEnemies[i]):
