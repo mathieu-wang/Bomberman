@@ -81,6 +81,9 @@ class Board(QtGui.QFrame):
         Board.NumberEnemies = 0
         Board.ListofEnemies = []
         Board.NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
+        Board.PowerupCoordinate = [0, 0]
+        Board.ExitCoordinate = [0, 0]
+        Board.BombermanCanMove = True
 
         self.curX = 1
         self.curY = 11
