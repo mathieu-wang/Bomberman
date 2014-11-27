@@ -60,7 +60,7 @@ class PauseMenu(QtGui.QWidget):
         self.quitGameSignal.emit()
 
     def showLeaderboard(self):
-        self.showLeaderboardSignal.emit(menu_constants.PAUSE_MENU)
+        self.showLeaderboardSignal.emit(global_constants.PAUSE_MENU)
 
     def back(self):
         self.backToMainMenuSignal.emit()

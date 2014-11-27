@@ -5,9 +5,22 @@ from tile import Tile
 from bomberman import Bomberman
 from enemy import Enemy
 
+class StatusBar(QtGui.QDockWidget):
+    def __init__(self, parent=None):
+        super(StatusBar, self).__init__(parent)
+        self.livesLabel = QtGui.QLabel('Lives: ' + str(parent.bomberman.lives), self)
+        self.livesLabel.setFixedWidth(100)
+        self.livesLabel.move(50, 0)
+
+        self.timeLeft = 200
+        self.timesLabel = QtGui.QLabel('Time Left: ' + str(self.timeLeft), self)
+        self.timesLabel.setFixedWidth(200)
+        self.timesLabel.move(200, 0)
+
 class Board(QtGui.QFrame):
 
-    msg2Statusbar = QtCore.pyqtSignal(str)
+    setBombermanLivesSignal = QtCore.pyqtSignal(int)
+    resetTimerSignal = QtCore.pyqtSignal()
     pauseGameSignal = QtCore.pyqtSignal()
 
     BoardWidth = 31
@@ -44,9 +57,20 @@ class Board(QtGui.QFrame):
         print "initializing board for level: " + str(level)
         self.initBoard()
         
-    def initBoard(self):     
+    def initBoard(self):
+        # self.statusBar = StatusBar(self)
+        # self.adjustSize()
         self.bomberman = Bomberman() #initialize bomberman attributes
         self.timer = QtCore.QBasicTimer()
+
+        self.fastTimer = QtCore.QTimer(self)
+        self.fastTimer.timeout.connect(lambda : self.moveEnemy(4))
+        self.normalTimer = QtCore.QTimer(self)
+        self.normalTimer.timeout.connect(lambda : self.moveEnemy(3))
+        self.slowTimer = QtCore.QTimer(self)
+        self.slowTimer.timeout.connect(lambda : self.moveEnemy(2))
+        self.slowestTimer = QtCore.QTimer(self)
+        self.slowestTimer.timeout.connect(lambda : self.moveEnemy(1))
 
         self.curX = 1
         self.curY = 11
@@ -74,6 +98,10 @@ class Board(QtGui.QFrame):
         self.setEnemies()
         self.setBomberman()
         self.timer.start(self.Speed, self)
+        self.fastTimer.start(Board.FastMoveTime)
+        self.normalTimer.start(Board.NormalMoveTime)
+        self.slowTimer.start(Board.SlowMoveTime)
+        self.slowestTimer.start(Board.SlowestMoveTime)
 
     def saveBoard(self):
 
@@ -114,6 +142,8 @@ class Board(QtGui.QFrame):
         savedBoard['isStarted'] = self.isStarted
         savedBoard['isPaused'] = False
 
+        savedBoard['timeLeft'] = self.findChild(QtGui.QDockWidget).timeLeft
+
         return savedBoard
 
     def loadBoard(self, savedBoard):
@@ -151,6 +181,8 @@ class Board(QtGui.QFrame):
 
         self.isStarted = savedBoard['isStarted']
         self.isPaused = savedBoard['isPaused']
+
+        self.findChild(QtGui.QDockWidget).timeLeft = savedBoard['timeLeft']
 
         self.update()
 
@@ -400,25 +432,55 @@ class Board(QtGui.QFrame):
 
         return True
 
-    def tryMoveFast(self):
+    def moveEnemy(self, speed):
         for i in range(Board.NumberEnemies):
-            if (Enemy.getEnemy(Board.ListofEnemies[i][3])['speed'] == 4):
-                print Board.ListofEnemies[i]
+            if (Enemy.getEnemy(Board.ListofEnemies[i][3])['speed'] == speed):
+                curX = Board.ListofEnemies[i][0]
+                curY = Board.ListofEnemies[i][1]
+                tempDir = Board.ListofEnemies[i][2]
+                tempWP = Enemy.getEnemy(Board.ListofEnemies[i][3])['wallpass']
+                newX = 0
+                newY = 0
+
+                if (tempDir == 0):
+                    newX = curX
+                    newY = curY + 1
+                elif (tempDir == 1):
+                    newX = curX + 1
+                    newY = curY
+                elif (tempDir == 2):
+                    newX = curX
+                    newY = curY - 1
+                elif (tempDir == 3):
+                    newX = curX - 1
+                    newY = curY
+
+                tempTile = self.board[newY][newX].peek()
+
+                if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
+                    if (tempDir == 0): newY -= 2
+                    elif (tempDir == 1): newX -= 2
+                    elif (tempDir == 2): newY += 2
+                    elif (tempDir == 3): newX += 2
+                    Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 2) % 4
+
+                tempTile = self.board[newY][newX].peek()
+
+                if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
+                    Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 1) % 4
+
+                tempTile = self.board[newY][newX].peek()
+
+                if (tempTile != Tile.Bomb and tempTile != Tile.Brick and tempTile != Tile.Concrete):
+                    Board.ListofEnemies[i][0] = newX
+                    Board.ListofEnemies[i][1] = newY
+
+                    self.popTileAt(curX, curY)
+                    self.setTileAt(newX, newY, i + 8)
+
 
     def bombermanCanMove(self):
         Board.BombermanCanMove = True
-
-    def fastCanMove(self):
-        Board.FastCanMove = True
-
-    def normalCanMove(self):
-        Board.NormalCanMove = True
-
-    def slowCanMove(self):
-        Board.SlowCanMove = True
-
-    def slowestCanMove(self):
-        Board.SlowestCanMove = True
 
     def setBomb(self):
         self.bombQueue.append((self.curX,self.curY))
