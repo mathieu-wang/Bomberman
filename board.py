@@ -646,10 +646,10 @@ class Board(QtGui.QFrame):
                         elif (tempDir == 3): newX += 2
                         Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 2) % 4
 
-                        tempTile = self.board[newY][newX].peek()
-
-                        if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
-                            Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 1) % 4
+                        # tempTile = self.board[newY][newX].peek()
+                        #
+                        # if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
+                        #     Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 1) % 4
 
                     tempTile = self.board[newY][newX].peek()
 
@@ -689,6 +689,7 @@ class Board(QtGui.QFrame):
                 del Board.ListofEnemies[i]
                 Board.NumberEnemies -= 1
                 Board.NumEnemies[i] -= 1
+                break
 
     def detonateBomb(self):
 
