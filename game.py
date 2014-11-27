@@ -76,7 +76,7 @@ class Game(QtGui.QMainWindow):
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
 
-        self.board_widget.endGameSignal.connect(self.update_lives)
+        self.board_widget.endGameSignal.connect(self.lose_life)
         self.board_widget.gameOverSignal.connect(self.game_over)
 
         self.statusBar.resize(100, 468)
@@ -190,11 +190,20 @@ class Game(QtGui.QMainWindow):
 
         self.central_widget.setCurrentWidget(self.board_widget)
 
-    def update_lives(self):
+    def lose_life(self):
         self.statusBar.livesLabel.setText('Lives: ' + str(self.board_widget.bomberman.lives))
+        self.update_score_in_db()
+        self.board_widget.score = 0
 
     def game_over(self):
+        self.update_score_in_db()
+        self.board_widget.score = 0
         self.show_main_menu()
+
+    def update_score_in_db(self):
+        db = Database()
+        db.updateUserScore(self.login_widget.loggedUsername, self.board_widget.score)
+
 
 def main():
 

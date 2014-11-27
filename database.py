@@ -185,3 +185,11 @@ class Database:
             return None
 
         return self.game[username][gamename]
+
+
+    def updateUserScore(self, username, scoreToAdd):
+        user = self.userTable.find_one(username=username)
+        print user
+        user['cumulativeScore'] += scoreToAdd
+        print user
+        self.userTable.update(user, ['username'])
