@@ -148,15 +148,17 @@ class Database:
     def loadListSavedGames(self, username):
 
         try:
-            with open('db.pkl', 'rb') as input:
-                self.game = pickle.load(input)
+            f = file('db.pkl', 'rb')
+            self.game = pickle.load(f)
+            f.close()
         except:
-            with open('db.pkl', 'wb') as output:
-                self.game = {}
-                pickle.dump(self.game, output, pickle.HIGHEST_PROTOCOL)
+            self.game = {}
+            f = file('db.pkl', 'wb')
+            pickle.dump(self.game, f, protocol=pickle.HIGHEST_PROTOCOL)
+            f.close()
 
-        if username not in self.game:
-            return None
+        if username not in self.game.keys():
+            return []
 
         gameList = []
 

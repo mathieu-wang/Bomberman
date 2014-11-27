@@ -7,8 +7,6 @@ class LoadMenu(QtGui.QWidget):
     returnToPauseMenuSignal = QtCore.pyqtSignal()
     loadSavedGameSignal = QtCore.pyqtSignal(str)
 
-    gamename = 'best'
-
     def __init__(self, username, parent=None):
         super(LoadMenu, self).__init__(parent)
 
@@ -21,14 +19,27 @@ class LoadMenu(QtGui.QWidget):
         buttonWidth = 150
         buttonStartXCoordinate = 159
 
+        gameListWidth = 368
+        gameListStartXCoordinate = 50
+
+        savedGameList = self.loadSavedGameList()
+
+        self.gameList = QtGui.QListWidget(self)
+
+        for savedGame in savedGameList:
+            self.gameList.addItem(savedGame)
+
+        self.gameList.setFixedWidth(gameListWidth)
+        self.gameList.move(gameListStartXCoordinate, 94)
+
         loadButton = QtGui.QPushButton('Load', self)
         loadButton.setFixedWidth(buttonWidth)
-        loadButton.move(buttonStartXCoordinate, 174)
-        loadButton.clicked.connect(self.loadGame)
+        loadButton.move(buttonStartXCoordinate, 314)
+        loadButton.clicked.connect(self.loadSavedGame)
 
         returnButton = QtGui.QPushButton('Back', self)
         returnButton.setFixedWidth(buttonWidth)
-        returnButton.move(buttonStartXCoordinate, 214)
+        returnButton.move(buttonStartXCoordinate, 354)
         returnButton.clicked.connect(self.returnToPauseMenu)
 
         self.setFixedHeight(468)
@@ -36,10 +47,10 @@ class LoadMenu(QtGui.QWidget):
 
         self.show()
 
-    def loadGame(self):
-    	self.loadSavedGameSignal.emit(self.gamename)
+    def loadSavedGame(self):
+        self.loadSavedGameSignal.emit(str(self.gameList.currentItem().text()))
 
-    def loadGameList(self):
+    def loadSavedGameList(self):
         db = Database()
         return db.loadListSavedGames(self.username)
 
