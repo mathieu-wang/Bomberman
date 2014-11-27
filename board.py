@@ -17,6 +17,10 @@ class StatusBar(QtGui.QDockWidget):
         self.timesLabel.setFixedWidth(200)
         self.timesLabel.move(200, 0)
 
+        self.scoreLabel = QtGui.QLabel('Score: ' + str(parent.score), self)
+        self.scoreLabel.setFixedWidth(200)
+        self.scoreLabel.move(300, 0)
+
 class Board(QtGui.QFrame):
 
     setBombermanLivesSignal = QtCore.pyqtSignal(int)
@@ -59,7 +63,7 @@ class Board(QtGui.QFrame):
         self.bomberman = Bomberman() #initialize bomberman attributes
         print "initializing board for level: " + str(level)
         self.initBoard()
-        
+
     def initBoard(self):
         # self.statusBar = StatusBar(self)
         # self.adjustSize()
@@ -86,10 +90,12 @@ class Board(QtGui.QFrame):
         self.isStarted = False
         self.isPaused = False
 
+        self.score = 0
+
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
 
     def start(self):
-        
+
         if self.isPaused:
             return
 
@@ -137,7 +143,7 @@ class Board(QtGui.QFrame):
         savedBoard['ListofEnemies'] = Board.ListofEnemies
         savedBoard['NumEnemies'] = Board.NumEnemies
 
-        savedBoard['bomberman'] = self.bomberman 
+        savedBoard['bomberman'] = self.bomberman
 
         savedBoard['curX'] = self.curX
         savedBoard['curY'] = self.curY
@@ -148,11 +154,12 @@ class Board(QtGui.QFrame):
         savedBoard['isPaused'] = False
 
         savedBoard['timeLeft'] = self.findChild(QtGui.QDockWidget).timeLeft
+        savedBoard['score'] = self.score
 
         return savedBoard
 
     def loadBoard(self, savedBoard):
-        self.BoardWidth = savedBoard['BoardWidth'] 
+        self.BoardWidth = savedBoard['BoardWidth']
         self.BoardHeight = savedBoard['BoardHeight']
         self.ViewWidth = savedBoard['ViewWidth']
         self.ViewHeight = savedBoard['ViewHeight']
@@ -188,6 +195,7 @@ class Board(QtGui.QFrame):
         self.isPaused = savedBoard['isPaused']
 
         self.findChild(QtGui.QDockWidget).timeLeft = savedBoard['timeLeft']
+        self.score = savedBoard['score']
 
         self.update()
 
@@ -251,7 +259,7 @@ class Board(QtGui.QFrame):
 
     def squareWidth(self):
         return self.contentsRect().width() / Board.ViewWidth
-        
+
     def squareHeight(self):
         return self.contentsRect().height() / Board.ViewHeight
 
@@ -344,34 +352,34 @@ class Board(QtGui.QFrame):
                 if(shape == Tile.Exit):
                     exitPix = QtGui.QPixmap("./images/exit.png")
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                    boardTop + i * self.squareHeight(),exitPix)
+                                       boardTop + i * self.squareHeight(),exitPix)
                 elif(shape == Tile.Brick):
                     brickPix = QtGui.QPixmap("./images/brick.png")
                     scaledBrickPix = QtGui.QPixmap.scaled(brickPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                    boardTop + i * self.squareHeight(),scaledBrickPix)
+                                       boardTop + i * self.squareHeight(),scaledBrickPix)
                 elif(shape == Tile.Balloom):
                     balloomPix = QtGui.QPixmap("./images/Balloom.png")
                     scaledBalloomPix = QtGui.QPixmap.scaled(balloomPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                    boardTop + i * self.squareHeight(),scaledBalloomPix)
+                                       boardTop + i * self.squareHeight(),scaledBalloomPix)
                 elif(shape == Tile.Bomb):
                     bombPix = QtGui.QPixmap("./images/bomb.png")
                     scaledBombPix = QtGui.QPixmap.scaled(bombPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                    boardTop + i * self.squareHeight(),scaledBombPix)
+                                       boardTop + i * self.squareHeight(),scaledBombPix)
                 elif(shape == Tile.Concrete):
                     concretePix = QtGui.QPixmap("./images/concrete.png")
                     scaledConcretePix = QtGui.QPixmap.scaled(concretePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                    boardTop + i * self.squareHeight(),scaledConcretePix)
+                                       boardTop + i * self.squareHeight(),scaledConcretePix)
                 else:
                     self.drawSquare(painter,
-                        rect.left() + (j-viewXFirst) * self.squareWidth(),
-                        boardTop + i * self.squareHeight(), shape)
+                                    rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                    boardTop + i * self.squareHeight(), shape)
 
     def drawSquare(self, painter, x, y, shape):
-        
+
         colorTable = [0x009700, 0x999999, 0x996633, 0xCC0000,
                       0xFFCC00, 0x000000, 0xFFFFFF, 0xFF9900,
                       0xFF6600, 0x00FFFF, 0xCC0099, 0xFF9933,
@@ -380,11 +388,11 @@ class Board(QtGui.QFrame):
         color = QtGui.QColor(colorTable[shape])
 
         if (shape == Tile.Empty or shape == Tile.Flash):
-            painter.fillRect(x + 1, y + 1, self.squareWidth(), 
-            self.squareHeight(), color)
+            painter.fillRect(x + 1, y + 1, self.squareWidth(),
+                             self.squareHeight(), color)
         else:
-            painter.fillRect(x + 1, y + 1, self.squareWidth(), 
-                self.squareHeight(), color)
+            painter.fillRect(x + 1, y + 1, self.squareWidth(),
+                             self.squareHeight(), color)
 
             painter.setPen(color.light())
             painter.drawLine(x, y + self.squareHeight() - 1, x, y)
@@ -392,36 +400,36 @@ class Board(QtGui.QFrame):
 
             painter.setPen(color.dark())
             painter.drawLine(x + 1, y + self.squareHeight() - 1,
-                x + self.squareWidth() - 1, y + self.squareHeight() - 1)
-            painter.drawLine(x + self.squareWidth() - 1, 
-                y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
+                             x + self.squareWidth() - 1, y + self.squareHeight() - 1)
+            painter.drawLine(x + self.squareWidth() - 1,
+                             y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
 
     def keyPressEvent(self, event):
 
         key = event.key()
-        
+
         if key == QtCore.Qt.Key_P:
             self.pause()
             return
-            
+
         if self.isPaused:
             return
-                
+
         elif key == QtCore.Qt.Key_Left:
             if self.curX == 0:
                 return
             self.tryMove(self.curX-1,self.curY)
-            
+
         elif key == QtCore.Qt.Key_Right:
             if self.curX == Board.BoardWidth - 1:
                 return
             self.tryMove(self.curX+1,self.curY)
-            
+
         elif key == QtCore.Qt.Key_Down:
             if self.curY == 0:
                 return
             self.tryMove(self.curX,self.curY-1)
-            
+
         elif key == QtCore.Qt.Key_Up:
             if self.curY == Board.BoardHeight-1:
                 return
@@ -434,7 +442,7 @@ class Board(QtGui.QFrame):
         elif key == QtCore.Qt.Key_B:
             if (self.bomberman.hasDetonator == 1 and self.bombQueue):
                 self.detonateBomb()
-            
+
         else:
             super(Board, self).keyPressEvent(event)
 
@@ -539,7 +547,7 @@ class Board(QtGui.QFrame):
             QtCore.QTimer.singleShot(Board.BombTime, self.detonateBomb)
 
     def timerEvent(self, event):
-        
+
         if event.timerId() == self.timer.timerId():
             pass
         else:
@@ -610,7 +618,7 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isEnemy(westTile)):
                     killedEnemies[i-1].append(westTile)
-        
+
         self.startFlash(flashList)
         self.endFlash(flashList)
         self.destroyTiles(popList)
@@ -624,7 +632,7 @@ class Board(QtGui.QFrame):
     def endFlash(self, flashList):
         for x,y in flashList:
             self.popTileAtWithoutUpdate(x,y)
-    
+
     def destroyTiles(self,popList):
         for x,y in popList:
             self.popTileAtWithoutUpdate(x,y)
@@ -648,9 +656,12 @@ class Board(QtGui.QFrame):
         if(powerUpNum == 8):
             self.bomberman.invincible = 1
 
+    # update score in status bar
     def updateScore(self, killedEnemies):
-        # score in status bar
-        print self.getScoreOfKilledEnemies(killedEnemies)
+        statusBar = self.findChild(QtGui.QDockWidget)
+        newScore = self.score + self.getScoreOfKilledEnemies(killedEnemies)
+        self.score = newScore
+        statusBar.scoreLabel.setText('Score: ' + str(newScore))
 
     # assume the list "killedEnemies" has the following format:
     # [[enemies at distance = 1 from bomb], [enemies at distance = 2 from bomb], ... , [enemies at distance = range from bomb]]
