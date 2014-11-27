@@ -493,53 +493,62 @@ class Board(QtGui.QFrame):
                 tempIntel = Enemy.getEnemy(Board.ListofEnemies[i][3])['intelligence']
                 newX = 0
                 newY = 0
+                randInt = 0
+                hasDied = False
                 hasMoved = False
 
-                if (tempIntel == 2):
+                if (tempIntel == 3): randInt = 2
+                elif (tempIntel == 2): randInt = 10
+
+                if (tempIntel == 2 or tempIntel == 3):
                     if (self.board[curY+1][curX].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX
                         newY = curY + 1
                         tempDir = 0
                         hasMoved = True
+                        hasDied = True
                     if (self.board[curY-1][curX].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX
                         newY = curY - 1
                         tempDir = 2
                         hasMoved = True
+                        hasDied = True
                     if (self.board[curY][curX+1].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX + 1
                         newY = curY
                         tempDir = 1
                         hasMoved = True
+                        hasDied = True
                     if (self.board[curY][curX-1].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX - 1
                         newY = curY
                         tempDir = 3
                         hasMoved = True
+                        hasDied = True
 
                     tempTile = self.board[curY+1][curX].peek()
-                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX
                         newY = curY + 1
                         tempDir = 0
                         hasMoved = True
 
                     tempTile = self.board[curY-1][curX].peek()
-                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX
                         newY = curY - 1
                         tempDir = 2
                         hasMoved = True
 
                     tempTile = self.board[curY][curX+1].peek()
-                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX + 1
                         newY = curY
                         tempDir = 1
                         hasMoved = True
 
                     tempTile = self.board[curY][curX-1].peek()
-                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX - 1
                         newY = curY
                         tempDir = 3
@@ -551,6 +560,9 @@ class Board(QtGui.QFrame):
                         Board.ListofEnemies[i][2] = tempDir
                         self.popTileAt(curX, curY)
                         self.setTileAt(newX, newY, Board.ListofEnemies[i][3])
+                        if (hasDied == True):
+                            self.death()
+                            return False
 
                 if (tempIntel == 1 or hasMoved == False):
                     if (tempDir == 0):
@@ -585,9 +597,11 @@ class Board(QtGui.QFrame):
                     if ((tempTile == Tile.Brick and tempWP == True) or (tempTile != Tile.Bomb and tempTile != Tile.Brick and tempTile != Tile.Concrete)):
                         Board.ListofEnemies[i][0] = newX
                         Board.ListofEnemies[i][1] = newY
-
                         self.popTileAt(curX, curY)
                         self.setTileAt(newX, newY, Board.ListofEnemies[i][3])
+                        if (tempTile == Tile.Bomberman):
+                            self.death()
+                            return False
 
 
     def bombermanCanMove(self):
