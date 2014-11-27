@@ -298,6 +298,11 @@ class Board(QtGui.QFrame):
                     scaledBombPix = QtGui.QPixmap.scaled(bombPix,37,37,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                     boardTop + i * self.squareHeight(),scaledBombPix)
+                elif(shape == Tile.Concrete):
+                    concretePix = QtGui.QPixmap("./images/concrete.png")
+                    scaledConcretePix = QtGui.QPixmap.scaled(concretePix,37,37,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                    boardTop + i * self.squareHeight(),scaledConcretePix)
                 else:
                     self.drawSquare(painter,
                         rect.left() + (j-viewXFirst) * self.squareWidth(),
