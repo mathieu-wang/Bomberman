@@ -226,18 +226,28 @@ class Board(QtGui.QFrame):
 
         #stop timer
         self.timer.stop()
+        self.fastTimer.stop()
+        self.normalTimer.stop()
+        self.slowTimer.stop()
+        self.slowestTimer.stop()
 
         #change attributes
         self.bomberman.lives = self.bomberman.lives - 1
         self.bomberman.hasDetonator = 0
         self.bomberman.bombPass = 0
         self.bomberman.wallPass = 0
-        self.bomberman.flamePass = 0
+        self.bomberman.flamePass = 0    
 
         if(self.bomberman.lives == 0):
             self.gameOverSignal.emit() # Send signal to end game
         else:
             self.endGameSignal.emit() # Send signal to end current board
+
+        deathMessage = '''You lost a life!'''
+        QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
+
+        self.initBoard()
+        self.start()
 
 
     def tileAt(self, x, y):
@@ -622,6 +632,10 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isEnemy(northTile)):
                     killedEnemies[i-1].append(northTile)
+                    break
+                if (Tile.isBomberman(northTile)):
+                    self.death()
+
         # SOUTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y - i
@@ -635,6 +649,10 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isEnemy(southTile)):
                     killedEnemies[i-1].append(southTile)
+                    break
+                if (Tile.isBomberman(southTile)):
+                    self.death()
+
         # EAST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
@@ -648,6 +666,9 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isEnemy(eastTile)):
                     killedEnemies[i-1].append(eastTile)
+                    break
+                if (Tile.isBomberman(eastTile)):
+                    self.death()
         # WEST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
@@ -661,6 +682,9 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isEnemy(westTile)):
                     killedEnemies[i-1].append(westTile)
+                    break
+                if (Tile.isBomberman(westpTile)):
+                    self.death()
 
         self.startFlash(flashList)
         self.endFlash(flashList)
