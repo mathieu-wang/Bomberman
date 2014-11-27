@@ -468,6 +468,9 @@ class Board(QtGui.QFrame):
                 return False
         elif (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
             return False
+        elif Tile.isEnemy(self.tileAt(self.curX,self.curY)):
+            self.death()
+            return False
         self.popTileAt(self.curX,self.curY)
         self.curX = newX
         self.curY = newY
