@@ -683,7 +683,7 @@ class Board(QtGui.QFrame):
                 if (Tile.isEnemy(westTile)):
                     killedEnemies[i-1].append(westTile)
                     break
-                if (Tile.isBomberman(westpTile)):
+                if (Tile.isBomberman(westTile)):
                     self.death()
 
         self.startFlash(flashList)
