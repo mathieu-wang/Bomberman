@@ -74,7 +74,8 @@ class Game(QtGui.QMainWindow):
         self.statusBar.setFixedWidth(468)
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
-        self.board_widget.start()
+
+        # self.addDockWidget(self.dockWidgetArea(self.statusBar), self.statusBar)
 
         self.statusBar.resize(100, 468)
         self.coundownTimer = QtCore.QTimer()

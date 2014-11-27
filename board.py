@@ -307,7 +307,6 @@ class Board(QtGui.QFrame):
                         Board.NumberEnemies += 1
                         break
 
-
     def paintEvent(self, event):
 
         # Check for bomberman X pos for moving viewPort
