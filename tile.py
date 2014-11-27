@@ -38,3 +38,7 @@ class Tile(object):
     @staticmethod
     def isEnemy(tile):
         return 8 <= tile <=15
+
+    @staticmethod
+    def isBomberman(tile):
+        return tile == Tile.Bomberman
