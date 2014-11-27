@@ -406,6 +406,41 @@ class Board(QtGui.QFrame):
                     scaledConcretePix = QtGui.QPixmap.scaled(concretePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                                        boardTop + i * self.squareHeight(),scaledConcretePix)
+                elif(shape == Tile.Oneal):
+                    OnealPix = QtGui.QPixmap("./images/Oneal.png")
+                    scaledOnealPix = QtGui.QPixmap.scaled(OnealPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledOnealPix)
+                elif(shape == Tile.Doll):
+                    DollPix = QtGui.QPixmap("./images/Doll.png")
+                    scaledDollPix = QtGui.QPixmap.scaled(DollPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledDollPix)
+                elif(shape == Tile.Minvo):
+                    MinvoPix = QtGui.QPixmap("./images/Minvo.png")
+                    scaledMinvoPix = QtGui.QPixmap.scaled(MinvoPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledMinvoPix)
+                elif(shape == Tile.Kondoria):
+                    KondoriaPix = QtGui.QPixmap("./images/Kondoria.png")
+                    scaledKondoriaPix = QtGui.QPixmap.scaled(KondoriaPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledKondoriaPix)
+                elif(shape == Tile.Ovapi):
+                    OvapiPix = QtGui.QPixmap("./images/Ovapi.png")
+                    scaledOvapiPix = QtGui.QPixmap.scaled(OvapiPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledOvapiPix)
+                elif(shape == Tile.Pass):
+                    PassPix = QtGui.QPixmap("./images/Pass.png")
+                    scaledPassPix = QtGui.QPixmap.scaled(PassPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledPassPix)
+                elif(shape == Tile.Pontan):
+                    PontanPix = QtGui.QPixmap("./images/Pontan.png")
+                    scaledPontanPix = QtGui.QPixmap.scaled(PontanPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledPontanPix)
                 else:
                     self.drawSquare(painter,
                                     rect.left() + (j-viewXFirst) * self.squareWidth(),
