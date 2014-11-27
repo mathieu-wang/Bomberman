@@ -8,7 +8,7 @@ from enemy import Enemy
 class StatusBar(QtGui.QDockWidget):
     def __init__(self, parent=None):
         super(StatusBar, self).__init__(parent)
-        self.livesLabel = QtGui.QLabel('Lives: 3', self)
+        self.livesLabel = QtGui.QLabel('Lives: ' + str(parent.bomberman.lives), self)
         self.livesLabel.setFixedWidth(100)
         self.livesLabel.move(50, 0)
 

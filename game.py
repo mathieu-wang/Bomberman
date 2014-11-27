@@ -68,10 +68,10 @@ class Game(QtGui.QMainWindow):
         self.center()
 
     def show_board(self, level):
-        self.statusBar = StatusBar(self)
-        self.statusBar.setFixedWidth(468)
         self.board_widget = Board(self.login_widget.loggedUsername, level, self)
 
+        self.statusBar = StatusBar(self.board_widget)
+        self.statusBar.setFixedWidth(468)
         # self.board_widget = Board(self, level)
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
@@ -110,6 +110,7 @@ class Game(QtGui.QMainWindow):
         self.statusBar.timesLabel.setText('Time Left: ' + str(self.statusBar.timeLeft))
 
     def show_pause_menu(self):
+        self.coundownTimer.stop()
 
         self.pauseMenuWidget = PauseMenu(self)
 
@@ -164,7 +165,7 @@ class Game(QtGui.QMainWindow):
         sys.exit()
 
     def resumeToGame(self):
-
+        self.coundownTimer.start(1000)
         self.central_widget.setCurrentWidget(self.board_widget)
 
     def resumeToPauseMenu(self):
