@@ -74,6 +74,10 @@ class Board(QtGui.QFrame):
         self.slowestTimer = QtCore.QTimer(self)
         self.slowestTimer.timeout.connect(lambda : self.moveEnemy(1))
 
+        Board.NumberEnemies = 0
+        Board.ListofEnemies = []
+        Board.NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
+
         self.curX = 1
         self.curY = 11
         self.board = []
@@ -124,14 +128,14 @@ class Board(QtGui.QFrame):
         savedBoard['BombermanCanMove'] = self.BombermanCanMove
         savedBoard['BombTime'] = self.BombTime
         savedBoard['FlashTime'] = self.FlashTime
-        savedBoard['BrickPercent'] = self.BrickPercent
-        savedBoard['PowerupCoordinate'] = self.PowerupCoordinate
-        savedBoard['ExitCoordinate'] = self.ExitCoordinate
-        savedBoard['Level'] = self.Level
-        savedBoard['Powerup'] = self.Powerup
-        savedBoard['NumberEnemies'] = self.NumberEnemies
-        savedBoard['ListofEnemies'] = self.ListofEnemies
-        savedBoard['NumEnemies'] = self.NumEnemies
+        savedBoard['BrickPercent'] = Board.BrickPercent
+        savedBoard['PowerupCoordinate'] = Board.PowerupCoordinate
+        savedBoard['ExitCoordinate'] = Board.ExitCoordinate
+        savedBoard['Level'] = Board.Level
+        savedBoard['Powerup'] = Board.Powerup
+        savedBoard['NumberEnemies'] = Board.NumberEnemies
+        savedBoard['ListofEnemies'] = Board.ListofEnemies
+        savedBoard['NumEnemies'] = Board.NumEnemies
 
         savedBoard['bomberman'] = self.bomberman 
 
@@ -164,14 +168,14 @@ class Board(QtGui.QFrame):
         self.BombermanCanMove = savedBoard['BombermanCanMove']
         self.BombTime = savedBoard['BombTime']
         self.FlashTime = savedBoard['FlashTime']
-        self.BrickPercent = savedBoard['BrickPercent']
-        self.PowerupCoordinate = savedBoard['PowerupCoordinate']
-        self.ExitCoordinate = savedBoard['ExitCoordinate']
-        self.Level = savedBoard['Level']
-        self.Powerup = savedBoard['Powerup']
-        self.NumberEnemies = savedBoard['NumberEnemies']
-        self.ListofEnemies = savedBoard['ListofEnemies']
-        self.NumEnemies = savedBoard['NumEnemies']
+        Board.BrickPercent = savedBoard['BrickPercent']
+        Board.PowerupCoordinate = savedBoard['PowerupCoordinate']
+        Board.ExitCoordinate = savedBoard['ExitCoordinate']
+        Board.Level = savedBoard['Level']
+        Board.Powerup = savedBoard['Powerup']
+        Board.NumberEnemies = savedBoard['NumberEnemies']
+        Board.ListofEnemies = savedBoard['ListofEnemies']
+        Board.NumEnemies = savedBoard['NumEnemies']
 
         self.bomberman = savedBoard['bomberman']
 
@@ -196,9 +200,17 @@ class Board(QtGui.QFrame):
 
         if self.isPaused:
             self.timer.stop()
+            self.fastTimer.stop()
+            self.normalTimer.stop()
+            self.slowTimer.stop()
+            self.slowestTimer.stop()
             self.pauseGameSignal.emit() # Send signal to show pauseMenu
         else:
             self.timer.start(self.Speed, self)
+            self.fastTimer.start(Board.FastMoveTime)
+            self.normalTimer.start(Board.NormalMoveTime)
+            self.slowTimer.start(Board.SlowMoveTime)
+            self.slowestTimer.start(Board.SlowestMoveTime)
 
         self.update()
 
