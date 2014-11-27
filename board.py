@@ -554,7 +554,7 @@ class Board(QtGui.QFrame):
         # EAST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
-            if (modX < Board.BoardHeight-1):
+            if (modX < Board.BoardWidth-1):
                 northTile = self.tileAt(modX,y)
                 if (northTile == Tile.Concrete or northTile == Tile.Bomb):
                     break
@@ -565,7 +565,7 @@ class Board(QtGui.QFrame):
         # WEST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
-            if (modX < Board.BoardHeight-1):
+            if (modX < Board.BoardWidth-1):
                 northTile = self.tileAt(modX,y)
                 if (northTile == Tile.Concrete or northTile == Tile.Bomb):
                     break

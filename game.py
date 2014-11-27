@@ -72,12 +72,10 @@ class Game(QtGui.QMainWindow):
 
         self.statusBar = StatusBar(self.board_widget)
         self.statusBar.setFixedWidth(468)
-        # self.board_widget = Board(self, level)
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
         self.board_widget.start()
 
-        # self.addDockWidget(self.dockWidgetArea(self.statusBar), self.statusBar)
         self.statusBar.resize(100, 468)
         self.coundownTimer = QtCore.QTimer()
         self.coundownTimer.start(1000)
@@ -178,6 +176,8 @@ class Game(QtGui.QMainWindow):
         savedBoard = db.loadGame(self.login_widget.loggedUsername, str(gamename))
 
         self.board_widget.loadBoard(savedBoard)
+
+        self.coundownTimer.start(1000)
 
         self.central_widget.setCurrentWidget(self.board_widget)
 
