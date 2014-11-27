@@ -385,8 +385,9 @@ class Board(QtGui.QFrame):
 
                 if(shape == Tile.Exit):
                     exitPix = QtGui.QPixmap("./images/exit.png")
+                    scaledExitPix = QtGui.QPixmap.scaled(exitPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),exitPix)
+                                       boardTop + i * self.squareHeight(),scaledExitPix)
                 elif(shape == Tile.Brick):
                     brickPix = QtGui.QPixmap("./images/brick.png")
                     scaledBrickPix = QtGui.QPixmap.scaled(brickPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
