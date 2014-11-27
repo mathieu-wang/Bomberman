@@ -490,23 +490,66 @@ class Board(QtGui.QFrame):
                 tempIntel = Enemy.getEnemy(Board.ListofEnemies[i][3])['intelligence']
                 newX = 0
                 newY = 0
+                hasMoved = False
 
-                # if (tempIntel == 2):
-                #     if (self.board[curY+1][curX].peek() == Tile.Bomberman):
-                #         newX = curX
-                #         newY = curY + 1
-                #     elif (self.board[curY-1][curX].peek() == Tile.Bomberman):
-                #         newX = curX
-                #         newY = curY - 1
-                #     elif (self.board[curY][curX+1].peek() == Tile.Bomberman):
-                #         newX = curX + 1
-                #         newY = curY
-                #     elif (self.board[curY][curX-1].peek() == Tile.Bomberman):
-                #         newX = curX - 1
-                #         newY = curY
+                if (tempIntel == 2):
+                    if (self.board[curY+1][curX].peek() == Tile.Bomberman and hasMoved == False):
+                        newX = curX
+                        newY = curY + 1
+                        tempDir = 0
+                        hasMoved = True
+                    if (self.board[curY-1][curX].peek() == Tile.Bomberman and hasMoved == False):
+                        newX = curX
+                        newY = curY - 1
+                        tempDir = 2
+                        hasMoved = True
+                    if (self.board[curY][curX+1].peek() == Tile.Bomberman and hasMoved == False):
+                        newX = curX + 1
+                        newY = curY
+                        tempDir = 1
+                        hasMoved = True
+                    if (self.board[curY][curX-1].peek() == Tile.Bomberman and hasMoved == False):
+                        newX = curX - 1
+                        newY = curY
+                        tempDir = 3
+                        hasMoved = True
 
+                    tempTile = self.board[curY+1][curX].peek()
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                        newX = curX
+                        newY = curY + 1
+                        tempDir = 0
+                        hasMoved = True
 
-                if (True):
+                    tempTile = self.board[curY-1][curX].peek()
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                        newX = curX
+                        newY = curY - 1
+                        tempDir = 2
+                        hasMoved = True
+
+                    tempTile = self.board[curY][curX+1].peek()
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                        newX = curX + 1
+                        newY = curY
+                        tempDir = 1
+                        hasMoved = True
+
+                    tempTile = self.board[curY][curX-1].peek()
+                    if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,10) == 10 and hasMoved == False):
+                        newX = curX - 1
+                        newY = curY
+                        tempDir = 3
+                        hasMoved = True
+
+                    if (hasMoved == True):
+                        Board.ListofEnemies[i][0] = newX
+                        Board.ListofEnemies[i][1] = newY
+                        Board.ListofEnemies[i][2] = tempDir
+                        self.popTileAt(curX, curY)
+                        self.setTileAt(newX, newY, Board.ListofEnemies[i][3])
+
+                if (tempIntel == 1 or hasMoved == False):
                     if (tempDir == 0):
                         newX = curX
                         newY = curY + 1
@@ -541,7 +584,7 @@ class Board(QtGui.QFrame):
                         Board.ListofEnemies[i][1] = newY
 
                         self.popTileAt(curX, curY)
-                        self.setTileAt(newX, newY, i + 8)
+                        self.setTileAt(newX, newY, Board.ListofEnemies[i][3])
 
 
     def bombermanCanMove(self):
