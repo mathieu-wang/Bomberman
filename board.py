@@ -128,6 +128,8 @@ class Board(QtGui.QFrame):
         savedBoard['isStarted'] = self.isStarted
         savedBoard['isPaused'] = False
 
+        savedBoard['timeLeft'] = self.findChild(QtGui.QDockWidget).timeLeft
+
         return savedBoard
 
     def loadBoard(self, savedBoard):
@@ -165,6 +167,8 @@ class Board(QtGui.QFrame):
 
         self.isStarted = savedBoard['isStarted']
         self.isPaused = savedBoard['isPaused']
+
+        self.findChild(QtGui.QDockWidget).timeLeft = savedBoard['timeLeft']
 
         self.update()
 
