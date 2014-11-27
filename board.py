@@ -469,44 +469,61 @@ class Board(QtGui.QFrame):
                 curY = Board.ListofEnemies[i][1]
                 tempDir = Board.ListofEnemies[i][2]
                 tempWP = Enemy.getEnemy(Board.ListofEnemies[i][3])['wallpass']
+                tempIntel = Enemy.getEnemy(Board.ListofEnemies[i][3])['intelligence']
                 newX = 0
                 newY = 0
 
-                if (tempDir == 0):
-                    newX = curX
-                    newY = curY + 1
-                elif (tempDir == 1):
-                    newX = curX + 1
-                    newY = curY
-                elif (tempDir == 2):
-                    newX = curX
-                    newY = curY - 1
-                elif (tempDir == 3):
-                    newX = curX - 1
-                    newY = curY
+                # if (tempIntel == 2):
+                #     if (self.board[curY+1][curX].peek() == Tile.Bomberman):
+                #         newX = curX
+                #         newY = curY + 1
+                #     elif (self.board[curY-1][curX].peek() == Tile.Bomberman):
+                #         newX = curX
+                #         newY = curY - 1
+                #     elif (self.board[curY][curX+1].peek() == Tile.Bomberman):
+                #         newX = curX + 1
+                #         newY = curY
+                #     elif (self.board[curY][curX-1].peek() == Tile.Bomberman):
+                #         newX = curX - 1
+                #         newY = curY
 
-                tempTile = self.board[newY][newX].peek()
 
-                if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
-                    if (tempDir == 0): newY -= 2
-                    elif (tempDir == 1): newX -= 2
-                    elif (tempDir == 2): newY += 2
-                    elif (tempDir == 3): newX += 2
-                    Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 2) % 4
+                if (True):
+                    if (tempDir == 0):
+                        newX = curX
+                        newY = curY + 1
+                    elif (tempDir == 1):
+                        newX = curX + 1
+                        newY = curY
+                    elif (tempDir == 2):
+                        newX = curX
+                        newY = curY - 1
+                    elif (tempDir == 3):
+                        newX = curX - 1
+                        newY = curY
 
-                tempTile = self.board[newY][newX].peek()
+                    tempTile = self.board[newY][newX].peek()
 
-                if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
-                    Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 1) % 4
+                    if (tempTile == Tile.Bomb or (tempTile == Tile.Brick and tempWP == False) or tempTile == Tile.Concrete):
+                        if (tempDir == 0): newY -= 2
+                        elif (tempDir == 1): newX -= 2
+                        elif (tempDir == 2): newY += 2
+                        elif (tempDir == 3): newX += 2
+                        Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 2) % 4
 
-                tempTile = self.board[newY][newX].peek()
+                        tempTile = self.board[newY][newX].peek()
 
-                if (tempTile != Tile.Bomb and tempTile != Tile.Brick and tempTile != Tile.Concrete):
-                    Board.ListofEnemies[i][0] = newX
-                    Board.ListofEnemies[i][1] = newY
+                        if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
+                            Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 1) % 4
 
-                    self.popTileAt(curX, curY)
-                    self.setTileAt(newX, newY, i + 8)
+                    tempTile = self.board[newY][newX].peek()
+
+                    if ((tempTile == Tile.Brick and tempWP == True) or (tempTile != Tile.Bomb and tempTile != Tile.Brick and tempTile != Tile.Concrete)):
+                        Board.ListofEnemies[i][0] = newX
+                        Board.ListofEnemies[i][1] = newY
+
+                        self.popTileAt(curX, curY)
+                        self.setTileAt(newX, newY, i + 8)
 
 
     def bombermanCanMove(self):
