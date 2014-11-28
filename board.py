@@ -17,254 +17,113 @@ class StatusBar(QtGui.QDockWidget):
         self.timesLabel.setFixedWidth(200)
         self.timesLabel.move(200, 0)
 
-        self.scoreLabel = QtGui.QLabel('Score: ' + str(parent.score), self)
-        self.scoreLabel.setFixedWidth(200)
-        self.scoreLabel.move(300, 0)
+        # self.scoreLabel = QtGui.QLabel('Score: ' + str(parent.score), self)
+        # self.scoreLabel.setFixedWidth(200)
+        # self.scoreLabel.move(300, 0)
 
 class Board(QtGui.QFrame):
 
-    setBombermanLivesSignal = QtCore.pyqtSignal(int)
-    resetTimerSignal = QtCore.pyqtSignal()
     pauseGameSignal = QtCore.pyqtSignal()
-    endGameSignal = QtCore.pyqtSignal()
     gameOverSignal = QtCore.pyqtSignal()
 
-    Level = 15
-    BoardWidth = 31
-    BoardHeight = 13
-    ViewWidth = 13
-    ViewHeight = 13
-    Speed = 300
-    FastMoveTime = 200
-    NormalMoveTime = 300
-    SlowMoveTime = 600
-    SlowestMoveTime = 800
-    FastCanMove = True
-    NormalCanMove = True
-    SlowCanMove = True
-    SlowestCanMove = True
-    BombermanCanMove = True
-    BombTime = 3000
-    FlashTime = 700
-    BrickPercent = 0.12
-    PowerupCoordinate = [0, 0]
-    ExitCoordinate = [0, 0]
-    Powerup = 0
-    NumberEnemies = 0
-    ListofEnemies = []
-    NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
+    # setBombermanLivesSignal = QtCore.pyqtSignal(int)
+    # resetTimerSignal = QtCore.pyqtSignal()
 
-    # print Enemy.getEnemy(8)['points']
+    BOARD_WIDTH = 31
+    BOARD_HEIGHT = 13
+    VIEW_WIDTH = 13
+    VIEW_HEIGHT = 13
 
-    def __init__(self, username, level=1, parent=None):
+    TIME_GLOBAL = 100
+    TIME_FAST = 200
+    TIME_NORMAL = 300
+    TIME_SLOW = 600
+    TIME_SLOWEST = 800
+
+    SPEED_FAST = 4
+    SPEED_NORMAL = 3
+    SPEED_SLOW = 2
+    SPEED_SLOWEST = 1
+
+    TIME_BOMB = 3000
+    TIME_FLASH = 700
+    PERCENT_BRICK = 0.12
+
+    def __init__(self, bomberman, parent=None):
         super(Board, self).__init__(parent)
-        self.username = username
-        self.level = level
-        Board.Level = level
-        self.bomberman = Bomberman() #initialize bomberman attributes
-        print "initializing board for level: " + str(level)
+        self.bomberman = bomberman # Initialize bomberman attributes
+        self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.initBoard()
 
     def initBoard(self):
-        # self.statusBar = StatusBar(self)
-        # self.adjustSize()
-        self.timer = QtCore.QBasicTimer()
+
+        print "Username: " + str(self.bomberman.username)
+        print "Board level: " + str(self.bomberman.level)
+
+        self.isPaused = True
+
+        self.globalTimer = QtCore.QTimer(self)
+        self.globalTimer.timeout.connect(lambda : self.bombLoop())
 
         self.fastTimer = QtCore.QTimer(self)
-        self.fastTimer.timeout.connect(lambda : self.moveEnemy(4))
+        self.fastTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_FAST))
         self.normalTimer = QtCore.QTimer(self)
-        self.normalTimer.timeout.connect(lambda : self.moveEnemy(3))
+        self.normalTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_NORMAL))
         self.slowTimer = QtCore.QTimer(self)
-        self.slowTimer.timeout.connect(lambda : self.moveEnemy(2))
+        self.slowTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_SLOW))
         self.slowestTimer = QtCore.QTimer(self)
-        self.slowestTimer.timeout.connect(lambda : self.moveEnemy(1))
+        self.slowestTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_SLOWEST))
 
-        Board.BoardWidth = 31
-        Board.BoardHeight = 13
-        Board.ViewWidth = 13
-        Board.ViewHeight = 13
-        Board.Speed = 300
-        Board.FastMoveTime = 200
-        Board.NormalMoveTime = 300
-        Board.SlowMoveTime = 600
-        Board.SlowestMoveTime = 800
-        Board.FastCanMove = True
-        Board.NormalCanMove = True
-        Board.SlowCanMove = True
-        Board.SlowestCanMove = True
-        Board.BombermanCanMove = True
-        Board.BombTime = 3000
-        Board.FlashTime = 700
-        Board.BrickPercent = 0.12
-        Board.PowerupCoordinate = [0, 0]
-        Board.ExitCoordinate = [0, 0]
-        Board.Powerup = 0
-        Board.NumberEnemies = 0
-        Board.ListofEnemies = []
-        Board.NumEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
+        if not self.bomberman.isInitialized: 
+            self.initLevel()
 
-        self.curX = 1
-        self.curY = 11
-        self.board = []
-        self.bombQueue = []
+    def initLevel(self):
 
-        self.isStarted = False
-        self.isPaused = False
-
-        self.score = 0
-
-        self.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.bomberman.isInitialized = True
+        self.bomberman.setNewLevel()
 
     def start(self):
 
-        if self.isPaused:
-            return
+        self.isPaused = False
 
-        self.isStarted = True
-        self.clearBoard()
-        self.clearBombs()
-        self.setConcrete()
-        self.setExit()
-        self.setPowerup()
-        self.setBrick()
-        self.setEnemies()
-        self.setBomberman()
-        self.timer.start(self.Speed, self)
-        self.fastTimer.start(Board.FastMoveTime)
-        self.normalTimer.start(Board.NormalMoveTime)
-        self.slowTimer.start(Board.SlowMoveTime)
-        self.slowestTimer.start(Board.SlowestMoveTime)
-
-    def saveBoard(self):
-
-        savedBoard = {}
-
-        savedBoard['BoardWidth'] = self.BoardWidth
-        savedBoard['BoardHeight'] = self.BoardHeight
-        savedBoard['ViewWidth'] = self.ViewWidth
-        savedBoard['ViewHeight'] = self.ViewHeight
-        savedBoard['Speed'] = self.Speed
-        savedBoard['FastMoveTime'] = self.FastMoveTime
-        savedBoard['NormalMoveTime'] = self.NormalMoveTime
-        savedBoard['SlowMoveTime'] = self.SlowMoveTime
-        savedBoard['SlowestMoveTime'] = self.SlowestMoveTime
-        savedBoard['FastCanMove'] = self.FastCanMove
-        savedBoard['NormalCanMove'] = self.NormalCanMove
-        savedBoard['SlowCanMove'] = self.SlowCanMove
-        savedBoard['SlowestCanMove'] = self.SlowestCanMove
-        savedBoard['BombermanCanMove'] = self.BombermanCanMove
-        savedBoard['BombTime'] = self.BombTime
-        savedBoard['FlashTime'] = self.FlashTime
-        savedBoard['BrickPercent'] = Board.BrickPercent
-        savedBoard['PowerupCoordinate'] = Board.PowerupCoordinate
-        savedBoard['ExitCoordinate'] = Board.ExitCoordinate
-        savedBoard['Level'] = Board.Level
-        savedBoard['Powerup'] = Board.Powerup
-        savedBoard['NumberEnemies'] = Board.NumberEnemies
-        savedBoard['ListofEnemies'] = Board.ListofEnemies
-        savedBoard['NumEnemies'] = Board.NumEnemies
-
-        savedBoard['bomberman'] = self.bomberman
-
-        savedBoard['curX'] = self.curX
-        savedBoard['curY'] = self.curY
-        savedBoard['board'] = self.board
-        savedBoard['bombQueue'] = self.bombQueue
-
-        savedBoard['isStarted'] = self.isStarted
-        savedBoard['isPaused'] = False
-
-        savedBoard['timeLeft'] = self.findChild(QtGui.QDockWidget).timeLeft
-        savedBoard['score'] = self.score
-
-        return savedBoard
-
-    def loadBoard(self, savedBoard):
-        self.BoardWidth = savedBoard['BoardWidth']
-        self.BoardHeight = savedBoard['BoardHeight']
-        self.ViewWidth = savedBoard['ViewWidth']
-        self.ViewHeight = savedBoard['ViewHeight']
-        self.Speed = savedBoard['Speed']
-        self.FastMoveTime = savedBoard['FastMoveTime']
-        self.NormalMoveTime = savedBoard['NormalMoveTime']
-        self.SlowMoveTime = savedBoard['SlowMoveTime']
-        self.SlowestMoveTime = savedBoard['SlowestMoveTime']
-        self.FastCanMove = savedBoard['FastCanMove']
-        self.NormalCanMove = savedBoard['NormalCanMove']
-        self.SlowCanMove = savedBoard['SlowCanMove']
-        self.SlowestCanMove = savedBoard['SlowestCanMove']
-        self.BombermanCanMove = savedBoard['BombermanCanMove']
-        self.BombTime = savedBoard['BombTime']
-        self.FlashTime = savedBoard['FlashTime']
-        Board.BrickPercent = savedBoard['BrickPercent']
-        Board.PowerupCoordinate = savedBoard['PowerupCoordinate']
-        Board.ExitCoordinate = savedBoard['ExitCoordinate']
-        Board.Level = savedBoard['Level']
-        self.level = savedBoard['Level']
-        Board.Powerup = savedBoard['Powerup']
-        Board.NumberEnemies = savedBoard['NumberEnemies']
-        Board.ListofEnemies = savedBoard['ListofEnemies']
-        Board.NumEnemies = savedBoard['NumEnemies']
-
-        self.bomberman = savedBoard['bomberman']
-
-        self.curX = savedBoard['curX']
-        self.curY = savedBoard['curY']
-        self.board = savedBoard['board']
-        self.bombQueue = savedBoard['bombQueue']
-
-        self.isStarted = savedBoard['isStarted']
-        self.isPaused = savedBoard['isPaused']
-
-        self.findChild(QtGui.QDockWidget).timeLeft = savedBoard['timeLeft']
-        self.score = savedBoard['score']
-
-        self.update()
+        self.globalTimer.start(Board.TIME_GLOBAL)
+        self.fastTimer.start(Board.TIME_FAST)
+        self.normalTimer.start(Board.TIME_NORMAL)
+        self.slowTimer.start(Board.TIME_SLOW)
+        self.slowestTimer.start(Board.TIME_SLOWEST)
 
     def pause(self):
 
-        if not self.isStarted:
-            return
+        self.isPaused = True
 
-        self.isPaused = not self.isPaused
-
-        if self.isPaused:
-            self.timer.stop()
-            self.fastTimer.stop()
-            self.normalTimer.stop()
-            self.slowTimer.stop()
-            self.slowestTimer.stop()
-            self.pauseGameSignal.emit() # Send signal to show pauseMenu
-        else:
-            self.timer.start(self.Speed, self)
-            self.fastTimer.start(Board.FastMoveTime)
-            self.normalTimer.start(Board.NormalMoveTime)
-            self.slowTimer.start(Board.SlowMoveTime)
-            self.slowestTimer.start(Board.SlowestMoveTime)
+        self.globalTimer.stop()
+        self.fastTimer.stop()
+        self.normalTimer.stop()
+        self.slowTimer.stop()
+        self.slowestTimer.stop()
+        self.pauseGameSignal.emit() # Send signal to show pauseMenu
 
         self.update()
 
     def death(self):
 
-        #stop timer
-        self.timer.stop()
+        # Stop timer
+        self.globalTimer.stop()
         self.fastTimer.stop()
         self.normalTimer.stop()
         self.slowTimer.stop()
         self.slowestTimer.stop()
 
-        #change attributes
-        self.bomberman.lives = self.bomberman.lives - 1
-        self.bomberman.hasDetonator = 0
-        self.bomberman.bombPass = 0
-        self.bomberman.wallPass = 0
-        self.bomberman.flamePass = 0    
+        # Update attributes
+        self.bomberman.lives -= 1
+        self.bomberman.hasDetonator = False
+        self.bomberman.bombPass = False
+        self.bomberman.wallPass = False
+        self.bomberman.flamePass = False
 
         if(self.bomberman.lives == 0):
-            self.gameOverSignal.emit() # Send signal to end game
+            self.gameOverSignal.emit() # Send signal for game over
             return
-        else:
-            self.endGameSignal.emit() # Send signal to end current board
 
         deathMessage = '''You lost a life!'''
         QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
@@ -272,116 +131,57 @@ class Board(QtGui.QFrame):
         self.initBoard()
         self.start()
 
-
     def tileAt(self, x, y):
-        return self.board[y][x].peek()
+        return self.bomberman.board[y][x].peek()
 
     def setTileAt(self, x, y, tile):
-        self.board[y][x].push(tile)
+        self.bomberman.board[y][x].push(tile)
         self.update()
 
     def setTileAtWithoutUpdate(self, x, y, tile):
-        self.board[y][x].push(tile)
+        self.bomberman.board[y][x].push(tile)
 
     def popTileAt(self, x, y):
-        self.board[y][x].pop()
+        self.bomberman.board[y][x].pop()
         self.update()
 
     def popTileAtWithoutUpdate(self, x, y):
-        self.board[y][x].pop()
+        self.bomberman.board[y][x].pop()
 
     def squareWidth(self):
-        return self.contentsRect().width() / Board.ViewWidth
+        return self.contentsRect().width() / Board.VIEW_WIDTH
 
     def squareHeight(self):
-        return self.contentsRect().height() / Board.ViewHeight
+        return self.contentsRect().height() / Board.VIEW_HEIGHT
 
-    def clearBoard(self):
-        self.board = [[Tile() for x in range(Board.BoardWidth)] for y in range(Board.BoardHeight)]
-
-    def clearBombs(self):
-        self.bombQueue = []
-
-    def setConcrete(self):
-        for y in range(Board.BoardHeight):
-            for x in range(Board.BoardWidth):
-                if x == 0 or x == 30 or y == 0 or y == 12:
-                    self.setTileAt(x,y,Tile.Concrete)
-                elif x % 2 == 0 and y % 2 == 0:
-                    self.setTileAt(x,y,Tile.Concrete)
-
-    def setExit(self):
-        while True:
-            tempX = random.randint(1, Board.BoardWidth) - 1
-            tempY = random.randint(1, Board.BoardHeight) - 1
-
-            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
-                self.setTileAt(tempX, tempY, Tile.Exit)
-                self.setTileAt(tempX, tempY, Tile.Brick)
-                Board.ExitCoordinate[0] = tempX
-                Board.ExitCoordinate[1] = tempY
-                break
-
-    def setPowerup(self):
-        while True:
-            tempX = random.randint(1, Board.BoardWidth) - 1
-            tempY = random.randint(1, Board.BoardHeight) - 1
-
-            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
-                self.setTileAt(tempX, tempY, Tile.Powerup)
-                self.setTileAt(tempX, tempY, Tile.Brick)
-                Board.PowerupCoordinate[0] = tempX
-                Board.PowerupCoordinate[1] = tempY
-                break
-
-    def setBrick(self):
-        for y in range(Board.BoardHeight):
-            for x in range (Board.BoardWidth):
-                if (self.tileAt(x, y) == Tile.Empty and not (x == 1 and y == Board.BoardHeight - 2) and not (x == 1 and y == Board.BoardHeight - 3) and not (x == 2 and y == Board.BoardHeight - 2)):
-                    if (random.random() <= Board.BrickPercent):
-                        self.setTileAt(x, y, Tile.Brick)
-
-    def setBomberman(self):
-        self.setTileAt(self.curX,self.curY,Tile.Bomberman)
-
-    def setEnemies(self):
-        Board.NumEnemies, Board.Powerup = Enemy.getEnemyListAndPowerUp(self.level)
-
-        for i in range(8):
-            for j in range(self.NumEnemies[i]):
-                while True:
-                    tempX = random.randint(1, Board.BoardWidth) - 1
-                    tempY = random.randint(1, Board.BoardHeight) - 1
-
-                    if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == Board.BoardHeight - 2) and not (tempX == 1 and tempY == Board.BoardHeight - 3) and not (tempX == 2 and tempY == Board.BoardHeight - 2)):
-                        self.setTileAt(tempX, tempY, i + 8)
-                        tempList = [tempX, tempY, random.randint(1,4), i + 8]
-                        Board.ListofEnemies.append(tempList)
-                        self.NumEnemies[i] += 1
-                        Board.NumberEnemies += 1
-                        break
+    def bombLoop(self):
+        for i in xrange(len(self.bomberman.bombQueue)):
+            if (self.bomberman.bombQueue[i][2] <= 0):
+                self.detonateBomb()
+            else:
+                self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - Board.TIME_GLOBAL)
 
     def paintEvent(self, event):
 
         # Check for bomberman X pos for moving viewPort
-        if self.curX <= 6:
+        if self.bomberman.curX <= 6:
             viewXFirst = 0
             viewXLast = 12
-        elif self.curX >= 24:
+        elif self.bomberman.curX >= 24:
             viewXFirst = 18
             viewXLast = 30
         else:
-            viewXFirst = self.curX - 6
-            viewXLast = self.curX + 6
+            viewXFirst = self.bomberman.curX - 6
+            viewXLast = self.bomberman.curX + 6
 
         painter = QtGui.QPainter(self)
         rect = self.contentsRect()
 
-        boardTop = rect.bottom() - Board.ViewHeight * self.squareHeight()
+        boardTop = rect.bottom() - Board.VIEW_HEIGHT * self.squareHeight()
 
-        for i in range(Board.BoardHeight):
+        for i in range(Board.BOARD_HEIGHT):
             for j in range(viewXFirst,viewXLast+1):
-                shape = self.tileAt(j, Board.BoardHeight - i - 1)
+                shape = self.tileAt(j, Board.BOARD_HEIGHT - i - 1)
 
                 if(shape == Tile.Exit):
                     exitPix = QtGui.QPixmap("./images/exit.png")
@@ -486,71 +286,81 @@ class Board(QtGui.QFrame):
             return
 
         elif key == QtCore.Qt.Key_Left:
-            if self.curX == 0:
+            if self.bomberman.curX == 0:
                 return
-            self.tryMove(self.curX-1,self.curY)
+            self.tryMove(self.bomberman.curX-1,self.bomberman.curY)
 
         elif key == QtCore.Qt.Key_Right:
-            if self.curX == Board.BoardWidth - 1:
+            if self.bomberman.curX == Board.BOARD_WIDTH - 1:
                 return
-            self.tryMove(self.curX+1,self.curY)
+            self.tryMove(self.bomberman.curX+1,self.bomberman.curY)
 
         elif key == QtCore.Qt.Key_Down:
-            if self.curY == 0:
+            if self.bomberman.curY == 0:
                 return
-            self.tryMove(self.curX,self.curY-1)
+            self.tryMove(self.bomberman.curX,self.bomberman.curY-1)
 
         elif key == QtCore.Qt.Key_Up:
-            if self.curY == Board.BoardHeight-1:
+            if self.bomberman.curY == Board.BOARD_HEIGHT-1:
                 return
-            self.tryMove(self.curX,self.curY+1)
+            self.tryMove(self.bomberman.curX,self.bomberman.curY+1)
 
         elif key == QtCore.Qt.Key_Space:
-            if (len(self.bombQueue) < self.bomberman.numBombs):
-                self.setBomb()
+            if (len(self.bomberman.bombQueue) < self.bomberman.numBombs):
+                self.bomberman.setBomb()
 
         elif key == QtCore.Qt.Key_B:
-            if (self.bomberman.hasDetonator == 1 and self.bombQueue):
+            if (self.bomberman.hasDetonator and self.bomberman.bombQueue is not None):
                 self.detonateBomb()
-
         else:
             super(Board, self).keyPressEvent(event)
 
     def tryMove(self, newX, newY):
-        if (self.bomberman.wallPass == 1):
-            if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
-                return False
-        elif (self.bomberman.bombPass == 1):
-            if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or Board.BombermanCanMove == False):
-                return False
-        elif (self.bomberman.wallPass == 1 and self.bomberman.bombPass == 1):
-            if (self.tileAt(newX,newY) == Tile.Concrete or Board.BombermanCanMove == False):
-                return False
-        elif (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb or Board.BombermanCanMove == False):
+        if (not self.bomberman.canMove):
             return False
-        elif Tile.isEnemy(self.tileAt(self.curX,self.curY)):
+        elif (self.bomberman.wallPass):
+            if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Bomb):
+                return False
+        elif (self.bomberman.bombPass):
+            if (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick):
+                return False
+        elif (self.bomberman.wallPass and self.bomberman.bombPass):
+            if (self.tileAt(newX,newY) == Tile.Concrete):
+                return False
+        elif (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb):
+            return False
+        elif Tile.isEnemy(self.tileAt(self.bomberman.curX,self.bomberman.curY)):
             self.death()
             return False
-        self.popTileAt(self.curX,self.curY)
-        self.curX = newX
-        self.curY = newY
-        if (self.tileAt(self.curX,self.curY) == Tile.Powerup):
+
+        # Pop bomberman at current pos
+        self.popTileAt(self.bomberman.curX,self.bomberman.curY)
+
+        # Compute new position
+        self.bomberman.curX = newX
+        self.bomberman.curY = newY
+
+        if (self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Powerup):
             self.popTileAt(newX, newY)
-            self.gainPowerUps(Board.Powerup)
-        self.setTileAt(self.curX,self.curY,Tile.Bomberman)
-        Board.BombermanCanMove = False
-        QtCore.QTimer.singleShot(Board.NormalMoveTime, self.bombermanCanMove)
+            self.bomberman.gainPowerUp()
+
+        # Set bomberman to new pos
+        self.setTileAt(self.bomberman.curX,self.bomberman.curY,Tile.Bomberman)
+
+        # Limit bomberman move speed
+        self.bombermanTriggerCanMove()
+        QtCore.QTimer.singleShot(self.bomberman.speed, self.bombermanTriggerCanMove)
 
         return True
 
     def moveEnemy(self, speed):
-        for i in range(Board.NumberEnemies):
-            if (Enemy.getEnemy(Board.ListofEnemies[i][3])['speed'] == speed):
-                curX = Board.ListofEnemies[i][0]
-                curY = Board.ListofEnemies[i][1]
-                tempDir = Board.ListofEnemies[i][2]
-                tempWP = Enemy.getEnemy(Board.ListofEnemies[i][3])['wallpass']
-                tempIntel = Enemy.getEnemy(Board.ListofEnemies[i][3])['intelligence']
+        for i in range(self.bomberman.numberEnemies):
+            if (Enemy.getEnemy(self.bomberman.listEnemies[i][3])['speed'] == speed):
+                curX = self.bomberman.listEnemies[i][0]
+                curY = self.bomberman.listEnemies[i][1]
+                tempDir = self.bomberman.listEnemies[i][2]
+                tempWP = Enemy.getEnemy(self.bomberman.listEnemies[i][3])['wallpass']
+                tempIntel = Enemy.getEnemy(self.bomberman.listEnemies[i][3])['intelligence']
                 newX = 0
                 newY = 0
                 randInt = 0
@@ -561,53 +371,53 @@ class Board(QtGui.QFrame):
                 elif (tempIntel == 2): randInt = 10
 
                 if (tempIntel == 2 or tempIntel == 3):
-                    if (self.board[curY+1][curX].peek() == Tile.Bomberman and hasMoved == False):
+                    if (self.bomberman.board[curY+1][curX].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX
                         newY = curY + 1
                         tempDir = 0
                         hasMoved = True
                         hasDied = True
-                    if (self.board[curY-1][curX].peek() == Tile.Bomberman and hasMoved == False):
+                    if (self.bomberman.board[curY-1][curX].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX
                         newY = curY - 1
                         tempDir = 2
                         hasMoved = True
                         hasDied = True
-                    if (self.board[curY][curX+1].peek() == Tile.Bomberman and hasMoved == False):
+                    if (self.bomberman.board[curY][curX+1].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX + 1
                         newY = curY
                         tempDir = 1
                         hasMoved = True
                         hasDied = True
-                    if (self.board[curY][curX-1].peek() == Tile.Bomberman and hasMoved == False):
+                    if (self.bomberman.board[curY][curX-1].peek() == Tile.Bomberman and hasMoved == False):
                         newX = curX - 1
                         newY = curY
                         tempDir = 3
                         hasMoved = True
                         hasDied = True
 
-                    tempTile = self.board[curY+1][curX].peek()
+                    tempTile = self.bomberman.board[curY+1][curX].peek()
                     if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX
                         newY = curY + 1
                         tempDir = 0
                         hasMoved = True
 
-                    tempTile = self.board[curY-1][curX].peek()
+                    tempTile = self.bomberman.board[curY-1][curX].peek()
                     if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX
                         newY = curY - 1
                         tempDir = 2
                         hasMoved = True
 
-                    tempTile = self.board[curY][curX+1].peek()
+                    tempTile = self.bomberman.board[curY][curX+1].peek()
                     if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX + 1
                         newY = curY
                         tempDir = 1
                         hasMoved = True
 
-                    tempTile = self.board[curY][curX-1].peek()
+                    tempTile = self.bomberman.board[curY][curX-1].peek()
                     if (tempTile != Tile.Bomb and ((tempTile == Tile.Brick and tempWP == True) or tempTile != Tile.Brick) and tempTile != Tile.Concrete and random.randint(1,randInt) == 1 and hasMoved == False):
                         newX = curX - 1
                         newY = curY
@@ -615,11 +425,11 @@ class Board(QtGui.QFrame):
                         hasMoved = True
 
                     if (hasMoved == True):
-                        Board.ListofEnemies[i][0] = newX
-                        Board.ListofEnemies[i][1] = newY
-                        Board.ListofEnemies[i][2] = tempDir
+                        self.bomberman.listEnemies[i][0] = newX
+                        self.bomberman.listEnemies[i][1] = newY
+                        self.bomberman.listEnemies[i][2] = tempDir
                         self.popTileAt(curX, curY)
-                        self.setTileAt(newX, newY, Board.ListofEnemies[i][3])
+                        self.setTileAt(newX, newY, self.bomberman.listEnemies[i][3])
                         if (hasDied == True):
                             self.death()
                             return False
@@ -638,69 +448,52 @@ class Board(QtGui.QFrame):
                         newX = curX - 1
                         newY = curY
 
-                    tempTile = self.board[newY][newX].peek()
+                    tempTile = self.bomberman.board[newY][newX].peek()
 
                     if (tempTile == Tile.Bomb or (tempTile == Tile.Brick and tempWP == False) or tempTile == Tile.Concrete):
                         if (tempDir == 0): newY -= 2
                         elif (tempDir == 1): newX -= 2
                         elif (tempDir == 2): newY += 2
                         elif (tempDir == 3): newX += 2
-                        Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 2) % 4
+                        self.bomberman.listEnemies[i][2] = (self.bomberman.listEnemies[i][2] + 2) % 4
 
-                        # tempTile = self.board[newY][newX].peek()
+                        # tempTile = self.bomberman.board[newY][newX].peek()
                         #
                         # if (tempTile == Tile.Bomb or tempTile == Tile.Brick or tempTile == Tile.Concrete):
-                        #     Board.ListofEnemies[i][2] = (Board.ListofEnemies[i][2] + 1) % 4
+                        #     self.bomberman.listEnemies[i][2] = (self.bomberman.listEnemies[i][2] + 1) % 4
 
-                    tempTile = self.board[newY][newX].peek()
+                    tempTile = self.bomberman.board[newY][newX].peek()
 
                     if ((tempTile == Tile.Brick and tempWP == True) or (tempTile != Tile.Bomb and tempTile != Tile.Brick and tempTile != Tile.Concrete)):
-                        Board.ListofEnemies[i][0] = newX
-                        Board.ListofEnemies[i][1] = newY
+                        self.bomberman.listEnemies[i][0] = newX
+                        self.bomberman.listEnemies[i][1] = newY
                         self.popTileAt(curX, curY)
-                        self.setTileAt(newX, newY, Board.ListofEnemies[i][3])
+                        self.setTileAt(newX, newY, self.bomberman.listEnemies[i][3])
                         if (tempTile == Tile.Bomberman):
                             self.death()
                             return False
 
-
-    def bombermanCanMove(self):
-        Board.BombermanCanMove = True
-
-    def setBomb(self):
-        self.bombQueue.append((self.curX,self.curY))
-        tempTile = self.tileAt(self.curX,self.curY)
-        self.popTileAt(self.curX,self.curY)
-        self.setTileAt(self.curX,self.curY,Tile.Bomb)
-        self.setTileAt(self.curX,self.curY,tempTile)
-        if (self.bomberman.hasDetonator == 0):
-            QtCore.QTimer.singleShot(Board.BombTime, self.detonateBomb)
-
-    def timerEvent(self, event):
-
-        if event.timerId() == self.timer.timerId():
-            pass
-        else:
-            super(Board, self).timerEvent(event)
+    def bombermanTriggerCanMove(self):
+        self.bomberman.canMove = not self.bomberman.canMove
             
     def killEnemy(self, x, y):
-        for i in range (Board.NumberEnemies):
-            if (x == Board.ListofEnemies[i][0] and y ==  Board.ListofEnemies[i][1]):
+        for i in range (self.bomberman.numberEnemies):
+            if (x == self.bomberman.listEnemies[i][0] and y ==  self.bomberman.listEnemies[i][1]):
                 self.popTileAt(x, y)
-                del Board.ListofEnemies[i]
-                Board.NumberEnemies -= 1
-                Board.NumEnemies[i] -= 1
+                del self.bomberman.listEnemies[i]
+                self.bomberman.numberEnemies -= 1
+                self.bomberman.listTypeEnemies[i] -= 1
                 break
 
     def detonateBomb(self):
-
-        x, y = self.bombQueue.pop(0)
+        x, y, z = self.bomberman.bombQueue.pop(0)
         if (self.tileAt(x,y) == Tile.Bomberman):
             self.popTileAt(x,y)
             self.popTileAt(x,y)
             self.setTileAt(x,y,Tile.Bomberman)
         else:
             self.popTileAt(x,y)
+
         flashList = []
         popList = []
         killedEnemies = [[] for i in range(self.bomberman.rangeOfBombs)]
@@ -708,7 +501,7 @@ class Board(QtGui.QFrame):
         # NORTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y + i
-            if (modY < Board.BoardHeight-1):
+            if (modY < Board.BOARD_HEIGHT-1):
                 northTile = self.tileAt(x,modY)
                 if (northTile == Tile.Concrete or northTile == Tile.Bomb):
                     break
@@ -722,26 +515,11 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isBomberman(northTile)):
                     self.death()
-                if (Tile.isExit(northTile) or Tile.isPowerup(northTile)):
-                    for j in range(Board.NumberEnemies):
-                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
-                    Board.ListofEnemies[:] = []
-                    Board.NumberEnemies = 0
-
-                    # for j in range(8, 1, -1):
-                    #     if (Enemy.getEnemy(Board.ListofEnemies[i][3])[''])
-                    #
-                    # for j in range(8):
-                    #     self.setTileAt(x, modY, highestEnemy + 8)
-                    #     tempList = [x, modY, random.randint(1,4), highestEnemy + 8]
-                    #     Board.ListofEnemies.append(tempList)
-                    #     self.NumEnemies[i] += 1
-                    #     Board.NumberEnemies += 1
 
         # SOUTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y - i
-            if (modY < Board.BoardHeight-1):
+            if (modY < Board.BOARD_HEIGHT-1):
                 southTile = self.tileAt(x,modY)
                 if (southTile == Tile.Concrete or southTile == Tile.Bomb):
                     break
@@ -755,16 +533,11 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isBomberman(southTile)):
                     self.death()
-                if (Tile.isExit(southTile) or Tile.isPowerup(southTile)):
-                    for j in range(Board.NumberEnemies):
-                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
-                    Board.ListofEnemies[:] = []
-                    Board.NumberEnemies = 0
 
         # EAST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
-            if (modX < Board.BoardWidth-1):
+            if (modX < Board.BOARD_WIDTH-1):
                 eastTile = self.tileAt(modX,y)
                 if (eastTile == Tile.Concrete or eastTile == Tile.Bomb):
                     break
@@ -778,16 +551,11 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isBomberman(eastTile)):
                     self.death()
-                if (Tile.isExit(eastTile) or Tile.isPowerup(eastTile)):
-                    for j in range(Board.NumberEnemies):
-                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
-                    Board.ListofEnemies[:] = []
-                    Board.NumberEnemies = 0
 
         # WEST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
-            if (modX < Board.BoardWidth-1):
+            if (modX < Board.BOARD_WIDTH-1):
                 westTile = self.tileAt(modX,y)
                 if (westTile == Tile.Concrete or westTile == Tile.Bomb):
                     break
@@ -801,17 +569,11 @@ class Board(QtGui.QFrame):
                     break
                 if (Tile.isBomberman(westTile)):
                     self.death()
-                if (Tile.isExit(westTile) or Tile.isPowerup(westTile)):
-                    for j in range(Board.NumberEnemies):
-                        self.popTileAt(Board.ListofEnemies[j][0], Board.ListofEnemies[j][1])
-                    Board.ListofEnemies[:] = []
-                    Board.NumberEnemies = 0
 
-        self.startFlash(flashList)
-        self.endFlash(flashList)
+        # self.startFlash(flashList)
+        # self.endFlash(flashList)
         self.destroyTiles(popList)
-        self.updateScore(killedEnemies)
-
+        # self.updateScore(killedEnemies)
 
     def startFlash(self, flashList):
         for x,y in flashList:
@@ -823,48 +585,32 @@ class Board(QtGui.QFrame):
 
     def destroyTiles(self,popList):
         for x,y in popList:
-            self.popTileAtWithoutUpdate(x,y)
-        return True
-
-    def gainPowerUps(self, powerUpNum):
-        if(powerUpNum == 1):
-            self.bomberman.numBombs = self.bomberman.numBombs + 1
-        if(powerUpNum == 2):
-            self.bomberman.rangeOfBombs = self.bomberman.rangeOfBombs + 1
-        if(powerUpNum == 3):
-            self.bomberman.speed = 4
-        if(powerUpNum == 4):
-            self.bomberman.wallPass = 1
-        if(powerUpNum == 5):
-            self.bomberman.hasDetonator = 1
-        if(powerUpNum == 6):
-            self.bomberman.bombPass = 1
-        if(powerUpNum == 7):
-            self.bomberman.flamePass = 1
-        if(powerUpNum == 8):
-            self.bomberman.invincible = 1
+            self.popTileAt(x,y)
 
     # update score in status bar
-    def updateScore(self, killedEnemies):
-        statusBar = self.findChild(QtGui.QDockWidget)
-        newScore = self.score + self.getScoreOfKilledEnemies(killedEnemies)
-        self.score = newScore
-        statusBar.scoreLabel.setText('Score: ' + str(newScore))
+    # def updateScore(self, killedEnemies):
+    #     statusBar = self.findChild(QtGui.QDockWidget)
+    #     newScore = self.score + self.getScoreOfKilledEnemies(killedEnemies)
+    #     self.score = newScore
+    #     statusBar.scoreLabel.setText('Score: ' + str(newScore))
 
     # assume the list "killedEnemies" has the following format:
     # [[enemies at distance = 1 from bomb], [enemies at distance = 2 from bomb], ... , [enemies at distance = range from bomb]]
     # e.g.: [[Tile.Balloom, Tile.Oneal], [], [Tile.Doll]] means when the bomb exploded, there was a Balloom and an Oneal at distance 1,
     # nothing at distance 2, and a Doll at distance 3 from the bomb.
     # def getScoreOfKilledEnemies(self, killedEnemies):
-    def getScoreOfKilledEnemies(self, killedEnemies):
-        score = 0
-        multiplier = 1
+    # def getScoreOfKilledEnemies(self, killedEnemies):
+    #     score = 0
+    #     multiplier = 1
 
-        for dist in range(len(killedEnemies)):
-            list = killedEnemies[dist]
-            sortedList = sorted(list)
-            for enemy in sortedList:
-                score += Enemy.getEnemy(enemy)['points'] * multiplier
-                multiplier *= 2
+    #     for dist in range(len(killedEnemies)):
+    #         list = killedEnemies[dist]
+    #         sortedList = sorted(list)
+    #         for enemy in sortedList:
+    #             score += Enemy.getEnemy(enemy)['points'] * multiplier
+    #             multiplier *= 2
 
-        return score
+    #     return score
+
+    def saveBomberman(self):
+        return self.bomberman

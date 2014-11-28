@@ -19,7 +19,7 @@ class LoginMenu(QtGui.QWidget):
         column1XCoordinate = 84
         column2XCoordinate = 234
 
-        #first Column
+        # First Column
 
         self.signUpTitle = QtGui.QLabel('Create Account:', self)
         self.signUpTitle.setFixedWidth(buttonWidth)
@@ -44,7 +44,7 @@ class LoginMenu(QtGui.QWidget):
         self.signUpButton.move(column1XCoordinate, 232)
         self.signUpButton.clicked.connect(self.register)
 
-        #second Column
+        # Second Column
 
         self.loginTitle = QtGui.QLabel('Login:', self)
         self.loginTitle.setAlignment(QtCore.Qt.AlignHCenter)
@@ -74,8 +74,8 @@ class LoginMenu(QtGui.QWidget):
         password = str(self.loginPassword.text())
 
         if self.db.checkUser(username, password):
-            self.loginSuccessSignal.emit()
             self.loggedUsername = username
+            self.loginSuccessSignal.emit()
         else:
             QtGui.QMessageBox.warning(self,'Warning!','Wrong username or password',QtGui.QMessageBox.Ok)
 

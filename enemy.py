@@ -1,12 +1,12 @@
 class Enemy(object):
 
     def __init__(self, points, speed, intelligence, wallpass, direction, canMove):
-        selfpoints = points
-        selfspeed = speed
-        selfintelligence = intelligence
-        selfwallpass = wallpass
-        selfdirection = direction   # 0 - North, 1 - East, 2 - South, 3 - West
-        selfcanMove = canMove
+        self.points = points
+        self.speed = speed
+        self.intelligence = intelligence
+        self.wallpass = wallpass
+        self.direction = direction   # 0 - North, 1 - East, 2 - South, 3 - West
+        self.canMove = canMove
 
     @staticmethod
     def getEnemy(type):

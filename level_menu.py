@@ -10,7 +10,7 @@ class LevelMenu(QtGui.QWidget):
 
     def __init__(self, parent, username):
         super(LevelMenu, self).__init__(parent)
-        print "initializing level menu for user: " + str(username)
+        print "Initializing level menu for user: " + str(username)
         self.username = username
         self.db = Database()
         self.initUI()
@@ -20,7 +20,7 @@ class LevelMenu(QtGui.QWidget):
         self.setLayout(grid)
 
         maxLevel = self.db.getHighestUnlockedLevel(self.username)
-        print "Max level reached by user: " + str(self.username)
+        print "Max level reached by user: " + str(maxLevel)
 
         # Add enabled buttons
         for i in range(0, maxLevel):

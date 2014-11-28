@@ -10,6 +10,7 @@ from level_menu import LevelMenu
 from save_menu import SaveMenu
 from load_menu import LoadMenu
 from database import Database
+from bomberman import Bomberman
 import global_constants
 
 class Game(QtGui.QMainWindow):
@@ -23,9 +24,7 @@ class Game(QtGui.QMainWindow):
         self.central_widget = QtGui.QStackedWidget()
         self.setCentralWidget(self.central_widget)
 
-        # self.show_main_menu()
         self.show_login_menu()
-        # self.show_board(10)
 
     def show_login_menu(self):
 
@@ -40,6 +39,8 @@ class Game(QtGui.QMainWindow):
         self.center()
 
     def show_main_menu(self):
+
+        self.username = self.login_widget.loggedUsername
 
         self.mainMenuWidget = MainMenu(self)
 
@@ -57,7 +58,7 @@ class Game(QtGui.QMainWindow):
 
     def show_level_menu(self):
 
-        self.levelMenuWidget = LevelMenu(self, self.login_widget.loggedUsername)
+        self.levelMenuWidget = LevelMenu(self, self.username)
 
         self.levelMenuWidget.backToMainMenuSignal.connect(self.show_main_menu)
         self.levelMenuWidget.startLevelSignal.connect(self.show_board)
@@ -68,28 +69,30 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Choose Level')
         self.center()
 
-    def show_board(self, level):
+    def show_board(self, level, bomberman=None):
+
+        if not bomberman:
+            bomberman = Bomberman(self.username,level)
         
-        self.board_widget = Board(self.login_widget.loggedUsername, level, self)
+        self.board_widget = Board(bomberman, self)
 
         self.statusBar = StatusBar(self.board_widget)
         self.statusBar.setFixedWidth(468)
+        self.statusBar.resize(100, 468)
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
+        self.board_widget.gameOverSignal.connect(self.gameOver)
 
-        self.board_widget.endGameSignal.connect(self.lose_life)
-        self.board_widget.gameOverSignal.connect(self.game_over)
-
-        self.statusBar.resize(100, 468)
         self.coundownTimer = QtCore.QTimer()
         self.coundownTimer.start(1000)
         self.coundownTimer.timeout.connect(self.timeout_event)
 
         self.central_widget.addWidget(self.board_widget)
         self.central_widget.setCurrentWidget(self.board_widget)
+
         self.board_widget.start()
+
         self.resize(468, 468)
-        self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
         self.setWindowTitle('Bomberman')
 
     def show_leaderboard(self, previousMenu):
@@ -107,11 +110,14 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Leaderboard')
         self.center()
 
+    ###
     def timeout_event(self):
         self.statusBar.timeLeft -= 1
         self.statusBar.timesLabel.setText('Time Left: ' + str(self.statusBar.timeLeft))
 
     def show_pause_menu(self):
+
+        self.board_widget.pause()
 
         self.coundownTimer.stop()
 
@@ -132,7 +138,7 @@ class Game(QtGui.QMainWindow):
 
     def show_save_menu(self):
         
-        self.saveMenuWidget = SaveMenu(self.login_widget.loggedUsername, self.board_widget.saveBoard(), self)
+        self.saveMenuWidget = SaveMenu(self.username, self.board_widget.saveBomberman(), self)
 
         self.saveMenuWidget.returnToPauseMenuSignal.connect(self.resumeToPauseMenu)
 
@@ -157,55 +163,48 @@ class Game(QtGui.QMainWindow):
 
 
     def center(self):
-
         screen = QtGui.QDesktopWidget().screenGeometry()
         size = self.geometry()
         self.move((screen.width()-size.width())/2, 
             (screen.height()-size.height())/2)
 
     def quit(self):
-        
         sys.exit()
 
     def resumeToGame(self):
-
         self.coundownTimer.start(1000)
 
-        self.board_widget.pause()
         self.central_widget.setCurrentWidget(self.board_widget)
+        self.board_widget.start()
 
     def resumeToPauseMenu(self):
 
-        self.coundownTimer.stop()
-
-        self.board_widget.pause()
         self.central_widget.setCurrentWidget(self.pauseMenuWidget)
         
     def loadSavedGame(self, gamename):
-        db = Database()
-        savedBoard = db.loadGame(self.login_widget.loggedUsername, str(gamename))
 
-        self.show_board(1)
-        self.board_widget.loadBoard(savedBoard)
+        db = Database()
+        bomberman = db.loadGame(self.username, str(gamename))
 
         self.coundownTimer.start(1000)
 
-        self.central_widget.setCurrentWidget(self.board_widget)
+        self.show_board(1, bomberman)
 
-    def lose_life(self):
+    ###
+    def loseLife(self):
+        self.updateScoreToDb()
         self.statusBar.livesLabel.setText('Lives: ' + str(self.board_widget.bomberman.lives))
-        self.update_score_in_db()
         self.board_widget.score = 0
 
-    def game_over(self):
-        self.update_score_in_db()
-        self.board_widget.score = 0
+    ###
+    def gameOver(self):
+        # self.updateScoreToDb()
         self.show_main_menu()
 
-    def update_score_in_db(self):
+    ###
+    def updateScoreToDb(self):
         db = Database()
         db.updateUserScore(self.login_widget.loggedUsername, self.board_widget.score)
-
 
 def main():
 
