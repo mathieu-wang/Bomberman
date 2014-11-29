@@ -6,6 +6,7 @@ class LoadMenu(QtGui.QWidget):
 
     returnToPauseMenuSignal = QtCore.pyqtSignal()
     loadSavedGameSignal = QtCore.pyqtSignal(str)
+    backSignal = QtCore.pyqtSignal(int)
 
     def __init__(self, username, parent=None):
         super(LoadMenu, self).__init__(parent)
@@ -40,7 +41,7 @@ class LoadMenu(QtGui.QWidget):
         returnButton = QtGui.QPushButton('Back', self)
         returnButton.setFixedWidth(buttonWidth)
         returnButton.move(buttonStartXCoordinate, 354)
-        returnButton.clicked.connect(self.returnToPauseMenu)
+        returnButton.clicked.connect(self.back)
 
         self.setFixedHeight(468)
         self.setFixedWidth(468)
@@ -54,5 +55,5 @@ class LoadMenu(QtGui.QWidget):
         db = Database()
         return db.loadListSavedGames(self.username)
 
-    def returnToPauseMenu(self):
-        self.returnToPauseMenuSignal.emit()
+    def back(self):
+        self.backSignal.emit(self.previousMenu)
