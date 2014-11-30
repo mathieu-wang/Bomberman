@@ -133,11 +133,14 @@ class Board(QtGui.QFrame):
         return self.contentsRect().height() / constant.VIEW_HEIGHT
 
     def bombLoop(self):
+        indexToDecrement = []
         for i in xrange(len(self.bomberman.bombQueue)):
             if (self.bomberman.bombQueue[i][2] <= 0):
                 self.detonateBomb()
             else:
-                self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - constant.TIME_GLOBAL)
+                indexToDecrement.append(i)
+        for i in xrange(len(indexToDecrement)):
+            self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - constant.TIME_GLOBAL)
 
     def paintEvent(self, event):
 
