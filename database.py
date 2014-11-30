@@ -193,3 +193,8 @@ class Database:
         user['cumulativeScore'] += scoreToAdd
         print user
         self.userTable.update(user, ['username'])
+
+    def updateNumGamesPlayed(self, username):
+        user = self.userTable.find_one(username=username)
+        user['numGamesPlayed'] += 1
+        self.userTable.update(user, ['username'])
