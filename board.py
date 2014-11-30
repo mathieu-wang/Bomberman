@@ -134,11 +134,14 @@ class Board(QtGui.QFrame):
 
     def bombLoop(self):
         indexToDecrement = []
+        detonate = False
         for i in xrange(len(self.bomberman.bombQueue)):
             if (self.bomberman.bombQueue[i][2] <= 0):
-                self.detonateBomb()
+                detonate = True
             else:
                 indexToDecrement.append(i)
+        if (detonate):
+            self.detonateBomb()
         for i in xrange(len(indexToDecrement)):
             self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - constant.TIME_GLOBAL)
 
