@@ -239,6 +239,11 @@ class Board(QtGui.QFrame):
                     scaledPontanPix = QtGui.QPixmap.scaled(PontanPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
                     painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
                                        boardTop + i * self.squareHeight(),scaledPontanPix)
+                elif(shape == Tile.Bomberman):
+                    BombermanPix = QtGui.QPixmap("./images/bomberman.png")
+                    scaledBombermanPix = QtGui.QPixmap.scaled(BombermanPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
+                                       boardTop + i * self.squareHeight(),scaledBombermanPix)
                 else:
                     self.drawSquare(painter,
                                     rect.left() + (j-viewXFirst) * self.squareWidth(),
