@@ -650,7 +650,9 @@ class Board(QtGui.QFrame):
         self.score = newScore
         statusBar.scoreLabel.setText('Score: ' + str(newScore))
 
-    # assume the list "killedEnemies" has the following format:
+    ## Method to calculate the score the user gets when a bomb detonates
+    # @param killedEnemies
+    # Assume the list "killedEnemies" has the following format:
     # [[enemies at distance = 1 from bomb], [enemies at distance = 2 from bomb], ... , [enemies at distance = range from bomb]]
     # e.g.: [[Tile.Balloom, Tile.Oneal], [], [Tile.Doll]] means when the bomb exploded, there was a Balloom and an Oneal at distance 1,
     # nothing at distance 2, and a Doll at distance 3 from the bomb.
