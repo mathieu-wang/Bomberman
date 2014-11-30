@@ -160,6 +160,7 @@ class Bomberman(object):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
+        print self.listTypeEnemies
         for i in range(8):
             for j in range(self.listTypeEnemies[i]):
                 while True:
@@ -182,15 +183,15 @@ class Bomberman(object):
 
     def setChaos(self):
 
-        self.clearEnemies()
-        self.setLevelInfo()
-
         highestIndex = 0
+        self.setLevelInfo()
         for x in xrange(len(self.listTypeEnemies)):
             if self.listTypeEnemies[x] != 0:
                 highestIndex = x
         if highestIndex != 7:
             highestIndex += 1
+        self.clearEnemies()
+
         self.listTypeEnemies[highestIndex] = 8
 
         self.setEnemies()
