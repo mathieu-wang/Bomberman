@@ -180,15 +180,13 @@ class Bomberman(object):
     def setChaos(self):
 
         highestIndex = 0
-        print self.listTypeEnemies
+        self.setLevelInfo()
         for x in xrange(len(self.listTypeEnemies)):
             if self.listTypeEnemies[x] != 0:
                 highestIndex = x
         if highestIndex != 7:
             highestIndex += 1
-        print highestIndex
         self.clearEnemies()
-        # self.setLevelInfo()
 
         self.listTypeEnemies[highestIndex] = 8
 
