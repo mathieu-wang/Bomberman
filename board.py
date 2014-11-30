@@ -1,5 +1,6 @@
 from PyQt4 import QtCore, QtGui
 import random
+import constant
 
 from tile import Tile
 from bomberman import Bomberman
@@ -29,26 +30,6 @@ class Board(QtGui.QFrame):
     # setBombermanLivesSignal = QtCore.pyqtSignal(int)
     # resetTimerSignal = QtCore.pyqtSignal()
 
-    BOARD_WIDTH = 31
-    BOARD_HEIGHT = 13
-    VIEW_WIDTH = 13
-    VIEW_HEIGHT = 13
-
-    TIME_GLOBAL = 100
-    TIME_FAST = 200
-    TIME_NORMAL = 300
-    TIME_SLOW = 600
-    TIME_SLOWEST = 800
-
-    SPEED_FAST = 4
-    SPEED_NORMAL = 3
-    SPEED_SLOW = 2
-    SPEED_SLOWEST = 1
-
-    TIME_BOMB = 3000
-    TIME_FLASH = 700
-    PERCENT_BRICK = 0.12
-
     def __init__(self, bomberman, parent=None):
         super(Board, self).__init__(parent)
         self.bomberman = bomberman # Initialize bomberman attributes
@@ -66,13 +47,13 @@ class Board(QtGui.QFrame):
         self.globalTimer.timeout.connect(lambda : self.bombLoop())
 
         self.fastTimer = QtCore.QTimer(self)
-        self.fastTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_FAST))
+        self.fastTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_FAST))
         self.normalTimer = QtCore.QTimer(self)
-        self.normalTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_NORMAL))
+        self.normalTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_NORMAL))
         self.slowTimer = QtCore.QTimer(self)
-        self.slowTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_SLOW))
+        self.slowTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_SLOW))
         self.slowestTimer = QtCore.QTimer(self)
-        self.slowestTimer.timeout.connect(lambda : self.moveEnemy(Board.SPEED_SLOWEST))
+        self.slowestTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_SLOWEST))
 
         if not self.bomberman.isInitialized: 
             self.initLevel()
@@ -86,11 +67,11 @@ class Board(QtGui.QFrame):
 
         self.isPaused = False
 
-        self.globalTimer.start(Board.TIME_GLOBAL)
-        self.fastTimer.start(Board.TIME_FAST)
-        self.normalTimer.start(Board.TIME_NORMAL)
-        self.slowTimer.start(Board.TIME_SLOW)
-        self.slowestTimer.start(Board.TIME_SLOWEST)
+        self.globalTimer.start(constant.TIME_GLOBAL)
+        self.fastTimer.start(constant.TIME_FAST)
+        self.normalTimer.start(constant.TIME_NORMAL)
+        self.slowTimer.start(constant.TIME_SLOW)
+        self.slowestTimer.start(constant.TIME_SLOWEST)
 
     def pause(self):
 
@@ -149,17 +130,17 @@ class Board(QtGui.QFrame):
         self.bomberman.board[y][x].pop()
 
     def squareWidth(self):
-        return self.contentsRect().width() / Board.VIEW_WIDTH
+        return self.contentsRect().width() / constant.VIEW_WIDTH
 
     def squareHeight(self):
-        return self.contentsRect().height() / Board.VIEW_HEIGHT
+        return self.contentsRect().height() / constant.VIEW_HEIGHT
 
     def bombLoop(self):
         for i in xrange(len(self.bomberman.bombQueue)):
             if (self.bomberman.bombQueue[i][2] <= 0):
                 self.detonateBomb()
             else:
-                self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - Board.TIME_GLOBAL)
+                self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - constant.TIME_GLOBAL)
 
     def paintEvent(self, event):
 
@@ -177,11 +158,11 @@ class Board(QtGui.QFrame):
         painter = QtGui.QPainter(self)
         rect = self.contentsRect()
 
-        boardTop = rect.bottom() - Board.VIEW_HEIGHT * self.squareHeight()
+        boardTop = rect.bottom() - constant.VIEW_HEIGHT * self.squareHeight()
 
-        for i in range(Board.BOARD_HEIGHT):
+        for i in range(constant.BOARD_HEIGHT):
             for j in range(viewXFirst,viewXLast+1):
-                shape = self.tileAt(j, Board.BOARD_HEIGHT - i - 1)
+                shape = self.tileAt(j, constant.BOARD_HEIGHT - i - 1)
 
                 if(shape == Tile.Exit):
                     exitPix = QtGui.QPixmap("./images/exit.png")
@@ -291,7 +272,7 @@ class Board(QtGui.QFrame):
             self.tryMove(self.bomberman.curX-1,self.bomberman.curY)
 
         elif key == QtCore.Qt.Key_Right:
-            if self.bomberman.curX == Board.BOARD_WIDTH - 1:
+            if self.bomberman.curX == constant.BOARD_WIDTH - 1:
                 return
             self.tryMove(self.bomberman.curX+1,self.bomberman.curY)
 
@@ -301,7 +282,7 @@ class Board(QtGui.QFrame):
             self.tryMove(self.bomberman.curX,self.bomberman.curY-1)
 
         elif key == QtCore.Qt.Key_Up:
-            if self.bomberman.curY == Board.BOARD_HEIGHT-1:
+            if self.bomberman.curY == constant.BOARD_HEIGHT-1:
                 return
             self.tryMove(self.bomberman.curX,self.bomberman.curY+1)
 
@@ -501,7 +482,7 @@ class Board(QtGui.QFrame):
         # NORTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y + i
-            if (modY < Board.BOARD_HEIGHT-1):
+            if (modY < constant.BOARD_HEIGHT-1):
                 northTile = self.tileAt(x,modY)
                 if (northTile == Tile.Concrete or northTile == Tile.Bomb):
                     break
@@ -519,7 +500,7 @@ class Board(QtGui.QFrame):
         # SOUTH
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modY = y - i
-            if (modY < Board.BOARD_HEIGHT-1):
+            if (modY < constant.BOARD_HEIGHT-1):
                 southTile = self.tileAt(x,modY)
                 if (southTile == Tile.Concrete or southTile == Tile.Bomb):
                     break
@@ -537,7 +518,7 @@ class Board(QtGui.QFrame):
         # EAST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x + i
-            if (modX < Board.BOARD_WIDTH-1):
+            if (modX < constant.BOARD_WIDTH-1):
                 eastTile = self.tileAt(modX,y)
                 if (eastTile == Tile.Concrete or eastTile == Tile.Bomb):
                     break
@@ -555,7 +536,7 @@ class Board(QtGui.QFrame):
         # WEST
         for i in range(1,self.bomberman.rangeOfBombs+1):
             modX = x - i
-            if (modX < Board.BOARD_WIDTH-1):
+            if (modX < constant.BOARD_WIDTH-1):
                 westTile = self.tileAt(modX,y)
                 if (westTile == Tile.Concrete or westTile == Tile.Bomb):
                     break

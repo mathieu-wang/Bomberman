@@ -1,5 +1,5 @@
 import random
-import global_constants
+import constant
 
 from tile import Tile
 from enemy import Enemy
@@ -95,21 +95,23 @@ class Bomberman(object):
         self.board[y][x].pop()
 
     def setBomb(self):
-        self.bombQueue.append((self.curX, self.curY, global_constants.TIME_BOMB))
+        self.bombQueue.append((self.curX, self.curY, constant.TIME_BOMB))
         tempTile = self.tileAt(self.curX, self.curY)
         self.popTileAt(self.curX, self.curY)
         self.setTileAt(self.curX, self.curY, Tile.Bomb)
         self.setTileAt(self.curX, self.curY, tempTile)
 
+    # LEVEL SETUP
+
     def clearBoard(self):
-        self.board = [[Tile() for x in range(global_constants.BOARD_WIDTH)] for y in range(global_constants.BOARD_HEIGHT)]
+        self.board = [[Tile() for x in range(constant.BOARD_WIDTH)] for y in range(constant.BOARD_HEIGHT)]
 
     def clearBombs(self):
         self.bombQueue = []
 
     def setConcrete(self):
-        for y in range(global_constants.BOARD_HEIGHT):
-            for x in range(global_constants.BOARD_WIDTH):
+        for y in range(constant.BOARD_HEIGHT):
+            for x in range(constant.BOARD_WIDTH):
                 if x == 0 or x == 30 or y == 0 or y == 12:
                     self.setTileAt(x,y,Tile.Concrete)
                 elif x % 2 == 0 and y % 2 == 0:
@@ -117,10 +119,10 @@ class Bomberman(object):
 
     def setExit(self):
         while True:
-            tempX = random.randint(1, global_constants.BOARD_WIDTH) - 1
-            tempY = random.randint(1, global_constants.BOARD_HEIGHT) - 1
+            tempX = random.randint(1, constant.BOARD_WIDTH) - 1
+            tempY = random.randint(1, constant.BOARD_HEIGHT) - 1
 
-            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == global_constants.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == global_constants.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == global_constants.BOARD_HEIGHT - 2)):
+            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == constant.BOARD_HEIGHT - 2)):
                 self.setTileAt(tempX, tempY, Tile.Exit)
                 self.setTileAt(tempX, tempY, Tile.Brick)
                 self.exitCoord[0] = tempX
@@ -129,10 +131,10 @@ class Bomberman(object):
 
     def setPowerup(self):
         while True:
-            tempX = random.randint(1, global_constants.BOARD_WIDTH) - 1
-            tempY = random.randint(1, global_constants.BOARD_HEIGHT) - 1
+            tempX = random.randint(1, constant.BOARD_WIDTH) - 1
+            tempY = random.randint(1, constant.BOARD_HEIGHT) - 1
 
-            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == global_constants.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == global_constants.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == global_constants.BOARD_HEIGHT - 2)):
+            if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == constant.BOARD_HEIGHT - 2)):
                 self.setTileAt(tempX, tempY, Tile.Powerup)
                 self.setTileAt(tempX, tempY, Tile.Brick)
                 self.powerUpCoord[0] = tempX
@@ -140,10 +142,10 @@ class Bomberman(object):
                 break
 
     def setBrick(self):
-        for y in range(global_constants.BOARD_HEIGHT):
-            for x in range (global_constants.BOARD_WIDTH):
-                if (self.tileAt(x, y) == Tile.Empty and not (x == 1 and y == global_constants.BOARD_HEIGHT - 2) and not (x == 1 and y == global_constants.BOARD_HEIGHT - 3) and not (x == 2 and y == global_constants.BOARD_HEIGHT - 2)):
-                    if (random.random() <= global_constants.PERCENT_BRICK):
+        for y in range(constant.BOARD_HEIGHT):
+            for x in range (constant.BOARD_WIDTH):
+                if (self.tileAt(x, y) == Tile.Empty and not (x == 1 and y == constant.BOARD_HEIGHT - 2) and not (x == 1 and y == constant.BOARD_HEIGHT - 3) and not (x == 2 and y == constant.BOARD_HEIGHT - 2)):
+                    if (random.random() <= constant.PERCENT_BRICK):
                         self.setTileAt(x, y, Tile.Brick)
 
     def setBomberman(self):
@@ -155,10 +157,10 @@ class Bomberman(object):
         for i in range(8):
             for j in range(self.listTypeEnemies[i]):
                 while True:
-                    tempX = random.randint(1, global_constants.BOARD_WIDTH) - 1
-                    tempY = random.randint(1, global_constants.BOARD_HEIGHT) - 1
+                    tempX = random.randint(1, constant.BOARD_WIDTH) - 1
+                    tempY = random.randint(1, constant.BOARD_HEIGHT) - 1
 
-                    if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == global_constants.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == global_constants.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == global_constants.BOARD_HEIGHT - 2)):
+                    if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == constant.BOARD_HEIGHT - 2)):
                         self.setTileAt(tempX, tempY, i + 8)
                         tempList = [tempX, tempY, random.randint(1,4), i + 8]
                         self.listEnemies.append(tempList)
