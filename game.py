@@ -196,15 +196,20 @@ class Game(QtGui.QMainWindow):
         self.statusBar.livesLabel.setText('Lives: ' + str(self.board_widget.bomberman.lives))
         self.board_widget.score = 0
 
-    ###
     def gameOver(self):
-        # self.updateScoreToDb()
+        self.update_score_in_db()
+        self.update_games_played_in_db()
+        self.board_widget.score = 0
         self.show_main_menu()
 
     ###
     def updateScoreToDb(self):
         db = Database()
         db.updateUserScore(self.login_widget.loggedUsername, self.board_widget.score)
+
+    def update_games_played_in_db(self):
+        db = Database()
+        db.updateNumGamesPlayed(self.login_widget.loggedUsername)
 
 def main():
 
