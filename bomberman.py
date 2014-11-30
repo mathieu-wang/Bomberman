@@ -64,7 +64,7 @@ class Bomberman(object):
         self.setConcrete()
         self.setExit()
         self.setPowerup()
-        self.setBrick()
+        # self.setBrick()
         self.setEnemies()
         self.setBomberman()
 

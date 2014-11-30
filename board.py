@@ -77,11 +77,8 @@ class Board(QtGui.QFrame):
 
         self.isPaused = True
 
-        self.globalTimer.stop()
-        self.fastTimer.stop()
-        self.normalTimer.stop()
-        self.slowTimer.stop()
-        self.slowestTimer.stop()
+        self.stopTimers()
+
         self.pauseGameSignal.emit() # Send signal to show pauseMenu
 
         self.update()
@@ -92,11 +89,7 @@ class Board(QtGui.QFrame):
             return
 
         # Stop timer
-        self.globalTimer.stop()
-        self.fastTimer.stop()
-        self.normalTimer.stop()
-        self.slowTimer.stop()
-        self.slowestTimer.stop()
+        self.stopTimers()
 
         # Reset powerups
         self.bomberman.lives -= 1
@@ -346,7 +339,7 @@ class Board(QtGui.QFrame):
 
         # Limit bomberman move speed
         self.bombermanTriggerCanMove()
-        QtCore.QTimer.singleShot(self.bomberman.speed, self.bombermanTriggerCanMove)
+        self.globalTimer.singleShot(self.bomberman.speed, self.bombermanTriggerCanMove)
 
         return True
 
@@ -590,10 +583,21 @@ class Board(QtGui.QFrame):
             winningMessage = '''Congratulations!!! You won the game!!!'''
 
             return
+
+        # Stop the game
+        self.stopTimers()
+
         self.bomberman.level += 1
         self.initBoard()
         self.initLevel()
         self.start()
+
+    def stopTimers(self):
+        self.globalTimer.stop()
+        self.fastTimer.stop()
+        self.normalTimer.stop()
+        self.slowTimer.stop()
+        self.slowestTimer.stop()
 
     # update score in status bar
     # def updateScore(self, killedEnemies):
