@@ -66,6 +66,7 @@ class Board(QtGui.QFrame):
     def start(self):
 
         self.isPaused = False
+        self.bomberman.canMove = True
 
         self.globalTimer.start(constant.TIME_GLOBAL)
         self.fastTimer.start(constant.TIME_FAST)
@@ -88,7 +89,7 @@ class Board(QtGui.QFrame):
         if self.bomberman.invincible:
             return
 
-        # Stop timer
+        # Stop timers
         self.stopTimers()
 
         # Reset powerups
@@ -105,8 +106,8 @@ class Board(QtGui.QFrame):
         deathMessage = '''You lost a life!'''
         QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
 
-        self.initBoard()
-        self.start()
+        # IMPORTANT sleep a few millisecond to avoid bomberman timer overlap
+        QtCore.QTimer.singleShot(self.bomberman.speed, self.restartSameLevel)
 
     def tileAt(self, x, y):
         return self.bomberman.board[y][x].peek()
@@ -255,11 +256,11 @@ class Board(QtGui.QFrame):
 
         key = event.key()
 
-        if key == QtCore.Qt.Key_P:
-            self.pause()
+        if self.isPaused:
             return
 
-        if self.isPaused:
+        if key == QtCore.Qt.Key_P:
+            self.pause()
             return
 
         elif key == QtCore.Qt.Key_Left:
@@ -301,7 +302,9 @@ class Board(QtGui.QFrame):
             super(Board, self).keyPressEvent(event)
 
     def tryMove(self, newX, newY):
-        if (not self.bomberman.canMove):
+        if (self.isPaused):
+            return False
+        elif (not self.bomberman.canMove):
             return False
         elif (self.bomberman.wallPass and self.bomberman.bombPass):
             if (self.tileAt(newX,newY) == Tile.Concrete):
@@ -314,7 +317,7 @@ class Board(QtGui.QFrame):
                 return False
         elif (self.tileAt(newX,newY) == Tile.Concrete or self.tileAt(newX,newY) == Tile.Brick or self.tileAt(newX,newY) == Tile.Bomb):
             return False
-        elif Tile.isEnemy(self.tileAt(self.bomberman.curX,self.bomberman.curY)):
+        elif Tile.isEnemy(self.tileAt(newX,newY)):
             self.death()
             return False
 
@@ -333,6 +336,7 @@ class Board(QtGui.QFrame):
         # Check if new pos is exit
         if (self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit):
             self.exit()
+            return # IMPORTANT
 
         # Set bomberman to new pos
         self.setTileAt(self.bomberman.curX,self.bomberman.curY,Tile.Bomberman)
@@ -502,9 +506,11 @@ class Board(QtGui.QFrame):
                 if (Tile.isEnemy(northTile)):
                     killedEnemies[i-1].append(northTile)
                     self.killEnemy(x, modY)
-                    break
                 if (Tile.isBomberman(northTile) and not self.bomberman.invincible):
                     self.death()
+                    break
+                if (Tile.isPowerup(northTile) or Tile.isExit(northTile)):
+                    self.bomberman.setChaos()
                     break
 
         # SOUTH
@@ -521,9 +527,12 @@ class Board(QtGui.QFrame):
                 if (Tile.isEnemy(southTile)):
                     killedEnemies[i-1].append(southTile)
                     self.killEnemy(x, modY)
-                    break
                 if (Tile.isBomberman(southTile) and not self.bomberman.invincible):
                     self.death()
+                    break
+                if (Tile.isPowerup(southTile) or Tile.isExit(southTile)):
+                    self.bomberman.setChaos()
+                    break
 
         # EAST
         for i in range(1,self.bomberman.rangeOfBombs+1):
@@ -539,9 +548,12 @@ class Board(QtGui.QFrame):
                 if (Tile.isEnemy(eastTile)):
                     killedEnemies[i-1].append(eastTile)
                     self.killEnemy(modX, y)
-                    break
                 if (Tile.isBomberman(eastTile) and not self.bomberman.invincible):
                     self.death()
+                    break
+                if (Tile.isPowerup(eastTile) or Tile.isExit(eastTile)):
+                    self.bomberman.setChaos()
+                    break
 
         # WEST
         for i in range(1,self.bomberman.rangeOfBombs+1):
@@ -557,9 +569,11 @@ class Board(QtGui.QFrame):
                 if (Tile.isEnemy(westTile)):
                     killedEnemies[i-1].append(westTile)
                     self.killEnemy(modX, y)
-                    break
                 if (Tile.isBomberman(westTile) and not self.bomberman.invincible):
                     self.death()
+                if (Tile.isPowerup(westTile) or Tile.isExit(westTile)):
+                    self.bomberman.setChaos()
+                    break
 
         # self.startFlash(flashList)
         # self.endFlash(flashList)
@@ -587,17 +601,28 @@ class Board(QtGui.QFrame):
         # Stop the game
         self.stopTimers()
 
-        self.bomberman.level += 1
-        self.initBoard()
-        self.initLevel()
-        self.start()
+        # IMPORTANT sleep a few millisecond to avoid bomberman timer overlap
+        QtCore.QTimer.singleShot(self.bomberman.speed, self.restartNextLevel)
 
     def stopTimers(self):
+        self.isPaused = True
         self.globalTimer.stop()
         self.fastTimer.stop()
         self.normalTimer.stop()
         self.slowTimer.stop()
         self.slowestTimer.stop()
+
+    def restartNextLevel(self):
+        # Increment level
+        self.bomberman.level += 1
+        self.initBoard()
+        self.initLevel()
+        self.start()
+
+    def restartSameLevel(self):
+        self.initBoard()
+        self.initLevel()
+        self.start()       
 
     # update score in status bar
     # def updateScore(self, killedEnemies):

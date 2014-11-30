@@ -182,8 +182,8 @@ class Bomberman(object):
         self.setLevelInfo()
 
         highestIndex = 0
-        for x in xrange(self.listTypeEnemies):
-            if listTypeEnemies[x] != 0:
+        for x in xrange(len(self.listTypeEnemies)):
+            if self.listTypeEnemies[x] != 0:
                 highestIndex = x
         if highestIndex != 7:
             highestIndex += 1

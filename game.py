@@ -117,8 +117,6 @@ class Game(QtGui.QMainWindow):
 
     def show_pause_menu(self):
 
-        self.board_widget.pause()
-
         self.coundownTimer.stop()
 
         self.pauseMenuWidget = PauseMenu(self)
