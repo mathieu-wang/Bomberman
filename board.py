@@ -13,22 +13,21 @@ class StatusBar(QtGui.QDockWidget):
         self.livesLabel.setFixedWidth(100)
         self.livesLabel.move(50, 0)
 
-        self.timeLeft = 200
-        self.timesLabel = QtGui.QLabel('Time Left: ' + str(self.timeLeft), self)
+        self.timesLabel = QtGui.QLabel('Time Left: ' + str(parent.bomberman.timeLeft), self)
         self.timesLabel.setFixedWidth(200)
         self.timesLabel.move(200, 0)
 
-        # self.scoreLabel = QtGui.QLabel('Score: ' + str(parent.score), self)
-        # self.scoreLabel.setFixedWidth(200)
-        # self.scoreLabel.move(300, 0)
+        self.scoreLabel = QtGui.QLabel('Score: ' + str(parent.bomberman.score), self)
+        self.scoreLabel.setFixedWidth(200)
+        self.scoreLabel.move(300, 0)
 
 class Board(QtGui.QFrame):
 
     pauseGameSignal = QtCore.pyqtSignal()
     gameOverSignal = QtCore.pyqtSignal()
 
-    # setBombermanLivesSignal = QtCore.pyqtSignal(int)
-    # resetTimerSignal = QtCore.pyqtSignal()
+    bombermanDeathSignal = QtCore.pyqtSignal()
+    resetTimerSignal = QtCore.pyqtSignal()
 
     def __init__(self, bomberman, parent=None):
         super(Board, self).__init__(parent)
@@ -40,6 +39,10 @@ class Board(QtGui.QFrame):
 
         print "Username: " + str(self.bomberman.username)
         print "Board level: " + str(self.bomberman.level)
+
+        self.statusBar = StatusBar(self)
+        self.statusBar.setFixedWidth(468)
+        self.statusBar.resize(100, 468)
 
         self.isPaused = True
 
@@ -55,7 +58,11 @@ class Board(QtGui.QFrame):
         self.slowestTimer = QtCore.QTimer(self)
         self.slowestTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_SLOWEST))
 
-        if not self.bomberman.isInitialized: 
+        self.coundownTimer = QtCore.QTimer()
+        self.coundownTimer.timeout.connect(self.timeout_event)
+
+        if not self.bomberman.isInitialized:
+            print "BBM NOT INITIALIZED"
             self.initLevel()
 
     def initLevel(self):
@@ -73,6 +80,8 @@ class Board(QtGui.QFrame):
         self.normalTimer.start(constant.TIME_NORMAL)
         self.slowTimer.start(constant.TIME_SLOW)
         self.slowestTimer.start(constant.TIME_SLOWEST)
+        self.coundownTimer.start(constant.TIME_COUNTDOWN)
+
 
     def pause(self):
 
@@ -80,7 +89,7 @@ class Board(QtGui.QFrame):
 
         self.stopTimers()
 
-        self.pauseGameSignal.emit() # Send signal to show pauseMenu
+        self.pauseGameSignal.emit()  # Send signal to show pauseMenu
 
         self.update()
 
@@ -94,14 +103,23 @@ class Board(QtGui.QFrame):
 
         # Reset powerups
         self.bomberman.lives -= 1
+
         self.bomberman.hasDetonator = False
         self.bomberman.bombPass = False
         self.bomberman.wallPass = False
         self.bomberman.flamePass = False
 
         if(self.bomberman.lives == 0):
-            self.gameOverSignal.emit() # Send signal for game over
+            self.gameOverSignal.emit()  # Send signal for game over
             return
+
+        print "BOMBERMAN LIVES: " + str(self.bomberman.lives)
+        if (self.bomberman.lives == 1):
+            print "ONE LIFE"
+            self.statusBar.livesLabel.setText('ONE LIFE')
+        self.statusBar.livesLabel.setText('SET LIVES: ' + str(self.bomberman.lives))
+        print "DECR LIVES"
+        self.bombermanDeathSignal.emit()
 
         deathMessage = '''You lost a life!'''
         QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
@@ -168,69 +186,62 @@ class Board(QtGui.QFrame):
                 shape = self.tileAt(j, constant.BOARD_HEIGHT - i - 1)
 
                 if(shape == Tile.Exit):
-                    exitPix = QtGui.QPixmap("./images/exit.png")
-                    scaledExitPix = QtGui.QPixmap.scaled(exitPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledExitPix)
+                    self.drawImages(painter, 'Exit', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Brick):
-                    brickPix = QtGui.QPixmap("./images/brick.png")
-                    scaledBrickPix = QtGui.QPixmap.scaled(brickPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledBrickPix)
+                    self.drawImages(painter, 'Brick', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Balloom):
-                    balloomPix = QtGui.QPixmap("./images/Balloom.png")
-                    scaledBalloomPix = QtGui.QPixmap.scaled(balloomPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledBalloomPix)
+                    self.drawImages(painter, 'Balloom', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Bomb):
-                    bombPix = QtGui.QPixmap("./images/bomb.png")
-                    scaledBombPix = QtGui.QPixmap.scaled(bombPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledBombPix)
+                    self.drawImages(painter, 'Bomb', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Concrete):
-                    concretePix = QtGui.QPixmap("./images/concrete.png")
-                    scaledConcretePix = QtGui.QPixmap.scaled(concretePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledConcretePix)
+                    self.drawImages(painter, 'Concrete', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Oneal):
-                    OnealPix = QtGui.QPixmap("./images/Oneal.png")
-                    scaledOnealPix = QtGui.QPixmap.scaled(OnealPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledOnealPix)
+                    self.drawImages(painter, 'Oneal', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Doll):
-                    DollPix = QtGui.QPixmap("./images/Doll.png")
-                    scaledDollPix = QtGui.QPixmap.scaled(DollPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledDollPix)
+                    self.drawImages(painter, 'Doll', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Minvo):
-                    MinvoPix = QtGui.QPixmap("./images/Minvo.png")
-                    scaledMinvoPix = QtGui.QPixmap.scaled(MinvoPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledMinvoPix)
+                    self.drawImages(painter, 'Minvo', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Kondoria):
-                    KondoriaPix = QtGui.QPixmap("./images/Kondoria.png")
-                    scaledKondoriaPix = QtGui.QPixmap.scaled(KondoriaPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledKondoriaPix)
+                    self.drawImages(painter, 'Kondoria', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Ovapi):
-                    OvapiPix = QtGui.QPixmap("./images/Ovapi.png")
-                    scaledOvapiPix = QtGui.QPixmap.scaled(OvapiPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledOvapiPix)
+                    self.drawImages(painter, 'Ovapi', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Pass):
-                    PassPix = QtGui.QPixmap("./images/Pass.png")
-                    scaledPassPix = QtGui.QPixmap.scaled(PassPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledPassPix)
+                    self.drawImages(painter, 'Pass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
                 elif(shape == Tile.Pontan):
-                    PontanPix = QtGui.QPixmap("./images/Pontan.png")
-                    scaledPontanPix = QtGui.QPixmap.scaled(PontanPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-                    painter.drawPixmap(rect.left() + (j-viewXFirst) * self.squareWidth(),
-                                       boardTop + i * self.squareHeight(),scaledPontanPix)
+                    self.drawImages(painter, 'Pontan', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                elif(shape == Tile.Bomberman):
+                    self.drawImages(painter, 'Bomberman', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                elif(shape == Tile.Powerup):
+                    if (self.bomberman.powerUp == 1):
+                        self.drawImages(painter, 'Bombs', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 2):
+                        self.drawImages(painter, 'Flames', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 3):
+                        self.drawImages(painter, 'Speed', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 4):
+                        self.drawImages(painter, 'Wallpass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 5):
+                        self.drawImages(painter, 'Detonator', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 6):
+                        self.drawImages(painter, 'Bombpass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 7):
+                        self.drawImages(painter, 'Flamepass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                    elif (self.bomberman.powerUp == 8):
+                        self.drawImages(painter, 'Mystery', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
                 else:
                     self.drawSquare(painter,
                                     rect.left() + (j-viewXFirst) * self.squareWidth(),
                                     boardTop + i * self.squareHeight(), shape)
+
+    def drawImages(self, painter, shape, x, y, powerup):
+        if (powerup != 0):
+            powerUpPix = QtGui.QPixmap('./images/' + shape + '.png')
+            scaledPowerUpPix = QtGui.QPixmap.scaled(powerUpPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+            painter.drawPixmap( x, y, scaledPowerUpPix)
+        else:
+            shapePix = QtGui.QPixmap('./images/' + shape + '.png')
+            scaledShapePix = QtGui.QPixmap.scaled(shapePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+            painter.drawPixmap( x, y, scaledShapePix)
 
     def drawSquare(self, painter, x, y, shape):
 
@@ -617,6 +628,7 @@ class Board(QtGui.QFrame):
         self.normalTimer.stop()
         self.slowTimer.stop()
         self.slowestTimer.stop()
+        self.coundownTimer.stop()
 
     def restartNextLevel(self):
         # Increment level
@@ -631,29 +643,35 @@ class Board(QtGui.QFrame):
         self.start()       
 
     # update score in status bar
-    # def updateScore(self, killedEnemies):
-    #     statusBar = self.findChild(QtGui.QDockWidget)
-    #     newScore = self.score + self.getScoreOfKilledEnemies(killedEnemies)
-    #     self.score = newScore
-    #     statusBar.scoreLabel.setText('Score: ' + str(newScore))
+    def updateScore(self, killedEnemies):
+        statusBar = self.findChild(QtGui.QDockWidget)
+        newScore = self.score + self.getScoreOfKilledEnemies(killedEnemies)
+        self.score = newScore
+        statusBar.scoreLabel.setText('Score: ' + str(newScore))
 
-    # assume the list "killedEnemies" has the following format:
+    ## Method to calculate the score the user gets when a bomb detonates
+    # @param killedEnemies
+    # Assume the list "killedEnemies" has the following format:
     # [[enemies at distance = 1 from bomb], [enemies at distance = 2 from bomb], ... , [enemies at distance = range from bomb]]
     # e.g.: [[Tile.Balloom, Tile.Oneal], [], [Tile.Doll]] means when the bomb exploded, there was a Balloom and an Oneal at distance 1,
     # nothing at distance 2, and a Doll at distance 3 from the bomb.
-    # def getScoreOfKilledEnemies(self, killedEnemies):
-    # def getScoreOfKilledEnemies(self, killedEnemies):
-    #     score = 0
-    #     multiplier = 1
+    def getScoreOfKilledEnemies(self, killedEnemies):
+        score = 0
+        multiplier = 1
 
-    #     for dist in range(len(killedEnemies)):
-    #         list = killedEnemies[dist]
-    #         sortedList = sorted(list)
-    #         for enemy in sortedList:
-    #             score += Enemy.getEnemy(enemy)['points'] * multiplier
-    #             multiplier *= 2
+        for dist in range(len(killedEnemies)):
+            list = killedEnemies[dist]
+            sortedList = sorted(list)
+            for enemy in sortedList:
+                score += Enemy.getEnemy(enemy)['points'] * multiplier
+                multiplier *= 2
 
-    #     return score
+        return score
 
     def saveBomberman(self):
         return self.bomberman
+
+    def timeout_event(self):
+        self.bomberman.timeLeft -= 1
+        print str(self.bomberman.lives)
+        self.statusBar.timesLabel.setText('Time Left: ' + str(self.bomberman.timeLeft))

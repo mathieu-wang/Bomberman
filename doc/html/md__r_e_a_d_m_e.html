@@ -24,7 +24,6 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -78,16 +77,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Team 12 Bomberman </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Dependencies:</p><ul>
+<div class="textblock"><p>Python package dependencies:</p><ul>
 <li>SIP</li>
-<li>Qt</li>
+<li>Qt4</li>
 <li>PyQt4</li>
+<li>dataset</li>
 </ul>
-<p>To execute the unit tests: python -m unittest discover </p>
+<h1>How to run</h1>
+<p>``` python game.py ```</p>
+<h1>Installation</h1>
+<h2>Mac OS X</h2>
+<p>Install the <a href="http://brew.sh/">brew package manager</a> if not already present ``` ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ``` Install Python 2.7 using brew if not already present (the native Apple Python is not compatible) ``` brew install python ``` Add the brew PYTHONPATH to your environment variables by adding the following line to .bash_profile ``` export PATH=/usr/local/bin:$PATH ``` Install the pip package manager if not already present ``` sudo easy_install pip ``` Install qt ``` brew install Qt ``` Install SIP ``` brew install sip ``` Install PyQt ``` brew install pyqt ``` Install Dataset ``` pip install dataset ```</p>
+<h2>Ubuntu</h2>
+<p>Install SIP and PyQt using aptitude ``` sudo apt-get install python-sip python-qt4 ``` Install the pip package manager if not already present ``` sudo apt-get install python-pip ``` Install Dataset ``` pip install dataset ```</p>
+<h3>Run on Ubuntu 12.04 without installation using virtualenv</h3>
+<p>Inside the root directory, activate the python virtual environment: ``` source venv/bin/activate ```</p>
+<p>Now <code>(venv)</code> should appear in front of your prompt. To start the game, run: ``` python game.py ```</p>
+<h3>Unit tests</h3>
+<p>Inside the root directory run: ``` python -m unittest discover ``` </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 9 2014 10:52:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 30 2014 17:04:10 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

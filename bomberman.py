@@ -40,13 +40,17 @@ class Bomberman(object):
         self.flamePass = False #
         self.invincible = False #
 
+        # Status bar info
+        self.timeLeft = 200
+        self.score = 0
+
     def setNewLevel(self):
 
         self.curX = 1
         self.curY = 11
         self.board = []
         self.bombQueue = []
-        self.lives = 3
+        # self.lives = 3
         self.speed = 300
         self.canMove = True
 
@@ -192,5 +196,3 @@ class Bomberman(object):
 
         self.setEnemies()
 
-
-    
