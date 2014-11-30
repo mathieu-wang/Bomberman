@@ -4,8 +4,10 @@ import sys
 from PyQt4 import QtGui
 
 from board import Board
+from bomberman import Bomberman
 from tile import Tile
 from game import Game
+import constant
 
 
 class TestBoard(unittest.TestCase):
@@ -18,7 +20,8 @@ class TestBoard(unittest.TestCase):
 
     def setUp(self):
         self.game = Game()
-        self.board = Board(self.game)
+        self.bomberman = Bomberman("testUser", 1)
+        self.board = Board(self.bomberman, self.game)
         self.board.start()
 
     def tearDown(self):
@@ -30,11 +33,11 @@ class TestBoard(unittest.TestCase):
         app.quit()
 
     def test_initialize_board_with_concrete_walls(self):
-        self.assertEqual(self.board.board[0][0].peek(), Tile.Concrete, "Corner tile should be Concrete, board not initialized properly")
+        self.assertEqual(self.board.bomberman.board[0][0].peek(), Tile.Concrete, "Corner tile should be Concrete, board not initialized properly")
 
     def test_initialize_board_with_exactly_one_bomberman(self):
         number_of_bomberman_on_the_board = 0
-        board = self.board.board
+        board = self.board.bomberman.board
         for i in range(len(board)):
             for j in range(len(board[i])):
                 if board[i][j].peek() == Tile.Bomberman:
@@ -43,41 +46,41 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(number_of_bomberman_on_the_board, 1, "Did not see exactly one bomberman on the board")
 
     def test_setTileAt(self):
-        self.assertEqual(self.board.board[1][1].peek(), Tile.Empty)
+        self.assertEqual(self.board.bomberman.board[1][1].peek(), Tile.Empty)
         self.board.setTileAt(1, 1, Tile.Brick)
-        self.assertEqual(self.board.board[1][1].peek(), Tile.Brick)
+        self.assertEqual(self.board.bomberman.board[1][1].peek(), Tile.Brick)
 
     def test_tileAt(self):
-        for i in range(len(self.board.board)):
-            for j in range(len(self.board.board[i])):
-                self.assertEqual(self.board.tileAt(j, i), self.board.board[i][j].peek())
+        for i in range(len(self.board.bomberman.board)):
+            for j in range(len(self.board.bomberman.board[i])):
+                self.assertEqual(self.board.tileAt(j, i), self.board.bomberman.board[i][j].peek())
 
     def test_setBomberman(self):
         self.assertNotEqual(self.board.tileAt(1, 2), Tile.Bomberman)
-        self.board.curX = 1
-        self.board.curY = 2
-        self.board.setBomberman()
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 2
+        self.board.bomberman.setBomberman()
         self.assertEqual(self.board.tileAt(1, 2), Tile.Bomberman)
 
     def test_setBomb(self):
         self.assertNotEqual(self.board.tileAt(1, 2), Tile.Bomb)
-        self.board.curX = 1
-        self.board.curY = 2
-        self.board.setBomberman() #bomberman should be here already
-        self.board.setBomb()
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 2
+        self.board.bomberman.setBomberman() #bomberman should be here already
+        self.board.bomberman.setBomb()
 
-        self.assertEqual(len(self.board.bombQueue), 1, "Bomb did not get enqueued")
-        self.assertEqual(self.board.bombQueue.pop(), (1, 2), "Bomb's coordinates are wrong")
+        self.assertEqual(len(self.board.bomberman.bombQueue), 1, "Bomb did not get enqueued")
+        self.assertEqual(self.board.bomberman.bombQueue.pop(), (1, 2, constant.TIME_BOMB), "Bomb's coordinates are wrong")
         self.assertEqual(self.board.tileAt(1, 2), Tile.Bomberman, "Bomberman is not on top of a bomb")
 
         self.board.popTileAt(1, 2)
         self.assertEqual(self.board.tileAt(1, 2), Tile.Bomb, "There is no bomb underneath Bomberman")
 
     def test_detonateBomb(self):
-        self.board.curX = 1
-        self.board.curY = 1
-        self.board.setBomberman()
-        self.board.setBomb()
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
 
         self.board.detonateBomb()
 
@@ -87,8 +90,8 @@ class TestBoard(unittest.TestCase):
     def test_detonateBomb_has_no_effect_on_concrete(self):
         self.board.curX = 1
         self.board.curY = 1
-        self.board.setBomberman()
-        self.board.setBomb()
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
 
         self.board.detonateBomb()
 
@@ -97,10 +100,10 @@ class TestBoard(unittest.TestCase):
 
     def test_detonateBomb_destroys_brick(self):
         self.board.setTileAt(1, 3, Tile.Brick)
-        self.board.curX = 1
-        self.board.curY = 1
-        self.board.setBomberman()
-        self.board.setBomb()
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
 
         self.board.detonateBomb()
 
@@ -109,10 +112,10 @@ class TestBoard(unittest.TestCase):
     def test_detonateBomb_destroys_multiple_bricks(self):
         self.board.setTileAt(1, 2, Tile.Brick)
         self.board.setTileAt(1, 3, Tile.Brick)
-        self.board.curX = 1
-        self.board.curY = 1
-        self.board.setBomberman()
-        self.board.setBomb()
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
 
         self.board.detonateBomb()
 
@@ -122,12 +125,12 @@ class TestBoard(unittest.TestCase):
     def test_detonateBomb_destroys_only_closest_brick_in_the_same_direction(self):
         self.board.setTileAt(1, 2, Tile.Brick)
         self.board.setTileAt(2, 1, Tile.Brick)
-        self.board.curX = 1
-        self.board.curY = 1
-        self.board.setBomberman()
-        self.board.setBomb()
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
 
-        self.assertTrue(Board.BombRadius > 1) #make sure the range of bomb is greater than one
+        self.board.bomberman.rangeOfBombs = 3
 
         self.board.detonateBomb()
 
