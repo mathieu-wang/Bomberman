@@ -32,13 +32,13 @@ class Bomberman(object):
         self.listTypeEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
 
         # Power ups
-        self.numBombs = 1
-        self.rangeOfBombs = 1
-        self.wallPass = False
+        self.numBombs = 1 #
+        self.rangeOfBombs = 1 #
+        self.wallPass = False #
         self.hasDetonator = False
-        self.bombPass = False
-        self.flamePass = False
-        self.invincible = False
+        self.bombPass = False #
+        self.flamePass = False #
+        self.invincible = False #
 
     def setNewLevel(self):
 
@@ -60,6 +60,7 @@ class Bomberman(object):
         self.clearBoard()
         self.clearBombs()
 
+        self.setLevelInfo()
         self.setConcrete()
         self.setExit()
         self.setPowerup()
@@ -69,21 +70,21 @@ class Bomberman(object):
 
     def gainPowerUp(self):
         if(self.powerUp == 1):
-            self.bomberman.numBombs += 1
+            self.numBombs += 1
         if(self.powerUp == 2):
-            self.bomberman.rangeOfBombs += 1
+            self.rangeOfBombs += 1
         if(self.powerUp == 3):
-            self.bomberman.speed = 400
+            self.speed = 400
         if(self.powerUp == 4):
-            self.bomberman.wallPass = True
+            self.wallPass = True
         if(self.powerUp == 5):
-            self.bomberman.hasDetonator = True
+            self.hasDetonator = True
         if(self.powerUp == 6):
-            self.bomberman.bombPass = True
+            self.bombPass = True
         if(self.powerUp == 7):
-            self.bomberman.flamePass = True
+            self.flamePass = True
         if(self.powerUp == 8):
-            self.bomberman.invincible = True
+            self.invincible = True
 
     def tileAt(self, x, y):
         return self.board[y][x].peek()
@@ -129,6 +130,9 @@ class Bomberman(object):
                 self.exitCoord[1] = tempY
                 break
 
+    def setLevelInfo(self):
+        self.listTypeEnemies, self.powerUp = Enemy.getEnemyListAndPowerUp(self.level)
+
     def setPowerup(self):
         while True:
             tempX = random.randint(1, constant.BOARD_WIDTH) - 1
@@ -152,8 +156,6 @@ class Bomberman(object):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
-        self.listTypeEnemies, self.powerUp = Enemy.getEnemyListAndPowerUp(self.level)
-
         for i in range(8):
             for j in range(self.listTypeEnemies[i]):
                 while True:
@@ -164,7 +166,30 @@ class Bomberman(object):
                         self.setTileAt(tempX, tempY, i + 8)
                         tempList = [tempX, tempY, random.randint(1,4), i + 8]
                         self.listEnemies.append(tempList)
-                        self.listTypeEnemies[i] += 1
                         self.numberEnemies += 1
                         break
+
+    def clearEnemies(self):
+        for enemy in self.listEnemies:
+            self.popTileAt(enemy[0],enemy[1])
+        self.numberEnemies = 0
+        self.listEnemies = []
+        self.listTypeEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
+
+    def setChaos(self):
+
+        self.clearEnemies()
+        self.setLevelInfo()
+
+        highestIndex = 0
+        for x in xrange(self.listTypeEnemies):
+            if listTypeEnemies[x] != 0:
+                highestIndex = x
+        if highestIndex != 7:
+            highestIndex += 1
+        self.listTypeEnemies[highestIndex] = 8
+
+        self.setEnemies()
+
+
     
