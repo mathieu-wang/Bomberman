@@ -160,7 +160,7 @@ class Bomberman(object):
         self.setTileAt(self.curX,self.curY,Tile.Bomberman)
 
     def setEnemies(self):
-        print self.listTypeEnemies
+        # print self.listTypeEnemies
         for i in range(8):
             for j in range(self.listTypeEnemies[i]):
                 while True:

@@ -3,7 +3,6 @@ import random
 import constant
 
 from tile import Tile
-from bomberman import Bomberman
 from enemy import Enemy
 
 class StatusBar(QtGui.QDockWidget):
@@ -33,16 +32,19 @@ class Board(QtGui.QFrame):
         super(Board, self).__init__(parent)
         self.bomberman = bomberman # Initialize bomberman attributes
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.initStatusBar()
         self.initBoard()
+
+    def initStatusBar(self):
+
+        self.statusBar = StatusBar(self)
+        self.statusBar.setFixedWidth(468)
+        self.statusBar.resize(100, 468)
 
     def initBoard(self):
 
         print "Username: " + str(self.bomberman.username)
         print "Board level: " + str(self.bomberman.level)
-
-        self.statusBar = StatusBar(self)
-        self.statusBar.setFixedWidth(468)
-        self.statusBar.resize(100, 468)
 
         self.isPaused = True
 
@@ -62,7 +64,6 @@ class Board(QtGui.QFrame):
         self.coundownTimer.timeout.connect(self.timeout_event)
 
         if not self.bomberman.isInitialized:
-            print "BBM NOT INITIALIZED"
             self.initLevel()
 
     def initLevel(self):
@@ -113,12 +114,7 @@ class Board(QtGui.QFrame):
             self.gameOverSignal.emit()  # Send signal for game over
             return
 
-        print "BOMBERMAN LIVES: " + str(self.bomberman.lives)
-        if (self.bomberman.lives == 1):
-            print "ONE LIFE"
-            self.statusBar.livesLabel.setText('ONE LIFE')
-        self.statusBar.livesLabel.setText('SET LIVES: ' + str(self.bomberman.lives))
-        print "DECR LIVES"
+        self.statusBar.livesLabel.setText('Lives: ' + str(self.bomberman.lives))
         self.bombermanDeathSignal.emit()
 
         deathMessage = '''You lost a life!'''
@@ -668,5 +664,4 @@ class Board(QtGui.QFrame):
 
     def timeout_event(self):
         self.bomberman.timeLeft -= 1
-        print str(self.bomberman.lives)
         self.statusBar.timesLabel.setText('Time Left: ' + str(self.bomberman.timeLeft))
