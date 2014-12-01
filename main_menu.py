@@ -1,6 +1,6 @@
 from PyQt4 import QtCore, QtGui
 
-import global_constants
+import constant
 
 ## This class is a widget that displays the Main menu.\n It includes buttons
 # that the user can interact with.
@@ -11,7 +11,7 @@ class MainMenu(QtGui.QWidget):
     logoutGameSignal = QtCore.pyqtSignal()
     quitGameSignal = QtCore.pyqtSignal()
     showLeaderboardSignal = QtCore.pyqtSignal(int)
-    loadMenuSignal = QtCore.pyqtSignal()
+    loadMenuSignal = QtCore.pyqtSignal(int)
 
     def __init__(self, parent=None):
         super(MainMenu, self).__init__(parent)
@@ -68,7 +68,7 @@ class MainMenu(QtGui.QWidget):
         self.quitGameSignal.emit()
 
     def showLeaderboard(self):
-        self.showLeaderboardSignal.emit(global_constants.MAIN_MENU)
+        self.showLeaderboardSignal.emit(constant.MAIN_MENU)
 
     def load(self):
-        self.loadMenuSignal.emit()
+        self.loadMenuSignal.emit(constant.MAIN_MENU)

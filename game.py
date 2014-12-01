@@ -48,7 +48,7 @@ class Game(QtGui.QMainWindow):
         self.mainMenuWidget.logoutGameSignal.connect(self.show_login_menu)
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
         self.mainMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
-        self.mainMenuWidget.showSettingsSignal.connect(self.show_load_menu)
+        self.mainMenuWidget.loadMenuSignal.connect(self.show_load_menu)
 
         self.central_widget.addWidget(self.mainMenuWidget)
         self.central_widget.setCurrentWidget(self.mainMenuWidget)
@@ -132,12 +132,16 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Save Game Menu')
         self.center()
 
-    def show_load_menu(self):
+    def show_load_menu(self, previousMenu):
         
-        self.loadMenuWidget = LoadMenu(self.login_widget.loggedUsername, self)
+        self.loadMenuWidget = LoadMenu(self, self.login_widget.loggedUsername, previousMenu)
 
         self.loadMenuWidget.loadSavedGameSignal.connect(self.loadSavedGame)
-        self.loadMenuWidget.returnToPauseMenuSignal.connect(self.resumeToPauseMenu)
+
+        if previousMenu == constant.MAIN_MENU:
+            self.loadMenuWidget.backSignal.connect(self.show_main_menu)
+        elif previousMenu == constant.PAUSE_MENU:
+            self.loadMenuWidget.backSignal.connect(self.show_pause_menu)
 
         self.central_widget.addWidget(self.loadMenuWidget)
         self.central_widget.setCurrentWidget(self.loadMenuWidget)
