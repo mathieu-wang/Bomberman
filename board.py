@@ -118,7 +118,6 @@ class Board(QtGui.QFrame):
             return
 
         self.statusBar.livesLabel.setText('Lives: ' + str(self.bomberman.lives))
-        self.bombermanDeathSignal.emit()
 
         deathMessage = '''You lost a life!'''
         QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
