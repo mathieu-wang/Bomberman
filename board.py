@@ -232,7 +232,7 @@ class Board(QtGui.QFrame):
                                     boardTop + i * self.squareHeight(), shape)
 
     def drawImages(self, painter, shape, x, y):
-        shapePix = QtGui.QPixmap('./images/' + shape + '.png')
+        shapePix = QtGui.QPixmap('./res/images/' + shape + '.png')
         scaledShapePix = QtGui.QPixmap.scaled(shapePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
         painter.drawPixmap( x, y, scaledShapePix)
 

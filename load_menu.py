@@ -4,12 +4,12 @@ from database import Database
 
 class LoadMenu(QtGui.QWidget):
 
-    returnToPauseMenuSignal = QtCore.pyqtSignal()
     loadSavedGameSignal = QtCore.pyqtSignal(str)
     backSignal = QtCore.pyqtSignal(int)
 
-    def __init__(self, username, parent=None):
+    def __init__(self, parent, username, previousMenu):
         super(LoadMenu, self).__init__(parent)
+        self.previousMenu = previousMenu
 
         self.username = username
 

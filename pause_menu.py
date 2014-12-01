@@ -1,5 +1,5 @@
 from PyQt4 import QtCore, QtGui
-import global_constants
+import constant
 
 class PauseMenu(QtGui.QWidget):
 
@@ -7,7 +7,7 @@ class PauseMenu(QtGui.QWidget):
     quitGameSignal = QtCore.pyqtSignal()
     showLeaderboardSignal = QtCore.pyqtSignal(int)
     saveMenuSignal = QtCore.pyqtSignal()
-    loadMenuSignal = QtCore.pyqtSignal()
+    loadMenuSignal = QtCore.pyqtSignal(int)
     backToMainMenuSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
@@ -60,7 +60,7 @@ class PauseMenu(QtGui.QWidget):
         self.quitGameSignal.emit()
 
     def showLeaderboard(self):
-        self.showLeaderboardSignal.emit(global_constants.PAUSE_MENU)
+        self.showLeaderboardSignal.emit(constant.PAUSE_MENU)
 
     def back(self):
         self.backToMainMenuSignal.emit()
@@ -69,4 +69,4 @@ class PauseMenu(QtGui.QWidget):
         self.saveMenuSignal.emit()
 
     def load(self):
-        self.loadMenuSignal.emit()
+        self.loadMenuSignal.emit(constant.PAUSE_MENU)
