@@ -25,8 +25,9 @@ class Board(QtGui.QFrame):
     pauseGameSignal = QtCore.pyqtSignal()
     gameOverSignal = QtCore.pyqtSignal()
 
-    bombermanDeathSignal = QtCore.pyqtSignal()
     resetTimerSignal = QtCore.pyqtSignal()
+
+    updateScoreInDbSignal = QtCore.pyqtSignal(int)
 
     def __init__(self, bomberman, parent=None):
         super(Board, self).__init__(parent)
@@ -111,6 +112,8 @@ class Board(QtGui.QFrame):
         self.bomberman.flamePass = False
 
         if(self.bomberman.lives == 0):
+            gameoverMessage = '''Game Over!'''
+            QtGui.QMessageBox.warning(self,'BOOM!', gameoverMessage, QtGui.QMessageBox.Ok)
             self.gameOverSignal.emit()  # Send signal for game over
             return
 
@@ -635,7 +638,9 @@ class Board(QtGui.QFrame):
 
     # update score in status bar
     def updateScore(self, killedEnemies):
-        newScore = self.bomberman.score + self.getScoreOfKilledEnemies(killedEnemies)
+        incrementalScore = self.getScoreOfKilledEnemies(killedEnemies)
+        self.updateScoreInDbSignal.emit(incrementalScore)
+        newScore = self.bomberman.score + incrementalScore
         self.bomberman.score = newScore
         self.statusBar.scoreLabel.setText('Score: ' + str(newScore))
 

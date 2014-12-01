@@ -77,8 +77,8 @@ class Game(QtGui.QMainWindow):
         self.board_widget = Board(bomberman, self)
 
         self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
-        self.board_widget.bombermanDeathSignal.connect(self.loseLife)
         self.board_widget.gameOverSignal.connect(self.gameOver)
+        self.board_widget.updateScoreInDbSignal.connect(self.updateScoreInDb)
 
         self.central_widget.addWidget(self.board_widget)
         self.central_widget.setCurrentWidget(self.board_widget)
@@ -171,21 +171,16 @@ class Game(QtGui.QMainWindow):
 
         self.show_board(1, bomberman)
 
-    def loseLife(self):
-        self.updateScoreToDb()
-        self.board_widget.score = 0
-
     def gameOver(self):
-        self.updateScoreToDb()
-        self.update_games_played_in_db()
-        self.board_widget.score = 0
+        print 'Game over!'
+        self.updateGamesPlayedInDb()
         self.show_main_menu()
 
-    def updateScoreToDb(self):
+    def updateScoreInDb(self, incrementalScore):
         db = Database()
-        db.updateUserScore(self.login_widget.loggedUsername, self.board_widget.bomberman.score)
+        db.updateUserScore(self.login_widget.loggedUsername, self.board_widget.bomberman.score + incrementalScore)
 
-    def update_games_played_in_db(self):
+    def updateGamesPlayedInDb(self):
         db = Database()
         db.updateNumGamesPlayed(self.login_widget.loggedUsername)
 
