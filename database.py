@@ -5,13 +5,12 @@ from models import UserAccount
 
 class Database:
 
-    def __init__(self):
+    def __init__(self, test=False):
 
-        # Create a database in RAM
-        # self.db = dataset.connect('sqlite:///:memory:')
-
-        # Connecting to a SQLite database
-        self.db = dataset.connect('sqlite:///db.sqlite')
+        if (test):
+            self.db = dataset.connect('sqlite:///:memory:') # Create a database in RAM
+        else:
+            self.db = dataset.connect('sqlite:///db.sqlite')  # Connecting to a SQLite database
 
         # Get the table of user/password
         self.userTable = self.db['user']
@@ -61,7 +60,7 @@ class Database:
 
         return True
 
-    # A password must be at least 8 character long with the same character constraints as a username.
+    ## A password must be at least 8 character long with the same character constraints as a username.
     # In addition, it must necessarily include a minimum of 1 Upper case letter, 1 Lower case letter, 1 digits and 1 special character.
     def isValidPassword(self, password):
 
@@ -113,7 +112,7 @@ class Database:
     def getUserAccount(self, username):
         return self.userTable.find_one(username=username)
 
-    # Get top players sorted by cumulative score.
+    ## Get top players sorted by cumulative score.
     # Same score is counted as two. Users with the same score are sorted alphabetically (by username).
     def getTopTenUsers(self):
         return self.userTable.find(_limit=10, order_by=['-cumulativeScore', 'username'])
