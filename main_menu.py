@@ -1,6 +1,5 @@
 from PyQt4 import QtCore, QtGui
-
-import global_constants
+import constant
 
 class MainMenu(QtGui.QWidget):
 
@@ -58,7 +57,7 @@ class MainMenu(QtGui.QWidget):
         self.quitGameSignal.emit()
 
     def showLeaderboard(self):
-        self.showLeaderboardSignal.emit(global_constants.MAIN_MENU)
+        self.showLeaderboardSignal.emit(constant.MAIN_MENU)
 
     def settings(self):
         self.showSettingsSignal.emit()

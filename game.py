@@ -1,4 +1,4 @@
-from PyQt4 import QtGui, QtCore
+from PyQt4 import QtGui
 import sys
 
 from board import Board
@@ -182,7 +182,7 @@ class Game(QtGui.QMainWindow):
 
     def updateGamesPlayedInDb(self):
         db = Database()
-        db.updateNumGamesPlayed(self.login_widget.loggedUsername)
+        db.incrementNumOfGamesPlayed(self.login_widget.loggedUsername)
 
 def main():
 

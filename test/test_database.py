@@ -72,7 +72,7 @@ class TestDatabase(unittest.TestCase):
     def testUpdateNumGamesPlayed(self):
         self.createTestUser()
         self.assertEqual(self.db.getUserAccount(TestDatabase.TestValidUsername)['numGamesPlayed'], 0)
-        self.db.updateNumGamesPlayed(TestDatabase.TestValidUsername)
+        self.db.incrementNumOfGamesPlayed(TestDatabase.TestValidUsername)
         self.assertEqual(self.db.getUserAccount(TestDatabase.TestValidUsername)['numGamesPlayed'], 1)
 
 
