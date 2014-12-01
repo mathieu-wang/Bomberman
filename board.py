@@ -586,7 +586,7 @@ class Board(QtGui.QFrame):
         # self.startFlash(flashList)
         # self.endFlash(flashList)
         self.destroyTiles(popList)
-        # self.updateScore(killedEnemies)
+        self.updateScore(killedEnemies)
 
     def startFlash(self, flashList):
         for x,y in flashList:
@@ -635,10 +635,9 @@ class Board(QtGui.QFrame):
 
     # update score in status bar
     def updateScore(self, killedEnemies):
-        statusBar = self.findChild(QtGui.QDockWidget)
-        newScore = self.score + self.getScoreOfKilledEnemies(killedEnemies)
-        self.score = newScore
-        statusBar.scoreLabel.setText('Score: ' + str(newScore))
+        newScore = self.bomberman.score + self.getScoreOfKilledEnemies(killedEnemies)
+        self.bomberman.score = newScore
+        self.statusBar.scoreLabel.setText('Score: ' + str(newScore))
 
     ## Method to calculate the score the user gets when a bomb detonates
     # @param killedEnemies
