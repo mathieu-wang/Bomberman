@@ -186,62 +186,57 @@ class Board(QtGui.QFrame):
                 shape = self.tileAt(j, constant.BOARD_HEIGHT - i - 1)
 
                 if(shape == Tile.Exit):
-                    self.drawImages(painter, 'Exit', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Exit', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Brick):
-                    self.drawImages(painter, 'Brick', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Brick', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Balloom):
-                    self.drawImages(painter, 'Balloom', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Balloom', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Bomb):
-                    self.drawImages(painter, 'Bomb', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Bomb', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Concrete):
-                    self.drawImages(painter, 'Concrete', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Concrete', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Oneal):
-                    self.drawImages(painter, 'Oneal', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Oneal', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Doll):
-                    self.drawImages(painter, 'Doll', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Doll', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Minvo):
-                    self.drawImages(painter, 'Minvo', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Minvo', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Kondoria):
-                    self.drawImages(painter, 'Kondoria', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Kondoria', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Ovapi):
-                    self.drawImages(painter, 'Ovapi', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Ovapi', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Pass):
-                    self.drawImages(painter, 'Pass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Pass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Pontan):
-                    self.drawImages(painter, 'Pontan', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Pontan', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Bomberman):
-                    self.drawImages(painter, 'Bomberman', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 0)
+                    self.drawImages(painter, 'Bomberman', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 elif(shape == Tile.Powerup):
                     if (self.bomberman.powerUp == 1):
-                        self.drawImages(painter, 'Bombs', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Bombs', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 2):
-                        self.drawImages(painter, 'Flames', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Flames', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 3):
-                        self.drawImages(painter, 'Speed', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Speed', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 4):
-                        self.drawImages(painter, 'Wallpass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Wallpass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 5):
-                        self.drawImages(painter, 'Detonator', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Detonator', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 6):
-                        self.drawImages(painter, 'Bombpass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Bombpass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 7):
-                        self.drawImages(painter, 'Flamepass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Flamepass', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                     elif (self.bomberman.powerUp == 8):
-                        self.drawImages(painter, 'Mystery', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight(), 1)
+                        self.drawImages(painter, 'Mystery', rect.left() + (j-viewXFirst) * self.squareWidth(), boardTop + i * self.squareHeight())
                 else:
                     self.drawSquare(painter,
                                     rect.left() + (j-viewXFirst) * self.squareWidth(),
                                     boardTop + i * self.squareHeight(), shape)
 
-    def drawImages(self, painter, shape, x, y, powerup):
-        if (powerup != 0):
-            powerUpPix = QtGui.QPixmap('./images/' + shape + '.png')
-            scaledPowerUpPix = QtGui.QPixmap.scaled(powerUpPix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-            painter.drawPixmap( x, y, scaledPowerUpPix)
-        else:
-            shapePix = QtGui.QPixmap('./images/' + shape + '.png')
-            scaledShapePix = QtGui.QPixmap.scaled(shapePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
-            painter.drawPixmap( x, y, scaledShapePix)
+    def drawImages(self, painter, shape, x, y):
+        shapePix = QtGui.QPixmap('./images/' + shape + '.png')
+        scaledShapePix = QtGui.QPixmap.scaled(shapePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
+        painter.drawPixmap( x, y, scaledShapePix)
 
     def drawSquare(self, painter, x, y, shape):
 
