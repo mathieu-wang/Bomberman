@@ -345,7 +345,7 @@ class Board(QtGui.QFrame):
             self.bomberman.gainPowerUp()
 
         # Check if new pos is exit
-        if (self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit):
+        if ((self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit) and self.bomberman.numberEnemies == 0):
             self.exit()
             return # IMPORTANT
 
