@@ -2,18 +2,28 @@ from PyQt4 import QtCore, QtGui
 
 import global_constants
 
+## This class is a widget that displays the Main menu.\n It includes buttons
+# that the user can interact with.
+#
 class MainMenu(QtGui.QWidget):
 
     playGameSignal = QtCore.pyqtSignal()
     logoutGameSignal = QtCore.pyqtSignal()
     quitGameSignal = QtCore.pyqtSignal()
     showLeaderboardSignal = QtCore.pyqtSignal(int)
-    showSettingsSignal = QtCore.pyqtSignal()
+    loadMenuSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(MainMenu, self).__init__(parent)
         self.initUI()
 
+    ## This method initialize the GUI of Main menu.
+    # Play Bomberman button: emit playGameSignal when clicked which will be used to launch
+    #       the game in game.py
+    # Logout button: emit logoutGameSignal when clicked which will be used to exit the current
+    #       user and send it back to the login menu
+    #Load Game button: emit 
+    #
     def initUI(self):
         buttonWidth = 150
         buttonStartXCoordinate = 159
@@ -28,10 +38,10 @@ class MainMenu(QtGui.QWidget):
         logoutButton.move(buttonStartXCoordinate, 259)
         logoutButton.clicked.connect(self.logout)
 
-        settingsButton = QtGui.QPushButton('Load Game', self)
-        settingsButton.setFixedWidth(buttonWidth)
-        settingsButton.move(buttonStartXCoordinate, 179)
-        settingsButton.clicked.connect(self.settings)
+        loadButton = QtGui.QPushButton('Load Game', self)
+        loadButton.setFixedWidth(buttonWidth)
+        loadButton.move(buttonStartXCoordinate, 179)
+        loadButton.clicked.connect(self.load)
 
         quitButton = QtGui.QPushButton('Quit', self)
         quitButton.setFixedWidth(buttonWidth)
@@ -60,5 +70,5 @@ class MainMenu(QtGui.QWidget):
     def showLeaderboard(self):
         self.showLeaderboardSignal.emit(global_constants.MAIN_MENU)
 
-    def settings(self):
-        self.showSettingsSignal.emit()
+    def load(self):
+        self.loadMenuSignal.emit()
