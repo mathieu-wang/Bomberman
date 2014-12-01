@@ -21,130 +21,130 @@ class Game(QtGui.QMainWindow):
         
     def initUI(self):    
 
-        self.central_widget = QtGui.QStackedWidget()
-        self.setCentralWidget(self.central_widget)
+        self.centralWidget = QtGui.QStackedWidget()
+        self.setCentralWidget(self.centralWidget)
 
-        self.show_login_menu()
+        self.showLoginMenu()
 
-    def show_login_menu(self):
+    def showLoginMenu(self):
 
-        self.login_widget = LoginMenu(self)
+        self.loginWidget = LoginMenu(self)
 
-        self.login_widget.loginSuccessSignal.connect(self.show_main_menu)
+        self.loginWidget.loginSuccessSignal.connect(self.showMainMenu)
 
-        self.central_widget.addWidget(self.login_widget)
-        self.central_widget.setCurrentWidget(self.login_widget)
+        self.centralWidget.addWidget(self.loginWidget)
+        self.centralWidget.setCurrentWidget(self.loginWidget)
 
         self.setWindowTitle('Login')
         self.center()
 
-    def show_main_menu(self):
+    def showMainMenu(self):
 
-        self.username = self.login_widget.loggedUsername
+        self.username = self.loginWidget.loggedUsername
 
         self.mainMenuWidget = MainMenu(self)
 
-        self.mainMenuWidget.playGameSignal.connect(self.show_level_menu)
-        self.mainMenuWidget.logoutGameSignal.connect(self.show_login_menu)
+        self.mainMenuWidget.playGameSignal.connect(self.showLevelMenu)
+        self.mainMenuWidget.logoutGameSignal.connect(self.showLoginMenu)
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
-        self.mainMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
-        self.mainMenuWidget.loadMenuSignal.connect(self.show_load_menu)
+        self.mainMenuWidget.showLeaderboardSignal.connect(self.showLeaderboard)
+        self.mainMenuWidget.loadMenuSignal.connect(self.showLoadMenu)
 
-        self.central_widget.addWidget(self.mainMenuWidget)
-        self.central_widget.setCurrentWidget(self.mainMenuWidget)
+        self.centralWidget.addWidget(self.mainMenuWidget)
+        self.centralWidget.setCurrentWidget(self.mainMenuWidget)
 
         self.setWindowTitle('Main Menu')
         self.center()
 
-    def show_level_menu(self):
+    def showLevelMenu(self):
 
         self.levelMenuWidget = LevelMenu(self, self.username)
 
-        self.levelMenuWidget.backToMainMenuSignal.connect(self.show_main_menu)
-        self.levelMenuWidget.startLevelSignal.connect(self.show_board)
+        self.levelMenuWidget.backToMainMenuSignal.connect(self.showMainMenu)
+        self.levelMenuWidget.startLevelSignal.connect(self.showBoard)
 
-        self.central_widget.addWidget(self.levelMenuWidget)
-        self.central_widget.setCurrentWidget(self.levelMenuWidget)
+        self.centralWidget.addWidget(self.levelMenuWidget)
+        self.centralWidget.setCurrentWidget(self.levelMenuWidget)
 
         self.setWindowTitle('Choose Level')
         self.center()
 
-    def show_board(self, level, bomberman=None):
+    def showBoard(self, level, bomberman=None):
 
         if not bomberman:
             bomberman = Bomberman(self.username,level)
         
         self.board_widget = Board(bomberman, self)
 
-        self.board_widget.pauseGameSignal.connect(self.show_pause_menu)
+        self.board_widget.pauseGameSignal.connect(self.showPauseMenu)
         self.board_widget.gameOverSignal.connect(self.gameOver)
         self.board_widget.updateScoreInDbSignal.connect(self.updateScoreInDb)
 
-        self.central_widget.addWidget(self.board_widget)
-        self.central_widget.setCurrentWidget(self.board_widget)
+        self.centralWidget.addWidget(self.board_widget)
+        self.centralWidget.setCurrentWidget(self.board_widget)
 
         self.board_widget.start()
 
         self.resize(468, 468)
         self.setWindowTitle('Bomberman')
 
-    def show_leaderboard(self, previousMenu):
+    def showLeaderboard(self, previousMenu):
 
         self.leaderboardWidget = Leaderboard(self, previousMenu)
 
         if previousMenu == constant.MAIN_MENU:
-            self.leaderboardWidget.backSignal.connect(self.show_main_menu)
+            self.leaderboardWidget.backSignal.connect(self.showMainMenu)
         elif previousMenu == constant.PAUSE_MENU:
-            self.leaderboardWidget.backSignal.connect(self.show_pause_menu)
+            self.leaderboardWidget.backSignal.connect(self.showPauseMenu)
 
-        self.central_widget.addWidget(self.leaderboardWidget)
-        self.central_widget.setCurrentWidget(self.leaderboardWidget)
+        self.centralWidget.addWidget(self.leaderboardWidget)
+        self.centralWidget.setCurrentWidget(self.leaderboardWidget)
 
         self.setWindowTitle('Leaderboard')
         self.center()
 
-    def show_pause_menu(self):
+    def showPauseMenu(self):
 
         self.pauseMenuWidget = PauseMenu(self)
 
         self.pauseMenuWidget.resumeGameSignal.connect(self.resumeToGame)
         self.pauseMenuWidget.quitGameSignal.connect(self.quit)
-        self.pauseMenuWidget.showLeaderboardSignal.connect(self.show_leaderboard)
-        self.pauseMenuWidget.saveMenuSignal.connect(self.show_save_menu)
-        self.pauseMenuWidget.loadMenuSignal.connect(self.show_load_menu)
-        self.pauseMenuWidget.backToMainMenuSignal.connect(self.show_main_menu)
+        self.pauseMenuWidget.showLeaderboardSignal.connect(self.showLeaderboard)
+        self.pauseMenuWidget.saveMenuSignal.connect(self.showSaveMenu)
+        self.pauseMenuWidget.loadMenuSignal.connect(self.showLoadMenu)
+        self.pauseMenuWidget.backToMainMenuSignal.connect(self.showMainMenu)
 
-        self.central_widget.addWidget(self.pauseMenuWidget)
-        self.central_widget.setCurrentWidget(self.pauseMenuWidget)
+        self.centralWidget.addWidget(self.pauseMenuWidget)
+        self.centralWidget.setCurrentWidget(self.pauseMenuWidget)
 
         self.setWindowTitle('Pause')
         self.center()
 
-    def show_save_menu(self):
+    def showSaveMenu(self):
         
         self.saveMenuWidget = SaveMenu(self.username, self.board_widget.saveBomberman(), self)
 
         self.saveMenuWidget.returnToPauseMenuSignal.connect(self.resumeToPauseMenu)
 
-        self.central_widget.addWidget(self.saveMenuWidget)
-        self.central_widget.setCurrentWidget(self.saveMenuWidget)
+        self.centralWidget.addWidget(self.saveMenuWidget)
+        self.centralWidget.setCurrentWidget(self.saveMenuWidget)
 
         self.setWindowTitle('Save Game Menu')
         self.center()
 
-    def show_load_menu(self, previousMenu):
+    def showLoadMenu(self, previousMenu):
         
-        self.loadMenuWidget = LoadMenu(self, self.login_widget.loggedUsername, previousMenu)
+        self.loadMenuWidget = LoadMenu(self, self.loginWidget.loggedUsername, previousMenu)
 
         self.loadMenuWidget.loadSavedGameSignal.connect(self.loadSavedGame)
 
         if previousMenu == constant.MAIN_MENU:
-            self.loadMenuWidget.backSignal.connect(self.show_main_menu)
+            self.loadMenuWidget.backSignal.connect(self.showMainMenu)
         elif previousMenu == constant.PAUSE_MENU:
-            self.loadMenuWidget.backSignal.connect(self.show_pause_menu)
+            self.loadMenuWidget.backSignal.connect(self.showPauseMenu)
 
-        self.central_widget.addWidget(self.loadMenuWidget)
-        self.central_widget.setCurrentWidget(self.loadMenuWidget)
+        self.centralWidget.addWidget(self.loadMenuWidget)
+        self.centralWidget.setCurrentWidget(self.loadMenuWidget)
 
         self.setWindowTitle('Load Game Menu')
         self.center()
@@ -161,32 +161,32 @@ class Game(QtGui.QMainWindow):
 
     def resumeToGame(self):
 
-        self.central_widget.setCurrentWidget(self.board_widget)
+        self.centralWidget.setCurrentWidget(self.board_widget)
         self.board_widget.start()
 
     def resumeToPauseMenu(self):
 
-        self.central_widget.setCurrentWidget(self.pauseMenuWidget)
+        self.centralWidget.setCurrentWidget(self.pauseMenuWidget)
         
     def loadSavedGame(self, gamename):
 
         db = Database()
         bomberman = db.loadGame(self.username, str(gamename))
 
-        self.show_board(1, bomberman)
+        self.showBoard(1, bomberman)
 
     def gameOver(self):
         print 'Game over!'
         self.updateGamesPlayedInDb()
-        self.show_main_menu()
+        self.showMainMenu()
 
     def updateScoreInDb(self, incrementalScore):
         db = Database()
-        db.updateUserScore(self.login_widget.loggedUsername, self.board_widget.bomberman.score + incrementalScore)
+        db.updateUserScore(self.loginWidget.loggedUsername, self.board_widget.bomberman.score + incrementalScore)
 
     def updateGamesPlayedInDb(self):
         db = Database()
-        db.incrementNumOfGamesPlayed(self.login_widget.loggedUsername)
+        db.incrementNumOfGamesPlayed(self.loginWidget.loggedUsername)
 
 def main():
 
