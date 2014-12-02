@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>enemy</b></li><li class="navelem"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">Enemy</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1enemy.html">enemy</a></li><li class="navelem"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">Enemy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -109,44 +110,94 @@ Inheritance diagram for src.enemy.Enemy:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6ec62571df1087a1a7683d62a4434081"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ec62571df1087a1a7683d62a4434081"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, points, speed, intelligence, wallpass, direction, canMove)</td></tr>
-<tr class="separator:a6ec62571df1087a1a7683d62a4434081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b23b56c368250db98c79101ea3a80c2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a9b23b56c368250db98c79101ea3a80c2">__init__</a></td></tr>
+<tr class="separator:a9b23b56c368250db98c79101ea3a80c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4476f5bc0be70d26bebece6abcb7bdad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a4476f5bc0be70d26bebece6abcb7bdad">getEnemy</a> (type)</td></tr>
-<tr class="memdesc:a4476f5bc0be70d26bebece6abcb7bdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is a dictionary that returns information for the different enemy types.  <a href="#a4476f5bc0be70d26bebece6abcb7bdad">More...</a><br /></td></tr>
-<tr class="separator:a4476f5bc0be70d26bebece6abcb7bdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a01da6a5d5f8eb5db75323749a80fc3a0">getEnemyListAndPowerUp</a> (level)</td></tr>
-<tr class="memdesc:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns a list of the number of each enemy and the powerup for each level.  <a href="#a01da6a5d5f8eb5db75323749a80fc3a0">More...</a><br /></td></tr>
-<tr class="separator:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d83ffde61f348af7462c7c1f32aa1c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a25d83ffde61f348af7462c7c1f32aa1c">getEnemy</a></td></tr>
+<tr class="memdesc:a25d83ffde61f348af7462c7c1f32aa1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is a dictionary that returns information for the different enemy types.  <a href="#a25d83ffde61f348af7462c7c1f32aa1c">More...</a><br /></td></tr>
+<tr class="separator:a25d83ffde61f348af7462c7c1f32aa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a60a3c9089fed21552341cec52b11be"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a5a60a3c9089fed21552341cec52b11be">getEnemyListAndPowerUp</a></td></tr>
+<tr class="memdesc:a5a60a3c9089fed21552341cec52b11be"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns a list of the number of each enemy and the powerup for each level.  <a href="#a5a60a3c9089fed21552341cec52b11be">More...</a><br /></td></tr>
+<tr class="separator:a5a60a3c9089fed21552341cec52b11be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae9fc7353b9fbbad3c2d0330169a14fe5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9fc7353b9fbbad3c2d0330169a14fe5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>points</b></td></tr>
+<tr class="memitem:ae9fc7353b9fbbad3c2d0330169a14fe5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#ae9fc7353b9fbbad3c2d0330169a14fe5">points</a></td></tr>
 <tr class="separator:ae9fc7353b9fbbad3c2d0330169a14fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24e64f3d82db0537f8438780bb1b082d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24e64f3d82db0537f8438780bb1b082d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+<tr class="memitem:a24e64f3d82db0537f8438780bb1b082d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a24e64f3d82db0537f8438780bb1b082d">speed</a></td></tr>
 <tr class="separator:a24e64f3d82db0537f8438780bb1b082d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11c139459feab2281e0804adc1e0276d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11c139459feab2281e0804adc1e0276d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>intelligence</b></td></tr>
+<tr class="memitem:a11c139459feab2281e0804adc1e0276d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a11c139459feab2281e0804adc1e0276d">intelligence</a></td></tr>
 <tr class="separator:a11c139459feab2281e0804adc1e0276d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3efd2aacdc7f1eca427075919649c09e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3efd2aacdc7f1eca427075919649c09e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>wallpass</b></td></tr>
+<tr class="memitem:a3efd2aacdc7f1eca427075919649c09e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a3efd2aacdc7f1eca427075919649c09e">wallpass</a></td></tr>
 <tr class="separator:a3efd2aacdc7f1eca427075919649c09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad232e0c586291fffbc676d6b20658cd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad232e0c586291fffbc676d6b20658cd2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>direction</b></td></tr>
+<tr class="memitem:ad232e0c586291fffbc676d6b20658cd2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#ad232e0c586291fffbc676d6b20658cd2">direction</a></td></tr>
 <tr class="separator:ad232e0c586291fffbc676d6b20658cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca96a4793e02437f1f33a1c3cbefd133"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca96a4793e02437f1f33a1c3cbefd133"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>canMove</b></td></tr>
+<tr class="memitem:aca96a4793e02437f1f33a1c3cbefd133"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#aca96a4793e02437f1f33a1c3cbefd133">canMove</a></td></tr>
 <tr class="separator:aca96a4793e02437f1f33a1c3cbefd133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class stores the types of enemies and how many there are in each level. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4476f5bc0be70d26bebece6abcb7bdad"></a>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9b23b56c368250db98c79101ea3a80c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.enemy.Enemy.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>intelligence</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wallpass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>canMove</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a25d83ffde61f348af7462c7c1f32aa1c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -173,7 +224,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a01da6a5d5f8eb5db75323749a80fc3a0"></a>
+<a class="anchor" id="a5a60a3c9089fed21552341cec52b11be"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -200,13 +251,86 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aca96a4793e02437f1f33a1c3cbefd133"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.enemy.Enemy.canMove</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad232e0c586291fffbc676d6b20658cd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.enemy.Enemy.direction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a11c139459feab2281e0804adc1e0276d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.enemy.Enemy.intelligence</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae9fc7353b9fbbad3c2d0330169a14fe5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.enemy.Enemy.points</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a24e64f3d82db0537f8438780bb1b082d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.enemy.Enemy.speed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3efd2aacdc7f1eca427075919649c09e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.enemy.Enemy.wallpass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/enemy.py</li>
+<li>src/<a class="el" href="enemy_8py.html">enemy.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

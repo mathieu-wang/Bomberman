@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>tile</b></li><li class="navelem"><a class="el" href="classsrc_1_1tile_1_1_tile.html">Tile</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1tile.html">tile</a></li><li class="navelem"><a class="el" href="classsrc_1_1tile_1_1_tile.html">Tile</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -110,104 +111,103 @@ Inheritance diagram for src.tile.Tile:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9976e652dac509c6aee814af20a6cabb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9976e652dac509c6aee814af20a6cabb"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self)</td></tr>
-<tr class="separator:a9976e652dac509c6aee814af20a6cabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad77febc9fbb4fa5fd2f13449d1c80da"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aad77febc9fbb4fa5fd2f13449d1c80da">isEmpty</a> (self)</td></tr>
-<tr class="memdesc:aad77febc9fbb4fa5fd2f13449d1c80da"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns True if the tile on top of the stack is Empty.  <a href="#aad77febc9fbb4fa5fd2f13449d1c80da">More...</a><br /></td></tr>
-<tr class="separator:aad77febc9fbb4fa5fd2f13449d1c80da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab682d4a8d92f6dbe5380c21e8c27114a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ab682d4a8d92f6dbe5380c21e8c27114a">push</a> (self, tile)</td></tr>
-<tr class="memdesc:ab682d4a8d92f6dbe5380c21e8c27114a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pushes a new tile on the stack.  <a href="#ab682d4a8d92f6dbe5380c21e8c27114a">More...</a><br /></td></tr>
-<tr class="separator:ab682d4a8d92f6dbe5380c21e8c27114a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a8402816b245a69773305cc6d86f16d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a0a8402816b245a69773305cc6d86f16d">peek</a> (self)</td></tr>
-<tr class="memdesc:a0a8402816b245a69773305cc6d86f16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the tile on the top of the stack.  <a href="#a0a8402816b245a69773305cc6d86f16d">More...</a><br /></td></tr>
-<tr class="separator:a0a8402816b245a69773305cc6d86f16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f31d367515d3259f21b90d6be44db8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ae0f31d367515d3259f21b90d6be44db8">pop</a> (self)</td></tr>
-<tr class="memdesc:ae0f31d367515d3259f21b90d6be44db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This methods removes the tile on top of the stack.  <a href="#ae0f31d367515d3259f21b90d6be44db8">More...</a><br /></td></tr>
-<tr class="separator:ae0f31d367515d3259f21b90d6be44db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9f0ddf090f58449aa74611a239e1458"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ac9f0ddf090f58449aa74611a239e1458">size</a> (self)</td></tr>
-<tr class="memdesc:ac9f0ddf090f58449aa74611a239e1458"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the number of tiles in the stack.  <a href="#ac9f0ddf090f58449aa74611a239e1458">More...</a><br /></td></tr>
-<tr class="separator:ac9f0ddf090f58449aa74611a239e1458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0b6f120a03e296c3af500933d91d88"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a6a0b6f120a03e296c3af500933d91d88">__init__</a></td></tr>
+<tr class="separator:a6a0b6f120a03e296c3af500933d91d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a21f16afbb5f5be4204b66be2624e3fc1">isEmpty</a></td></tr>
+<tr class="memdesc:a21f16afbb5f5be4204b66be2624e3fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns True if the tile on top of the stack is Empty.  <a href="#a21f16afbb5f5be4204b66be2624e3fc1">More...</a><br /></td></tr>
+<tr class="separator:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa968da9f37f05ba08ccfe7a44b2bf776"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aa968da9f37f05ba08ccfe7a44b2bf776">push</a></td></tr>
+<tr class="memdesc:aa968da9f37f05ba08ccfe7a44b2bf776"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pushes a new tile on the stack.  <a href="#aa968da9f37f05ba08ccfe7a44b2bf776">More...</a><br /></td></tr>
+<tr class="separator:aa968da9f37f05ba08ccfe7a44b2bf776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4cf13c5976824347b38961f7c3511c1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ab4cf13c5976824347b38961f7c3511c1">peek</a></td></tr>
+<tr class="memdesc:ab4cf13c5976824347b38961f7c3511c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the tile on the top of the stack.  <a href="#ab4cf13c5976824347b38961f7c3511c1">More...</a><br /></td></tr>
+<tr class="separator:ab4cf13c5976824347b38961f7c3511c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9707b7fe25e606192be87b3dd9957cd9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a9707b7fe25e606192be87b3dd9957cd9">pop</a></td></tr>
+<tr class="memdesc:a9707b7fe25e606192be87b3dd9957cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This methods removes the tile on top of the stack.  <a href="#a9707b7fe25e606192be87b3dd9957cd9">More...</a><br /></td></tr>
+<tr class="separator:a9707b7fe25e606192be87b3dd9957cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3770faf89f08cecc2ba9aab54bbee50b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a3770faf89f08cecc2ba9aab54bbee50b">size</a></td></tr>
+<tr class="memdesc:a3770faf89f08cecc2ba9aab54bbee50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the number of tiles in the stack.  <a href="#a3770faf89f08cecc2ba9aab54bbee50b">More...</a><br /></td></tr>
+<tr class="separator:a3770faf89f08cecc2ba9aab54bbee50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a402644908c005daf8f452078a8498884"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a402644908c005daf8f452078a8498884">isEmpty</a> (tile)</td></tr>
-<tr class="memdesc:a402644908c005daf8f452078a8498884"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Empty.  <a href="#a402644908c005daf8f452078a8498884">More...</a><br /></td></tr>
-<tr class="separator:a402644908c005daf8f452078a8498884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26d5b3272e8b49c400420bfb80f2367e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a26d5b3272e8b49c400420bfb80f2367e">isEnemy</a> (tile)</td></tr>
-<tr class="memdesc:a26d5b3272e8b49c400420bfb80f2367e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Enemy.  <a href="#a26d5b3272e8b49c400420bfb80f2367e">More...</a><br /></td></tr>
-<tr class="separator:a26d5b3272e8b49c400420bfb80f2367e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe6a8c872f4e0d314bedb157c5d05f88"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#abe6a8c872f4e0d314bedb157c5d05f88">isBomberman</a> (tile)</td></tr>
-<tr class="memdesc:abe6a8c872f4e0d314bedb157c5d05f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Bomberman.  <a href="#abe6a8c872f4e0d314bedb157c5d05f88">More...</a><br /></td></tr>
-<tr class="separator:abe6a8c872f4e0d314bedb157c5d05f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81e3ba4c45f3defa624c6d5cd080dab6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a81e3ba4c45f3defa624c6d5cd080dab6">isExit</a> (tile)</td></tr>
-<tr class="memdesc:a81e3ba4c45f3defa624c6d5cd080dab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Exit.  <a href="#a81e3ba4c45f3defa624c6d5cd080dab6">More...</a><br /></td></tr>
-<tr class="separator:a81e3ba4c45f3defa624c6d5cd080dab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464b874776619a4388f7bc8a5a57eee1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a464b874776619a4388f7bc8a5a57eee1">isPowerup</a> (tile)</td></tr>
-<tr class="memdesc:a464b874776619a4388f7bc8a5a57eee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Powerup.  <a href="#a464b874776619a4388f7bc8a5a57eee1">More...</a><br /></td></tr>
-<tr class="separator:a464b874776619a4388f7bc8a5a57eee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a21f16afbb5f5be4204b66be2624e3fc1">isEmpty</a></td></tr>
+<tr class="memdesc:a21f16afbb5f5be4204b66be2624e3fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Empty.  <a href="#a21f16afbb5f5be4204b66be2624e3fc1">More...</a><br /></td></tr>
+<tr class="separator:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d16325ef82c53165ac9b3369f7b10a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a28d16325ef82c53165ac9b3369f7b10a">isEnemy</a></td></tr>
+<tr class="memdesc:a28d16325ef82c53165ac9b3369f7b10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Enemy.  <a href="#a28d16325ef82c53165ac9b3369f7b10a">More...</a><br /></td></tr>
+<tr class="separator:a28d16325ef82c53165ac9b3369f7b10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2590141c388d7afbcd2a8b6a6c68d9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a6a2590141c388d7afbcd2a8b6a6c68d9">isBomberman</a></td></tr>
+<tr class="memdesc:a6a2590141c388d7afbcd2a8b6a6c68d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Bomberman.  <a href="#a6a2590141c388d7afbcd2a8b6a6c68d9">More...</a><br /></td></tr>
+<tr class="separator:a6a2590141c388d7afbcd2a8b6a6c68d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53e0f1d5c13b809d6090a1a61e88175"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ae53e0f1d5c13b809d6090a1a61e88175">isExit</a></td></tr>
+<tr class="memdesc:ae53e0f1d5c13b809d6090a1a61e88175"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Exit.  <a href="#ae53e0f1d5c13b809d6090a1a61e88175">More...</a><br /></td></tr>
+<tr class="separator:ae53e0f1d5c13b809d6090a1a61e88175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671e9633ec0c3dd2ef39aa0082c776fe"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a671e9633ec0c3dd2ef39aa0082c776fe">isPowerup</a></td></tr>
+<tr class="memdesc:a671e9633ec0c3dd2ef39aa0082c776fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This element returns True if the topmost tile is Powerup.  <a href="#a671e9633ec0c3dd2ef39aa0082c776fe">More...</a><br /></td></tr>
+<tr class="separator:a671e9633ec0c3dd2ef39aa0082c776fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aaad193d1f0e1a1e90570e6069f65b330"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaad193d1f0e1a1e90570e6069f65b330"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>stack</b></td></tr>
+<tr class="memitem:aaad193d1f0e1a1e90570e6069f65b330"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aaad193d1f0e1a1e90570e6069f65b330">stack</a></td></tr>
 <tr class="separator:aaad193d1f0e1a1e90570e6069f65b330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a2e2fc149a0f255ddd6a2cd64bf060e04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e2fc149a0f255ddd6a2cd64bf060e04"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Empty</b> = 0</td></tr>
+<tr class="memitem:a2e2fc149a0f255ddd6a2cd64bf060e04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a2e2fc149a0f255ddd6a2cd64bf060e04">Empty</a> = 0</td></tr>
 <tr class="separator:a2e2fc149a0f255ddd6a2cd64bf060e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bbfca724a7080f281ccf31fd324182d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bbfca724a7080f281ccf31fd324182d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Concrete</b> = 1</td></tr>
+<tr class="memitem:a7bbfca724a7080f281ccf31fd324182d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a7bbfca724a7080f281ccf31fd324182d">Concrete</a> = 1</td></tr>
 <tr class="separator:a7bbfca724a7080f281ccf31fd324182d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4e13878d3a81fd1209fac1884f22569"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4e13878d3a81fd1209fac1884f22569"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Brick</b> = 2</td></tr>
+<tr class="memitem:ae4e13878d3a81fd1209fac1884f22569"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ae4e13878d3a81fd1209fac1884f22569">Brick</a> = 2</td></tr>
 <tr class="separator:ae4e13878d3a81fd1209fac1884f22569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22cc10d99f8785119477645d6e15f1ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22cc10d99f8785119477645d6e15f1ac"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Bomb</b> = 3</td></tr>
+<tr class="memitem:a22cc10d99f8785119477645d6e15f1ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a22cc10d99f8785119477645d6e15f1ac">Bomb</a> = 3</td></tr>
 <tr class="separator:a22cc10d99f8785119477645d6e15f1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44a3a6a3a1ed1c80a766b4a971a882af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44a3a6a3a1ed1c80a766b4a971a882af"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Bomberman</b> = 4</td></tr>
+<tr class="memitem:a44a3a6a3a1ed1c80a766b4a971a882af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a44a3a6a3a1ed1c80a766b4a971a882af">Bomberman</a> = 4</td></tr>
 <tr class="separator:a44a3a6a3a1ed1c80a766b4a971a882af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff8f8b451056470316105c1950c8049"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afff8f8b451056470316105c1950c8049"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Powerup</b> = 5</td></tr>
+<tr class="memitem:afff8f8b451056470316105c1950c8049"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#afff8f8b451056470316105c1950c8049">Powerup</a> = 5</td></tr>
 <tr class="separator:afff8f8b451056470316105c1950c8049"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa351173f66c9b5b2afe3ed6a79d68eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa351173f66c9b5b2afe3ed6a79d68eb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Exit</b> = 6</td></tr>
+<tr class="memitem:aaa351173f66c9b5b2afe3ed6a79d68eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aaa351173f66c9b5b2afe3ed6a79d68eb">Exit</a> = 6</td></tr>
 <tr class="separator:aaa351173f66c9b5b2afe3ed6a79d68eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b37e5f805d37cd1fa30d999dd4b02cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b37e5f805d37cd1fa30d999dd4b02cc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Flash</b> = 7</td></tr>
+<tr class="memitem:a7b37e5f805d37cd1fa30d999dd4b02cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a7b37e5f805d37cd1fa30d999dd4b02cc">Flash</a> = 7</td></tr>
 <tr class="separator:a7b37e5f805d37cd1fa30d999dd4b02cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a2cda5d4e4a662ea9ec19aebd4c75a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a2cda5d4e4a662ea9ec19aebd4c75a5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Balloom</b> = 8</td></tr>
+<tr class="memitem:a4a2cda5d4e4a662ea9ec19aebd4c75a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a4a2cda5d4e4a662ea9ec19aebd4c75a5">Balloom</a> = 8</td></tr>
 <tr class="separator:a4a2cda5d4e4a662ea9ec19aebd4c75a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b2b4677c74d1d30e93a235d3d997a4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b2b4677c74d1d30e93a235d3d997a4a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Oneal</b> = 9</td></tr>
+<tr class="memitem:a9b2b4677c74d1d30e93a235d3d997a4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a9b2b4677c74d1d30e93a235d3d997a4a">Oneal</a> = 9</td></tr>
 <tr class="separator:a9b2b4677c74d1d30e93a235d3d997a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed2c1217d02f0ca8ce5713f28a5543c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeed2c1217d02f0ca8ce5713f28a5543c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Doll</b> = 10</td></tr>
+<tr class="memitem:aeed2c1217d02f0ca8ce5713f28a5543c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aeed2c1217d02f0ca8ce5713f28a5543c">Doll</a> = 10</td></tr>
 <tr class="separator:aeed2c1217d02f0ca8ce5713f28a5543c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca9bdbdf6863d2602f3f52adb749125"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ca9bdbdf6863d2602f3f52adb749125"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Minvo</b> = 11</td></tr>
+<tr class="memitem:a5ca9bdbdf6863d2602f3f52adb749125"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a5ca9bdbdf6863d2602f3f52adb749125">Minvo</a> = 11</td></tr>
 <tr class="separator:a5ca9bdbdf6863d2602f3f52adb749125"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d7c123ec8ee03dc3b742828f9ee8690"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d7c123ec8ee03dc3b742828f9ee8690"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Kondoria</b> = 12</td></tr>
+<tr class="memitem:a7d7c123ec8ee03dc3b742828f9ee8690"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a7d7c123ec8ee03dc3b742828f9ee8690">Kondoria</a> = 12</td></tr>
 <tr class="separator:a7d7c123ec8ee03dc3b742828f9ee8690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de207d2b99c4d5978448b3e18e6ceef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1de207d2b99c4d5978448b3e18e6ceef"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Ovapi</b> = 13</td></tr>
+<tr class="memitem:a1de207d2b99c4d5978448b3e18e6ceef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a1de207d2b99c4d5978448b3e18e6ceef">Ovapi</a> = 13</td></tr>
 <tr class="separator:a1de207d2b99c4d5978448b3e18e6ceef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9fd73aea6f5bd2e72b5a76fe7c0045e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9fd73aea6f5bd2e72b5a76fe7c0045e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Pass</b> = 14</td></tr>
+<tr class="memitem:ac9fd73aea6f5bd2e72b5a76fe7c0045e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ac9fd73aea6f5bd2e72b5a76fe7c0045e">Pass</a> = 14</td></tr>
 <tr class="separator:ac9fd73aea6f5bd2e72b5a76fe7c0045e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63e8749a3f0bca1c933dc2213ad519ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63e8749a3f0bca1c933dc2213ad519ba"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></tr>
+<tr class="memitem:a63e8749a3f0bca1c933dc2213ad519ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a63e8749a3f0bca1c933dc2213ad519ba">Pontan</a> = 15</td></tr>
 <tr class="separator:a63e8749a3f0bca1c933dc2213ad519ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class stores tiles as stacks and provides methods for them. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="abe6a8c872f4e0d314bedb157c5d05f88"></a>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a6a0b6f120a03e296c3af500933d91d88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.tile.Tile.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6a2590141c388d7afbcd2a8b6a6c68d9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -239,7 +239,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="aad77febc9fbb4fa5fd2f13449d1c80da"></a>
+<a class="anchor" id="a21f16afbb5f5be4204b66be2624e3fc1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -257,7 +257,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="a402644908c005daf8f452078a8498884"></a>
+<a class="anchor" id="a21f16afbb5f5be4204b66be2624e3fc1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -289,7 +289,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="a26d5b3272e8b49c400420bfb80f2367e"></a>
+<a class="anchor" id="a28d16325ef82c53165ac9b3369f7b10a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -321,7 +321,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="a81e3ba4c45f3defa624c6d5cd080dab6"></a>
+<a class="anchor" id="ae53e0f1d5c13b809d6090a1a61e88175"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -353,7 +353,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="a464b874776619a4388f7bc8a5a57eee1"></a>
+<a class="anchor" id="a671e9633ec0c3dd2ef39aa0082c776fe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -385,7 +385,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="a0a8402816b245a69773305cc6d86f16d"></a>
+<a class="anchor" id="ab4cf13c5976824347b38961f7c3511c1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -403,7 +403,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="ae0f31d367515d3259f21b90d6be44db8"></a>
+<a class="anchor" id="a9707b7fe25e606192be87b3dd9957cd9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -421,7 +421,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="ab682d4a8d92f6dbe5380c21e8c27114a"></a>
+<a class="anchor" id="aa968da9f37f05ba08ccfe7a44b2bf776"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -455,7 +455,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
-<a class="anchor" id="ac9f0ddf090f58449aa74611a239e1458"></a>
+<a class="anchor" id="a3770faf89f08cecc2ba9aab54bbee50b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -473,13 +473,346 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a4a2cda5d4e4a662ea9ec19aebd4c75a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Balloom = 8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a22cc10d99f8785119477645d6e15f1ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Bomb = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44a3a6a3a1ed1c80a766b4a971a882af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Bomberman = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4e13878d3a81fd1209fac1884f22569"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Brick = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7bbfca724a7080f281ccf31fd324182d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Concrete = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeed2c1217d02f0ca8ce5713f28a5543c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Doll = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e2fc149a0f255ddd6a2cd64bf060e04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Empty = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaa351173f66c9b5b2afe3ed6a79d68eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Exit = 6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b37e5f805d37cd1fa30d999dd4b02cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Flash = 7</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d7c123ec8ee03dc3b742828f9ee8690"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Kondoria = 12</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ca9bdbdf6863d2602f3f52adb749125"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Minvo = 11</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9b2b4677c74d1d30e93a235d3d997a4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Oneal = 9</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1de207d2b99c4d5978448b3e18e6ceef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Ovapi = 13</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac9fd73aea6f5bd2e72b5a76fe7c0045e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Pass = 14</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63e8749a3f0bca1c933dc2213ad519ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Pontan = 15</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afff8f8b451056470316105c1950c8049"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int src.tile.Tile.Powerup = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaad193d1f0e1a1e90570e6069f65b330"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.tile.Tile.stack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/tile.py</li>
+<li>src/<a class="el" href="tile_8py.html">tile.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

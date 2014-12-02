@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>main_menu</b></li><li class="navelem"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">MainMenu</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1main__menu.html">main_menu</a></li><li class="navelem"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">MainMenu</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -105,31 +106,29 @@ Inheritance diagram for src.main_menu.MainMenu:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a138987af797121617841ccb0cdd20121"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a138987af797121617841ccb0cdd20121"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
+<tr class="memitem:a138987af797121617841ccb0cdd20121"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a138987af797121617841ccb0cdd20121">__init__</a></td></tr>
 <tr class="separator:a138987af797121617841ccb0cdd20121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe71c56b747e1f76a2b73b542875a4d7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#abe71c56b747e1f76a2b73b542875a4d7">initUI</a> (self)</td></tr>
-<tr class="memdesc:abe71c56b747e1f76a2b73b542875a4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of Main menu.  <a href="#abe71c56b747e1f76a2b73b542875a4d7">More...</a><br /></td></tr>
-<tr class="separator:abe71c56b747e1f76a2b73b542875a4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaa5ceb3caccddfacf97ca9befd21ae5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#adaa5ceb3caccddfacf97ca9befd21ae5">play</a> (self)</td></tr>
-<tr class="memdesc:adaa5ceb3caccddfacf97ca9befd21ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit playGameSignal when called.  <a href="#adaa5ceb3caccddfacf97ca9befd21ae5">More...</a><br /></td></tr>
-<tr class="separator:adaa5ceb3caccddfacf97ca9befd21ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac60fcc9e2384edbf984c094682c61624"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ac60fcc9e2384edbf984c094682c61624">logout</a> (self)</td></tr>
-<tr class="memdesc:ac60fcc9e2384edbf984c094682c61624"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit logoutGameSignal when called.  <a href="#ac60fcc9e2384edbf984c094682c61624">More...</a><br /></td></tr>
-<tr class="separator:ac60fcc9e2384edbf984c094682c61624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2872e528109b4747bc169235302d3ae"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ab2872e528109b4747bc169235302d3ae">quit</a> (self)</td></tr>
-<tr class="memdesc:ab2872e528109b4747bc169235302d3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit quitGameSignal when called.  <a href="#ab2872e528109b4747bc169235302d3ae">More...</a><br /></td></tr>
-<tr class="separator:ab2872e528109b4747bc169235302d3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92f678a32751ee9d592fd64d487126b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad92f678a32751ee9d592fd64d487126b">showLeaderboard</a> (self)</td></tr>
-<tr class="memdesc:ad92f678a32751ee9d592fd64d487126b"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit showLeaderboardSignal when called.  <a href="#ad92f678a32751ee9d592fd64d487126b">More...</a><br /></td></tr>
-<tr class="separator:ad92f678a32751ee9d592fd64d487126b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f5509f22d8daa7510daa6bb592e5f73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f5509f22d8daa7510daa6bb592e5f73"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a9f5509f22d8daa7510daa6bb592e5f73">showAccountSettingsMenu</a> (self)</td></tr>
-<tr class="memdesc:a9f5509f22d8daa7510daa6bb592e5f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit changeSettingsSignal when called <br /></td></tr>
-<tr class="separator:a9f5509f22d8daa7510daa6bb592e5f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a8bd4179063fdebe0f679b4501e6642"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5a8bd4179063fdebe0f679b4501e6642">load</a> (self)</td></tr>
-<tr class="memdesc:a5a8bd4179063fdebe0f679b4501e6642"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadMenuSignal when called.  <a href="#a5a8bd4179063fdebe0f679b4501e6642">More...</a><br /></td></tr>
-<tr class="separator:a5a8bd4179063fdebe0f679b4501e6642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3113abc9c3a207f22ccc9ae7a83cf37d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a3113abc9c3a207f22ccc9ae7a83cf37d">initUI</a></td></tr>
+<tr class="memdesc:a3113abc9c3a207f22ccc9ae7a83cf37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of Main menu.  <a href="#a3113abc9c3a207f22ccc9ae7a83cf37d">More...</a><br /></td></tr>
+<tr class="separator:a3113abc9c3a207f22ccc9ae7a83cf37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90da1e0c47f74c4c09111d58715de87a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a90da1e0c47f74c4c09111d58715de87a">play</a></td></tr>
+<tr class="memdesc:a90da1e0c47f74c4c09111d58715de87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit playGameSignal when called.  <a href="#a90da1e0c47f74c4c09111d58715de87a">More...</a><br /></td></tr>
+<tr class="separator:a90da1e0c47f74c4c09111d58715de87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba446da45e2ac128b0e2babaff717b0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1ba446da45e2ac128b0e2babaff717b0">logout</a></td></tr>
+<tr class="memdesc:a1ba446da45e2ac128b0e2babaff717b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit logoutGameSignal when called.  <a href="#a1ba446da45e2ac128b0e2babaff717b0">More...</a><br /></td></tr>
+<tr class="separator:a1ba446da45e2ac128b0e2babaff717b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4889fe8c4fdecfc7582172653a01004"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad4889fe8c4fdecfc7582172653a01004">quit</a></td></tr>
+<tr class="memdesc:ad4889fe8c4fdecfc7582172653a01004"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit quitGameSignal when called.  <a href="#ad4889fe8c4fdecfc7582172653a01004">More...</a><br /></td></tr>
+<tr class="separator:ad4889fe8c4fdecfc7582172653a01004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dde3d58838214f407908e74589f25d4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5dde3d58838214f407908e74589f25d4">showLeaderboard</a></td></tr>
+<tr class="memdesc:a5dde3d58838214f407908e74589f25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit showLeaderboardSignal when called.  <a href="#a5dde3d58838214f407908e74589f25d4">More...</a><br /></td></tr>
+<tr class="separator:a5dde3d58838214f407908e74589f25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fde1c124db7260f097d49fa986bd1d2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1fde1c124db7260f097d49fa986bd1d2">showAccountSettingsMenu</a></td></tr>
+<tr class="memdesc:a1fde1c124db7260f097d49fa986bd1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit changeSettingsSignal when called  <a href="#a1fde1c124db7260f097d49fa986bd1d2">More...</a><br /></td></tr>
+<tr class="separator:a1fde1c124db7260f097d49fa986bd1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769362f714e9bc7071f7d04e582cb89d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a769362f714e9bc7071f7d04e582cb89d">load</a></td></tr>
+<tr class="memdesc:a769362f714e9bc7071f7d04e582cb89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadMenuSignal when called.  <a href="#a769362f714e9bc7071f7d04e582cb89d">More...</a><br /></td></tr>
+<tr class="separator:a769362f714e9bc7071f7d04e582cb89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -152,8 +151,35 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a7a76ee92b8b02099e74f0d5ad107ff34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal which will launch the account settings menu.  <a href="#a7a76ee92b8b02099e74f0d5ad107ff34">More...</a><br /></td></tr>
 <tr class="separator:a7a76ee92b8b02099e74f0d5ad107ff34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a138987af797121617841ccb0cdd20121"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.main_menu.MainMenu.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="abe71c56b747e1f76a2b73b542875a4d7"></a>
+<a class="anchor" id="a3113abc9c3a207f22ccc9ae7a83cf37d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -171,7 +197,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5a8bd4179063fdebe0f679b4501e6642"></a>
+<a class="anchor" id="a769362f714e9bc7071f7d04e582cb89d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -189,7 +215,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac60fcc9e2384edbf984c094682c61624"></a>
+<a class="anchor" id="a1ba446da45e2ac128b0e2babaff717b0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -207,7 +233,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adaa5ceb3caccddfacf97ca9befd21ae5"></a>
+<a class="anchor" id="a90da1e0c47f74c4c09111d58715de87a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -225,7 +251,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab2872e528109b4747bc169235302d3ae"></a>
+<a class="anchor" id="ad4889fe8c4fdecfc7582172653a01004"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -243,7 +269,25 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad92f678a32751ee9d592fd64d487126b"></a>
+<a class="anchor" id="a1fde1c124db7260f097d49fa986bd1d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.main_menu.MainMenu.showAccountSettingsMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>emit changeSettingsSignal when called </p>
+
+</div>
+</div>
+<a class="anchor" id="a5dde3d58838214f407908e74589f25d4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -397,12 +441,12 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/main_menu.py</li>
+<li>src/<a class="el" href="main__menu_8py.html">main_menu.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

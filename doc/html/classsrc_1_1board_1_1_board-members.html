@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>board</b></li><li class="navelem"><a class="el" href="classsrc_1_1board_1_1_board.html">Board</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1board.html">board</a></li><li class="navelem"><a class="el" href="classsrc_1_1board_1_1_board.html">Board</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,58 +94,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a60ef4247af25957bcaaa0469eb222ac1">bombermanTriggerCanMove</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>bombLoop</b>(self) (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>coundownTimer</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a68ece335899ccecebb6ecb39c339d180">death</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a537d8c1c7d64aebc960da0f0b34ef44c">destroyTiles</a>(self, popList)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a801979e5433ee99d7e36a4c648b3f930">detonateBomb</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ac85b9f4f5c9a91b200fb7e9e75d69d29">drawImages</a>(self, painter, shape, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a5e6978f5baf0f94e864867df77d5c891">drawSquare</a>(self, painter, x, y, shape)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a1a709b1fbf97db6da5740b7aeac1fad8">endFlash</a>(self, flashList)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a718f3d710ba5aa31fb49da72d37c450a">exit</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>fastTimer</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>gameOverSignal</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a6a27183b76d873505d619fc6b78935b9">getScoreOfKilledEnemies</a>(self, killedEnemies)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>globalTimer</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a3ea0ac2d9356f9ebe6a63176b2351b5b">initBoard</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a2b87c8bc2da1173e07467996e4facbc4">initLevel</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a9088e838b9bb196505af60eb1598495c">initStatusBar</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>isPaused</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a656fb42b7e9a4e4b5aae20c261170fe3">keyPressEvent</a>(self, event)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a4e6bd40bde952bdbe12653269da596f5">killEnemy</a>(self, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>level</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#abcf6e3affb8c4b83c6d0ab28e265b4d5">moveEnemy</a>(self, speed)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>normalTimer</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aea8bc4036301719acbca3f62aa98e125">paintEvent</a>(self, event)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a29473ffbf635f04428be1349d177eedc">pause</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>pauseGameSignal</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#af2e08aecc48abfbb38dfcc2dbc11b7cd">popTileAt</a>(self, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a84399c357c601a4cf2f64dd096c2adc7">popTileAtWithoutUpdate</a>(self, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>resetTimerSignal</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aa7b557053364da15e7a150537bf37757">restartNextLevel</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a962e440ddb9556ca233a686d3d9f1be0">restartSameLevel</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a1320cdff86fe637b41b8973cf6bcb499">saveBomberman</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ac40120a47f2787cb730e2d945e8833ee">setTileAt</a>(self, x, y, tile)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a78d9960666f0be862cad75c855a38709">setTileAtWithoutUpdate</a>(self, x, y, tile)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>slowestTimer</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>slowTimer</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a1e964f3382db079501c6b4afa16348e4">squareHeight</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a4d2d336061f0136c40c42f491e11ad02">squareWidth</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a97be76e6fb7312dddd9c86290fc3a1db">start</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a39006efbb358f5be11d11c3a2775a2f0">startFlash</a>(self, flashList)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>statusBar</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a218749642f3aec8d8daaaf6be61cf0a9">stopTimers</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#afc740240caba216e9b416bdae675aab6">tileAt</a>(self, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#afa56e069dac6b7cdc60ba45e91d1745c">timeoutEvent</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a663a599889dead3d876c4e4d79123b8e">tryMove</a>(self, newX, newY)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a69b2b3031f0df523ba3dbeab4bfd3fb2">updateScore</a>(self, killedEnemies)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>updateScoreInDbSignal</b> (defined in <a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a>)</td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ae8571472bb4178812dd941cf3f8e5f7c">__init__</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a06616b31d53421ff4ab628bc370a3717">bombermanTriggerCanMove</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a22d94f0b9cf168530310b9c8f1b91376">bombLoop</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a91635719cb9bc632fa29a4185b1ffaa4">coundownTimer</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ac8a66bf9402309a00433b5f3513802ae">death</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a392550a2ae67a3e6726a4afc83f4fc77">destroyTiles</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aa69b375e6720c302a475b6e3fa307818">detonateBomb</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#abaffd7452946f29645bf4477858c6bc2">drawImages</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a8e8a6bed7e0b45811bda19ed429f0e5f">drawSquare</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a47b036053ac0ecb1aac40c5035aeb11f">endFlash</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a6591f612888730234201162cee1247ee">exit</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ac8c6d710d39e770a99356a30cabf275b">fastTimer</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a88d390d2d4ad6a255712abdde9f737e0">gameOverSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a1ae6596d1345af2690e5cb5c3b210b05">getScoreOfKilledEnemies</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a693000531a35e8c699aa56262ed6d10a">globalTimer</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ae89a8df74a8b5e6c30d738d1e60aefcf">initBoard</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aa09d3240add060f59c927df49bbaf853">initLevel</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a21a2d633ba83651a60a7ffd2f24b3797">initStatusBar</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a0b508a29cd8fed07fcb8cc9ab0c3fc0d">isPaused</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a72c23c7368eee625a0f6a192b289cb3a">keyPressEvent</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a21abf126d870b63c6620faf5e9544620">killEnemy</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a553447e81840fb800b7ab2f74702ccfb">level</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#af0bf5c1fff44cecd5410dcba5a3e75a8">moveEnemy</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a18fce871d4c91bac16992dbd2975ebda">normalTimer</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a6d6fe108c89b79bedcb20eff2a7fa278">paintEvent</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a1f89a0825fdfc89286ee2e3f38860f7d">pause</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a3d20eac8eee8f73f9fd84ca14a9a99d5">pauseGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ae02bd2e398b1e838d9c874aafc17c68f">popTileAt</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ad99cc8367b082eab43bde486ab0e2624">popTileAtWithoutUpdate</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#afbf20580188f637d8d5863a9a9810ff5">resetTimerSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a34a6889cf6a222ed0a64697301d98fa3">restartNextLevel</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aceab5432b56d92ed4d90120f09215869">restartSameLevel</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a0bb178d1309da01f9a45bca2d1b03323">saveBomberman</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#afbf21fc3a38eb00e8718ccc9cf457520">setTileAt</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ae35ead89f71cc90775d60f72ecec2e47">setTileAtWithoutUpdate</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ab11b4588420cef13c3d035a2607362d0">slowestTimer</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#af0477a0dda0a5b27f4f931f89da25180">slowTimer</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ab6da811ebb1baa57c29c42564d345b55">squareHeight</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aa2300430b0461afd5a122108d25f9f93">squareWidth</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#aed7119b9d194c3ff7af9589264514218">start</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#add12f1a97d8fb399f3bc2beff010357c">startFlash</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a5b5a2ac1a742155264df3668a470335f">statusBar</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a2bc2ed380897c70960a12925b80cf2b8">stopTimers</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a4b7b4d7c816b212cd24a4aa6881b0211">tileAt</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ac9890ecb8ab2ca60eafe3e0c53eabe0d">timeoutEvent</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#ad540d95ae1e8082d4f7837a2886b59a9">tryMove</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#a1ac2285718bb573f5815284827d2a30d">updateScore</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html#adbdb04e00742a09c938f8cb3f751e1f9">updateScoreInDbSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1board_1_1_board.html">src.board.Board</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

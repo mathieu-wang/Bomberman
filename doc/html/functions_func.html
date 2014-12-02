@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -101,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,429 +116,447 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
 <li>__init__()
-: <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ad9cdb2bcd44e1aaec299743531de5473">src.bomberman.Bomberman</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ae8571472bb4178812dd941cf3f8e5f7c">src.board.Board</a>
+, <a class="el" href="classsrc_1_1board_1_1_status_bar.html#a1f6a41d63501b4eb012a19c243b2cc5b">src.board.StatusBar</a>
+, <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a3417c001682d099753e7523493412da5">src.bomberman.Bomberman</a>
 , <a class="el" href="classsrc_1_1database_1_1_database.html#aab829b3386356e12ed7276c63e168269">src.database.Database</a>
-, <a class="el" href="classsrc_1_1game_1_1_game.html#a15684812af57df03feb870c9b4b380a2">src.game.Game</a>
-, <a class="el" href="classsrc_1_1level_1_1_level.html#ab6e52c74e02be818576be2ffd9040fe0">src.level.Level</a>
-, <a class="el" href="classsrc_1_1models_1_1_user_account.html#a027838850b725021534e05b2efffdc8f">src.models.UserAccount</a>
+, <a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a9b23b56c368250db98c79101ea3a80c2">src.enemy.Enemy</a>
+, <a class="el" href="classsrc_1_1game_1_1_game.html#a56a28235b9d21d6bb127c42cdc3187bf">src.game.Game</a>
+, <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#a2244b6bbae494de46daf3ec6ba8e9493">src.leaderboard.Leaderboard</a>
+, <a class="el" href="classsrc_1_1level_1_1_level.html#aa29517fc750a5a294a6fe3b320229bd7">src.level.Level</a>
+, <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#ac7a8b94d081a19792110eac3242ae77d">src.level_menu.LevelMenu</a>
+, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a718733e0299307cef6596781bcca9f0f">src.load_menu.LoadMenu</a>
+, <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a33638b382a7b9e5c95163bae3900d5b3">src.login_menu.LoginMenu</a>
+, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a138987af797121617841ccb0cdd20121">src.main_menu.MainMenu</a>
+, <a class="el" href="classsrc_1_1models_1_1_user_account.html#a1b42a1de62a313290db65c883a52323a">src.models.UserAccount</a>
+, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a50b6571cbb54b07250cf74db412231dd">src.pause_menu.PauseMenu</a>
+, <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#aec50d1d33e455ba8ea30063059ba3270">src.save_menu.SaveMenu</a>
+, <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#acd265c6844c42a4add38cd02d17070ed">src.settings_menu.AccountSettingsMenu</a>
+, <a class="el" href="classsrc_1_1tile_1_1_tile.html#a6a0b6f120a03e296c3af500933d91d88">src.tile.Tile</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
 <li>back()
-: <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ade0e52e1b6809df57ea4b1a167c0257b">src.leaderboard.Leaderboard</a>
-, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ac1756d59b9d5d3c026d4cb971bb6a657">src.load_menu.LoadMenu</a>
-, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#affa6df962a7284b81fa60171119585b1">src.pause_menu.PauseMenu</a>
+: <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#a88785a6d31f74d16e5c89d25ef4f00cd">src.leaderboard.Leaderboard</a>
+, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a74fb2bc25bdc9367194c0b8553bacf6b">src.load_menu.LoadMenu</a>
+, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#addfc7fc25e6e43c541a6b65b8867fb18">src.pause_menu.PauseMenu</a>
 </li>
 <li>backToMainMenu()
-: <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a5852c765b18d5e6c28d5fdb7ebf80427">src.level_menu.LevelMenu</a>
-, <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a47dc6e6cb8a9ca5431a32ad73298ed81">src.settings_menu.AccountSettingsMenu</a>
+: <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#ab4fe8d2bc18589c5e6c2fa72a86f0101">src.level_menu.LevelMenu</a>
+, <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#af8e8941adda48bb6b2c80065e7847c40">src.settings_menu.AccountSettingsMenu</a>
 </li>
 <li>bombermanTriggerCanMove()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a60ef4247af25957bcaaa0469eb222ac1">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a06616b31d53421ff4ab628bc370a3717">src.board.Board</a>
+</li>
+<li>bombLoop()
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a22d94f0b9cf168530310b9c8f1b91376">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>center()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a243a1df9b63a0f081b90fa29146a4af6">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#ad5bd7707485097c34b145e947f33201c">src.game.Game</a>
 </li>
 <li>changeSettings()
-: <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a10989536edbbe0db4fc03f2e5ccc8271">src.settings_menu.AccountSettingsMenu</a>
+: <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a647c9a9f69d6a0e492d7cdc4712294c1">src.settings_menu.AccountSettingsMenu</a>
 </li>
 <li>checkUser()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a801015f444b4267274d219381e134575">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a9918d1065bc690ded6430d8065f742f0">src.database.Database</a>
 </li>
 <li>clearBoard()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#ab1083324efb6eddfdfc04316a85f7f15">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a7cf3194f45bf6216f8f4721cbb6323ea">src.level.Level</a>
 </li>
 <li>clearBombs()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a5cacfb3b893af155c71dfffc3ae042bd">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a6de81c59468d0fdd992fb16579818cf2">src.level.Level</a>
 </li>
 <li>clearEnemies()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#acd226ddc877d5bf1e18c4d2a7e790fb3">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a54d44854b3705182c47f6d7b6ca4ce01">src.level.Level</a>
 </li>
 <li>createUser()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a9f2df42cc938c2eb8186104b2831afaa">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#aecdce29af868a48af80983864a58363e">src.database.Database</a>
+</li>
+<li>createUserAccountsForDemo()
+: <a class="el" href="classsrc_1_1database_1_1_database.html#acccba83374f863733b9356901c4867f8">src.database.Database</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>death()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a68ece335899ccecebb6ecb39c339d180">src.board.Board</a>
-, <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ae596075451ff8d73d59ff2cf9e4f7848">src.bomberman.Bomberman</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ac8a66bf9402309a00433b5f3513802ae">src.board.Board</a>
+, <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ae0fe5887593d3396b4b8f4c6457a4df4">src.bomberman.Bomberman</a>
 </li>
 <li>deleteAccount()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#ab38097adf50de7cdc08953819dc59d91">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a4888155189d5f8d5d6740f3fae14f897">src.database.Database</a>
 </li>
 <li>destroyTiles()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a537d8c1c7d64aebc960da0f0b34ef44c">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a392550a2ae67a3e6726a4afc83f4fc77">src.board.Board</a>
 </li>
 <li>detonateBomb()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a801979e5433ee99d7e36a4c648b3f930">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#aa69b375e6720c302a475b6e3fa307818">src.board.Board</a>
 </li>
 <li>drawImages()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#ac85b9f4f5c9a91b200fb7e9e75d69d29">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#abaffd7452946f29645bf4477858c6bc2">src.board.Board</a>
 </li>
 <li>drawSquare()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a5e6978f5baf0f94e864867df77d5c891">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a8e8a6bed7e0b45811bda19ed429f0e5f">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>endFlash()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a1a709b1fbf97db6da5740b7aeac1fad8">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a47b036053ac0ecb1aac40c5035aeb11f">src.board.Board</a>
 </li>
 <li>exit()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a718f3d710ba5aa31fb49da72d37c450a">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a6591f612888730234201162cee1247ee">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>fillData()
-: <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#a0cf6394bf691c593a05dadf3969536ba">src.leaderboard.Leaderboard</a>
+: <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#af1be63243d5b117e44b308d77bc596ec">src.leaderboard.Leaderboard</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>gainPowerUp()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a9af98db5112ae2fbd4a9f44ae0bcbe83">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#ad342c492e30a176c38b82831ec0b51eb">src.level.Level</a>
 </li>
 <li>gameOver()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#ae864ef349cf3b094874543fab2210a37">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a884c2309f069058047dc88f7089519e6">src.game.Game</a>
 </li>
 <li>getEnemy()
-: <a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a4476f5bc0be70d26bebece6abcb7bdad">src.enemy.Enemy</a>
+: <a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a25d83ffde61f348af7462c7c1f32aa1c">src.enemy.Enemy</a>
 </li>
 <li>getEnemyListAndPowerUp()
-: <a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a01da6a5d5f8eb5db75323749a80fc3a0">src.enemy.Enemy</a>
+: <a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a5a60a3c9089fed21552341cec52b11be">src.enemy.Enemy</a>
 </li>
 <li>getHighestUnlockedLevel()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a20befecd8b13cac9a87e59b759a5406a">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a78b80530c69c4f87c9dba0973851847f">src.database.Database</a>
 </li>
 <li>getScoreOfKilledEnemies()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a6a27183b76d873505d619fc6b78935b9">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a1ae6596d1345af2690e5cb5c3b210b05">src.board.Board</a>
 </li>
 <li>getTopTenUsers()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a1e26b95f30986a81d197e118420d0865">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a0f7c561e980eb1edb94fceb6f068cde1">src.database.Database</a>
 </li>
 <li>getUserAccount()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a18158514f653442eb3ff7bb61b5f5213">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a0d1c376636eea2a4b1146c3bf5b58a3b">src.database.Database</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>hasUser()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a12d75fd9334f108d345cdbd3ee8816a9">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#aa664b6b94bb39e9f5fe3186f72ee44ff">src.database.Database</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>incrementNumOfGamesPlayed()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#adf6d7572d1782bedb86e6880c24e8e9e">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a640ebedb267940c09228ea6c51fcf8e2">src.database.Database</a>
 </li>
 <li>initBoard()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a3ea0ac2d9356f9ebe6a63176b2351b5b">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ae89a8df74a8b5e6c30d738d1e60aefcf">src.board.Board</a>
 </li>
 <li>initLevel()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a2b87c8bc2da1173e07467996e4facbc4">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#aa09d3240add060f59c927df49bbaf853">src.board.Board</a>
 </li>
 <li>initStatusBar()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a9088e838b9bb196505af60eb1598495c">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a21a2d633ba83651a60a7ffd2f24b3797">src.board.Board</a>
 </li>
 <li>initUI()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a89ba31b71efebcc9b2f43227d833e38f">src.game.Game</a>
-, <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ad5925cc40678e00c529938ee5105d833">src.leaderboard.Leaderboard</a>
-, <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a85ba6c3a92e1f256f70186866f2795ac">src.level_menu.LevelMenu</a>
-, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ae10c4104f4245eaba4772a7f29485ff4">src.load_menu.LoadMenu</a>
-, <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a5114077865bfc30e8adef2f90cd27d85">src.login_menu.LoginMenu</a>
-, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#abe71c56b747e1f76a2b73b542875a4d7">src.main_menu.MainMenu</a>
-, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9a5e36aa2482be916deefce1f4f23fcb">src.pause_menu.PauseMenu</a>
-, <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a69135ce0e32c0ec25e23f4cea0a0eae8">src.save_menu.SaveMenu</a>
-, <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#aeff3b2a6031f6dd312a66d0f161eeedb">src.settings_menu.AccountSettingsMenu</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#ade13769638b64de5af50e07e859d1434">src.game.Game</a>
+, <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ac62f1304f5b4295d74af6d9e65d050c7">src.leaderboard.Leaderboard</a>
+, <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a2ac0ca1cba0bbcc90d7bb67f4800c8a2">src.level_menu.LevelMenu</a>
+, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a2e32e2e1f422ac727cb97cc27b7c138d">src.load_menu.LoadMenu</a>
+, <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#ae4f0e6adbb18214711d96acdb924508d">src.login_menu.LoginMenu</a>
+, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a3113abc9c3a207f22ccc9ae7a83cf37d">src.main_menu.MainMenu</a>
+, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a62e8c72521fecf6445dca451b0935f2e">src.pause_menu.PauseMenu</a>
+, <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a66b95685a36bf0e13d999ff0e1c963a6">src.save_menu.SaveMenu</a>
+, <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#af1ec8bde572a5ccb81c8be474f536270">src.settings_menu.AccountSettingsMenu</a>
 </li>
 <li>isBomberman()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#abe6a8c872f4e0d314bedb157c5d05f88">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a6a2590141c388d7afbcd2a8b6a6c68d9">src.tile.Tile</a>
 </li>
 <li>isEmpty()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#aad77febc9fbb4fa5fd2f13449d1c80da">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a21f16afbb5f5be4204b66be2624e3fc1">src.tile.Tile</a>
 </li>
 <li>isEnemy()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a26d5b3272e8b49c400420bfb80f2367e">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a28d16325ef82c53165ac9b3369f7b10a">src.tile.Tile</a>
 </li>
 <li>isExit()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a81e3ba4c45f3defa624c6d5cd080dab6">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#ae53e0f1d5c13b809d6090a1a61e88175">src.tile.Tile</a>
 </li>
 <li>isPowerup()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a464b874776619a4388f7bc8a5a57eee1">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a671e9633ec0c3dd2ef39aa0082c776fe">src.tile.Tile</a>
 </li>
 <li>isValidPassword()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#ae1b03c0a444fc7600f6d6333b0270437">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a8613fbb0fd5056043b89385351742ba7">src.database.Database</a>
 </li>
 <li>isValidUsername()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#ad5f2e607e41b9b4d1e956d1a9a229afa">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#aa1414e3de9a7737c155bfe79249267f8">src.database.Database</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
 <li>keyPressEvent()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a656fb42b7e9a4e4b5aae20c261170fe3">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a72c23c7368eee625a0f6a192b289cb3a">src.board.Board</a>
 </li>
 <li>killEnemy()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a4e6bd40bde952bdbe12653269da596f5">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a21abf126d870b63c6620faf5e9544620">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>load()
-: <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5a8bd4179063fdebe0f679b4501e6642">src.main_menu.MainMenu</a>
-, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aa3714c919e9514631cd66c6714c1e243">src.pause_menu.PauseMenu</a>
+: <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a769362f714e9bc7071f7d04e582cb89d">src.main_menu.MainMenu</a>
+, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a90347d01be71758705a0b6a80e3c14c7">src.pause_menu.PauseMenu</a>
 </li>
 <li>loadGame()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#abc4a7e44498f2e3ede0c52a43725526d">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#ab9eaa249323fbe01795bb0bb63f86eab">src.database.Database</a>
 </li>
 <li>loadListSavedGames()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a8f48d5d1c090840389e7cbc556d635b5">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a6c64d066e8f86c7d68a5fcf549a89abf">src.database.Database</a>
 </li>
 <li>loadSavedGame()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a8e215b6533b7fa858334453633e12e6e">src.game.Game</a>
-, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ac3ab22ee56c51e7cb02f27344d6bfcbd">src.load_menu.LoadMenu</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a1fa03d050e014c54f122315f8e98d441">src.game.Game</a>
+, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a47c0992339e3d0c5050f33bd9c67040a">src.load_menu.LoadMenu</a>
 </li>
 <li>loadSavedGameList()
-: <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#af7b9c789c68fb85b2d4e2bfd211e201d">src.load_menu.LoadMenu</a>
+: <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a97aed1f843fdce3ae868ba7e96d55515">src.load_menu.LoadMenu</a>
 </li>
 <li>login()
-: <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a75303935e17e43388fd4ef3df029944e">src.login_menu.LoginMenu</a>
+: <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9098f8834d712331e4d05250a8012370">src.login_menu.LoginMenu</a>
 </li>
 <li>logout()
-: <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ac60fcc9e2384edbf984c094682c61624">src.main_menu.MainMenu</a>
+: <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1ba446da45e2ac128b0e2babaff717b0">src.main_menu.MainMenu</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>moveEnemy()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#abcf6e3affb8c4b83c6d0ab28e265b4d5">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#af0bf5c1fff44cecd5410dcba5a3e75a8">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>paintEvent()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#aea8bc4036301719acbca3f62aa98e125">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a6d6fe108c89b79bedcb20eff2a7fa278">src.board.Board</a>
 </li>
 <li>pause()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a29473ffbf635f04428be1349d177eedc">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a1f89a0825fdfc89286ee2e3f38860f7d">src.board.Board</a>
 </li>
 <li>peek()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a0a8402816b245a69773305cc6d86f16d">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#ab4cf13c5976824347b38961f7c3511c1">src.tile.Tile</a>
 </li>
 <li>play()
-: <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#adaa5ceb3caccddfacf97ca9befd21ae5">src.main_menu.MainMenu</a>
+: <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a90da1e0c47f74c4c09111d58715de87a">src.main_menu.MainMenu</a>
 </li>
 <li>pop()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#ae0f31d367515d3259f21b90d6be44db8">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a9707b7fe25e606192be87b3dd9957cd9">src.tile.Tile</a>
 </li>
 <li>popTileAt()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#af2e08aecc48abfbb38dfcc2dbc11b7cd">src.board.Board</a>
-, <a class="el" href="classsrc_1_1level_1_1_level.html#a79a922117841f374126a4ab727a65ef1">src.level.Level</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ae02bd2e398b1e838d9c874aafc17c68f">src.board.Board</a>
+, <a class="el" href="classsrc_1_1level_1_1_level.html#a49949e01d457000e8a5237eb965beb62">src.level.Level</a>
 </li>
 <li>popTileAtWithoutUpdate()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a84399c357c601a4cf2f64dd096c2adc7">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ad99cc8367b082eab43bde486ab0e2624">src.board.Board</a>
 </li>
 <li>push()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#ab682d4a8d92f6dbe5380c21e8c27114a">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#aa968da9f37f05ba08ccfe7a44b2bf776">src.tile.Tile</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
 <li>quit()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#aa7856f8d00f279cc139d131cb2e8d8ea">src.game.Game</a>
-, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ab2872e528109b4747bc169235302d3ae">src.main_menu.MainMenu</a>
-, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9f29e275aa812da5fad8730a41746677">src.pause_menu.PauseMenu</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a09118068e27878ad17bb2d58d13d1a8e">src.game.Game</a>
+, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad4889fe8c4fdecfc7582172653a01004">src.main_menu.MainMenu</a>
+, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a7f5c8ff0f8ce14cf43036125aa7cc0f1">src.pause_menu.PauseMenu</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>register()
-: <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#af6ee6a8dee90f1a94a506400356707ad">src.login_menu.LoginMenu</a>
+: <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd">src.login_menu.LoginMenu</a>
 </li>
 <li>reset()
-: <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a7d6de2893ff7ce0bed4cd72f15e9eb20">src.bomberman.Bomberman</a>
+: <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ab2ee598521d0aa9ca64f19526b532db3">src.bomberman.Bomberman</a>
 </li>
 <li>restartNextLevel()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#aa7b557053364da15e7a150537bf37757">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a34a6889cf6a222ed0a64697301d98fa3">src.board.Board</a>
 </li>
 <li>restartSameLevel()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a962e440ddb9556ca233a686d3d9f1be0">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#aceab5432b56d92ed4d90120f09215869">src.board.Board</a>
 </li>
 <li>resume()
-: <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aaf160aa602ebd4ec91e9bc32d6d730f9">src.pause_menu.PauseMenu</a>
+: <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a3c7297c8c855b2acdcf1c88038c9610d">src.pause_menu.PauseMenu</a>
 </li>
 <li>resumeToGame()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a19d0646df1f0cb57f8262412487d5270">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a1d29b77bdab0f65b719d8346fe20fb99">src.game.Game</a>
 </li>
 <li>resumeToPauseMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#add2df3ddda7fa333cadb6fcfa060eaef">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#aa7bd3d1e95c485aadf0e6f3fc491d1dc">src.game.Game</a>
 </li>
 <li>returnToPauseMenu()
-: <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a91e3ce3f4563456db3102294459a8c43">src.save_menu.SaveMenu</a>
+: <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a97cb0d0ac2bcb449471b2eeaba360033">src.save_menu.SaveMenu</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>save()
-: <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a6950e08a6f9a87c87e9b77d606117eef">src.pause_menu.PauseMenu</a>
+: <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aa542d98eed8764c699497ccea1ec7a3b">src.pause_menu.PauseMenu</a>
 </li>
 <li>saveBomberman()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a1320cdff86fe637b41b8973cf6bcb499">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a0bb178d1309da01f9a45bca2d1b03323">src.board.Board</a>
 </li>
 <li>saveGame()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a0910f9e8e11bf94dcf9a24489e6f4dde">src.database.Database</a>
-, <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a318487ca9ed34963dd572faa1ce09c56">src.save_menu.SaveMenu</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a98053f72cae85fd3348162d66ba1dafe">src.database.Database</a>
+, <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#abbacb5225acd0f6d3afdd7540e8c98ef">src.save_menu.SaveMenu</a>
 </li>
 <li>setBomb()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#aa1fdbf2a27cb66fffd27bc2598449072">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#afe359808f5f5a8db06b05736cefb9717">src.level.Level</a>
 </li>
 <li>setBomberman()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a76cfaab350e8f7699f054e9e9423de6c">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a31dee5f64d4faa5c583a7d15189c60dc">src.level.Level</a>
 </li>
 <li>setBrick()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#ae430589f114a19e13c2667e8ef37e266">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a88a55e8010242b576f004109cbaef727">src.level.Level</a>
 </li>
 <li>setChaos()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a4b318116c4f5b2bdad46be495e21c53d">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#aaa3494815c1274bd189339a5076ba63d">src.level.Level</a>
 </li>
 <li>setConcrete()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#ad43e3dab276d7ea38b268f22827b0236">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a64bc17bcf23b2fad18e1fd311befd56c">src.level.Level</a>
 </li>
 <li>setEnemies()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#af60d85055b9f07935312e581b5316364">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a103df1704c6f4ddbe0b61645277111e7">src.level.Level</a>
 </li>
 <li>setExit()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a37d135e2fd7961eb5f2921447d1c8243">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a883c95dde27eff49917bfb4d5fe85e75">src.level.Level</a>
 </li>
 <li>setLevelInfo()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a6e5e52649e074784152f5fe8f94ded08">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#aa097a0823969566f5b72185b194b3236">src.level.Level</a>
 </li>
 <li>setNewLevel()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a0df76bcc440bbab23e4ce754223177c5">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#ac5f74996221484c4492b6f50412427ed">src.level.Level</a>
 </li>
 <li>setPowerup()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a7ab32312eb682ecce07ae83551c051e1">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a9d926314e0c8be00f2eb793ccdc776a3">src.level.Level</a>
 </li>
 <li>setSuperChaos()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#acf03686c3657b7e1a5436bbf1b721bf2">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a728e95c873b4046cf555bd70ca9141b3">src.level.Level</a>
 </li>
 <li>setTileAt()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#ac40120a47f2787cb730e2d945e8833ee">src.board.Board</a>
-, <a class="el" href="classsrc_1_1level_1_1_level.html#a1b0a565e03f055cd93abe6faeefd3b4f">src.level.Level</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#afbf21fc3a38eb00e8718ccc9cf457520">src.board.Board</a>
+, <a class="el" href="classsrc_1_1level_1_1_level.html#acd34ac61d532aa42f6478a21315179d1">src.level.Level</a>
 </li>
 <li>setTileAtWithoutUpdate()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a78d9960666f0be862cad75c855a38709">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ae35ead89f71cc90775d60f72ecec2e47">src.board.Board</a>
 </li>
 <li>showAccountSettingsMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a42b40336207a65cb12910ae7d1a4175d">src.game.Game</a>
-, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a9f5509f22d8daa7510daa6bb592e5f73">src.main_menu.MainMenu</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a252b2ec6612780aec8655dfdd4cf8259">src.game.Game</a>
+, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1fde1c124db7260f097d49fa986bd1d2">src.main_menu.MainMenu</a>
 </li>
 <li>showBoard()
 : <a class="el" href="classsrc_1_1game_1_1_game.html#a570dba568ad9dd3b9745e0f10a4b29a8">src.game.Game</a>
 </li>
 <li>showLeaderboard()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a13a6d564b3397c8c520b0b23e99d0880">src.game.Game</a>
-, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad92f678a32751ee9d592fd64d487126b">src.main_menu.MainMenu</a>
-, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9e3d8c0c94fdf4af682d6988f123888f">src.pause_menu.PauseMenu</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a5998c86374c68278133a28fc86a7f71d">src.game.Game</a>
+, <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5dde3d58838214f407908e74589f25d4">src.main_menu.MainMenu</a>
+, <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a4f58d07f41a062addc881f07ab0d97f4">src.pause_menu.PauseMenu</a>
 </li>
 <li>showLevelMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#afe69a6fa066d92365c226aff1c903e90">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a281d0d5faca43cf2d0946ab971281735">src.game.Game</a>
 </li>
 <li>showLoadMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a4c38f9b4c2f4e81a49e25632dccd8622">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#ac9f00ac625aa0a9027c3eddfe00e1e51">src.game.Game</a>
 </li>
 <li>showLoginMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a7a14788a82ebc0d4b4b821ac1489a7a0">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#aeed21fd562360874f0264e32be392a56">src.game.Game</a>
 </li>
 <li>showMainMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a218f9c8c6e86a19fa9d3155ce43068a0">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a16759ee9c164fe518080139ea25086e0">src.game.Game</a>
 </li>
 <li>showPauseMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a0e17658d314189179aa5be0bfdc185da">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#acd8bf94bd7676c2942df14ed0404055a">src.game.Game</a>
 </li>
 <li>showSaveMenu()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a02ee6b88570e0af0686050a2268f687b">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a808603504aca0c767ece9b422a76ecbb">src.game.Game</a>
 </li>
 <li>size()
-: <a class="el" href="classsrc_1_1tile_1_1_tile.html#ac9f0ddf090f58449aa74611a239e1458">src.tile.Tile</a>
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a3770faf89f08cecc2ba9aab54bbee50b">src.tile.Tile</a>
 </li>
 <li>squareHeight()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a1e964f3382db079501c6b4afa16348e4">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ab6da811ebb1baa57c29c42564d345b55">src.board.Board</a>
 </li>
 <li>squareWidth()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a4d2d336061f0136c40c42f491e11ad02">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#aa2300430b0461afd5a122108d25f9f93">src.board.Board</a>
 </li>
 <li>start()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a97be76e6fb7312dddd9c86290fc3a1db">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#aed7119b9d194c3ff7af9589264514218">src.board.Board</a>
 </li>
 <li>startFlash()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a39006efbb358f5be11d11c3a2775a2f0">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#add12f1a97d8fb399f3bc2beff010357c">src.board.Board</a>
 </li>
 <li>startLevel()
-: <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#aafc4b32a91edcdf2a10f5de32efbda2a">src.level_menu.LevelMenu</a>
+: <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a9d3cad83657dfc56af914d0717f13a3e">src.level_menu.LevelMenu</a>
 </li>
 <li>stopTimers()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a218749642f3aec8d8daaaf6be61cf0a9">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a2bc2ed380897c70960a12925b80cf2b8">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>tileAt()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#afc740240caba216e9b416bdae675aab6">src.board.Board</a>
-, <a class="el" href="classsrc_1_1level_1_1_level.html#a9f1a64a223be266425f6100e4728df3a">src.level.Level</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a4b7b4d7c816b212cd24a4aa6881b0211">src.board.Board</a>
+, <a class="el" href="classsrc_1_1level_1_1_level.html#a4c61be308c7af4e98f3ed6e0f6dd5d24">src.level.Level</a>
 </li>
 <li>timeoutEvent()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#afa56e069dac6b7cdc60ba45e91d1745c">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ac9890ecb8ab2ca60eafe3e0c53eabe0d">src.board.Board</a>
 </li>
 <li>tryMove()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a663a599889dead3d876c4e4d79123b8e">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#ad540d95ae1e8082d4f7837a2886b59a9">src.board.Board</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>updateGamesPlayedInDb()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a45770f3f952d2738b599e04ade877296">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a6761faa058096df0e2df9724906c6287">src.game.Game</a>
 </li>
 <li>updateScore()
-: <a class="el" href="classsrc_1_1board_1_1_board.html#a69b2b3031f0df523ba3dbeab4bfd3fb2">src.board.Board</a>
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a1ac2285718bb573f5815284827d2a30d">src.board.Board</a>
 </li>
 <li>updateScoreInDb()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a85c98d60278dc78a465e40b5e3c57579">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#ad671c0a5819b1eaae158dd3a23e5e80b">src.game.Game</a>
 </li>
 <li>updateUserAccount()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a374cf7a2b0dc2d1764fea49ef248544c">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a5dc3caa90a8c56991dce1e79bcdd5a17">src.database.Database</a>
 </li>
 <li>updateUserScore()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#aea1e0de87f1e08cf83d31a2179cf0c12">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a29201805da2b1392bf8edd0c67144a1a">src.database.Database</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>models</b></li><li class="navelem"><a class="el" href="classsrc_1_1models_1_1_user_account.html">UserAccount</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1models.html">models</a></li><li class="navelem"><a class="el" href="classsrc_1_1models_1_1_user_account.html">UserAccount</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -100,35 +101,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a027838850b725021534e05b2efffdc8f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a027838850b725021534e05b2efffdc8f">__init__</a> (self, username, realname, password, maxLevelReached=1, cumulativeScore=0, numGamesPlayed=0)</td></tr>
-<tr class="memdesc:a027838850b725021534e05b2efffdc8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with three required parameters: username, realname, and password.  <a href="#a027838850b725021534e05b2efffdc8f">More...</a><br /></td></tr>
-<tr class="separator:a027838850b725021534e05b2efffdc8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b42a1de62a313290db65c883a52323a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a1b42a1de62a313290db65c883a52323a">__init__</a></td></tr>
+<tr class="memdesc:a1b42a1de62a313290db65c883a52323a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with three required parameters: username, realname, and password.  <a href="#a1b42a1de62a313290db65c883a52323a">More...</a><br /></td></tr>
+<tr class="separator:a1b42a1de62a313290db65c883a52323a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a324ce15e04522bc6d7e1b1518f7a9810"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a324ce15e04522bc6d7e1b1518f7a9810"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>username</b></td></tr>
+<tr class="memitem:a324ce15e04522bc6d7e1b1518f7a9810"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a324ce15e04522bc6d7e1b1518f7a9810">username</a></td></tr>
 <tr class="separator:a324ce15e04522bc6d7e1b1518f7a9810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fce5f371818dfb89c6837313497dbb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fce5f371818dfb89c6837313497dbb5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>realname</b></td></tr>
+<tr class="memitem:a0fce5f371818dfb89c6837313497dbb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a0fce5f371818dfb89c6837313497dbb5">realname</a></td></tr>
 <tr class="separator:a0fce5f371818dfb89c6837313497dbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94b6fb51043b9cd72661f232aac24168"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94b6fb51043b9cd72661f232aac24168"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>password</b></td></tr>
+<tr class="memitem:a94b6fb51043b9cd72661f232aac24168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a94b6fb51043b9cd72661f232aac24168">password</a></td></tr>
 <tr class="separator:a94b6fb51043b9cd72661f232aac24168"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3bcbebd2526795af0c1be70b8100434"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3bcbebd2526795af0c1be70b8100434"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>maxLevelReached</b></td></tr>
+<tr class="memitem:ac3bcbebd2526795af0c1be70b8100434"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#ac3bcbebd2526795af0c1be70b8100434">maxLevelReached</a></td></tr>
 <tr class="separator:ac3bcbebd2526795af0c1be70b8100434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba4c0aff5e1f4aa209fef3a9d77b7bb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba4c0aff5e1f4aa209fef3a9d77b7bb7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>cumulativeScore</b></td></tr>
+<tr class="memitem:aba4c0aff5e1f4aa209fef3a9d77b7bb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#aba4c0aff5e1f4aa209fef3a9d77b7bb7">cumulativeScore</a></td></tr>
 <tr class="separator:aba4c0aff5e1f4aa209fef3a9d77b7bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb4b6601e342d936266c44a9e809e3db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb4b6601e342d936266c44a9e809e3db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>numGamesPlayed</b></td></tr>
+<tr class="memitem:adb4b6601e342d936266c44a9e809e3db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1models_1_1_user_account.html#adb4b6601e342d936266c44a9e809e3db">numGamesPlayed</a></td></tr>
 <tr class="separator:adb4b6601e342d936266c44a9e809e3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Instances of this class represent all information relevant to a specific user account. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a027838850b725021534e05b2efffdc8f"></a>
+<a class="anchor" id="a1b42a1de62a313290db65c883a52323a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -197,13 +192,86 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aba4c0aff5e1f4aa209fef3a9d77b7bb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.models.UserAccount.cumulativeScore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac3bcbebd2526795af0c1be70b8100434"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.models.UserAccount.maxLevelReached</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adb4b6601e342d936266c44a9e809e3db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.models.UserAccount.numGamesPlayed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a94b6fb51043b9cd72661f232aac24168"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.models.UserAccount.password</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0fce5f371818dfb89c6837313497dbb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.models.UserAccount.realname</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a324ce15e04522bc6d7e1b1518f7a9810"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.models.UserAccount.username</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/models.py</li>
+<li>src/<a class="el" href="models_8py.html">models.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

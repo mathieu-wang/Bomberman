@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>models</b></li><li class="navelem"><a class="el" href="classsrc_1_1models_1_1_user_account.html">UserAccount</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1models.html">models</a></li><li class="navelem"><a class="el" href="classsrc_1_1models_1_1_user_account.html">UserAccount</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,17 +94,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a027838850b725021534e05b2efffdc8f">__init__</a>(self, username, realname, password, maxLevelReached=1, cumulativeScore=0, numGamesPlayed=0)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>cumulativeScore</b> (defined in <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>maxLevelReached</b> (defined in <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>numGamesPlayed</b> (defined in <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>password</b> (defined in <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>realname</b> (defined in <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>username</b> (defined in <a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a>)</td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a1b42a1de62a313290db65c883a52323a">__init__</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#aba4c0aff5e1f4aa209fef3a9d77b7bb7">cumulativeScore</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#ac3bcbebd2526795af0c1be70b8100434">maxLevelReached</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#adb4b6601e342d936266c44a9e809e3db">numGamesPlayed</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a94b6fb51043b9cd72661f232aac24168">password</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a0fce5f371818dfb89c6837313497dbb5">realname</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html#a324ce15e04522bc6d7e1b1518f7a9810">username</a></td><td class="entry"><a class="el" href="classsrc_1_1models_1_1_user_account.html">src.models.UserAccount</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

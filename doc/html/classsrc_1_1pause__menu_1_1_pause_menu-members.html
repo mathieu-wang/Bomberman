@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>pause_menu</b></li><li class="navelem"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">PauseMenu</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1pause__menu.html">pause_menu</a></li><li class="navelem"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">PauseMenu</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,24 +94,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#affa6df962a7284b81fa60171119585b1">back</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a50b6571cbb54b07250cf74db412231dd">__init__</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#addfc7fc25e6e43c541a6b65b8867fb18">back</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#adc8bc5514ba8991d100512319659d24e">backToMainMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9a5e36aa2482be916deefce1f4f23fcb">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aa3714c919e9514631cd66c6714c1e243">load</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a62e8c72521fecf6445dca451b0935f2e">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a90347d01be71758705a0b6a80e3c14c7">load</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#ae1851c6cab071ed1a4473320110432d8">loadMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9f29e275aa812da5fad8730a41746677">quit</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a7f5c8ff0f8ce14cf43036125aa7cc0f1">quit</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aea554e6749ca45f516618711530a1acd">quitGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aaf160aa602ebd4ec91e9bc32d6d730f9">resume</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a3c7297c8c855b2acdcf1c88038c9610d">resume</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a0b97feb3939cd6be81c71ba6dbe67669">resumeGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a6950e08a6f9a87c87e9b77d606117eef">save</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aa542d98eed8764c699497ccea1ec7a3b">save</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a48613202c1a9051758755bf8fcdd2ecc">saveMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9e3d8c0c94fdf4af682d6988f123888f">showLeaderboard</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a4f58d07f41a062addc881f07ab0d97f4">showLeaderboard</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#abaa0c6d5831d9bfb1d99d7431e47a981">showLeaderboardSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">src.pause_menu.PauseMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

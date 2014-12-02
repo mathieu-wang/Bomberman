@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>enemy</b></li><li class="navelem"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">Enemy</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1enemy.html">enemy</a></li><li class="navelem"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">Enemy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,19 +94,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b>(self, points, speed, intelligence, wallpass, direction, canMove) (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>canMove</b> (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>direction</b> (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a4476f5bc0be70d26bebece6abcb7bdad">getEnemy</a>(type)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a01da6a5d5f8eb5db75323749a80fc3a0">getEnemyListAndPowerUp</a>(level)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>intelligence</b> (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>points</b> (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>speed</b> (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>wallpass</b> (defined in <a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a>)</td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a9b23b56c368250db98c79101ea3a80c2">__init__</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#aca96a4793e02437f1f33a1c3cbefd133">canMove</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#ad232e0c586291fffbc676d6b20658cd2">direction</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a25d83ffde61f348af7462c7c1f32aa1c">getEnemy</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a5a60a3c9089fed21552341cec52b11be">getEnemyListAndPowerUp</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a11c139459feab2281e0804adc1e0276d">intelligence</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#ae9fc7353b9fbbad3c2d0330169a14fe5">points</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a24e64f3d82db0537f8438780bb1b082d">speed</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a3efd2aacdc7f1eca427075919649c09e">wallpass</a></td><td class="entry"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">src.enemy.Enemy</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

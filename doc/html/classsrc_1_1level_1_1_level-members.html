@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>level</b></li><li class="navelem"><a class="el" href="classsrc_1_1level_1_1_level.html">Level</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1level.html">level</a></li><li class="navelem"><a class="el" href="classsrc_1_1level_1_1_level.html">Level</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,45 +94,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ab6e52c74e02be818576be2ffd9040fe0">__init__</a>(self, username, levelNum)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#aa29517fc750a5a294a6fe3b320229bd7">__init__</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#aa09aade96eec6dbcdf4b04754a3fcf17">board</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a07cb236f1acaa42ea5ad2c20fec75c3b">bomberman</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ad6cc50ff3008c2fd8497b22070d7da64">bombQueue</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ab1083324efb6eddfdfc04316a85f7f15">clearBoard</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a5cacfb3b893af155c71dfffc3ae042bd">clearBombs</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#acd226ddc877d5bf1e18c4d2a7e790fb3">clearEnemies</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a7cf3194f45bf6216f8f4721cbb6323ea">clearBoard</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a6de81c59468d0fdd992fb16579818cf2">clearBombs</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a54d44854b3705182c47f6d7b6ca4ce01">clearEnemies</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ab0595b7e689e25d540f0f486413e0514">exitCoord</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ac6d2065a5cd3ddd4348bb7f6394a0b46">flashQueue</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a9af98db5112ae2fbd4a9f44ae0bcbe83">gainPowerUp</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ad342c492e30a176c38b82831ec0b51eb">gainPowerUp</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a65841b782b1342d40aa32c3a788cf6b0">isInitialized</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a8b26c1249a2d161c058595e789948bf9">levelNum</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ad45aaceea3034ea0e83e1627a47ea2d2">listEnemies</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a198d86791a4f4a570909d80490057ae9">listTypeEnemies</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a0a652366b9fe32851d20915af1dbc0f3">numberEnemies</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a79a922117841f374126a4ab727a65ef1">popTileAt</a>(self, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a49949e01d457000e8a5237eb965beb62">popTileAt</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a50126ed45ccd7be41b5b80a4bf821028">powerUp</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a5445bee2b7b93a1caa1a0a5bf3455db9">powerUpCoord</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a91123ee7d794996b5504dcb8550f7684">score</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#aa1fdbf2a27cb66fffd27bc2598449072">setBomb</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a76cfaab350e8f7699f054e9e9423de6c">setBomberman</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ae430589f114a19e13c2667e8ef37e266">setBrick</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a4b318116c4f5b2bdad46be495e21c53d">setChaos</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ad43e3dab276d7ea38b268f22827b0236">setConcrete</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#af60d85055b9f07935312e581b5316364">setEnemies</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a37d135e2fd7961eb5f2921447d1c8243">setExit</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a6e5e52649e074784152f5fe8f94ded08">setLevelInfo</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a0df76bcc440bbab23e4ce754223177c5">setNewLevel</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a7ab32312eb682ecce07ae83551c051e1">setPowerup</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#acf03686c3657b7e1a5436bbf1b721bf2">setSuperChaos</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a1b0a565e03f055cd93abe6faeefd3b4f">setTileAt</a>(self, x, y, tile)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a9f1a64a223be266425f6100e4728df3a">tileAt</a>(self, x, y)</td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#afe359808f5f5a8db06b05736cefb9717">setBomb</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a31dee5f64d4faa5c583a7d15189c60dc">setBomberman</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a88a55e8010242b576f004109cbaef727">setBrick</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#aaa3494815c1274bd189339a5076ba63d">setChaos</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a64bc17bcf23b2fad18e1fd311befd56c">setConcrete</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a103df1704c6f4ddbe0b61645277111e7">setEnemies</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a883c95dde27eff49917bfb4d5fe85e75">setExit</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#aa097a0823969566f5b72185b194b3236">setLevelInfo</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#ac5f74996221484c4492b6f50412427ed">setNewLevel</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a9d926314e0c8be00f2eb793ccdc776a3">setPowerup</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a728e95c873b4046cf555bd70ca9141b3">setSuperChaos</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#acd34ac61d532aa42f6478a21315179d1">setTileAt</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a4c61be308c7af4e98f3ed6e0f6dd5d24">tileAt</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#aec7becdb4db743d76dbb993cb22a22bb">timeDone</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a0272ba87f68c6b056d20751096f576d9">timeLeft</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html#a7ec8be181d4558bc3f7b8c106a6aeb5a">username</a></td><td class="entry"><a class="el" href="classsrc_1_1level_1_1_level.html">src.level.Level</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

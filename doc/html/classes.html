@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,32 +91,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table style="margin: 10px; white-space: nowrap;" align="center" width="95%" border="0" cellspacing="0" cellpadding="0">
 <tr><td rowspan="2" valign="bottom"><a name="letter_A"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;A&#160;&#160;</div></td></tr></table>
 </td><td rowspan="2" valign="bottom"><a name="letter_E"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;E&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classsrc_1_1level_1_1_level.html">Level</a> (src.level)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_S"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;S&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classsrc_1_1level_1_1_level.html">Level</a> (<a class="el" href="namespacesrc_1_1level.html">src.level</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_S"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;S&#160;&#160;</div></td></tr></table>
 </td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">LevelMenu</a> (src.level_menu)&#160;&#160;&#160;</td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">AccountSettingsMenu</a> (src.settings_menu)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">Enemy</a> (src.enemy)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">LoadMenu</a> (src.load_menu)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">SaveMenu</a> (src.save_menu)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">LevelMenu</a> (<a class="el" href="namespacesrc_1_1level__menu.html">src.level_menu</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">AccountSettingsMenu</a> (<a class="el" href="namespacesrc_1_1settings__menu.html">src.settings_menu</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html">Enemy</a> (<a class="el" href="namespacesrc_1_1enemy.html">src.enemy</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">LoadMenu</a> (<a class="el" href="namespacesrc_1_1load__menu.html">src.load_menu</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">SaveMenu</a> (<a class="el" href="namespacesrc_1_1save__menu.html">src.save_menu</a>)&#160;&#160;&#160;</td><td></td></tr>
 <tr><td rowspan="2" valign="bottom"><a name="letter_B"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;B&#160;&#160;</div></td></tr></table>
 </td><td rowspan="2" valign="bottom"><a name="letter_G"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;G&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">LoginMenu</a> (src.login_menu)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1board_1_1_status_bar.html">StatusBar</a> (src.board)&#160;&#160;&#160;</td><td></td></tr>
+</td><td valign="top"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">LoginMenu</a> (<a class="el" href="namespacesrc_1_1login__menu.html">src.login_menu</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1board_1_1_status_bar.html">StatusBar</a> (<a class="el" href="namespacesrc_1_1board.html">src.board</a>)&#160;&#160;&#160;</td><td></td></tr>
 <tr><td rowspan="2" valign="bottom"><a name="letter_M"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;M&#160;&#160;</div></td></tr></table>
 </td><td rowspan="2" valign="bottom"><a name="letter_T"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;T&#160;&#160;</div></td></tr></table>
 </td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classsrc_1_1board_1_1_board.html">Board</a> (src.board)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1game_1_1_game.html">Game</a> (src.game)&#160;&#160;&#160;</td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">Bomberman</a> (src.bomberman)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_L"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;L&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">MainMenu</a> (src.main_menu)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1tile_1_1_tile.html">Tile</a> (src.tile)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classsrc_1_1board_1_1_board.html">Board</a> (<a class="el" href="namespacesrc_1_1board.html">src.board</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1game_1_1_game.html">Game</a> (<a class="el" href="namespacesrc_1_1game.html">src.game</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">Bomberman</a> (<a class="el" href="namespacesrc_1_1bomberman.html">src.bomberman</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_L"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;L&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">MainMenu</a> (<a class="el" href="namespacesrc_1_1main__menu.html">src.main_menu</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1tile_1_1_tile.html">Tile</a> (<a class="el" href="namespacesrc_1_1tile.html">src.tile</a>)&#160;&#160;&#160;</td><td></td></tr>
 <tr><td rowspan="2" valign="bottom"><a name="letter_D"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;D&#160;&#160;</div></td></tr></table>
 </td><td rowspan="2" valign="bottom"><a name="letter_P"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;P&#160;&#160;</div></td></tr></table>
 </td><td rowspan="2" valign="bottom"><a name="letter_U"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;U&#160;&#160;</div></td></tr></table>
 </td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html">Leaderboard</a> (src.leaderboard)&#160;&#160;&#160;</td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classsrc_1_1database_1_1_database.html">Database</a> (src.database)&#160;&#160;&#160;</td><td></td><td valign="top"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">PauseMenu</a> (src.pause_menu)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1models_1_1_user_account.html">UserAccount</a> (src.models)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html">Leaderboard</a> (<a class="el" href="namespacesrc_1_1leaderboard.html">src.leaderboard</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classsrc_1_1database_1_1_database.html">Database</a> (<a class="el" href="namespacesrc_1_1database.html">src.database</a>)&#160;&#160;&#160;</td><td></td><td valign="top"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">PauseMenu</a> (<a class="el" href="namespacesrc_1_1pause__menu.html">src.pause_menu</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classsrc_1_1models_1_1_user_account.html">UserAccount</a> (<a class="el" href="namespacesrc_1_1models.html">src.models</a>)&#160;&#160;&#160;</td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_B">B</a>&#160;|&#160;<a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_E">E</a>&#160;|&#160;<a class="qindex" href="#letter_G">G</a>&#160;|&#160;<a class="qindex" href="#letter_L">L</a>&#160;|&#160;<a class="qindex" href="#letter_M">M</a>&#160;|&#160;<a class="qindex" href="#letter_P">P</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a>&#160;|&#160;<a class="qindex" href="#letter_T">T</a>&#160;|&#160;<a class="qindex" href="#letter_U">U</a></div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

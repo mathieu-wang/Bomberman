@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>tile</b></li><li class="navelem"><a class="el" href="classsrc_1_1tile_1_1_tile.html">Tile</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1tile.html">tile</a></li><li class="navelem"><a class="el" href="classsrc_1_1tile_1_1_tile.html">Tile</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,38 +94,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b>(self) (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Balloom</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Bomb</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Bomberman</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Brick</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Concrete</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Doll</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Empty</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Exit</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Flash</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#abe6a8c872f4e0d314bedb157c5d05f88">isBomberman</a>(tile)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aad77febc9fbb4fa5fd2f13449d1c80da">isEmpty</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a402644908c005daf8f452078a8498884">isEmpty</a>(tile)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a26d5b3272e8b49c400420bfb80f2367e">isEnemy</a>(tile)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a81e3ba4c45f3defa624c6d5cd080dab6">isExit</a>(tile)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a464b874776619a4388f7bc8a5a57eee1">isPowerup</a>(tile)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Kondoria</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Minvo</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Oneal</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Ovapi</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Pass</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a0a8402816b245a69773305cc6d86f16d">peek</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Pontan</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ae0f31d367515d3259f21b90d6be44db8">pop</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Powerup</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ab682d4a8d92f6dbe5380c21e8c27114a">push</a>(self, tile)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ac9f0ddf090f58449aa74611a239e1458">size</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>stack</b> (defined in <a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a>)</td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a6a0b6f120a03e296c3af500933d91d88">__init__</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a4a2cda5d4e4a662ea9ec19aebd4c75a5">Balloom</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a22cc10d99f8785119477645d6e15f1ac">Bomb</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a44a3a6a3a1ed1c80a766b4a971a882af">Bomberman</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ae4e13878d3a81fd1209fac1884f22569">Brick</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a7bbfca724a7080f281ccf31fd324182d">Concrete</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aeed2c1217d02f0ca8ce5713f28a5543c">Doll</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a2e2fc149a0f255ddd6a2cd64bf060e04">Empty</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aaa351173f66c9b5b2afe3ed6a79d68eb">Exit</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a7b37e5f805d37cd1fa30d999dd4b02cc">Flash</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a6a2590141c388d7afbcd2a8b6a6c68d9">isBomberman</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a21f16afbb5f5be4204b66be2624e3fc1">isEmpty</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a21f16afbb5f5be4204b66be2624e3fc1">isEmpty</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a28d16325ef82c53165ac9b3369f7b10a">isEnemy</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ae53e0f1d5c13b809d6090a1a61e88175">isExit</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a671e9633ec0c3dd2ef39aa0082c776fe">isPowerup</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a7d7c123ec8ee03dc3b742828f9ee8690">Kondoria</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a5ca9bdbdf6863d2602f3f52adb749125">Minvo</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a9b2b4677c74d1d30e93a235d3d997a4a">Oneal</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a1de207d2b99c4d5978448b3e18e6ceef">Ovapi</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ac9fd73aea6f5bd2e72b5a76fe7c0045e">Pass</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#ab4cf13c5976824347b38961f7c3511c1">peek</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a63e8749a3f0bca1c933dc2213ad519ba">Pontan</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a9707b7fe25e606192be87b3dd9957cd9">pop</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#afff8f8b451056470316105c1950c8049">Powerup</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aa968da9f37f05ba08ccfe7a44b2bf776">push</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#a3770faf89f08cecc2ba9aab54bbee50b">size</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html#aaad193d1f0e1a1e90570e6069f65b330">stack</a></td><td class="entry"><a class="el" href="classsrc_1_1tile_1_1_tile.html">src.tile.Tile</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

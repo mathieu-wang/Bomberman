@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -76,6 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="functions.html#index__"><span>_</span></a></li>
+      <li><a href="functions_a.html#index_a"><span>a</span></a></li>
       <li><a href="functions_b.html#index_b"><span>b</span></a></li>
       <li class="current"><a href="functions_c.html#index_c"><span>c</span></a></li>
       <li><a href="functions_d.html#index_d"><span>d</span></a></li>
@@ -88,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_l.html#index_l"><span>l</span></a></li>
       <li><a href="functions_m.html#index_m"><span>m</span></a></li>
       <li><a href="functions_n.html#index_n"><span>n</span></a></li>
+      <li><a href="functions_o.html#index_o"><span>o</span></a></li>
       <li><a href="functions_p.html#index_p"><span>p</span></a></li>
       <li><a href="functions_q.html#index_q"><span>q</span></a></li>
       <li><a href="functions_r.html#index_r"><span>r</span></a></li>
@@ -104,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,41 +117,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>canMove
 : <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a71c03f3d45e6d025a1dc65d1933abb0a">src.bomberman.Bomberman</a>
+, <a class="el" href="classsrc_1_1enemy_1_1_enemy.html#aca96a4793e02437f1f33a1c3cbefd133">src.enemy.Enemy</a>
 </li>
 <li>center()
-: <a class="el" href="classsrc_1_1game_1_1_game.html#a243a1df9b63a0f081b90fa29146a4af6">src.game.Game</a>
+: <a class="el" href="classsrc_1_1game_1_1_game.html#ad5bd7707485097c34b145e947f33201c">src.game.Game</a>
+</li>
+<li>centralWidget
+: <a class="el" href="classsrc_1_1game_1_1_game.html#a92c4f3cb7732c69c98cfb2ed60787493">src.game.Game</a>
 </li>
 <li>changeButton
 : <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a6ad9267209290b0eaa3ef35191f81d82">src.settings_menu.AccountSettingsMenu</a>
 </li>
 <li>changeSettings()
-: <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a10989536edbbe0db4fc03f2e5ccc8271">src.settings_menu.AccountSettingsMenu</a>
+: <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a647c9a9f69d6a0e492d7cdc4712294c1">src.settings_menu.AccountSettingsMenu</a>
 </li>
 <li>changeSettingsSignal
 : <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a7a76ee92b8b02099e74f0d5ad107ff34">src.main_menu.MainMenu</a>
 </li>
 <li>checkUser()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a801015f444b4267274d219381e134575">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#a9918d1065bc690ded6430d8065f742f0">src.database.Database</a>
 </li>
 <li>clearBoard()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#ab1083324efb6eddfdfc04316a85f7f15">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a7cf3194f45bf6216f8f4721cbb6323ea">src.level.Level</a>
 </li>
 <li>clearBombs()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#a5cacfb3b893af155c71dfffc3ae042bd">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a6de81c59468d0fdd992fb16579818cf2">src.level.Level</a>
 </li>
 <li>clearEnemies()
-: <a class="el" href="classsrc_1_1level_1_1_level.html#acd226ddc877d5bf1e18c4d2a7e790fb3">src.level.Level</a>
+: <a class="el" href="classsrc_1_1level_1_1_level.html#a54d44854b3705182c47f6d7b6ca4ce01">src.level.Level</a>
 </li>
 <li>colCount
 : <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ac02b975859a4e3cb57eabe5206808a46">src.leaderboard.Leaderboard</a>
 </li>
+<li>Concrete
+: <a class="el" href="classsrc_1_1tile_1_1_tile.html#a7bbfca724a7080f281ccf31fd324182d">src.tile.Tile</a>
+</li>
+<li>coundownTimer
+: <a class="el" href="classsrc_1_1board_1_1_board.html#a91635719cb9bc632fa29a4185b1ffaa4">src.board.Board</a>
+</li>
 <li>createUser()
-: <a class="el" href="classsrc_1_1database_1_1_database.html#a9f2df42cc938c2eb8186104b2831afaa">src.database.Database</a>
+: <a class="el" href="classsrc_1_1database_1_1_database.html#aecdce29af868a48af80983864a58363e">src.database.Database</a>
+</li>
+<li>createUserAccountsForDemo()
+: <a class="el" href="classsrc_1_1database_1_1_database.html#acccba83374f863733b9356901c4867f8">src.database.Database</a>
+</li>
+<li>cumulativeScore
+: <a class="el" href="classsrc_1_1models_1_1_user_account.html#aba4c0aff5e1f4aa209fef3a9d77b7bb7">src.models.UserAccount</a>
 </li>
 <li>curX
 : <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ade28c12524be42994d93b74bddc92647">src.bomberman.Bomberman</a>
@@ -160,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

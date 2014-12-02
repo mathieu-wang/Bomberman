@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['savelabel',['saveLabel',['../classsrc_1_1save__menu_1_1_save_menu.html#aed6ba9a74fc14066593c5ce7b2ae4691',1,'src::save_menu::SaveMenu']]],
-  ['savemenusignal',['saveMenuSignal',['../classsrc_1_1pause__menu_1_1_pause_menu.html#a48613202c1a9051758755bf8fcdd2ecc',1,'src::pause_menu::PauseMenu']]],
-  ['score',['score',['../classsrc_1_1level_1_1_level.html#a91123ee7d794996b5504dcb8550f7684',1,'src::level::Level']]],
-  ['showleaderboardsignal',['showLeaderboardSignal',['../classsrc_1_1main__menu_1_1_main_menu.html#aa737b525a5e965eb6af321d25baa787c',1,'src.main_menu.MainMenu.showLeaderboardSignal()'],['../classsrc_1_1pause__menu_1_1_pause_menu.html#abaa0c6d5831d9bfb1d99d7431e47a981',1,'src.pause_menu.PauseMenu.showLeaderboardSignal()']]],
-  ['signupbutton',['signUpButton',['../classsrc_1_1login__menu_1_1_login_menu.html#a2d518012477c43a0d5b77385e2e4209f',1,'src::login_menu::LoginMenu']]],
-  ['signuptitle',['signUpTitle',['../classsrc_1_1login__menu_1_1_login_menu.html#a07a65e6211f15b49d6e6abc0daac320b',1,'src::login_menu::LoginMenu']]],
-  ['speed',['speed',['../classsrc_1_1bomberman_1_1_bomberman.html#a6ac3e76b884ce72178bd068a4c40c05b',1,'src::bomberman::Bomberman']]],
-  ['startlevelsignal',['startLevelSignal',['../classsrc_1_1level__menu_1_1_level_menu.html#a14a5a5bd905bb0d8e732a33bed71ef44',1,'src::level_menu::LevelMenu']]]
+  ['normaltimer',['normalTimer',['../classsrc_1_1board_1_1_board.html#a18fce871d4c91bac16992dbd2975ebda',1,'src::board::Board']]],
+  ['numberenemies',['numberEnemies',['../classsrc_1_1level_1_1_level.html#a0a652366b9fe32851d20915af1dbc0f3',1,'src::level::Level']]],
+  ['numbombs',['numBombs',['../classsrc_1_1bomberman_1_1_bomberman.html#a2cb3572c62ccccb8eb2383145d0d4f2e',1,'src::bomberman::Bomberman']]],
+  ['numgamesplayed',['numGamesPlayed',['../classsrc_1_1models_1_1_user_account.html#adb4b6601e342d936266c44a9e809e3db',1,'src::models::UserAccount']]]
 ];

@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>pause_menu</b></li><li class="navelem"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">PauseMenu</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1pause__menu.html">pause_menu</a></li><li class="navelem"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html">PauseMenu</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -105,30 +106,29 @@ Inheritance diagram for src.pause_menu.PauseMenu:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a50b6571cbb54b07250cf74db412231dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50b6571cbb54b07250cf74db412231dd"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
+<tr class="memitem:a50b6571cbb54b07250cf74db412231dd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a50b6571cbb54b07250cf74db412231dd">__init__</a></td></tr>
 <tr class="separator:a50b6571cbb54b07250cf74db412231dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a5e36aa2482be916deefce1f4f23fcb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9a5e36aa2482be916deefce1f4f23fcb">initUI</a> (self)</td></tr>
-<tr class="memdesc:a9a5e36aa2482be916deefce1f4f23fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of the pause menu.  <a href="#a9a5e36aa2482be916deefce1f4f23fcb">More...</a><br /></td></tr>
-<tr class="separator:a9a5e36aa2482be916deefce1f4f23fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf160aa602ebd4ec91e9bc32d6d730f9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aaf160aa602ebd4ec91e9bc32d6d730f9">resume</a> (self)</td></tr>
-<tr class="memdesc:aaf160aa602ebd4ec91e9bc32d6d730f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit resumeGameSignal when called.  <a href="#aaf160aa602ebd4ec91e9bc32d6d730f9">More...</a><br /></td></tr>
-<tr class="separator:aaf160aa602ebd4ec91e9bc32d6d730f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f29e275aa812da5fad8730a41746677"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9f29e275aa812da5fad8730a41746677">quit</a> (self)</td></tr>
-<tr class="memdesc:a9f29e275aa812da5fad8730a41746677"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit quitGameSignal when called.  <a href="#a9f29e275aa812da5fad8730a41746677">More...</a><br /></td></tr>
-<tr class="separator:a9f29e275aa812da5fad8730a41746677"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e3d8c0c94fdf4af682d6988f123888f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a9e3d8c0c94fdf4af682d6988f123888f">showLeaderboard</a> (self)</td></tr>
-<tr class="memdesc:a9e3d8c0c94fdf4af682d6988f123888f"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit showLeaderboardSignal with parameter 'constant.PAUSE_MENU' when called.  <a href="#a9e3d8c0c94fdf4af682d6988f123888f">More...</a><br /></td></tr>
-<tr class="separator:a9e3d8c0c94fdf4af682d6988f123888f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa6df962a7284b81fa60171119585b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#affa6df962a7284b81fa60171119585b1">back</a> (self)</td></tr>
-<tr class="memdesc:affa6df962a7284b81fa60171119585b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backToMainMenuSignal when called.  <a href="#affa6df962a7284b81fa60171119585b1">More...</a><br /></td></tr>
-<tr class="separator:affa6df962a7284b81fa60171119585b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6950e08a6f9a87c87e9b77d606117eef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a6950e08a6f9a87c87e9b77d606117eef">save</a> (self)</td></tr>
-<tr class="memdesc:a6950e08a6f9a87c87e9b77d606117eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit saveMenuSignal when called.  <a href="#a6950e08a6f9a87c87e9b77d606117eef">More...</a><br /></td></tr>
-<tr class="separator:a6950e08a6f9a87c87e9b77d606117eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3714c919e9514631cd66c6714c1e243"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aa3714c919e9514631cd66c6714c1e243">load</a> (self)</td></tr>
-<tr class="memdesc:aa3714c919e9514631cd66c6714c1e243"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadMenuSignal with parameter 'constant.PAUSE_MENU' when called.  <a href="#aa3714c919e9514631cd66c6714c1e243">More...</a><br /></td></tr>
-<tr class="separator:aa3714c919e9514631cd66c6714c1e243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e8c72521fecf6445dca451b0935f2e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a62e8c72521fecf6445dca451b0935f2e">initUI</a></td></tr>
+<tr class="memdesc:a62e8c72521fecf6445dca451b0935f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of the pause menu.  <a href="#a62e8c72521fecf6445dca451b0935f2e">More...</a><br /></td></tr>
+<tr class="separator:a62e8c72521fecf6445dca451b0935f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c7297c8c855b2acdcf1c88038c9610d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a3c7297c8c855b2acdcf1c88038c9610d">resume</a></td></tr>
+<tr class="memdesc:a3c7297c8c855b2acdcf1c88038c9610d"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit resumeGameSignal when called.  <a href="#a3c7297c8c855b2acdcf1c88038c9610d">More...</a><br /></td></tr>
+<tr class="separator:a3c7297c8c855b2acdcf1c88038c9610d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5c8ff0f8ce14cf43036125aa7cc0f1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a7f5c8ff0f8ce14cf43036125aa7cc0f1">quit</a></td></tr>
+<tr class="memdesc:a7f5c8ff0f8ce14cf43036125aa7cc0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit quitGameSignal when called.  <a href="#a7f5c8ff0f8ce14cf43036125aa7cc0f1">More...</a><br /></td></tr>
+<tr class="separator:a7f5c8ff0f8ce14cf43036125aa7cc0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f58d07f41a062addc881f07ab0d97f4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a4f58d07f41a062addc881f07ab0d97f4">showLeaderboard</a></td></tr>
+<tr class="memdesc:a4f58d07f41a062addc881f07ab0d97f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit showLeaderboardSignal with parameter '<a class="el" href="namespacesrc_1_1constant.html#ad97a2ffeabe91acaaec11504d0de1fd7">constant.PAUSE_MENU</a>' when called.  <a href="#a4f58d07f41a062addc881f07ab0d97f4">More...</a><br /></td></tr>
+<tr class="separator:a4f58d07f41a062addc881f07ab0d97f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addfc7fc25e6e43c541a6b65b8867fb18"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#addfc7fc25e6e43c541a6b65b8867fb18">back</a></td></tr>
+<tr class="memdesc:addfc7fc25e6e43c541a6b65b8867fb18"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backToMainMenuSignal when called.  <a href="#addfc7fc25e6e43c541a6b65b8867fb18">More...</a><br /></td></tr>
+<tr class="separator:addfc7fc25e6e43c541a6b65b8867fb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa542d98eed8764c699497ccea1ec7a3b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#aa542d98eed8764c699497ccea1ec7a3b">save</a></td></tr>
+<tr class="memdesc:aa542d98eed8764c699497ccea1ec7a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit saveMenuSignal when called.  <a href="#aa542d98eed8764c699497ccea1ec7a3b">More...</a><br /></td></tr>
+<tr class="separator:aa542d98eed8764c699497ccea1ec7a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90347d01be71758705a0b6a80e3c14c7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1pause__menu_1_1_pause_menu.html#a90347d01be71758705a0b6a80e3c14c7">load</a></td></tr>
+<tr class="memdesc:a90347d01be71758705a0b6a80e3c14c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadMenuSignal with parameter '<a class="el" href="namespacesrc_1_1constant.html#ad97a2ffeabe91acaaec11504d0de1fd7">constant.PAUSE_MENU</a>' when called.  <a href="#a90347d01be71758705a0b6a80e3c14c7">More...</a><br /></td></tr>
+<tr class="separator:a90347d01be71758705a0b6a80e3c14c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -151,8 +151,35 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:adc8bc5514ba8991d100512319659d24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal which will be used to go back to the main menu.  <a href="#adc8bc5514ba8991d100512319659d24e">More...</a><br /></td></tr>
 <tr class="separator:adc8bc5514ba8991d100512319659d24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a50b6571cbb54b07250cf74db412231dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.pause_menu.PauseMenu.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="affa6df962a7284b81fa60171119585b1"></a>
+<a class="anchor" id="addfc7fc25e6e43c541a6b65b8867fb18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -170,7 +197,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9a5e36aa2482be916deefce1f4f23fcb"></a>
+<a class="anchor" id="a62e8c72521fecf6445dca451b0935f2e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -188,7 +215,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa3714c919e9514631cd66c6714c1e243"></a>
+<a class="anchor" id="a90347d01be71758705a0b6a80e3c14c7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -202,11 +229,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>emit loadMenuSignal with parameter 'constant.PAUSE_MENU' when called. </p>
+<p>emit loadMenuSignal with parameter '<a class="el" href="namespacesrc_1_1constant.html#ad97a2ffeabe91acaaec11504d0de1fd7">constant.PAUSE_MENU</a>' when called. </p>
 
 </div>
 </div>
-<a class="anchor" id="a9f29e275aa812da5fad8730a41746677"></a>
+<a class="anchor" id="a7f5c8ff0f8ce14cf43036125aa7cc0f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -224,7 +251,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaf160aa602ebd4ec91e9bc32d6d730f9"></a>
+<a class="anchor" id="a3c7297c8c855b2acdcf1c88038c9610d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -242,7 +269,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6950e08a6f9a87c87e9b77d606117eef"></a>
+<a class="anchor" id="aa542d98eed8764c699497ccea1ec7a3b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -260,7 +287,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9e3d8c0c94fdf4af682d6988f123888f"></a>
+<a class="anchor" id="a4f58d07f41a062addc881f07ab0d97f4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -274,7 +301,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>emit showLeaderboardSignal with parameter 'constant.PAUSE_MENU' when called. </p>
+<p>emit showLeaderboardSignal with parameter '<a class="el" href="namespacesrc_1_1constant.html#ad97a2ffeabe91acaaec11504d0de1fd7">constant.PAUSE_MENU</a>' when called. </p>
 
 </div>
 </div>
@@ -320,7 +347,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Signal which will be used to launch load menu. </p>
-<p>int is set as 'constant.PAUSE_MENU'. </p>
+<p>int is set as '<a class="el" href="namespacesrc_1_1constant.html#ad97a2ffeabe91acaaec11504d0de1fd7">constant.PAUSE_MENU</a>'. </p>
 
 </div>
 </div>
@@ -409,17 +436,17 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Signal which will be used to launch the leaderboard. </p>
-<p>int is set as 'constant.PAUSE_MENU'. </p>
+<p>int is set as '<a class="el" href="namespacesrc_1_1constant.html#ad97a2ffeabe91acaaec11504d0de1fd7">constant.PAUSE_MENU</a>'. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/pause_menu.py</li>
+<li>src/<a class="el" href="pause__menu_8py.html">pause_menu.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>database</b></li><li class="navelem"><a class="el" href="classsrc_1_1database_1_1_database.html">Database</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1database.html">database</a></li><li class="navelem"><a class="el" href="classsrc_1_1database_1_1_database.html">Database</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -103,65 +104,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab829b3386356e12ed7276c63e168269"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#aab829b3386356e12ed7276c63e168269">__init__</a></td></tr>
 <tr class="memdesc:aab829b3386356e12ed7276c63e168269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that connects to a sqlite database, and gets the 'user' table from it.  <a href="#aab829b3386356e12ed7276c63e168269">More...</a><br /></td></tr>
 <tr class="separator:aab829b3386356e12ed7276c63e168269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2df42cc938c2eb8186104b2831afaa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a9f2df42cc938c2eb8186104b2831afaa">createUser</a> (self, name, username, password)</td></tr>
-<tr class="memdesc:a9f2df42cc938c2eb8186104b2831afaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new user in the database.  <a href="#a9f2df42cc938c2eb8186104b2831afaa">More...</a><br /></td></tr>
-<tr class="separator:a9f2df42cc938c2eb8186104b2831afaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a374cf7a2b0dc2d1764fea49ef248544c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a374cf7a2b0dc2d1764fea49ef248544c">updateUserAccount</a> (self, oldUsername, newUsername, newRealname, newPassword)</td></tr>
-<tr class="memdesc:a374cf7a2b0dc2d1764fea49ef248544c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update user account information with new username, realname, and password.  <a href="#a374cf7a2b0dc2d1764fea49ef248544c">More...</a><br /></td></tr>
-<tr class="separator:a374cf7a2b0dc2d1764fea49ef248544c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab38097adf50de7cdc08953819dc59d91"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#ab38097adf50de7cdc08953819dc59d91">deleteAccount</a> (self, username)</td></tr>
-<tr class="memdesc:ab38097adf50de7cdc08953819dc59d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the account from the database.  <a href="#ab38097adf50de7cdc08953819dc59d91">More...</a><br /></td></tr>
-<tr class="separator:ab38097adf50de7cdc08953819dc59d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a801015f444b4267274d219381e134575"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a801015f444b4267274d219381e134575">checkUser</a> (self, username, password)</td></tr>
-<tr class="memdesc:a801015f444b4267274d219381e134575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided credentials correspond to a valid user account in the database.  <a href="#a801015f444b4267274d219381e134575">More...</a><br /></td></tr>
-<tr class="separator:a801015f444b4267274d219381e134575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12d75fd9334f108d345cdbd3ee8816a9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a12d75fd9334f108d345cdbd3ee8816a9">hasUser</a> (self, username)</td></tr>
-<tr class="memdesc:a12d75fd9334f108d345cdbd3ee8816a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided user name exists in the database.  <a href="#a12d75fd9334f108d345cdbd3ee8816a9">More...</a><br /></td></tr>
-<tr class="separator:a12d75fd9334f108d345cdbd3ee8816a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5f2e607e41b9b4d1e956d1a9a229afa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#ad5f2e607e41b9b4d1e956d1a9a229afa">isValidUsername</a> (self, username)</td></tr>
-<tr class="memdesc:ad5f2e607e41b9b4d1e956d1a9a229afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the username is at least 6 character long.  <a href="#ad5f2e607e41b9b4d1e956d1a9a229afa">More...</a><br /></td></tr>
-<tr class="separator:ad5f2e607e41b9b4d1e956d1a9a229afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b03c0a444fc7600f6d6333b0270437"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#ae1b03c0a444fc7600f6d6333b0270437">isValidPassword</a> (self, password)</td></tr>
-<tr class="memdesc:ae1b03c0a444fc7600f6d6333b0270437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a password is valid.  <a href="#ae1b03c0a444fc7600f6d6333b0270437">More...</a><br /></td></tr>
-<tr class="separator:ae1b03c0a444fc7600f6d6333b0270437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bcb118c8b6079d851a6adb429eae756"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bcb118c8b6079d851a6adb429eae756"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>createUserAccountsForDemo</b> (self)</td></tr>
-<tr class="separator:a5bcb118c8b6079d851a6adb429eae756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18158514f653442eb3ff7bb61b5f5213"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a18158514f653442eb3ff7bb61b5f5213">getUserAccount</a> (self, username)</td></tr>
-<tr class="memdesc:a18158514f653442eb3ff7bb61b5f5213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the UserAccount object as a dictionary from the database.  <a href="#a18158514f653442eb3ff7bb61b5f5213">More...</a><br /></td></tr>
-<tr class="separator:a18158514f653442eb3ff7bb61b5f5213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e26b95f30986a81d197e118420d0865"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a1e26b95f30986a81d197e118420d0865">getTopTenUsers</a> (self)</td></tr>
-<tr class="memdesc:a1e26b95f30986a81d197e118420d0865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get top players sorted by cumulative score.  <a href="#a1e26b95f30986a81d197e118420d0865">More...</a><br /></td></tr>
-<tr class="separator:a1e26b95f30986a81d197e118420d0865"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20befecd8b13cac9a87e59b759a5406a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a20befecd8b13cac9a87e59b759a5406a">getHighestUnlockedLevel</a> (self, username)</td></tr>
-<tr class="memdesc:a20befecd8b13cac9a87e59b759a5406a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get highest unlocked level by the user.  <a href="#a20befecd8b13cac9a87e59b759a5406a">More...</a><br /></td></tr>
-<tr class="separator:a20befecd8b13cac9a87e59b759a5406a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0910f9e8e11bf94dcf9a24489e6f4dde"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a0910f9e8e11bf94dcf9a24489e6f4dde">saveGame</a> (self, username, gamename, board)</td></tr>
-<tr class="memdesc:a0910f9e8e11bf94dcf9a24489e6f4dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save current game state into a file.  <a href="#a0910f9e8e11bf94dcf9a24489e6f4dde">More...</a><br /></td></tr>
-<tr class="separator:a0910f9e8e11bf94dcf9a24489e6f4dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f48d5d1c090840389e7cbc556d635b5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a8f48d5d1c090840389e7cbc556d635b5">loadListSavedGames</a> (self, username)</td></tr>
-<tr class="memdesc:a8f48d5d1c090840389e7cbc556d635b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the list of previously saved games for an user.  <a href="#a8f48d5d1c090840389e7cbc556d635b5">More...</a><br /></td></tr>
-<tr class="separator:a8f48d5d1c090840389e7cbc556d635b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc4a7e44498f2e3ede0c52a43725526d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#abc4a7e44498f2e3ede0c52a43725526d">loadGame</a> (self, username, gamename)</td></tr>
-<tr class="memdesc:abc4a7e44498f2e3ede0c52a43725526d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a specific game for an user.  <a href="#abc4a7e44498f2e3ede0c52a43725526d">More...</a><br /></td></tr>
-<tr class="separator:abc4a7e44498f2e3ede0c52a43725526d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea1e0de87f1e08cf83d31a2179cf0c12"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#aea1e0de87f1e08cf83d31a2179cf0c12">updateUserScore</a> (self, username, scoreToAdd)</td></tr>
-<tr class="memdesc:aea1e0de87f1e08cf83d31a2179cf0c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the user's cumulative score in the database.  <a href="#aea1e0de87f1e08cf83d31a2179cf0c12">More...</a><br /></td></tr>
-<tr class="separator:aea1e0de87f1e08cf83d31a2179cf0c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf6d7572d1782bedb86e6880c24e8e9e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#adf6d7572d1782bedb86e6880c24e8e9e">incrementNumOfGamesPlayed</a> (self, username)</td></tr>
-<tr class="memdesc:adf6d7572d1782bedb86e6880c24e8e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the total number of games played for the user.  <a href="#adf6d7572d1782bedb86e6880c24e8e9e">More...</a><br /></td></tr>
-<tr class="separator:adf6d7572d1782bedb86e6880c24e8e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecdce29af868a48af80983864a58363e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#aecdce29af868a48af80983864a58363e">createUser</a></td></tr>
+<tr class="memdesc:aecdce29af868a48af80983864a58363e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new user in the database.  <a href="#aecdce29af868a48af80983864a58363e">More...</a><br /></td></tr>
+<tr class="separator:aecdce29af868a48af80983864a58363e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc3caa90a8c56991dce1e79bcdd5a17"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a5dc3caa90a8c56991dce1e79bcdd5a17">updateUserAccount</a></td></tr>
+<tr class="memdesc:a5dc3caa90a8c56991dce1e79bcdd5a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update user account information with new username, realname, and password.  <a href="#a5dc3caa90a8c56991dce1e79bcdd5a17">More...</a><br /></td></tr>
+<tr class="separator:a5dc3caa90a8c56991dce1e79bcdd5a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4888155189d5f8d5d6740f3fae14f897"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a4888155189d5f8d5d6740f3fae14f897">deleteAccount</a></td></tr>
+<tr class="memdesc:a4888155189d5f8d5d6740f3fae14f897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the account from the database.  <a href="#a4888155189d5f8d5d6740f3fae14f897">More...</a><br /></td></tr>
+<tr class="separator:a4888155189d5f8d5d6740f3fae14f897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9918d1065bc690ded6430d8065f742f0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a9918d1065bc690ded6430d8065f742f0">checkUser</a></td></tr>
+<tr class="memdesc:a9918d1065bc690ded6430d8065f742f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided credentials correspond to a valid user account in the database.  <a href="#a9918d1065bc690ded6430d8065f742f0">More...</a><br /></td></tr>
+<tr class="separator:a9918d1065bc690ded6430d8065f742f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa664b6b94bb39e9f5fe3186f72ee44ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#aa664b6b94bb39e9f5fe3186f72ee44ff">hasUser</a></td></tr>
+<tr class="memdesc:aa664b6b94bb39e9f5fe3186f72ee44ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided user name exists in the database.  <a href="#aa664b6b94bb39e9f5fe3186f72ee44ff">More...</a><br /></td></tr>
+<tr class="separator:aa664b6b94bb39e9f5fe3186f72ee44ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1414e3de9a7737c155bfe79249267f8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#aa1414e3de9a7737c155bfe79249267f8">isValidUsername</a></td></tr>
+<tr class="memdesc:aa1414e3de9a7737c155bfe79249267f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the username is at least 6 character long.  <a href="#aa1414e3de9a7737c155bfe79249267f8">More...</a><br /></td></tr>
+<tr class="separator:aa1414e3de9a7737c155bfe79249267f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8613fbb0fd5056043b89385351742ba7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a8613fbb0fd5056043b89385351742ba7">isValidPassword</a></td></tr>
+<tr class="memdesc:a8613fbb0fd5056043b89385351742ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a password is valid.  <a href="#a8613fbb0fd5056043b89385351742ba7">More...</a><br /></td></tr>
+<tr class="separator:a8613fbb0fd5056043b89385351742ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccba83374f863733b9356901c4867f8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#acccba83374f863733b9356901c4867f8">createUserAccountsForDemo</a></td></tr>
+<tr class="separator:acccba83374f863733b9356901c4867f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1c376636eea2a4b1146c3bf5b58a3b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a0d1c376636eea2a4b1146c3bf5b58a3b">getUserAccount</a></td></tr>
+<tr class="memdesc:a0d1c376636eea2a4b1146c3bf5b58a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the UserAccount object as a dictionary from the database.  <a href="#a0d1c376636eea2a4b1146c3bf5b58a3b">More...</a><br /></td></tr>
+<tr class="separator:a0d1c376636eea2a4b1146c3bf5b58a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7c561e980eb1edb94fceb6f068cde1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a0f7c561e980eb1edb94fceb6f068cde1">getTopTenUsers</a></td></tr>
+<tr class="memdesc:a0f7c561e980eb1edb94fceb6f068cde1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get top players sorted by cumulative score.  <a href="#a0f7c561e980eb1edb94fceb6f068cde1">More...</a><br /></td></tr>
+<tr class="separator:a0f7c561e980eb1edb94fceb6f068cde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b80530c69c4f87c9dba0973851847f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a78b80530c69c4f87c9dba0973851847f">getHighestUnlockedLevel</a></td></tr>
+<tr class="memdesc:a78b80530c69c4f87c9dba0973851847f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get highest unlocked level by the user.  <a href="#a78b80530c69c4f87c9dba0973851847f">More...</a><br /></td></tr>
+<tr class="separator:a78b80530c69c4f87c9dba0973851847f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98053f72cae85fd3348162d66ba1dafe"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a98053f72cae85fd3348162d66ba1dafe">saveGame</a></td></tr>
+<tr class="memdesc:a98053f72cae85fd3348162d66ba1dafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save current game state into a file.  <a href="#a98053f72cae85fd3348162d66ba1dafe">More...</a><br /></td></tr>
+<tr class="separator:a98053f72cae85fd3348162d66ba1dafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c64d066e8f86c7d68a5fcf549a89abf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a6c64d066e8f86c7d68a5fcf549a89abf">loadListSavedGames</a></td></tr>
+<tr class="memdesc:a6c64d066e8f86c7d68a5fcf549a89abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the list of previously saved games for an user.  <a href="#a6c64d066e8f86c7d68a5fcf549a89abf">More...</a><br /></td></tr>
+<tr class="separator:a6c64d066e8f86c7d68a5fcf549a89abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9eaa249323fbe01795bb0bb63f86eab"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#ab9eaa249323fbe01795bb0bb63f86eab">loadGame</a></td></tr>
+<tr class="memdesc:ab9eaa249323fbe01795bb0bb63f86eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a specific game for an user.  <a href="#ab9eaa249323fbe01795bb0bb63f86eab">More...</a><br /></td></tr>
+<tr class="separator:ab9eaa249323fbe01795bb0bb63f86eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29201805da2b1392bf8edd0c67144a1a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a29201805da2b1392bf8edd0c67144a1a">updateUserScore</a></td></tr>
+<tr class="memdesc:a29201805da2b1392bf8edd0c67144a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the user's cumulative score in the database.  <a href="#a29201805da2b1392bf8edd0c67144a1a">More...</a><br /></td></tr>
+<tr class="separator:a29201805da2b1392bf8edd0c67144a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a640ebedb267940c09228ea6c51fcf8e2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a640ebedb267940c09228ea6c51fcf8e2">incrementNumOfGamesPlayed</a></td></tr>
+<tr class="memdesc:a640ebedb267940c09228ea6c51fcf8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the total number of games played for the user.  <a href="#a640ebedb267940c09228ea6c51fcf8e2">More...</a><br /></td></tr>
+<tr class="separator:a640ebedb267940c09228ea6c51fcf8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a3b1c6af40f8d2c934bf2d63d71e657e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b1c6af40f8d2c934bf2d63d71e657e5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>db</b></td></tr>
+<tr class="memitem:a3b1c6af40f8d2c934bf2d63d71e657e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a3b1c6af40f8d2c934bf2d63d71e657e5">db</a></td></tr>
 <tr class="separator:a3b1c6af40f8d2c934bf2d63d71e657e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b7d83448ad1895241783bf04a5a1b6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b7d83448ad1895241783bf04a5a1b6c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>userTable</b></td></tr>
+<tr class="memitem:a7b7d83448ad1895241783bf04a5a1b6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a7b7d83448ad1895241783bf04a5a1b6c">userTable</a></td></tr>
 <tr class="separator:a7b7d83448ad1895241783bf04a5a1b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50ceb943a93153787b40bb9c037049aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50ceb943a93153787b40bb9c037049aa"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>game</b></td></tr>
+<tr class="memitem:a50ceb943a93153787b40bb9c037049aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1database_1_1_database.html#a50ceb943a93153787b40bb9c037049aa">game</a></td></tr>
 <tr class="separator:a50ceb943a93153787b40bb9c037049aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -203,7 +200,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a801015f444b4267274d219381e134575"></a>
+<a class="anchor" id="a9918d1065bc690ded6430d8065f742f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -245,7 +242,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9f2df42cc938c2eb8186104b2831afaa"></a>
+<a class="anchor" id="aecdce29af868a48af80983864a58363e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -294,7 +291,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab38097adf50de7cdc08953819dc59d91"></a>
+<a class="anchor" id="acccba83374f863733b9356901c4867f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.database.Database.createUserAccountsForDemo </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4888155189d5f8d5d6740f3fae14f897"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -328,7 +341,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a20befecd8b13cac9a87e59b759a5406a"></a>
+<a class="anchor" id="a78b80530c69c4f87c9dba0973851847f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -363,7 +376,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1e26b95f30986a81d197e118420d0865"></a>
+<a class="anchor" id="a0f7c561e980eb1edb94fceb6f068cde1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -382,7 +395,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a18158514f653442eb3ff7bb61b5f5213"></a>
+<a class="anchor" id="a0d1c376636eea2a4b1146c3bf5b58a3b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -417,7 +430,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a12d75fd9334f108d345cdbd3ee8816a9"></a>
+<a class="anchor" id="aa664b6b94bb39e9f5fe3186f72ee44ff"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -451,7 +464,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adf6d7572d1782bedb86e6880c24e8e9e"></a>
+<a class="anchor" id="a640ebedb267940c09228ea6c51fcf8e2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -485,7 +498,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae1b03c0a444fc7600f6d6333b0270437"></a>
+<a class="anchor" id="a8613fbb0fd5056043b89385351742ba7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -520,7 +533,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad5f2e607e41b9b4d1e956d1a9a229afa"></a>
+<a class="anchor" id="aa1414e3de9a7737c155bfe79249267f8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -555,7 +568,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abc4a7e44498f2e3ede0c52a43725526d"></a>
+<a class="anchor" id="ab9eaa249323fbe01795bb0bb63f86eab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -596,7 +609,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8f48d5d1c090840389e7cbc556d635b5"></a>
+<a class="anchor" id="a6c64d066e8f86c7d68a5fcf549a89abf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -630,7 +643,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0910f9e8e11bf94dcf9a24489e6f4dde"></a>
+<a class="anchor" id="a98053f72cae85fd3348162d66ba1dafe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -678,7 +691,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a374cf7a2b0dc2d1764fea49ef248544c"></a>
+<a class="anchor" id="a5dc3caa90a8c56991dce1e79bcdd5a17"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -733,7 +746,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aea1e0de87f1e08cf83d31a2179cf0c12"></a>
+<a class="anchor" id="a29201805da2b1392bf8edd0c67144a1a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -774,13 +787,50 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a3b1c6af40f8d2c934bf2d63d71e657e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.database.Database.db</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a50ceb943a93153787b40bb9c037049aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.database.Database.game</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b7d83448ad1895241783bf04a5a1b6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.database.Database.userTable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/database.py</li>
+<li>src/<a class="el" href="database_8py.html">database.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

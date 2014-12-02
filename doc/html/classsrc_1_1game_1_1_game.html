@@ -9,10 +9,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
-   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
+   <div id="projectbrief">The class game of Bomberman re-implemented in Python!</div>
   </td>
  </tr>
  </tbody>
@@ -39,7 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>game</b></li><li class="navelem"><a class="el" href="classsrc_1_1game_1_1_game.html">Game</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1game.html">game</a></li><li class="navelem"><a class="el" href="classsrc_1_1game_1_1_game.html">Game</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -108,121 +109,265 @@ Inheritance diagram for src.game.Game:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15684812af57df03feb870c9b4b380a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15684812af57df03feb870c9b4b380a2"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a15684812af57df03feb870c9b4b380a2">__init__</a> (self)</td></tr>
-<tr class="memdesc:a15684812af57df03feb870c9b4b380a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, initializes UI. <br /></td></tr>
-<tr class="separator:a15684812af57df03feb870c9b4b380a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89ba31b71efebcc9b2f43227d833e38f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89ba31b71efebcc9b2f43227d833e38f"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a89ba31b71efebcc9b2f43227d833e38f">initUI</a> (self)</td></tr>
-<tr class="memdesc:a89ba31b71efebcc9b2f43227d833e38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes the UI and center the window. <br /></td></tr>
-<tr class="separator:a89ba31b71efebcc9b2f43227d833e38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a14788a82ebc0d4b4b821ac1489a7a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a14788a82ebc0d4b4b821ac1489a7a0"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a7a14788a82ebc0d4b4b821ac1489a7a0">showLoginMenu</a> (self)</td></tr>
-<tr class="memdesc:a7a14788a82ebc0d4b4b821ac1489a7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the login menu. <br /></td></tr>
-<tr class="separator:a7a14788a82ebc0d4b4b821ac1489a7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a218f9c8c6e86a19fa9d3155ce43068a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a218f9c8c6e86a19fa9d3155ce43068a0"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a218f9c8c6e86a19fa9d3155ce43068a0">showMainMenu</a> (self)</td></tr>
-<tr class="memdesc:a218f9c8c6e86a19fa9d3155ce43068a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the login menu after successful login. <br /></td></tr>
-<tr class="separator:a218f9c8c6e86a19fa9d3155ce43068a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe69a6fa066d92365c226aff1c903e90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe69a6fa066d92365c226aff1c903e90"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#afe69a6fa066d92365c226aff1c903e90">showLevelMenu</a> (self)</td></tr>
-<tr class="memdesc:afe69a6fa066d92365c226aff1c903e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the level menu where player is asked to select level to play. <br /></td></tr>
-<tr class="separator:afe69a6fa066d92365c226aff1c903e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a28235b9d21d6bb127c42cdc3187bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a56a28235b9d21d6bb127c42cdc3187bf">__init__</a></td></tr>
+<tr class="memdesc:a56a28235b9d21d6bb127c42cdc3187bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, initializes UI.  <a href="#a56a28235b9d21d6bb127c42cdc3187bf">More...</a><br /></td></tr>
+<tr class="separator:a56a28235b9d21d6bb127c42cdc3187bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade13769638b64de5af50e07e859d1434"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#ade13769638b64de5af50e07e859d1434">initUI</a></td></tr>
+<tr class="memdesc:ade13769638b64de5af50e07e859d1434"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes the UI and center the window.  <a href="#ade13769638b64de5af50e07e859d1434">More...</a><br /></td></tr>
+<tr class="separator:ade13769638b64de5af50e07e859d1434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed21fd562360874f0264e32be392a56"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#aeed21fd562360874f0264e32be392a56">showLoginMenu</a></td></tr>
+<tr class="memdesc:aeed21fd562360874f0264e32be392a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the login menu.  <a href="#aeed21fd562360874f0264e32be392a56">More...</a><br /></td></tr>
+<tr class="separator:aeed21fd562360874f0264e32be392a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16759ee9c164fe518080139ea25086e0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a16759ee9c164fe518080139ea25086e0">showMainMenu</a></td></tr>
+<tr class="memdesc:a16759ee9c164fe518080139ea25086e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the login menu after successful login.  <a href="#a16759ee9c164fe518080139ea25086e0">More...</a><br /></td></tr>
+<tr class="separator:a16759ee9c164fe518080139ea25086e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281d0d5faca43cf2d0946ab971281735"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a281d0d5faca43cf2d0946ab971281735">showLevelMenu</a></td></tr>
+<tr class="memdesc:a281d0d5faca43cf2d0946ab971281735"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the level menu where player is asked to select level to play.  <a href="#a281d0d5faca43cf2d0946ab971281735">More...</a><br /></td></tr>
+<tr class="separator:a281d0d5faca43cf2d0946ab971281735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a570dba568ad9dd3b9745e0f10a4b29a8">showBoard</a></td></tr>
 <tr class="memdesc:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the bomberman gameplay and initiliazes the game to the selected level.  <a href="#a570dba568ad9dd3b9745e0f10a4b29a8">More...</a><br /></td></tr>
 <tr class="separator:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a6d564b3397c8c520b0b23e99d0880"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13a6d564b3397c8c520b0b23e99d0880"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a13a6d564b3397c8c520b0b23e99d0880">showLeaderboard</a> (self, previousMenu)</td></tr>
-<tr class="memdesc:a13a6d564b3397c8c520b0b23e99d0880"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method isplays the leaderboard. <br /></td></tr>
-<tr class="separator:a13a6d564b3397c8c520b0b23e99d0880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e17658d314189179aa5be0bfdc185da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e17658d314189179aa5be0bfdc185da"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a0e17658d314189179aa5be0bfdc185da">showPauseMenu</a> (self)</td></tr>
-<tr class="memdesc:a0e17658d314189179aa5be0bfdc185da"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays pause menu. <br /></td></tr>
-<tr class="separator:a0e17658d314189179aa5be0bfdc185da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02ee6b88570e0af0686050a2268f687b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02ee6b88570e0af0686050a2268f687b"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a02ee6b88570e0af0686050a2268f687b">showSaveMenu</a> (self)</td></tr>
-<tr class="memdesc:a02ee6b88570e0af0686050a2268f687b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the menu to save game instances. <br /></td></tr>
-<tr class="separator:a02ee6b88570e0af0686050a2268f687b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c38f9b4c2f4e81a49e25632dccd8622"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c38f9b4c2f4e81a49e25632dccd8622"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a4c38f9b4c2f4e81a49e25632dccd8622">showLoadMenu</a> (self, previousMenu)</td></tr>
-<tr class="memdesc:a4c38f9b4c2f4e81a49e25632dccd8622"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the menu to load saved game instances. <br /></td></tr>
-<tr class="separator:a4c38f9b4c2f4e81a49e25632dccd8622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42b40336207a65cb12910ae7d1a4175d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42b40336207a65cb12910ae7d1a4175d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a42b40336207a65cb12910ae7d1a4175d">showAccountSettingsMenu</a> (self)</td></tr>
-<tr class="memdesc:a42b40336207a65cb12910ae7d1a4175d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the account settings menu. <br /></td></tr>
-<tr class="separator:a42b40336207a65cb12910ae7d1a4175d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a243a1df9b63a0f081b90fa29146a4af6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a243a1df9b63a0f081b90fa29146a4af6"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a243a1df9b63a0f081b90fa29146a4af6">center</a> (self)</td></tr>
-<tr class="memdesc:a243a1df9b63a0f081b90fa29146a4af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method centers the current window to the middle. <br /></td></tr>
-<tr class="separator:a243a1df9b63a0f081b90fa29146a4af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7856f8d00f279cc139d131cb2e8d8ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7856f8d00f279cc139d131cb2e8d8ea"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#aa7856f8d00f279cc139d131cb2e8d8ea">quit</a> (self)</td></tr>
-<tr class="memdesc:aa7856f8d00f279cc139d131cb2e8d8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method exits the process. <br /></td></tr>
-<tr class="separator:aa7856f8d00f279cc139d131cb2e8d8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19d0646df1f0cb57f8262412487d5270"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19d0646df1f0cb57f8262412487d5270"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a19d0646df1f0cb57f8262412487d5270">resumeToGame</a> (self)</td></tr>
-<tr class="memdesc:a19d0646df1f0cb57f8262412487d5270"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method resumes the game after a pause action. <br /></td></tr>
-<tr class="separator:a19d0646df1f0cb57f8262412487d5270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2df3ddda7fa333cadb6fcfa060eaef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add2df3ddda7fa333cadb6fcfa060eaef"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#add2df3ddda7fa333cadb6fcfa060eaef">resumeToPauseMenu</a> (self)</td></tr>
-<tr class="memdesc:add2df3ddda7fa333cadb6fcfa060eaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method navigates back to pause menu. <br /></td></tr>
-<tr class="separator:add2df3ddda7fa333cadb6fcfa060eaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e215b6533b7fa858334453633e12e6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e215b6533b7fa858334453633e12e6e"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a8e215b6533b7fa858334453633e12e6e">loadSavedGame</a> (self, gamename)</td></tr>
-<tr class="memdesc:a8e215b6533b7fa858334453633e12e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method loads the current user's saved game instance corresponding to the provided game name. <br /></td></tr>
-<tr class="separator:a8e215b6533b7fa858334453633e12e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae864ef349cf3b094874543fab2210a37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae864ef349cf3b094874543fab2210a37"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#ae864ef349cf3b094874543fab2210a37">gameOver</a> (self)</td></tr>
-<tr class="memdesc:ae864ef349cf3b094874543fab2210a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method emits a signal to acknowledge game over state. <br /></td></tr>
-<tr class="separator:ae864ef349cf3b094874543fab2210a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85c98d60278dc78a465e40b5e3c57579"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85c98d60278dc78a465e40b5e3c57579"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a85c98d60278dc78a465e40b5e3c57579">updateScoreInDb</a> (self, incrementalScore)</td></tr>
-<tr class="memdesc:a85c98d60278dc78a465e40b5e3c57579"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method updates the user's current score to the database. <br /></td></tr>
-<tr class="separator:a85c98d60278dc78a465e40b5e3c57579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45770f3f952d2738b599e04ade877296"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45770f3f952d2738b599e04ade877296"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a45770f3f952d2738b599e04ade877296">updateGamesPlayedInDb</a> (self)</td></tr>
-<tr class="memdesc:a45770f3f952d2738b599e04ade877296"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method updates the users' number of games played to the database. <br /></td></tr>
-<tr class="separator:a45770f3f952d2738b599e04ade877296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5998c86374c68278133a28fc86a7f71d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a5998c86374c68278133a28fc86a7f71d">showLeaderboard</a></td></tr>
+<tr class="memdesc:a5998c86374c68278133a28fc86a7f71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method isplays the leaderboard.  <a href="#a5998c86374c68278133a28fc86a7f71d">More...</a><br /></td></tr>
+<tr class="separator:a5998c86374c68278133a28fc86a7f71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8bf94bd7676c2942df14ed0404055a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#acd8bf94bd7676c2942df14ed0404055a">showPauseMenu</a></td></tr>
+<tr class="memdesc:acd8bf94bd7676c2942df14ed0404055a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays pause menu.  <a href="#acd8bf94bd7676c2942df14ed0404055a">More...</a><br /></td></tr>
+<tr class="separator:acd8bf94bd7676c2942df14ed0404055a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808603504aca0c767ece9b422a76ecbb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a808603504aca0c767ece9b422a76ecbb">showSaveMenu</a></td></tr>
+<tr class="memdesc:a808603504aca0c767ece9b422a76ecbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the menu to save game instances.  <a href="#a808603504aca0c767ece9b422a76ecbb">More...</a><br /></td></tr>
+<tr class="separator:a808603504aca0c767ece9b422a76ecbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f00ac625aa0a9027c3eddfe00e1e51"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#ac9f00ac625aa0a9027c3eddfe00e1e51">showLoadMenu</a></td></tr>
+<tr class="memdesc:ac9f00ac625aa0a9027c3eddfe00e1e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the menu to load saved game instances.  <a href="#ac9f00ac625aa0a9027c3eddfe00e1e51">More...</a><br /></td></tr>
+<tr class="separator:ac9f00ac625aa0a9027c3eddfe00e1e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252b2ec6612780aec8655dfdd4cf8259"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a252b2ec6612780aec8655dfdd4cf8259">showAccountSettingsMenu</a></td></tr>
+<tr class="memdesc:a252b2ec6612780aec8655dfdd4cf8259"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method displays the account settings menu.  <a href="#a252b2ec6612780aec8655dfdd4cf8259">More...</a><br /></td></tr>
+<tr class="separator:a252b2ec6612780aec8655dfdd4cf8259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5bd7707485097c34b145e947f33201c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#ad5bd7707485097c34b145e947f33201c">center</a></td></tr>
+<tr class="memdesc:ad5bd7707485097c34b145e947f33201c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method centers the current window to the middle.  <a href="#ad5bd7707485097c34b145e947f33201c">More...</a><br /></td></tr>
+<tr class="separator:ad5bd7707485097c34b145e947f33201c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09118068e27878ad17bb2d58d13d1a8e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a09118068e27878ad17bb2d58d13d1a8e">quit</a></td></tr>
+<tr class="memdesc:a09118068e27878ad17bb2d58d13d1a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method exits the process.  <a href="#a09118068e27878ad17bb2d58d13d1a8e">More...</a><br /></td></tr>
+<tr class="separator:a09118068e27878ad17bb2d58d13d1a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d29b77bdab0f65b719d8346fe20fb99"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a1d29b77bdab0f65b719d8346fe20fb99">resumeToGame</a></td></tr>
+<tr class="memdesc:a1d29b77bdab0f65b719d8346fe20fb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method resumes the game after a pause action.  <a href="#a1d29b77bdab0f65b719d8346fe20fb99">More...</a><br /></td></tr>
+<tr class="separator:a1d29b77bdab0f65b719d8346fe20fb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7bd3d1e95c485aadf0e6f3fc491d1dc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#aa7bd3d1e95c485aadf0e6f3fc491d1dc">resumeToPauseMenu</a></td></tr>
+<tr class="memdesc:aa7bd3d1e95c485aadf0e6f3fc491d1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method navigates back to pause menu.  <a href="#aa7bd3d1e95c485aadf0e6f3fc491d1dc">More...</a><br /></td></tr>
+<tr class="separator:aa7bd3d1e95c485aadf0e6f3fc491d1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa03d050e014c54f122315f8e98d441"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a1fa03d050e014c54f122315f8e98d441">loadSavedGame</a></td></tr>
+<tr class="memdesc:a1fa03d050e014c54f122315f8e98d441"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method loads the current user's saved game instance corresponding to the provided game name.  <a href="#a1fa03d050e014c54f122315f8e98d441">More...</a><br /></td></tr>
+<tr class="separator:a1fa03d050e014c54f122315f8e98d441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a884c2309f069058047dc88f7089519e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a884c2309f069058047dc88f7089519e6">gameOver</a></td></tr>
+<tr class="memdesc:a884c2309f069058047dc88f7089519e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method emits a signal to acknowledge game over state.  <a href="#a884c2309f069058047dc88f7089519e6">More...</a><br /></td></tr>
+<tr class="separator:a884c2309f069058047dc88f7089519e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad671c0a5819b1eaae158dd3a23e5e80b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#ad671c0a5819b1eaae158dd3a23e5e80b">updateScoreInDb</a></td></tr>
+<tr class="memdesc:ad671c0a5819b1eaae158dd3a23e5e80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method updates the user's current score to the database.  <a href="#ad671c0a5819b1eaae158dd3a23e5e80b">More...</a><br /></td></tr>
+<tr class="separator:ad671c0a5819b1eaae158dd3a23e5e80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6761faa058096df0e2df9724906c6287"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a6761faa058096df0e2df9724906c6287">updateGamesPlayedInDb</a></td></tr>
+<tr class="memdesc:a6761faa058096df0e2df9724906c6287"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method updates the users' number of games played to the database.  <a href="#a6761faa058096df0e2df9724906c6287">More...</a><br /></td></tr>
+<tr class="separator:a6761faa058096df0e2df9724906c6287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a92c4f3cb7732c69c98cfb2ed60787493"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92c4f3cb7732c69c98cfb2ed60787493"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>centralWidget</b></td></tr>
+<tr class="memitem:a92c4f3cb7732c69c98cfb2ed60787493"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a92c4f3cb7732c69c98cfb2ed60787493">centralWidget</a></td></tr>
 <tr class="separator:a92c4f3cb7732c69c98cfb2ed60787493"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99d603ef9c1161c44a4f5a56bb6dd9f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99d603ef9c1161c44a4f5a56bb6dd9f2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>loginWidget</b></td></tr>
+<tr class="memitem:a99d603ef9c1161c44a4f5a56bb6dd9f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a99d603ef9c1161c44a4f5a56bb6dd9f2">loginWidget</a></td></tr>
 <tr class="separator:a99d603ef9c1161c44a4f5a56bb6dd9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29a088cb0bd6e4fcb48a378edd2167e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29a088cb0bd6e4fcb48a378edd2167e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>username</b></td></tr>
+<tr class="memitem:a29a088cb0bd6e4fcb48a378edd2167e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a29a088cb0bd6e4fcb48a378edd2167e8">username</a></td></tr>
 <tr class="separator:a29a088cb0bd6e4fcb48a378edd2167e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1459ba85bf23680a28b7cb4763894ba4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1459ba85bf23680a28b7cb4763894ba4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>mainMenuWidget</b></td></tr>
+<tr class="memitem:a1459ba85bf23680a28b7cb4763894ba4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a1459ba85bf23680a28b7cb4763894ba4">mainMenuWidget</a></td></tr>
 <tr class="separator:a1459ba85bf23680a28b7cb4763894ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ae5da6053d5ec0649455c184bfdcedb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ae5da6053d5ec0649455c184bfdcedb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>levelMenuWidget</b></td></tr>
+<tr class="memitem:a9ae5da6053d5ec0649455c184bfdcedb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a9ae5da6053d5ec0649455c184bfdcedb">levelMenuWidget</a></td></tr>
 <tr class="separator:a9ae5da6053d5ec0649455c184bfdcedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76712fbdaf1d11ec0865e01b9122b97a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76712fbdaf1d11ec0865e01b9122b97a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>board_widget</b></td></tr>
+<tr class="memitem:a76712fbdaf1d11ec0865e01b9122b97a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a76712fbdaf1d11ec0865e01b9122b97a">board_widget</a></td></tr>
 <tr class="separator:a76712fbdaf1d11ec0865e01b9122b97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78fdde7f6a5b71a85c60773d21cc9411"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78fdde7f6a5b71a85c60773d21cc9411"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>leaderboardWidget</b></td></tr>
+<tr class="memitem:a78fdde7f6a5b71a85c60773d21cc9411"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a78fdde7f6a5b71a85c60773d21cc9411">leaderboardWidget</a></td></tr>
 <tr class="separator:a78fdde7f6a5b71a85c60773d21cc9411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af24a410e54a1a4a5780ede9e63cd5f42"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af24a410e54a1a4a5780ede9e63cd5f42"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>pauseMenuWidget</b></td></tr>
+<tr class="memitem:af24a410e54a1a4a5780ede9e63cd5f42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#af24a410e54a1a4a5780ede9e63cd5f42">pauseMenuWidget</a></td></tr>
 <tr class="separator:af24a410e54a1a4a5780ede9e63cd5f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d047842ed7da302396199fd53bde5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77d047842ed7da302396199fd53bde5a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>saveMenuWidget</b></td></tr>
+<tr class="memitem:a77d047842ed7da302396199fd53bde5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a77d047842ed7da302396199fd53bde5a">saveMenuWidget</a></td></tr>
 <tr class="separator:a77d047842ed7da302396199fd53bde5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a013f911e3aa25cd66ff89046838f5fff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a013f911e3aa25cd66ff89046838f5fff"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>loadMenuWidget</b></td></tr>
+<tr class="memitem:a013f911e3aa25cd66ff89046838f5fff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a013f911e3aa25cd66ff89046838f5fff">loadMenuWidget</a></td></tr>
 <tr class="separator:a013f911e3aa25cd66ff89046838f5fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27cf07a0e4ce7f3469cf682df11244e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27cf07a0e4ce7f3469cf682df11244e0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>accountSettingsMenuWidget</b></td></tr>
+<tr class="memitem:a27cf07a0e4ce7f3469cf682df11244e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a27cf07a0e4ce7f3469cf682df11244e0">accountSettingsMenuWidget</a></td></tr>
 <tr class="separator:a27cf07a0e4ce7f3469cf682df11244e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is the main controller of all subcontrollers for menus. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a56a28235b9d21d6bb127c42cdc3187bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor, initializes UI. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad5bd7707485097c34b145e947f33201c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.center </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method centers the current window to the middle. </p>
+
+</div>
+</div>
+<a class="anchor" id="a884c2309f069058047dc88f7089519e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.gameOver </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method emits a signal to acknowledge game over state. </p>
+
+</div>
+</div>
+<a class="anchor" id="ade13769638b64de5af50e07e859d1434"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.initUI </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method initializes the UI and center the window. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1fa03d050e014c54f122315f8e98d441"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.loadSavedGame </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>gamename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method loads the current user's saved game instance corresponding to the provided game name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a09118068e27878ad17bb2d58d13d1a8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.quit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method exits the process. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1d29b77bdab0f65b719d8346fe20fb99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.resumeToGame </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method resumes the game after a pause action. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7bd3d1e95c485aadf0e6f3fc491d1dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.resumeToPauseMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method navigates back to pause menu. </p>
+
+</div>
+</div>
+<a class="anchor" id="a252b2ec6612780aec8655dfdd4cf8259"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showAccountSettingsMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays the account settings menu. </p>
+
+</div>
+</div>
 <a class="anchor" id="a570dba568ad9dd3b9745e0f10a4b29a8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -264,13 +409,338 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5998c86374c68278133a28fc86a7f71d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showLeaderboard </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>previousMenu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method isplays the leaderboard. </p>
+
+</div>
+</div>
+<a class="anchor" id="a281d0d5faca43cf2d0946ab971281735"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showLevelMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays the level menu where player is asked to select level to play. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9f00ac625aa0a9027c3eddfe00e1e51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showLoadMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>previousMenu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays the menu to load saved game instances. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeed21fd562360874f0264e32be392a56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showLoginMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays the login menu. </p>
+
+</div>
+</div>
+<a class="anchor" id="a16759ee9c164fe518080139ea25086e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showMainMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays the login menu after successful login. </p>
+
+</div>
+</div>
+<a class="anchor" id="acd8bf94bd7676c2942df14ed0404055a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showPauseMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays pause menu. </p>
+
+</div>
+</div>
+<a class="anchor" id="a808603504aca0c767ece9b422a76ecbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showSaveMenu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method displays the menu to save game instances. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6761faa058096df0e2df9724906c6287"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.updateGamesPlayedInDb </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method updates the users' number of games played to the database. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad671c0a5819b1eaae158dd3a23e5e80b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.updateScoreInDb </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>incrementalScore</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method updates the user's current score to the database. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a27cf07a0e4ce7f3469cf682df11244e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.accountSettingsMenuWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a76712fbdaf1d11ec0865e01b9122b97a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.board_widget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92c4f3cb7732c69c98cfb2ed60787493"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.centralWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78fdde7f6a5b71a85c60773d21cc9411"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.leaderboardWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ae5da6053d5ec0649455c184bfdcedb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.levelMenuWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a013f911e3aa25cd66ff89046838f5fff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.loadMenuWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99d603ef9c1161c44a4f5a56bb6dd9f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.loginWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1459ba85bf23680a28b7cb4763894ba4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.mainMenuWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af24a410e54a1a4a5780ede9e63cd5f42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.pauseMenuWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a77d047842ed7da302396199fd53bde5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.saveMenuWidget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29a088cb0bd6e4fcb48a378edd2167e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.game.Game.username</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/game.py</li>
+<li>src/<a class="el" href="game_8py.html">game.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:55:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 02:28:24 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
