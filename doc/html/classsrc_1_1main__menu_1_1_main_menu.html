@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,28 +108,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a138987af797121617841ccb0cdd20121"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a138987af797121617841ccb0cdd20121"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
 <tr class="separator:a138987af797121617841ccb0cdd20121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3113abc9c3a207f22ccc9ae7a83cf37d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a3113abc9c3a207f22ccc9ae7a83cf37d">initUI</a></td></tr>
-<tr class="memdesc:a3113abc9c3a207f22ccc9ae7a83cf37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of Main menu.  <a href="#a3113abc9c3a207f22ccc9ae7a83cf37d">More...</a><br /></td></tr>
-<tr class="separator:a3113abc9c3a207f22ccc9ae7a83cf37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90da1e0c47f74c4c09111d58715de87a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a90da1e0c47f74c4c09111d58715de87a">play</a></td></tr>
-<tr class="memdesc:a90da1e0c47f74c4c09111d58715de87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit playGameSignal when called.  <a href="#a90da1e0c47f74c4c09111d58715de87a">More...</a><br /></td></tr>
-<tr class="separator:a90da1e0c47f74c4c09111d58715de87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ba446da45e2ac128b0e2babaff717b0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1ba446da45e2ac128b0e2babaff717b0">logout</a></td></tr>
-<tr class="memdesc:a1ba446da45e2ac128b0e2babaff717b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit logoutGameSignal when called.  <a href="#a1ba446da45e2ac128b0e2babaff717b0">More...</a><br /></td></tr>
-<tr class="separator:a1ba446da45e2ac128b0e2babaff717b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4889fe8c4fdecfc7582172653a01004"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad4889fe8c4fdecfc7582172653a01004">quit</a></td></tr>
-<tr class="memdesc:ad4889fe8c4fdecfc7582172653a01004"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit quitGameSignal when called.  <a href="#ad4889fe8c4fdecfc7582172653a01004">More...</a><br /></td></tr>
-<tr class="separator:ad4889fe8c4fdecfc7582172653a01004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dde3d58838214f407908e74589f25d4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5dde3d58838214f407908e74589f25d4">showLeaderboard</a></td></tr>
-<tr class="memdesc:a5dde3d58838214f407908e74589f25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit showLeaderboardSignal when called.  <a href="#a5dde3d58838214f407908e74589f25d4">More...</a><br /></td></tr>
-<tr class="separator:a5dde3d58838214f407908e74589f25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fde1c124db7260f097d49fa986bd1d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fde1c124db7260f097d49fa986bd1d2"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1fde1c124db7260f097d49fa986bd1d2">showAccountSettingsMenu</a></td></tr>
-<tr class="memdesc:a1fde1c124db7260f097d49fa986bd1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit changeSettingsSignal when called <br /></td></tr>
-<tr class="separator:a1fde1c124db7260f097d49fa986bd1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a769362f714e9bc7071f7d04e582cb89d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a769362f714e9bc7071f7d04e582cb89d">load</a></td></tr>
-<tr class="memdesc:a769362f714e9bc7071f7d04e582cb89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadMenuSignal when called.  <a href="#a769362f714e9bc7071f7d04e582cb89d">More...</a><br /></td></tr>
-<tr class="separator:a769362f714e9bc7071f7d04e582cb89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe71c56b747e1f76a2b73b542875a4d7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#abe71c56b747e1f76a2b73b542875a4d7">initUI</a> (self)</td></tr>
+<tr class="memdesc:abe71c56b747e1f76a2b73b542875a4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of Main menu.  <a href="#abe71c56b747e1f76a2b73b542875a4d7">More...</a><br /></td></tr>
+<tr class="separator:abe71c56b747e1f76a2b73b542875a4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa5ceb3caccddfacf97ca9befd21ae5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#adaa5ceb3caccddfacf97ca9befd21ae5">play</a> (self)</td></tr>
+<tr class="memdesc:adaa5ceb3caccddfacf97ca9befd21ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit playGameSignal when called.  <a href="#adaa5ceb3caccddfacf97ca9befd21ae5">More...</a><br /></td></tr>
+<tr class="separator:adaa5ceb3caccddfacf97ca9befd21ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60fcc9e2384edbf984c094682c61624"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ac60fcc9e2384edbf984c094682c61624">logout</a> (self)</td></tr>
+<tr class="memdesc:ac60fcc9e2384edbf984c094682c61624"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit logoutGameSignal when called.  <a href="#ac60fcc9e2384edbf984c094682c61624">More...</a><br /></td></tr>
+<tr class="separator:ac60fcc9e2384edbf984c094682c61624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2872e528109b4747bc169235302d3ae"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ab2872e528109b4747bc169235302d3ae">quit</a> (self)</td></tr>
+<tr class="memdesc:ab2872e528109b4747bc169235302d3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit quitGameSignal when called.  <a href="#ab2872e528109b4747bc169235302d3ae">More...</a><br /></td></tr>
+<tr class="separator:ab2872e528109b4747bc169235302d3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92f678a32751ee9d592fd64d487126b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad92f678a32751ee9d592fd64d487126b">showLeaderboard</a> (self)</td></tr>
+<tr class="memdesc:ad92f678a32751ee9d592fd64d487126b"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit showLeaderboardSignal when called.  <a href="#ad92f678a32751ee9d592fd64d487126b">More...</a><br /></td></tr>
+<tr class="separator:ad92f678a32751ee9d592fd64d487126b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5509f22d8daa7510daa6bb592e5f73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f5509f22d8daa7510daa6bb592e5f73"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a9f5509f22d8daa7510daa6bb592e5f73">showAccountSettingsMenu</a> (self)</td></tr>
+<tr class="memdesc:a9f5509f22d8daa7510daa6bb592e5f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit changeSettingsSignal when called <br /></td></tr>
+<tr class="separator:a9f5509f22d8daa7510daa6bb592e5f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8bd4179063fdebe0f679b4501e6642"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5a8bd4179063fdebe0f679b4501e6642">load</a> (self)</td></tr>
+<tr class="memdesc:a5a8bd4179063fdebe0f679b4501e6642"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadMenuSignal when called.  <a href="#a5a8bd4179063fdebe0f679b4501e6642">More...</a><br /></td></tr>
+<tr class="separator:a5a8bd4179063fdebe0f679b4501e6642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -151,7 +153,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a7a76ee92b8b02099e74f0d5ad107ff34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3113abc9c3a207f22ccc9ae7a83cf37d"></a>
+<a class="anchor" id="abe71c56b747e1f76a2b73b542875a4d7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -169,7 +171,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a769362f714e9bc7071f7d04e582cb89d"></a>
+<a class="anchor" id="a5a8bd4179063fdebe0f679b4501e6642"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -187,7 +189,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1ba446da45e2ac128b0e2babaff717b0"></a>
+<a class="anchor" id="ac60fcc9e2384edbf984c094682c61624"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -205,7 +207,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a90da1e0c47f74c4c09111d58715de87a"></a>
+<a class="anchor" id="adaa5ceb3caccddfacf97ca9befd21ae5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -223,7 +225,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad4889fe8c4fdecfc7582172653a01004"></a>
+<a class="anchor" id="ab2872e528109b4747bc169235302d3ae"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -241,7 +243,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5dde3d58838214f407908e74589f25d4"></a>
+<a class="anchor" id="ad92f678a32751ee9d592fd64d487126b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -400,7 +402,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

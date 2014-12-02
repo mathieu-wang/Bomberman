@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,22 +95,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a7a76ee92b8b02099e74f0d5ad107ff34">changeSettingsSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a3113abc9c3a207f22ccc9ae7a83cf37d">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a769362f714e9bc7071f7d04e582cb89d">load</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#abe71c56b747e1f76a2b73b542875a4d7">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5a8bd4179063fdebe0f679b4501e6642">load</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a51466fb736e3368249412c501aa18741">loadMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1ba446da45e2ac128b0e2babaff717b0">logout</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ac60fcc9e2384edbf984c094682c61624">logout</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ac8a9bae484f207fa58edd090112c8be3">logoutGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a90da1e0c47f74c4c09111d58715de87a">play</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#adaa5ceb3caccddfacf97ca9befd21ae5">play</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5649447e46d6bd6bdc5f1289941c8c02">playGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad4889fe8c4fdecfc7582172653a01004">quit</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ab2872e528109b4747bc169235302d3ae">quit</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#adb966ecda1f332af67efc3c3b3adf8bd">quitGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a1fde1c124db7260f097d49fa986bd1d2">showAccountSettingsMenu</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a5dde3d58838214f407908e74589f25d4">showLeaderboard</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#a9f5509f22d8daa7510daa6bb592e5f73">showAccountSettingsMenu</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#ad92f678a32751ee9d592fd64d487126b">showLeaderboard</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html#aa737b525a5e965eb6af321d25baa787c">showLeaderboardSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1main__menu_1_1_main_menu.html">src.main_menu.MainMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

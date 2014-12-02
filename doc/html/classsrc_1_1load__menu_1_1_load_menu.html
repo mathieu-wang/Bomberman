@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,21 +109,21 @@ Inheritance diagram for src.load_menu.LoadMenu:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a718733e0299307cef6596781bcca9f0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a718733e0299307cef6596781bcca9f0f"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:a718733e0299307cef6596781bcca9f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e32e2e1f422ac727cb97cc27b7c138d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a2e32e2e1f422ac727cb97cc27b7c138d">initUI</a></td></tr>
-<tr class="memdesc:a2e32e2e1f422ac727cb97cc27b7c138d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of the Load menu.  <a href="#a2e32e2e1f422ac727cb97cc27b7c138d">More...</a><br /></td></tr>
-<tr class="separator:a2e32e2e1f422ac727cb97cc27b7c138d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c0992339e3d0c5050f33bd9c67040a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a47c0992339e3d0c5050f33bd9c67040a">loadSavedGame</a></td></tr>
-<tr class="memdesc:a47c0992339e3d0c5050f33bd9c67040a"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadSavedGameSignal when called.  <a href="#a47c0992339e3d0c5050f33bd9c67040a">More...</a><br /></td></tr>
-<tr class="separator:a47c0992339e3d0c5050f33bd9c67040a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97aed1f843fdce3ae868ba7e96d55515"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a97aed1f843fdce3ae868ba7e96d55515">loadSavedGameList</a></td></tr>
-<tr class="memdesc:a97aed1f843fdce3ae868ba7e96d55515"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetch from the database the current user's saved game.  <a href="#a97aed1f843fdce3ae868ba7e96d55515">More...</a><br /></td></tr>
-<tr class="separator:a97aed1f843fdce3ae868ba7e96d55515"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74fb2bc25bdc9367194c0b8553bacf6b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a74fb2bc25bdc9367194c0b8553bacf6b">back</a></td></tr>
-<tr class="memdesc:a74fb2bc25bdc9367194c0b8553bacf6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backSignal when called.  <a href="#a74fb2bc25bdc9367194c0b8553bacf6b">More...</a><br /></td></tr>
-<tr class="separator:a74fb2bc25bdc9367194c0b8553bacf6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b067e9ede752fd13ed4df84570083b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b067e9ede752fd13ed4df84570083b7"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, parent, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ab1c940f6352015a62d85b668bc6ebb01">username</a>, <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a266279b7ed3e68889b07c1785251c806">previousMenu</a>)</td></tr>
+<tr class="separator:a6b067e9ede752fd13ed4df84570083b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10c4104f4245eaba4772a7f29485ff4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ae10c4104f4245eaba4772a7f29485ff4">initUI</a> (self)</td></tr>
+<tr class="memdesc:ae10c4104f4245eaba4772a7f29485ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of the Load menu.  <a href="#ae10c4104f4245eaba4772a7f29485ff4">More...</a><br /></td></tr>
+<tr class="separator:ae10c4104f4245eaba4772a7f29485ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ab22ee56c51e7cb02f27344d6bfcbd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ac3ab22ee56c51e7cb02f27344d6bfcbd">loadSavedGame</a> (self)</td></tr>
+<tr class="memdesc:ac3ab22ee56c51e7cb02f27344d6bfcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit loadSavedGameSignal when called.  <a href="#ac3ab22ee56c51e7cb02f27344d6bfcbd">More...</a><br /></td></tr>
+<tr class="separator:ac3ab22ee56c51e7cb02f27344d6bfcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b9c789c68fb85b2d4e2bfd211e201d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#af7b9c789c68fb85b2d4e2bfd211e201d">loadSavedGameList</a> (self)</td></tr>
+<tr class="memdesc:af7b9c789c68fb85b2d4e2bfd211e201d"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetch from the database the current user's saved game.  <a href="#af7b9c789c68fb85b2d4e2bfd211e201d">More...</a><br /></td></tr>
+<tr class="separator:af7b9c789c68fb85b2d4e2bfd211e201d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1756d59b9d5d3c026d4cb971bb6a657"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ac1756d59b9d5d3c026d4cb971bb6a657">back</a> (self)</td></tr>
+<tr class="memdesc:ac1756d59b9d5d3c026d4cb971bb6a657"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backSignal when called.  <a href="#ac1756d59b9d5d3c026d4cb971bb6a657">More...</a><br /></td></tr>
+<tr class="separator:ac1756d59b9d5d3c026d4cb971bb6a657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -153,7 +155,7 @@ loadButton: emit loadSavedGameSignal when clicked.<br />
 returnButton: emit backSignal when clicked.<br />
 savedGameList: list of all the saved game of the current active user. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a74fb2bc25bdc9367194c0b8553bacf6b"></a>
+<a class="anchor" id="ac1756d59b9d5d3c026d4cb971bb6a657"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -171,7 +173,7 @@ savedGameList: list of all the saved game of the current active user. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2e32e2e1f422ac727cb97cc27b7c138d"></a>
+<a class="anchor" id="ae10c4104f4245eaba4772a7f29485ff4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -189,7 +191,7 @@ savedGameList: list of all the saved game of the current active user. </p>
 
 </div>
 </div>
-<a class="anchor" id="a47c0992339e3d0c5050f33bd9c67040a"></a>
+<a class="anchor" id="ac3ab22ee56c51e7cb02f27344d6bfcbd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -207,7 +209,7 @@ savedGameList: list of all the saved game of the current active user. </p>
 
 </div>
 </div>
-<a class="anchor" id="a97aed1f843fdce3ae868ba7e96d55515"></a>
+<a class="anchor" id="af7b9c789c68fb85b2d4e2bfd211e201d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -292,7 +294,7 @@ savedGameList: list of all the saved game of the current active user. </p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

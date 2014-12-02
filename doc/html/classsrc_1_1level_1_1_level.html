@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src.level.Level Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classsrc_1_1level_1_1_level.html" title="Level object containing all the attributes and methods necessary to one level of gameplay. ">Level</a> object containing all the attributes and methods necessary to one level of gameplay.  
+ <a href="classsrc_1_1level_1_1_level.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for src.level.Level:</div>
 <div class="dyncontent">
@@ -103,122 +108,174 @@ Inheritance diagram for src.level.Level:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa29517fc750a5a294a6fe3b320229bd7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa29517fc750a5a294a6fe3b320229bd7"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:aa29517fc750a5a294a6fe3b320229bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f74996221484c4492b6f50412427ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5f74996221484c4492b6f50412427ed"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setNewLevel</b></td></tr>
-<tr class="separator:ac5f74996221484c4492b6f50412427ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad342c492e30a176c38b82831ec0b51eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad342c492e30a176c38b82831ec0b51eb"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>gainPowerUp</b></td></tr>
-<tr class="separator:ad342c492e30a176c38b82831ec0b51eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c61be308c7af4e98f3ed6e0f6dd5d24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c61be308c7af4e98f3ed6e0f6dd5d24"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>tileAt</b></td></tr>
-<tr class="separator:a4c61be308c7af4e98f3ed6e0f6dd5d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd34ac61d532aa42f6478a21315179d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd34ac61d532aa42f6478a21315179d1"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setTileAt</b></td></tr>
-<tr class="separator:acd34ac61d532aa42f6478a21315179d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49949e01d457000e8a5237eb965beb62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49949e01d457000e8a5237eb965beb62"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>popTileAt</b></td></tr>
-<tr class="separator:a49949e01d457000e8a5237eb965beb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe359808f5f5a8db06b05736cefb9717"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe359808f5f5a8db06b05736cefb9717"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setBomb</b></td></tr>
-<tr class="separator:afe359808f5f5a8db06b05736cefb9717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf3194f45bf6216f8f4721cbb6323ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cf3194f45bf6216f8f4721cbb6323ea"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>clearBoard</b></td></tr>
-<tr class="separator:a7cf3194f45bf6216f8f4721cbb6323ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6de81c59468d0fdd992fb16579818cf2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6de81c59468d0fdd992fb16579818cf2"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>clearBombs</b></td></tr>
-<tr class="separator:a6de81c59468d0fdd992fb16579818cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64bc17bcf23b2fad18e1fd311befd56c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64bc17bcf23b2fad18e1fd311befd56c"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setConcrete</b></td></tr>
-<tr class="separator:a64bc17bcf23b2fad18e1fd311befd56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a883c95dde27eff49917bfb4d5fe85e75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a883c95dde27eff49917bfb4d5fe85e75"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setExit</b></td></tr>
-<tr class="separator:a883c95dde27eff49917bfb4d5fe85e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa097a0823969566f5b72185b194b3236"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa097a0823969566f5b72185b194b3236"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setLevelInfo</b></td></tr>
-<tr class="separator:aa097a0823969566f5b72185b194b3236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d926314e0c8be00f2eb793ccdc776a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d926314e0c8be00f2eb793ccdc776a3"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setPowerup</b></td></tr>
-<tr class="separator:a9d926314e0c8be00f2eb793ccdc776a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88a55e8010242b576f004109cbaef727"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88a55e8010242b576f004109cbaef727"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setBrick</b></td></tr>
-<tr class="separator:a88a55e8010242b576f004109cbaef727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31dee5f64d4faa5c583a7d15189c60dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31dee5f64d4faa5c583a7d15189c60dc"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setBomberman</b></td></tr>
-<tr class="separator:a31dee5f64d4faa5c583a7d15189c60dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a103df1704c6f4ddbe0b61645277111e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a103df1704c6f4ddbe0b61645277111e7"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setEnemies</b></td></tr>
-<tr class="separator:a103df1704c6f4ddbe0b61645277111e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54d44854b3705182c47f6d7b6ca4ce01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54d44854b3705182c47f6d7b6ca4ce01"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>clearEnemies</b></td></tr>
-<tr class="separator:a54d44854b3705182c47f6d7b6ca4ce01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa3494815c1274bd189339a5076ba63d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa3494815c1274bd189339a5076ba63d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setChaos</b></td></tr>
-<tr class="separator:aaa3494815c1274bd189339a5076ba63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728e95c873b4046cf555bd70ca9141b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a728e95c873b4046cf555bd70ca9141b3"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setSuperChaos</b></td></tr>
-<tr class="separator:a728e95c873b4046cf555bd70ca9141b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e52c74e02be818576be2ffd9040fe0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6e52c74e02be818576be2ffd9040fe0"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ab6e52c74e02be818576be2ffd9040fe0">__init__</a> (self, <a class="el" href="classsrc_1_1level_1_1_level.html#a7ec8be181d4558bc3f7b8c106a6aeb5a">username</a>, <a class="el" href="classsrc_1_1level_1_1_level.html#a8b26c1249a2d161c058595e789948bf9">levelNum</a>)</td></tr>
+<tr class="memdesc:ab6e52c74e02be818576be2ffd9040fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a level which takes a username and a level as argument. <br /></td></tr>
+<tr class="separator:ab6e52c74e02be818576be2ffd9040fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0df76bcc440bbab23e4ce754223177c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0df76bcc440bbab23e4ce754223177c5"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a0df76bcc440bbab23e4ce754223177c5">setNewLevel</a> (self)</td></tr>
+<tr class="memdesc:a0df76bcc440bbab23e4ce754223177c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinitialize all of level's variables and bomberman's variable to start new level. <br /></td></tr>
+<tr class="separator:a0df76bcc440bbab23e4ce754223177c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af98db5112ae2fbd4a9f44ae0bcbe83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9af98db5112ae2fbd4a9f44ae0bcbe83"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a9af98db5112ae2fbd4a9f44ae0bcbe83">gainPowerUp</a> (self)</td></tr>
+<tr class="memdesc:a9af98db5112ae2fbd4a9f44ae0bcbe83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the current level's powerup and add attribute to bomberman. <br /></td></tr>
+<tr class="separator:a9af98db5112ae2fbd4a9f44ae0bcbe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1a64a223be266425f6100e4728df3a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f1a64a223be266425f6100e4728df3a"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a9f1a64a223be266425f6100e4728df3a">tileAt</a> (self, x, y)</td></tr>
+<tr class="memdesc:a9f1a64a223be266425f6100e4728df3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return tile at x and y from the board. <br /></td></tr>
+<tr class="separator:a9f1a64a223be266425f6100e4728df3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b0a565e03f055cd93abe6faeefd3b4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b0a565e03f055cd93abe6faeefd3b4f"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a1b0a565e03f055cd93abe6faeefd3b4f">setTileAt</a> (self, x, y, tile)</td></tr>
+<tr class="memdesc:a1b0a565e03f055cd93abe6faeefd3b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set tile at x and y on the board. <br /></td></tr>
+<tr class="separator:a1b0a565e03f055cd93abe6faeefd3b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a922117841f374126a4ab727a65ef1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79a922117841f374126a4ab727a65ef1"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a79a922117841f374126a4ab727a65ef1">popTileAt</a> (self, x, y)</td></tr>
+<tr class="memdesc:a79a922117841f374126a4ab727a65ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove tile at x and y on the board. <br /></td></tr>
+<tr class="separator:a79a922117841f374126a4ab727a65ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1fdbf2a27cb66fffd27bc2598449072"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1fdbf2a27cb66fffd27bc2598449072"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#aa1fdbf2a27cb66fffd27bc2598449072">setBomb</a> (self)</td></tr>
+<tr class="memdesc:aa1fdbf2a27cb66fffd27bc2598449072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lay a bomb at bomberman's current position. <br /></td></tr>
+<tr class="separator:aa1fdbf2a27cb66fffd27bc2598449072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1083324efb6eddfdfc04316a85f7f15"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1083324efb6eddfdfc04316a85f7f15"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ab1083324efb6eddfdfc04316a85f7f15">clearBoard</a> (self)</td></tr>
+<tr class="memdesc:ab1083324efb6eddfdfc04316a85f7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all tiles on the board. <br /></td></tr>
+<tr class="separator:ab1083324efb6eddfdfc04316a85f7f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cacfb3b893af155c71dfffc3ae042bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cacfb3b893af155c71dfffc3ae042bd"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a5cacfb3b893af155c71dfffc3ae042bd">clearBombs</a> (self)</td></tr>
+<tr class="memdesc:a5cacfb3b893af155c71dfffc3ae042bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all bombs from the bomb queue. <br /></td></tr>
+<tr class="separator:a5cacfb3b893af155c71dfffc3ae042bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad43e3dab276d7ea38b268f22827b0236"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad43e3dab276d7ea38b268f22827b0236"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ad43e3dab276d7ea38b268f22827b0236">setConcrete</a> (self)</td></tr>
+<tr class="memdesc:ad43e3dab276d7ea38b268f22827b0236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set concrete tiles systematically on the board. <br /></td></tr>
+<tr class="separator:ad43e3dab276d7ea38b268f22827b0236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d135e2fd7961eb5f2921447d1c8243"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37d135e2fd7961eb5f2921447d1c8243"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a37d135e2fd7961eb5f2921447d1c8243">setExit</a> (self)</td></tr>
+<tr class="memdesc:a37d135e2fd7961eb5f2921447d1c8243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set exit tile randomly on the board and set a brick on top of it. <br /></td></tr>
+<tr class="separator:a37d135e2fd7961eb5f2921447d1c8243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e5e52649e074784152f5fe8f94ded08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e5e52649e074784152f5fe8f94ded08"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a6e5e52649e074784152f5fe8f94ded08">setLevelInfo</a> (self)</td></tr>
+<tr class="memdesc:a6e5e52649e074784152f5fe8f94ded08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch a the list of enemies and powerup matching the current level number. <br /></td></tr>
+<tr class="separator:a6e5e52649e074784152f5fe8f94ded08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab32312eb682ecce07ae83551c051e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ab32312eb682ecce07ae83551c051e1"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a7ab32312eb682ecce07ae83551c051e1">setPowerup</a> (self)</td></tr>
+<tr class="memdesc:a7ab32312eb682ecce07ae83551c051e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set powerup tile randomly on the board and set a brick on top of it. <br /></td></tr>
+<tr class="separator:a7ab32312eb682ecce07ae83551c051e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae430589f114a19e13c2667e8ef37e266"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae430589f114a19e13c2667e8ef37e266"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ae430589f114a19e13c2667e8ef37e266">setBrick</a> (self)</td></tr>
+<tr class="memdesc:ae430589f114a19e13c2667e8ef37e266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set brick tiles randomly on the board. <br /></td></tr>
+<tr class="separator:ae430589f114a19e13c2667e8ef37e266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76cfaab350e8f7699f054e9e9423de6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76cfaab350e8f7699f054e9e9423de6c"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a76cfaab350e8f7699f054e9e9423de6c">setBomberman</a> (self)</td></tr>
+<tr class="memdesc:a76cfaab350e8f7699f054e9e9423de6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set bomberman at x and y on the board. <br /></td></tr>
+<tr class="separator:a76cfaab350e8f7699f054e9e9423de6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60d85055b9f07935312e581b5316364"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af60d85055b9f07935312e581b5316364"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#af60d85055b9f07935312e581b5316364">setEnemies</a> (self)</td></tr>
+<tr class="memdesc:af60d85055b9f07935312e581b5316364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set enemies randomly on the map. <br /></td></tr>
+<tr class="separator:af60d85055b9f07935312e581b5316364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd226ddc877d5bf1e18c4d2a7e790fb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd226ddc877d5bf1e18c4d2a7e790fb3"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#acd226ddc877d5bf1e18c4d2a7e790fb3">clearEnemies</a> (self)</td></tr>
+<tr class="memdesc:acd226ddc877d5bf1e18c4d2a7e790fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all enemies on the map and in the list of enemies and list of enemies type. <br /></td></tr>
+<tr class="separator:acd226ddc877d5bf1e18c4d2a7e790fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b318116c4f5b2bdad46be495e21c53d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b318116c4f5b2bdad46be495e21c53d"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a4b318116c4f5b2bdad46be495e21c53d">setChaos</a> (self)</td></tr>
+<tr class="memdesc:a4b318116c4f5b2bdad46be495e21c53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 8 mega enemies everywhere, used when bomb detonates an exit tile or powerup tile. <br /></td></tr>
+<tr class="separator:a4b318116c4f5b2bdad46be495e21c53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf03686c3657b7e1a5436bbf1b721bf2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf03686c3657b7e1a5436bbf1b721bf2"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#acf03686c3657b7e1a5436bbf1b721bf2">setSuperChaos</a> (self)</td></tr>
+<tr class="memdesc:acf03686c3657b7e1a5436bbf1b721bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 8 maximum level enemies everywhere. <br /></td></tr>
+<tr class="separator:acf03686c3657b7e1a5436bbf1b721bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a07cb236f1acaa42ea5ad2c20fec75c3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07cb236f1acaa42ea5ad2c20fec75c3b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>bomberman</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a07cb236f1acaa42ea5ad2c20fec75c3b">bomberman</a></td></tr>
+<tr class="memdesc:a07cb236f1acaa42ea5ad2c20fec75c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize bomberman. <br /></td></tr>
 <tr class="separator:a07cb236f1acaa42ea5ad2c20fec75c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ec8be181d4558bc3f7b8c106a6aeb5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ec8be181d4558bc3f7b8c106a6aeb5a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>username</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a7ec8be181d4558bc3f7b8c106a6aeb5a">username</a></td></tr>
+<tr class="memdesc:a7ec8be181d4558bc3f7b8c106a6aeb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">String Player's username. <br /></td></tr>
 <tr class="separator:a7ec8be181d4558bc3f7b8c106a6aeb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b26c1249a2d161c058595e789948bf9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b26c1249a2d161c058595e789948bf9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>levelNum</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a8b26c1249a2d161c058595e789948bf9">levelNum</a></td></tr>
+<tr class="memdesc:a8b26c1249a2d161c058595e789948bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer the level's number. <br /></td></tr>
 <tr class="separator:a8b26c1249a2d161c058595e789948bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65841b782b1342d40aa32c3a788cf6b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65841b782b1342d40aa32c3a788cf6b0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>isInitialized</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a65841b782b1342d40aa32c3a788cf6b0">isInitialized</a></td></tr>
+<tr class="memdesc:a65841b782b1342d40aa32c3a788cf6b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean True if the game has started. <br /></td></tr>
 <tr class="separator:a65841b782b1342d40aa32c3a788cf6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa09aade96eec6dbcdf4b04754a3fcf17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa09aade96eec6dbcdf4b04754a3fcf17"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>board</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#aa09aade96eec6dbcdf4b04754a3fcf17">board</a></td></tr>
+<tr class="memdesc:aa09aade96eec6dbcdf4b04754a3fcf17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nested List of Tile(s) representing the game board. <br /></td></tr>
 <tr class="separator:aa09aade96eec6dbcdf4b04754a3fcf17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6cc50ff3008c2fd8497b22070d7da64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6cc50ff3008c2fd8497b22070d7da64"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>bombQueue</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ad6cc50ff3008c2fd8497b22070d7da64">bombQueue</a></td></tr>
+<tr class="memdesc:ad6cc50ff3008c2fd8497b22070d7da64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue containing the coords and time left of bombs laid by bomberman. <br /></td></tr>
 <tr class="separator:ad6cc50ff3008c2fd8497b22070d7da64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6d2065a5cd3ddd4348bb7f6394a0b46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6d2065a5cd3ddd4348bb7f6394a0b46"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>flashQueue</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ac6d2065a5cd3ddd4348bb7f6394a0b46">flashQueue</a></td></tr>
+<tr class="memdesc:ac6d2065a5cd3ddd4348bb7f6394a0b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue containing the coords and time left of flame tiles produced by bomb(s) <br /></td></tr>
 <tr class="separator:ac6d2065a5cd3ddd4348bb7f6394a0b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5445bee2b7b93a1caa1a0a5bf3455db9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5445bee2b7b93a1caa1a0a5bf3455db9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>powerUpCoord</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a5445bee2b7b93a1caa1a0a5bf3455db9">powerUpCoord</a></td></tr>
+<tr class="memdesc:a5445bee2b7b93a1caa1a0a5bf3455db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">List coordinates of the powerup tile. <br /></td></tr>
 <tr class="separator:a5445bee2b7b93a1caa1a0a5bf3455db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0595b7e689e25d540f0f486413e0514"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0595b7e689e25d540f0f486413e0514"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>exitCoord</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ab0595b7e689e25d540f0f486413e0514">exitCoord</a></td></tr>
+<tr class="memdesc:ab0595b7e689e25d540f0f486413e0514"><td class="mdescLeft">&#160;</td><td class="mdescRight">List coordinates of the exit tile. <br /></td></tr>
 <tr class="separator:ab0595b7e689e25d540f0f486413e0514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50126ed45ccd7be41b5b80a4bf821028"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50126ed45ccd7be41b5b80a4bf821028"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>powerUp</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a50126ed45ccd7be41b5b80a4bf821028">powerUp</a></td></tr>
+<tr class="memdesc:a50126ed45ccd7be41b5b80a4bf821028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer type of powerup. <br /></td></tr>
 <tr class="separator:a50126ed45ccd7be41b5b80a4bf821028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a652366b9fe32851d20915af1dbc0f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a652366b9fe32851d20915af1dbc0f3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>numberEnemies</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a0a652366b9fe32851d20915af1dbc0f3">numberEnemies</a></td></tr>
+<tr class="memdesc:a0a652366b9fe32851d20915af1dbc0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer number of enemies in the board. <br /></td></tr>
 <tr class="separator:a0a652366b9fe32851d20915af1dbc0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad45aaceea3034ea0e83e1627a47ea2d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad45aaceea3034ea0e83e1627a47ea2d2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>listEnemies</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#ad45aaceea3034ea0e83e1627a47ea2d2">listEnemies</a></td></tr>
+<tr class="memdesc:ad45aaceea3034ea0e83e1627a47ea2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all enemies in the board. <br /></td></tr>
 <tr class="separator:ad45aaceea3034ea0e83e1627a47ea2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a198d86791a4f4a570909d80490057ae9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a198d86791a4f4a570909d80490057ae9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>listTypeEnemies</b></td></tr>
+<tr class="memitem:a198d86791a4f4a570909d80490057ae9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a198d86791a4f4a570909d80490057ae9">listTypeEnemies</a></td></tr>
+<tr class="memdesc:a198d86791a4f4a570909d80490057ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Integer all enemies by type, e.g.  <a href="#a198d86791a4f4a570909d80490057ae9">More...</a><br /></td></tr>
 <tr class="separator:a198d86791a4f4a570909d80490057ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0272ba87f68c6b056d20751096f576d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0272ba87f68c6b056d20751096f576d9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>timeLeft</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a0272ba87f68c6b056d20751096f576d9">timeLeft</a></td></tr>
+<tr class="memdesc:a0272ba87f68c6b056d20751096f576d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer time left in the game. <br /></td></tr>
 <tr class="separator:a0272ba87f68c6b056d20751096f576d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec7becdb4db743d76dbb993cb22a22bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec7becdb4db743d76dbb993cb22a22bb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>timeDone</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#aec7becdb4db743d76dbb993cb22a22bb">timeDone</a></td></tr>
+<tr class="memdesc:aec7becdb4db743d76dbb993cb22a22bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean True if time has elapsed. <br /></td></tr>
 <tr class="separator:aec7becdb4db743d76dbb993cb22a22bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91123ee7d794996b5504dcb8550f7684"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91123ee7d794996b5504dcb8550f7684"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>score</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level_1_1_level.html#a91123ee7d794996b5504dcb8550f7684">score</a></td></tr>
+<tr class="memdesc:a91123ee7d794996b5504dcb8550f7684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer player's score. <br /></td></tr>
 <tr class="separator:a91123ee7d794996b5504dcb8550f7684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classsrc_1_1level_1_1_level.html" title="Level object containing all the attributes and methods necessary to one level of gameplay. ">Level</a> object containing all the attributes and methods necessary to one level of gameplay. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a198d86791a4f4a570909d80490057ae9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.level.Level.listTypeEnemies</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of Integer all enemies by type, e.g. </p>
+<p>value at index 0 represents the number of enemies of level 0 </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/level.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

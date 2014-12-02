@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,16 +95,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9a3d5cb39385fb4b3d10f46af5543205">db</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#ae4f0e6adbb18214711d96acdb924508d">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a5114077865bfc30e8adef2f90cd27d85">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a3c59b83a7a55f2334a015dfc722e86da">loggedUsername</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9098f8834d712331e4d05250a8012370">login</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a75303935e17e43388fd4ef3df029944e">login</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6e91fe2dc9a5b4bb26019242e84ce986">loginButton</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6c0c5ab8b48e62ccb26a472e6e7790c9">loginPassword</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a0c7d684b7c11fd92f8de9beee9cf2a9f">loginSuccessSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#adce86324539cbf7d5a398d8afba6a439">loginTitle</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a762640516f0435f5764308fd0f00a6c9">loginUsername</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a036845330836e34588c87e2d73f53b85">password</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd">register</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#af6ee6a8dee90f1a94a506400356707ad">register</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a2d518012477c43a0d5b77385e2e4209f">signUpButton</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a07a65e6211f15b49d6e6abc0daac320b">signUpTitle</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6b5acd3b5dd7c538b601cf8ab1b1d4cf">username</a></td><td class="entry"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html">src.login_menu.LoginMenu</a></td><td class="entry"></td></tr>
@@ -110,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

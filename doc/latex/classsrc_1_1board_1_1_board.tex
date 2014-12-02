@@ -1,0 +1,563 @@
+\hypertarget{classsrc_1_1board_1_1_board}{}\section{src.\+board.\+Board Class Reference}
+\label{classsrc_1_1board_1_1_board}\index{src.\+board.\+Board@{src.\+board.\+Board}}
+
+
+This class displays the board for the gameplay.  
+
+
+Inheritance diagram for src.\+board.\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1board_1_1_board}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_ae8571472bb4178812dd941cf3f8e5f7c}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+}\label{classsrc_1_1board_1_1_board_ae8571472bb4178812dd941cf3f8e5f7c}
+
+\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a9088e838b9bb196505af60eb1598495c}{init\+Status\+Bar} (self)
+\begin{DoxyCompactList}\small\item\em This method initializes the status bar. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a3ea0ac2d9356f9ebe6a63176b2351b5b}{init\+Board} (self)
+\begin{DoxyCompactList}\small\item\em This method initializes the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a2b87c8bc2da1173e07467996e4facbc4}{init\+Level} (self)
+\begin{DoxyCompactList}\small\item\em This method initializes a new level. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a97be76e6fb7312dddd9c86290fc3a1db}{start} (self)
+\begin{DoxyCompactList}\small\item\em This method starts the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a29473ffbf635f04428be1349d177eedc}{pause} (self)
+\begin{DoxyCompactList}\small\item\em This method pauses the game. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a68ece335899ccecebb6ecb39c339d180}{death} (self)
+\begin{DoxyCompactList}\small\item\em This method takes care of bomberman\textquotesingle{}s death. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_afc740240caba216e9b416bdae675aab6}{tile\+At} (self, x, y)
+\begin{DoxyCompactList}\small\item\em This method the tile which is at specific coordinates. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_ac40120a47f2787cb730e2d945e8833ee}{set\+Tile\+At} (self, x, y, tile)
+\begin{DoxyCompactList}\small\item\em This method pushes a tile and then updates the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a78d9960666f0be862cad75c855a38709}{set\+Tile\+At\+Without\+Update} (self, x, y, tile)
+\begin{DoxyCompactList}\small\item\em This method pushes a tile without updating the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_af2e08aecc48abfbb38dfcc2dbc11b7cd}{pop\+Tile\+At} (self, x, y)
+\begin{DoxyCompactList}\small\item\em This method pops a tile at coordinates x and y and then updates the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a84399c357c601a4cf2f64dd096c2adc7}{pop\+Tile\+At\+Without\+Update} (self, x, y)
+\begin{DoxyCompactList}\small\item\em This method pops a tile at coordinates x and y without updating the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a4d2d336061f0136c40c42f491e11ad02}{square\+Width} (self)
+\begin{DoxyCompactList}\small\item\em This method returns the width of a single tile. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a1e964f3382db079501c6b4afa16348e4}{square\+Height} (self)
+\begin{DoxyCompactList}\small\item\em This method returns the height of a single tile. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1board_1_1_board_a7734f1ae8cb324abbafc0e1af7f4db6f}{}def {\bfseries bomb\+Loop} (self)\label{classsrc_1_1board_1_1_board_a7734f1ae8cb324abbafc0e1af7f4db6f}
+
+\item 
+def \hyperlink{classsrc_1_1board_1_1_board_aea8bc4036301719acbca3f62aa98e125}{paint\+Event} (self, event)
+\begin{DoxyCompactList}\small\item\em This method is used to draw the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_ac85b9f4f5c9a91b200fb7e9e75d69d29}{draw\+Images} (self, painter, shape, x, y)
+\begin{DoxyCompactList}\small\item\em This method draws the image to the board. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a5e6978f5baf0f94e864867df77d5c891}{draw\+Square} (self, painter, x, y, shape)
+\begin{DoxyCompactList}\small\item\em This method draws squares the represent Bricks, Concrete and Empty Tiles. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a656fb42b7e9a4e4b5aae20c261170fe3}{key\+Press\+Event} (self, event)
+\begin{DoxyCompactList}\small\item\em This method calls methods after keys are pressed. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a663a599889dead3d876c4e4d79123b8e}{try\+Move} (self, new\+X, new\+Y)
+\begin{DoxyCompactList}\small\item\em A method that moves bomberman one tile. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_abcf6e3affb8c4b83c6d0ab28e265b4d5}{move\+Enemy} (self, speed)
+\begin{DoxyCompactList}\small\item\em Method that moves every enemy of a certain speed if able. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a60ef4247af25957bcaaa0469eb222ac1}{bomberman\+Trigger\+Can\+Move} (self)
+\begin{DoxyCompactList}\small\item\em Method that allows bomberman to move. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a4e6bd40bde952bdbe12653269da596f5}{kill\+Enemy} (self, x, y)
+\begin{DoxyCompactList}\small\item\em This method kills an enemy if it is at a given coordinate. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a801979e5433ee99d7e36a4c648b3f930}{detonate\+Bomb} (self)
+\begin{DoxyCompactList}\small\item\em This method detonates the first bomb in bomb\+Queue. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a39006efbb358f5be11d11c3a2775a2f0}{start\+Flash} (self, flash\+List)
+\begin{DoxyCompactList}\small\item\em This method changes every tile on the flash\+List to Tile.\+Flash  The list of tiles to be flashed. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a1a709b1fbf97db6da5740b7aeac1fad8}{end\+Flash} (self, flash\+List)
+\begin{DoxyCompactList}\small\item\em This method pops all Tile.\+Flash from the list flash\+List. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a537d8c1c7d64aebc960da0f0b34ef44c}{destroy\+Tiles} (self, pop\+List)
+\begin{DoxyCompactList}\small\item\em This method pops all the tiles on the pop\+List. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a718f3d710ba5aa31fb49da72d37c450a}{exit} (self)
+\begin{DoxyCompactList}\small\item\em This method stops timers and ends the game when the exit of level 16 is reached. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a218749642f3aec8d8daaaf6be61cf0a9}{stop\+Timers} (self)
+\begin{DoxyCompactList}\small\item\em This method stops all the timers. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_aa7b557053364da15e7a150537bf37757}{restart\+Next\+Level} (self)
+\begin{DoxyCompactList}\small\item\em This method initialized a new next level. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a962e440ddb9556ca233a686d3d9f1be0}{restart\+Same\+Level} (self)
+\begin{DoxyCompactList}\small\item\em This method initializes a new same level. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1board_1_1_board_a69b2b3031f0df523ba3dbeab4bfd3fb2}{}def \hyperlink{classsrc_1_1board_1_1_board_a69b2b3031f0df523ba3dbeab4bfd3fb2}{update\+Score} (self, killed\+Enemies)\label{classsrc_1_1board_1_1_board_a69b2b3031f0df523ba3dbeab4bfd3fb2}
+
+\begin{DoxyCompactList}\small\item\em This method updates the score in status bar. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a6a27183b76d873505d619fc6b78935b9}{get\+Score\+Of\+Killed\+Enemies} (self, killed\+Enemies)
+\begin{DoxyCompactList}\small\item\em Method to calculate the score the user gets when a bomb detonates. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_a1320cdff86fe637b41b8973cf6bcb499}{save\+Bomberman} (self)
+\begin{DoxyCompactList}\small\item\em This method returns the level. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1board_1_1_board_afa56e069dac6b7cdc60ba45e91d1745c}{timeout\+Event} (self)
+\begin{DoxyCompactList}\small\item\em This method decreses the time by 1 until the time is 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a553447e81840fb800b7ab2f74702ccfb}{}{\bfseries level}\label{classsrc_1_1board_1_1_board_a553447e81840fb800b7ab2f74702ccfb}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a5b5a2ac1a742155264df3668a470335f}{}{\bfseries status\+Bar}\label{classsrc_1_1board_1_1_board_a5b5a2ac1a742155264df3668a470335f}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a0b508a29cd8fed07fcb8cc9ab0c3fc0d}{}{\bfseries is\+Paused}\label{classsrc_1_1board_1_1_board_a0b508a29cd8fed07fcb8cc9ab0c3fc0d}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a693000531a35e8c699aa56262ed6d10a}{}{\bfseries global\+Timer}\label{classsrc_1_1board_1_1_board_a693000531a35e8c699aa56262ed6d10a}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_ac8c6d710d39e770a99356a30cabf275b}{}{\bfseries fast\+Timer}\label{classsrc_1_1board_1_1_board_ac8c6d710d39e770a99356a30cabf275b}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a18fce871d4c91bac16992dbd2975ebda}{}{\bfseries normal\+Timer}\label{classsrc_1_1board_1_1_board_a18fce871d4c91bac16992dbd2975ebda}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_af0477a0dda0a5b27f4f931f89da25180}{}{\bfseries slow\+Timer}\label{classsrc_1_1board_1_1_board_af0477a0dda0a5b27f4f931f89da25180}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_ab11b4588420cef13c3d035a2607362d0}{}{\bfseries slowest\+Timer}\label{classsrc_1_1board_1_1_board_ab11b4588420cef13c3d035a2607362d0}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a91635719cb9bc632fa29a4185b1ffaa4}{}{\bfseries coundown\+Timer}\label{classsrc_1_1board_1_1_board_a91635719cb9bc632fa29a4185b1ffaa4}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a3d20eac8eee8f73f9fd84ca14a9a99d5}{}tuple {\bfseries pause\+Game\+Signal} = Qt\+Core.\+pyqt\+Signal()\label{classsrc_1_1board_1_1_board_a3d20eac8eee8f73f9fd84ca14a9a99d5}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_a88d390d2d4ad6a255712abdde9f737e0}{}tuple {\bfseries game\+Over\+Signal} = Qt\+Core.\+pyqt\+Signal()\label{classsrc_1_1board_1_1_board_a88d390d2d4ad6a255712abdde9f737e0}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_afbf20580188f637d8d5863a9a9810ff5}{}tuple {\bfseries reset\+Timer\+Signal} = Qt\+Core.\+pyqt\+Signal()\label{classsrc_1_1board_1_1_board_afbf20580188f637d8d5863a9a9810ff5}
+
+\item 
+\hypertarget{classsrc_1_1board_1_1_board_adbdb04e00742a09c938f8cb3f751e1f9}{}tuple {\bfseries update\+Score\+In\+Db\+Signal} = Qt\+Core.\+pyqt\+Signal(int)\label{classsrc_1_1board_1_1_board_adbdb04e00742a09c938f8cb3f751e1f9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class displays the board for the gameplay. 
+
+It handles drawing each tile. It also contains timers and methods that allow movement of bomberman and enemies. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1board_1_1_board_a60ef4247af25957bcaaa0469eb222ac1}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!bomberman\+Trigger\+Can\+Move@{bomberman\+Trigger\+Can\+Move}}
+\index{bomberman\+Trigger\+Can\+Move@{bomberman\+Trigger\+Can\+Move}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{bomberman\+Trigger\+Can\+Move}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+bomberman\+Trigger\+Can\+Move (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a60ef4247af25957bcaaa0469eb222ac1}
+
+
+Method that allows bomberman to move. 
+
+Triggers after a set amount of time. \hypertarget{classsrc_1_1board_1_1_board_a68ece335899ccecebb6ecb39c339d180}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!death@{death}}
+\index{death@{death}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{death}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+death (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a68ece335899ccecebb6ecb39c339d180}
+
+
+This method takes care of bomberman\textquotesingle{}s death. 
+
+It stops the timers and removes a life. If lives equals 0 then it ends the game. If not, it reinitializes the current level. \hypertarget{classsrc_1_1board_1_1_board_a537d8c1c7d64aebc960da0f0b34ef44c}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!destroy\+Tiles@{destroy\+Tiles}}
+\index{destroy\+Tiles@{destroy\+Tiles}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{destroy\+Tiles}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+destroy\+Tiles (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{pop\+List}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a537d8c1c7d64aebc960da0f0b34ef44c}
+
+
+This method pops all the tiles on the pop\+List. 
+
+pop\+List The list of tiles to be popped. \hypertarget{classsrc_1_1board_1_1_board_a801979e5433ee99d7e36a4c648b3f930}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!detonate\+Bomb@{detonate\+Bomb}}
+\index{detonate\+Bomb@{detonate\+Bomb}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{detonate\+Bomb}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+detonate\+Bomb (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a801979e5433ee99d7e36a4c648b3f930}
+
+
+This method detonates the first bomb in bomb\+Queue. 
+
+flash\+List is a list of tiles that are turned orange after the bomb is detonated. pop\+List is a list of tiles to be popped. killed\+Enemies is a list of tiles where enemies are to be killed. This method checks the four cardinal directions from the bomb for bricks that aren\textquotesingle{}t empty or concrete and acts according to the tile type. \hypertarget{classsrc_1_1board_1_1_board_ac85b9f4f5c9a91b200fb7e9e75d69d29}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!draw\+Images@{draw\+Images}}
+\index{draw\+Images@{draw\+Images}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{draw\+Images}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+draw\+Images (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{painter, }
+\item[{}]{shape, }
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_ac85b9f4f5c9a91b200fb7e9e75d69d29}
+
+
+This method draws the image to the board. 
+
+painter  shape The picture that is to be drawn.  x The x coordinate of the drawing.  y The y coordinate of the drawing. \hypertarget{classsrc_1_1board_1_1_board_a5e6978f5baf0f94e864867df77d5c891}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!draw\+Square@{draw\+Square}}
+\index{draw\+Square@{draw\+Square}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{draw\+Square}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+draw\+Square (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{painter, }
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{shape}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a5e6978f5baf0f94e864867df77d5c891}
+
+
+This method draws squares the represent Bricks, Concrete and Empty Tiles. 
+
+painter  shape The picture that is to be drawn.  x The x coordinate of the drawing.  y The y coordinate of the drawing. \hypertarget{classsrc_1_1board_1_1_board_a1a709b1fbf97db6da5740b7aeac1fad8}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!end\+Flash@{end\+Flash}}
+\index{end\+Flash@{end\+Flash}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{end\+Flash}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+end\+Flash (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{flash\+List}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a1a709b1fbf97db6da5740b7aeac1fad8}
+
+
+This method pops all Tile.\+Flash from the list flash\+List. 
+
+flash\+List The list of tiles to be popped. \hypertarget{classsrc_1_1board_1_1_board_a718f3d710ba5aa31fb49da72d37c450a}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!exit@{exit}}
+\index{exit@{exit}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+exit (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a718f3d710ba5aa31fb49da72d37c450a}
+
+
+This method stops timers and ends the game when the exit of level 16 is reached. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a6a27183b76d873505d619fc6b78935b9}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!get\+Score\+Of\+Killed\+Enemies@{get\+Score\+Of\+Killed\+Enemies}}
+\index{get\+Score\+Of\+Killed\+Enemies@{get\+Score\+Of\+Killed\+Enemies}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{get\+Score\+Of\+Killed\+Enemies}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+get\+Score\+Of\+Killed\+Enemies (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{killed\+Enemies}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a6a27183b76d873505d619fc6b78935b9}
+
+
+Method to calculate the score the user gets when a bomb detonates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em killed\+Enemies} & Assume the list \char`\"{}killed\+Enemies\char`\"{} has the following format\+: \mbox{[}\mbox{[}enemies at distance = 1 from bomb\mbox{]}, \mbox{[}enemies at distance = 2 from bomb\mbox{]}, ... , \mbox{[}enemies at distance = range from bomb\mbox{]}\mbox{]} e.\+g.\+: \mbox{[}\mbox{[}Tile.\+Balloom, Tile.\+Oneal\mbox{]}, \mbox{[}\mbox{]}, \mbox{[}Tile.\+Doll\mbox{]}\mbox{]} means when the bomb exploded, there was a Balloom and an Oneal at distance 1, nothing at distance 2, and a Doll at distance 3 from the bomb. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1board_1_1_board_a3ea0ac2d9356f9ebe6a63176b2351b5b}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!init\+Board@{init\+Board}}
+\index{init\+Board@{init\+Board}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{init\+Board}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+init\+Board (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a3ea0ac2d9356f9ebe6a63176b2351b5b}
+
+
+This method initializes the board. 
+
+It initializes the timers too. \hypertarget{classsrc_1_1board_1_1_board_a2b87c8bc2da1173e07467996e4facbc4}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!init\+Level@{init\+Level}}
+\index{init\+Level@{init\+Level}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{init\+Level}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+init\+Level (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a2b87c8bc2da1173e07467996e4facbc4}
+
+
+This method initializes a new level. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a9088e838b9bb196505af60eb1598495c}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!init\+Status\+Bar@{init\+Status\+Bar}}
+\index{init\+Status\+Bar@{init\+Status\+Bar}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{init\+Status\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+init\+Status\+Bar (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a9088e838b9bb196505af60eb1598495c}
+
+
+This method initializes the status bar. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a656fb42b7e9a4e4b5aae20c261170fe3}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!key\+Press\+Event@{key\+Press\+Event}}
+\index{key\+Press\+Event@{key\+Press\+Event}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+key\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{event}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a656fb42b7e9a4e4b5aae20c261170fe3}
+
+
+This method calls methods after keys are pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The key that has been pressed~\newline
+ P\+: self.\+pause() is called if pause menu isn\textquotesingle{}t open.~\newline
+ Arrow keys\+: \hyperlink{classsrc_1_1board_1_1_board_a663a599889dead3d876c4e4d79123b8e}{try\+Move()} is called.~\newline
+ Space or Z\+: set\+Bomb() is called.~\newline
+ X or B\+: \hyperlink{classsrc_1_1board_1_1_board_a801979e5433ee99d7e36a4c648b3f930}{detonate\+Bomb()} is called. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1board_1_1_board_a4e6bd40bde952bdbe12653269da596f5}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!kill\+Enemy@{kill\+Enemy}}
+\index{kill\+Enemy@{kill\+Enemy}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{kill\+Enemy}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+kill\+Enemy (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a4e6bd40bde952bdbe12653269da596f5}
+
+
+This method kills an enemy if it is at a given coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate \\
+\hline
+{\em y} & The y coordinate This method checks to see if there is an enemy at a given coordinate and if there is, it pops the tile that the enemy is at, removes it from list\+Enemies, and decrements both number of enemies and list\+Type\+Enemies. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1board_1_1_board_abcf6e3affb8c4b83c6d0ab28e265b4d5}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!move\+Enemy@{move\+Enemy}}
+\index{move\+Enemy@{move\+Enemy}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{move\+Enemy}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+move\+Enemy (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{speed}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_abcf6e3affb8c4b83c6d0ab28e265b4d5}
+
+
+Method that moves every enemy of a certain speed if able. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The speed of the enemies that will be moving. Each enemy on the map is checked to see if their speed is equal to the speed that is passed. If the intelligence of the enemy is 2 or 3 then the 4 adjacent tiles are checked to see if bomberman is on them. If yes, the enemy moves onto bomberman. If no, there is a chance based on the intelligence level of the enemy that it changes direction. The enemy will reverse its direction is there is an obstacle in its path. If there is no obstacle in front of the enemy it moves forward one tile. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1board_1_1_board_aea8bc4036301719acbca3f62aa98e125}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!paint\+Event@{paint\+Event}}
+\index{paint\+Event@{paint\+Event}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+paint\+Event (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{event}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_aea8bc4036301719acbca3f62aa98e125}
+
+
+This method is used to draw the board. 
+
+event This method uses bomberman\textquotesingle{}s x position to decide what part of the board to draw. It then draws each square in the visible portion of the board. \hypertarget{classsrc_1_1board_1_1_board_a29473ffbf635f04428be1349d177eedc}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!pause@{pause}}
+\index{pause@{pause}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+pause (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a29473ffbf635f04428be1349d177eedc}
+
+
+This method pauses the game. 
+
+It stops the timers and sends a signal to open the pause\+Menu. \hypertarget{classsrc_1_1board_1_1_board_af2e08aecc48abfbb38dfcc2dbc11b7cd}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!pop\+Tile\+At@{pop\+Tile\+At}}
+\index{pop\+Tile\+At@{pop\+Tile\+At}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{pop\+Tile\+At}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+pop\+Tile\+At (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_af2e08aecc48abfbb38dfcc2dbc11b7cd}
+
+
+This method pops a tile at coordinates x and y and then updates the board. 
+
+x The x coordinate to be popped.  y The y coordinate to be popped. \hypertarget{classsrc_1_1board_1_1_board_a84399c357c601a4cf2f64dd096c2adc7}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!pop\+Tile\+At\+Without\+Update@{pop\+Tile\+At\+Without\+Update}}
+\index{pop\+Tile\+At\+Without\+Update@{pop\+Tile\+At\+Without\+Update}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{pop\+Tile\+At\+Without\+Update}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+pop\+Tile\+At\+Without\+Update (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a84399c357c601a4cf2f64dd096c2adc7}
+
+
+This method pops a tile at coordinates x and y without updating the board. 
+
+x The x coordinate to be popped.  y The y coordinate to be popped. \hypertarget{classsrc_1_1board_1_1_board_aa7b557053364da15e7a150537bf37757}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!restart\+Next\+Level@{restart\+Next\+Level}}
+\index{restart\+Next\+Level@{restart\+Next\+Level}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{restart\+Next\+Level}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+restart\+Next\+Level (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_aa7b557053364da15e7a150537bf37757}
+
+
+This method initialized a new next level. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a962e440ddb9556ca233a686d3d9f1be0}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!restart\+Same\+Level@{restart\+Same\+Level}}
+\index{restart\+Same\+Level@{restart\+Same\+Level}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{restart\+Same\+Level}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+restart\+Same\+Level (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a962e440ddb9556ca233a686d3d9f1be0}
+
+
+This method initializes a new same level. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a1320cdff86fe637b41b8973cf6bcb499}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!save\+Bomberman@{save\+Bomberman}}
+\index{save\+Bomberman@{save\+Bomberman}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{save\+Bomberman}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+save\+Bomberman (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a1320cdff86fe637b41b8973cf6bcb499}
+
+
+This method returns the level. 
+
+\hypertarget{classsrc_1_1board_1_1_board_ac40120a47f2787cb730e2d945e8833ee}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!set\+Tile\+At@{set\+Tile\+At}}
+\index{set\+Tile\+At@{set\+Tile\+At}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{set\+Tile\+At}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+set\+Tile\+At (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_ac40120a47f2787cb730e2d945e8833ee}
+
+
+This method pushes a tile and then updates the board. 
+
+x The x coordinate to be popped.  y The y coordinate to be popped.  tile The tile that is to be pushed. \hypertarget{classsrc_1_1board_1_1_board_a78d9960666f0be862cad75c855a38709}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!set\+Tile\+At\+Without\+Update@{set\+Tile\+At\+Without\+Update}}
+\index{set\+Tile\+At\+Without\+Update@{set\+Tile\+At\+Without\+Update}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{set\+Tile\+At\+Without\+Update}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+set\+Tile\+At\+Without\+Update (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a78d9960666f0be862cad75c855a38709}
+
+
+This method pushes a tile without updating the board. 
+
+x The x coordinate to be popped.  y The y coordinate to be popped.  tile The tile that is to be pushed. \hypertarget{classsrc_1_1board_1_1_board_a1e964f3382db079501c6b4afa16348e4}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!square\+Height@{square\+Height}}
+\index{square\+Height@{square\+Height}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{square\+Height}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+square\+Height (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a1e964f3382db079501c6b4afa16348e4}
+
+
+This method returns the height of a single tile. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a4d2d336061f0136c40c42f491e11ad02}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!square\+Width@{square\+Width}}
+\index{square\+Width@{square\+Width}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{square\+Width}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+square\+Width (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a4d2d336061f0136c40c42f491e11ad02}
+
+
+This method returns the width of a single tile. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a97be76e6fb7312dddd9c86290fc3a1db}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!start@{start}}
+\index{start@{start}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+start (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a97be76e6fb7312dddd9c86290fc3a1db}
+
+
+This method starts the board. 
+
+It sets is\+Paused to false and allows bomberman to begin moving. It also starts all the timers. \hypertarget{classsrc_1_1board_1_1_board_a39006efbb358f5be11d11c3a2775a2f0}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!start\+Flash@{start\+Flash}}
+\index{start\+Flash@{start\+Flash}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{start\+Flash}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+start\+Flash (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{flash\+List}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a39006efbb358f5be11d11c3a2775a2f0}
+
+
+This method changes every tile on the flash\+List to Tile.\+Flash  The list of tiles to be flashed. 
+
+\hypertarget{classsrc_1_1board_1_1_board_a218749642f3aec8d8daaaf6be61cf0a9}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!stop\+Timers@{stop\+Timers}}
+\index{stop\+Timers@{stop\+Timers}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{stop\+Timers}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+stop\+Timers (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a218749642f3aec8d8daaaf6be61cf0a9}
+
+
+This method stops all the timers. 
+
+\hypertarget{classsrc_1_1board_1_1_board_afc740240caba216e9b416bdae675aab6}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!tile\+At@{tile\+At}}
+\index{tile\+At@{tile\+At}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{tile\+At}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+tile\+At (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_afc740240caba216e9b416bdae675aab6}
+
+
+This method the tile which is at specific coordinates. 
+
+x The x coordinate to be popped.  y The y coordinate to be popped. \hypertarget{classsrc_1_1board_1_1_board_afa56e069dac6b7cdc60ba45e91d1745c}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!timeout\+Event@{timeout\+Event}}
+\index{timeout\+Event@{timeout\+Event}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{timeout\+Event}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+timeout\+Event (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_afa56e069dac6b7cdc60ba45e91d1745c}
+
+
+This method decreses the time by 1 until the time is 0. 
+
+When time is equal to 0 set\+Super\+Chaos is called and a flag is set so the time does not decrease below 0. \hypertarget{classsrc_1_1board_1_1_board_a663a599889dead3d876c4e4d79123b8e}{}\index{src\+::board\+::\+Board@{src\+::board\+::\+Board}!try\+Move@{try\+Move}}
+\index{try\+Move@{try\+Move}!src\+::board\+::\+Board@{src\+::board\+::\+Board}}
+\subsubsection[{try\+Move}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+board.\+Board.\+try\+Move (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{new\+X, }
+\item[{}]{new\+Y}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1board_1_1_board_a663a599889dead3d876c4e4d79123b8e}
+
+
+A method that moves bomberman one tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+X} & The x coordinate to move to \\
+\hline
+{\em new\+Y} & The y coordinate to move to This method checks whether bomberman is allowed to move to the tile that is specified by new\+X and new\+Y. If he is, it pops the current tile he is on and pushes a bomberman tile to new\+X and new\+Y. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/board.\+py\end{DoxyCompactItemize}

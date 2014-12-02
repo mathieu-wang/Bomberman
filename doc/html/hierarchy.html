@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -70,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,16 +90,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1database_1_1_database.html" target="_self">src.database.Database</a></td><td class="desc">Class that handles the interface with database </td></tr>
 <tr id="row_1_"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="toggleFolder('1_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>object</b></td><td class="desc"></td></tr>
-<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" target="_self">src.bomberman.Bomberman</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" target="_self">src.bomberman.Bomberman</a></td><td class="desc"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a> object containing all the attributes describing the current state of bomberman </td></tr>
 <tr id="row_1_1_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1enemy_1_1_enemy.html" target="_self">src.enemy.Enemy</a></td><td class="desc"></td></tr>
-<tr id="row_1_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1level_1_1_level.html" target="_self">src.level.Level</a></td><td class="desc"></td></tr>
+<tr id="row_1_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1level_1_1_level.html" target="_self">src.level.Level</a></td><td class="desc"><a class="el" href="classsrc_1_1level_1_1_level.html" title="Level object containing all the attributes and methods necessary to one level of gameplay. ">Level</a> object containing all the attributes and methods necessary to one level of gameplay </td></tr>
 <tr id="row_1_3_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1tile_1_1_tile.html" target="_self">src.tile.Tile</a></td><td class="desc"></td></tr>
 <tr id="row_2_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_2_" class="arrow" onclick="toggleFolder('2_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QDockWidget</b></td><td class="desc"></td></tr>
-<tr id="row_2_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1board_1_1_status_bar.html" target="_self">src.board.StatusBar</a></td><td class="desc"></td></tr>
+<tr id="row_2_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1board_1_1_status_bar.html" target="_self">src.board.StatusBar</a></td><td class="desc">This class is a widget which displays the game information while playing </td></tr>
 <tr id="row_3_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_3_" class="arrow" onclick="toggleFolder('3_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QFrame</b></td><td class="desc"></td></tr>
-<tr id="row_3_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1board_1_1_board.html" target="_self">src.board.Board</a></td><td class="desc"></td></tr>
+<tr id="row_3_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1board_1_1_board.html" target="_self">src.board.Board</a></td><td class="desc">This class displays the board for the gameplay </td></tr>
 <tr id="row_4_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_4_" class="arrow" onclick="toggleFolder('4_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QMainWindow</b></td><td class="desc"></td></tr>
-<tr id="row_4_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1game_1_1_game.html" target="_self">src.game.Game</a></td><td class="desc"></td></tr>
+<tr id="row_4_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1game_1_1_game.html" target="_self">src.game.Game</a></td><td class="desc">Main controller </td></tr>
 <tr id="row_5_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_5_" class="arrow" onclick="toggleFolder('5_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QWidget</b></td><td class="desc"></td></tr>
 <tr id="row_5_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html" target="_self">src.leaderboard.Leaderboard</a></td><td class="desc">This class is a widget that displays the leaderBoard </td></tr>
 <tr id="row_5_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html" target="_self">src.level_menu.LevelMenu</a></td><td class="desc">This class is a widget that displays the level menu </td></tr>
@@ -113,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

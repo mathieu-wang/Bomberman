@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['updateuseraccount',['updateUserAccount',['../classsrc_1_1database_1_1_database.html#a5dc3caa90a8c56991dce1e79bcdd5a17',1,'src::database::Database']]],
-  ['updateuserscore',['updateUserScore',['../classsrc_1_1database_1_1_database.html#a29201805da2b1392bf8edd0c67144a1a',1,'src::database::Database']]],
-  ['useraccount',['UserAccount',['../classsrc_1_1models_1_1_user_account.html',1,'src::models']]],
-  ['username',['username',['../classsrc_1_1level__menu_1_1_level_menu.html#aee1d2148e23a2908c72c4a8f8ad0a98f',1,'src.level_menu.LevelMenu.username()'],['../classsrc_1_1load__menu_1_1_load_menu.html#ab1c940f6352015a62d85b668bc6ebb01',1,'src.load_menu.LoadMenu.username()'],['../classsrc_1_1login__menu_1_1_login_menu.html#a6b5acd3b5dd7c538b601cf8ab1b1d4cf',1,'src.login_menu.LoginMenu.username()'],['../classsrc_1_1save__menu_1_1_save_menu.html#afa694276e009bcb004df7c7a1a5da217',1,'src.save_menu.SaveMenu.username()'],['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#a54d0681d7b2c05bc084bf686a5e0cf41',1,'src.settings_menu.AccountSettingsMenu.username()']]]
+  ['table',['table',['../classsrc_1_1leaderboard_1_1_leaderboard.html#a1d9b33cb94b8636038320f10d3d2fe30',1,'src::leaderboard::Leaderboard']]],
+  ['tile',['Tile',['../classsrc_1_1tile_1_1_tile.html',1,'src::tile']]],
+  ['tileat',['tileAt',['../classsrc_1_1board_1_1_board.html#afc740240caba216e9b416bdae675aab6',1,'src.board.Board.tileAt()'],['../classsrc_1_1level_1_1_level.html#a9f1a64a223be266425f6100e4728df3a',1,'src.level.Level.tileAt()']]],
+  ['timedone',['timeDone',['../classsrc_1_1level_1_1_level.html#aec7becdb4db743d76dbb993cb22a22bb',1,'src::level::Level']]],
+  ['timeleft',['timeLeft',['../classsrc_1_1level_1_1_level.html#a0272ba87f68c6b056d20751096f576d9',1,'src::level::Level']]],
+  ['timeoutevent',['timeoutEvent',['../classsrc_1_1board_1_1_board.html#afa56e069dac6b7cdc60ba45e91d1745c',1,'src::board::Board']]],
+  ['title',['title',['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#a6f5f05b647982a9776c96ea5ca254068',1,'src::settings_menu::AccountSettingsMenu']]],
+  ['trymove',['tryMove',['../classsrc_1_1board_1_1_board.html#a663a599889dead3d876c4e4d79123b8e',1,'src::board::Board']]]
 ];

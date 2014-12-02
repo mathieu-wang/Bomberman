@@ -1,0 +1,171 @@
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu}{}\section{src.\+settings\+\_\+menu.\+Account\+Settings\+Menu Class Reference}
+\label{classsrc_1_1settings__menu_1_1_account_settings_menu}\index{src.\+settings\+\_\+menu.\+Account\+Settings\+Menu@{src.\+settings\+\_\+menu.\+Account\+Settings\+Menu}}
+
+
+this class is a widget that displays the account settings menu.  
+
+
+Inheritance diagram for src.\+settings\+\_\+menu.\+Account\+Settings\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1settings__menu_1_1_account_settings_menu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a4b199df6972058b64e123acda02b72a5}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_afe50b3829d1054937762620263272c4b}{parent}, \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a54d0681d7b2c05bc084bf686a5e0cf41}{username})\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a4b199df6972058b64e123acda02b72a5}
+
+\item 
+def \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_aeff3b2a6031f6dd312a66d0f161eeedb}{init\+U\+I} (self)
+\begin{DoxyCompactList}\small\item\em this method initialize the G\+U\+I for the account settings menu. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a10989536edbbe0db4fc03f2e5ccc8271}{change\+Settings} (self)
+\begin{DoxyCompactList}\small\item\em this method is used to change the user\textquotesingle{}s name,username A\+N\+D password. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a47dc6e6cb8a9ca5431a32ad73298ed81}{back\+To\+Main\+Menu} (self)
+\begin{DoxyCompactList}\small\item\em this method emit back\+To\+Main\+Menu\+Signal when called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_afe50b3829d1054937762620263272c4b}{parent}
+\begin{DoxyCompactList}\small\item\em instance of this class\textquotesingle{}s parent. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a793f0abcc421d4f7e51d6ff02e3e86ea}{db}
+\begin{DoxyCompactList}\small\item\em instance of the database. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a6f5f05b647982a9776c96ea5ca254068}{title}
+\begin{DoxyCompactList}\small\item\em is a Q\+Label that displays the titles of following fields. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a72d6db1fc6e6253916fec2090e8ff914}{your\+Name}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit which the user can use to enter his new real name. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a54d0681d7b2c05bc084bf686a5e0cf41}{username}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit which the user can use to enter his new username. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a11ded2b607c6b7e0b756eef17952b1f6}{password}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit which the user can use to enter his new password. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a6ad9267209290b0eaa3ef35191f81d82}{change\+Button}
+\begin{DoxyCompactList}\small\item\em is a buttton that calls \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a10989536edbbe0db4fc03f2e5ccc8271}{change\+Settings()} when clicked. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a80552690cf6643721ebc00319289468a}{back\+Button}
+\begin{DoxyCompactList}\small\item\em is a button that calls \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a47dc6e6cb8a9ca5431a32ad73298ed81}{back\+To\+Main\+Menu()} when clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a7cac3d6c4fd01c1d0c9e6cfcba8e8950}{logged\+Username} = None
+\begin{DoxyCompactList}\small\item\em instance of the currently active user\textquotesingle{}s username. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a968b438c9430d659dcb90a23689127be}{back\+To\+Main\+Menu\+Signal} = Qt\+Core.\+pyqt\+Signal()
+\begin{DoxyCompactList}\small\item\em Signal which will be used to return to the main menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class is a widget that displays the account settings menu. 
+
+It includes buttons and fields that the user can interact with.~\newline
+ 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a47dc6e6cb8a9ca5431a32ad73298ed81}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!back\+To\+Main\+Menu@{back\+To\+Main\+Menu}}
+\index{back\+To\+Main\+Menu@{back\+To\+Main\+Menu}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{back\+To\+Main\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+back\+To\+Main\+Menu (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a47dc6e6cb8a9ca5431a32ad73298ed81}
+
+
+this method emit back\+To\+Main\+Menu\+Signal when called. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a10989536edbbe0db4fc03f2e5ccc8271}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!change\+Settings@{change\+Settings}}
+\index{change\+Settings@{change\+Settings}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{change\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+change\+Settings (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a10989536edbbe0db4fc03f2e5ccc8271}
+
+
+this method is used to change the user\textquotesingle{}s name,username A\+N\+D password. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_aeff3b2a6031f6dd312a66d0f161eeedb}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!init\+U\+I@{init\+U\+I}}
+\index{init\+U\+I@{init\+U\+I}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{init\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+init\+U\+I (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_aeff3b2a6031f6dd312a66d0f161eeedb}
+
+
+this method initialize the G\+U\+I for the account settings menu. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a80552690cf6643721ebc00319289468a}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!back\+Button@{back\+Button}}
+\index{back\+Button@{back\+Button}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{back\+Button}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+back\+Button}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a80552690cf6643721ebc00319289468a}
+
+
+is a button that calls \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a47dc6e6cb8a9ca5431a32ad73298ed81}{back\+To\+Main\+Menu()} when clicked. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a968b438c9430d659dcb90a23689127be}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!back\+To\+Main\+Menu\+Signal@{back\+To\+Main\+Menu\+Signal}}
+\index{back\+To\+Main\+Menu\+Signal@{back\+To\+Main\+Menu\+Signal}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{back\+To\+Main\+Menu\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+back\+To\+Main\+Menu\+Signal = Qt\+Core.\+pyqt\+Signal()\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a968b438c9430d659dcb90a23689127be}
+
+
+Signal which will be used to return to the main menu. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a6ad9267209290b0eaa3ef35191f81d82}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!change\+Button@{change\+Button}}
+\index{change\+Button@{change\+Button}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{change\+Button}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+change\+Button}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a6ad9267209290b0eaa3ef35191f81d82}
+
+
+is a buttton that calls \hyperlink{classsrc_1_1settings__menu_1_1_account_settings_menu_a10989536edbbe0db4fc03f2e5ccc8271}{change\+Settings()} when clicked. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a793f0abcc421d4f7e51d6ff02e3e86ea}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!db@{db}}
+\index{db@{db}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{db}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+db}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a793f0abcc421d4f7e51d6ff02e3e86ea}
+
+
+instance of the database. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a7cac3d6c4fd01c1d0c9e6cfcba8e8950}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!logged\+Username@{logged\+Username}}
+\index{logged\+Username@{logged\+Username}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{logged\+Username}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+logged\+Username = None\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a7cac3d6c4fd01c1d0c9e6cfcba8e8950}
+
+
+instance of the currently active user\textquotesingle{}s username. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_afe50b3829d1054937762620263272c4b}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!parent@{parent}}
+\index{parent@{parent}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+parent}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_afe50b3829d1054937762620263272c4b}
+
+
+instance of this class\textquotesingle{}s parent. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a11ded2b607c6b7e0b756eef17952b1f6}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!password@{password}}
+\index{password@{password}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{password}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+password}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a11ded2b607c6b7e0b756eef17952b1f6}
+
+
+is a Q\+Line\+Edit which the user can use to enter his new password. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a6f5f05b647982a9776c96ea5ca254068}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!title@{title}}
+\index{title@{title}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+title}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a6f5f05b647982a9776c96ea5ca254068}
+
+
+is a Q\+Label that displays the titles of following fields. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a54d0681d7b2c05bc084bf686a5e0cf41}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!username@{username}}
+\index{username@{username}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{username}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+username}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a54d0681d7b2c05bc084bf686a5e0cf41}
+
+
+is a Q\+Line\+Edit which the user can use to enter his new username. 
+
+\hypertarget{classsrc_1_1settings__menu_1_1_account_settings_menu_a72d6db1fc6e6253916fec2090e8ff914}{}\index{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}!your\+Name@{your\+Name}}
+\index{your\+Name@{your\+Name}!src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu@{src\+::settings\+\_\+menu\+::\+Account\+Settings\+Menu}}
+\subsubsection[{your\+Name}]{\setlength{\rightskip}{0pt plus 5cm}src.\+settings\+\_\+menu.\+Account\+Settings\+Menu.\+your\+Name}\label{classsrc_1_1settings__menu_1_1_account_settings_menu_a72d6db1fc6e6253916fec2090e8ff914}
+
+
+is a Q\+Line\+Edit which the user can use to enter his new real name. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/settings\+\_\+menu.\+py\end{DoxyCompactItemize}

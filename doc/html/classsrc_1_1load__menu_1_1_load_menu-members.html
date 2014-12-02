@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,20 +93,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a74fb2bc25bdc9367194c0b8553bacf6b">back</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b>(self, parent, username, previousMenu) (defined in <a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ac1756d59b9d5d3c026d4cb971bb6a657">back</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a213d15dc1a4c3b77947ea334896268c5">backSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#af17d0436c9ca2ece0594fbcfd6380162">gameList</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a2e32e2e1f422ac727cb97cc27b7c138d">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a47c0992339e3d0c5050f33bd9c67040a">loadSavedGame</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a97aed1f843fdce3ae868ba7e96d55515">loadSavedGameList</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ae10c4104f4245eaba4772a7f29485ff4">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ac3ab22ee56c51e7cb02f27344d6bfcbd">loadSavedGame</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#af7b9c789c68fb85b2d4e2bfd211e201d">loadSavedGameList</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a9f994468ddeb9d648ce5a68c001fbb36">loadSavedGameSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#a266279b7ed3e68889b07c1785251c806">previousMenu</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html#ab1c940f6352015a62d85b668bc6ebb01">username</a></td><td class="entry"><a class="el" href="classsrc_1_1load__menu_1_1_load_menu.html">src.load_menu.LoadMenu</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

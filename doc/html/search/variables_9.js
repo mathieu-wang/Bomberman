@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['table',['table',['../classsrc_1_1leaderboard_1_1_leaderboard.html#a1d9b33cb94b8636038320f10d3d2fe30',1,'src::leaderboard::Leaderboard']]],
-  ['title',['title',['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#a6f5f05b647982a9776c96ea5ca254068',1,'src::settings_menu::AccountSettingsMenu']]]
+  ['numberenemies',['numberEnemies',['../classsrc_1_1level_1_1_level.html#a0a652366b9fe32851d20915af1dbc0f3',1,'src::level::Level']]],
+  ['numbombs',['numBombs',['../classsrc_1_1bomberman_1_1_bomberman.html#a2cb3572c62ccccb8eb2383145d0d4f2e',1,'src::bomberman::Bomberman']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yourname',['yourName',['../classsrc_1_1login__menu_1_1_login_menu.html#a6ba84d7d5a18940588ad710b7f6f964c',1,'src.login_menu.LoginMenu.yourName()'],['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#a72d6db1fc6e6253916fec2090e8ff914',1,'src.settings_menu.AccountSettingsMenu.yourName()']]]
+  ['quitgamesignal',['quitGameSignal',['../classsrc_1_1main__menu_1_1_main_menu.html#adb966ecda1f332af67efc3c3b3adf8bd',1,'src.main_menu.MainMenu.quitGameSignal()'],['../classsrc_1_1pause__menu_1_1_pause_menu.html#aea554e6749ca45f516618711530a1acd',1,'src.pause_menu.PauseMenu.quitGameSignal()']]]
 ];

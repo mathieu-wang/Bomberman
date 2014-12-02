@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src.bomberman.Bomberman Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a> object containing all the attributes describing the current state of bomberman.  
+ <a href="classsrc_1_1bomberman_1_1_bomberman.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for src.bomberman.Bomberman:</div>
 <div class="dyncontent">
@@ -103,62 +108,79 @@ Inheritance diagram for src.bomberman.Bomberman:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3417c001682d099753e7523493412da5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3417c001682d099753e7523493412da5"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:a3417c001682d099753e7523493412da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ee598521d0aa9ca64f19526b532db3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2ee598521d0aa9ca64f19526b532db3"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b></td></tr>
-<tr class="separator:ab2ee598521d0aa9ca64f19526b532db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0fe5887593d3396b4b8f4c6457a4df4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0fe5887593d3396b4b8f4c6457a4df4"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>death</b></td></tr>
-<tr class="separator:ae0fe5887593d3396b4b8f4c6457a4df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9cdb2bcd44e1aaec299743531de5473"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9cdb2bcd44e1aaec299743531de5473"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ad9cdb2bcd44e1aaec299743531de5473">__init__</a> (self)</td></tr>
+<tr class="memdesc:ad9cdb2bcd44e1aaec299743531de5473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a bomberman unit with attributes. <br /></td></tr>
+<tr class="separator:ad9cdb2bcd44e1aaec299743531de5473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6de2893ff7ce0bed4cd72f15e9eb20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d6de2893ff7ce0bed4cd72f15e9eb20"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a7d6de2893ff7ce0bed4cd72f15e9eb20">reset</a> (self)</td></tr>
+<tr class="memdesc:a7d6de2893ff7ce0bed4cd72f15e9eb20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset bomberman's attribute at the start of a new level or a new game. <br /></td></tr>
+<tr class="separator:a7d6de2893ff7ce0bed4cd72f15e9eb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae596075451ff8d73d59ff2cf9e4f7848"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae596075451ff8d73d59ff2cf9e4f7848"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ae596075451ff8d73d59ff2cf9e4f7848">death</a> (self)</td></tr>
+<tr class="memdesc:ae596075451ff8d73d59ff2cf9e4f7848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset bomberman's attributes as well a its powerup and reduce its lives by 1. <br /></td></tr>
+<tr class="separator:ae596075451ff8d73d59ff2cf9e4f7848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ade28c12524be42994d93b74bddc92647"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade28c12524be42994d93b74bddc92647"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>curX</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ade28c12524be42994d93b74bddc92647">curX</a></td></tr>
+<tr class="memdesc:ade28c12524be42994d93b74bddc92647"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a>'s current X position. <br /></td></tr>
 <tr class="separator:ade28c12524be42994d93b74bddc92647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab163853c4ad07078948a14fc3b6ad1e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab163853c4ad07078948a14fc3b6ad1e7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>curY</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ab163853c4ad07078948a14fc3b6ad1e7">curY</a></td></tr>
+<tr class="memdesc:ab163853c4ad07078948a14fc3b6ad1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a>'s current Y position. <br /></td></tr>
 <tr class="separator:ab163853c4ad07078948a14fc3b6ad1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139e60f5380a184bd42d356afab660ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a139e60f5380a184bd42d356afab660ef"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>lives</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a139e60f5380a184bd42d356afab660ef">lives</a></td></tr>
+<tr class="memdesc:a139e60f5380a184bd42d356afab660ef"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a>'s current remaining lives. <br /></td></tr>
 <tr class="separator:a139e60f5380a184bd42d356afab660ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac3e76b884ce72178bd068a4c40c05b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ac3e76b884ce72178bd068a4c40c05b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a6ac3e76b884ce72178bd068a4c40c05b">speed</a></td></tr>
+<tr class="memdesc:a6ac3e76b884ce72178bd068a4c40c05b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a>'s current speed. <br /></td></tr>
 <tr class="separator:a6ac3e76b884ce72178bd068a4c40c05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71c03f3d45e6d025a1dc65d1933abb0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71c03f3d45e6d025a1dc65d1933abb0a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>canMove</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a71c03f3d45e6d025a1dc65d1933abb0a">canMove</a></td></tr>
+<tr class="memdesc:a71c03f3d45e6d025a1dc65d1933abb0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean whether bomberman can move or not. <br /></td></tr>
 <tr class="separator:a71c03f3d45e6d025a1dc65d1933abb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cb3572c62ccccb8eb2383145d0d4f2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cb3572c62ccccb8eb2383145d0d4f2e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>numBombs</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a2cb3572c62ccccb8eb2383145d0d4f2e">numBombs</a></td></tr>
+<tr class="memdesc:a2cb3572c62ccccb8eb2383145d0d4f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer powerup maximum number of bombs bomberman can lay. <br /></td></tr>
 <tr class="separator:a2cb3572c62ccccb8eb2383145d0d4f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60e8708ab7b666aa01aeb3cf0660db92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60e8708ab7b666aa01aeb3cf0660db92"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>rangeOfBombs</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a60e8708ab7b666aa01aeb3cf0660db92">rangeOfBombs</a></td></tr>
+<tr class="memdesc:a60e8708ab7b666aa01aeb3cf0660db92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer powerup the range in terms of tiles, the bomb can reach. <br /></td></tr>
 <tr class="separator:a60e8708ab7b666aa01aeb3cf0660db92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f1c6898c8d82b94228c5d4361c389a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f1c6898c8d82b94228c5d4361c389a4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>wallPass</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a8f1c6898c8d82b94228c5d4361c389a4">wallPass</a></td></tr>
+<tr class="memdesc:a8f1c6898c8d82b94228c5d4361c389a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean powerup true if bomberman can pass through bricks. <br /></td></tr>
 <tr class="separator:a8f1c6898c8d82b94228c5d4361c389a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3633e53e0443adbc59816892d516065"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3633e53e0443adbc59816892d516065"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>hasDetonator</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#af3633e53e0443adbc59816892d516065">hasDetonator</a></td></tr>
+<tr class="memdesc:af3633e53e0443adbc59816892d516065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean powerup true if bomberman has a detonator powerup. <br /></td></tr>
 <tr class="separator:af3633e53e0443adbc59816892d516065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca70e55b92691117f315e82d444188d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca70e55b92691117f315e82d444188d4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>bombPass</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#aca70e55b92691117f315e82d444188d4">bombPass</a></td></tr>
+<tr class="memdesc:aca70e55b92691117f315e82d444188d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean powerup true if bomberman can pass through bombs. <br /></td></tr>
 <tr class="separator:aca70e55b92691117f315e82d444188d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04139259920ddb2447a762bcbc8a53c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04139259920ddb2447a762bcbc8a53c4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>flamePass</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a04139259920ddb2447a762bcbc8a53c4">flamePass</a></td></tr>
+<tr class="memdesc:a04139259920ddb2447a762bcbc8a53c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean powerup true if bomberman does not die when touching flames. <br /></td></tr>
 <tr class="separator:a04139259920ddb2447a762bcbc8a53c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a139150d8425b6bf1a8431a991fc0f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a139150d8425b6bf1a8431a991fc0f1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>invincible</b></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a6a139150d8425b6bf1a8431a991fc0f1">invincible</a></td></tr>
+<tr class="memdesc:a6a139150d8425b6bf1a8431a991fc0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean powerup true if bomberman cannot die. <br /></td></tr>
 <tr class="separator:a6a139150d8425b6bf1a8431a991fc0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html" title="Bomberman object containing all the attributes describing the current state of bomberman. ">Bomberman</a> object containing all the attributes describing the current state of bomberman. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/bomberman.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:16 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

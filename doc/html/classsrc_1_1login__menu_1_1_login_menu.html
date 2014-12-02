@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,15 +112,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33638b382a7b9e5c95163bae3900d5b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33638b382a7b9e5c95163bae3900d5b3"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
 <tr class="separator:a33638b382a7b9e5c95163bae3900d5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4f0e6adbb18214711d96acdb924508d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#ae4f0e6adbb18214711d96acdb924508d">initUI</a></td></tr>
-<tr class="memdesc:ae4f0e6adbb18214711d96acdb924508d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of the login menu.  <a href="#ae4f0e6adbb18214711d96acdb924508d">More...</a><br /></td></tr>
-<tr class="separator:ae4f0e6adbb18214711d96acdb924508d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9098f8834d712331e4d05250a8012370"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9098f8834d712331e4d05250a8012370">login</a></td></tr>
-<tr class="memdesc:a9098f8834d712331e4d05250a8012370"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method is used to login an existing user.  <a href="#a9098f8834d712331e4d05250a8012370">More...</a><br /></td></tr>
-<tr class="separator:a9098f8834d712331e4d05250a8012370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6db28e6b5f4cbc7682518773915c31cd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd">register</a></td></tr>
-<tr class="memdesc:a6db28e6b5f4cbc7682518773915c31cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method is used to register a new user.  <a href="#a6db28e6b5f4cbc7682518773915c31cd">More...</a><br /></td></tr>
-<tr class="separator:a6db28e6b5f4cbc7682518773915c31cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5114077865bfc30e8adef2f90cd27d85"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a5114077865bfc30e8adef2f90cd27d85">initUI</a> (self)</td></tr>
+<tr class="memdesc:a5114077865bfc30e8adef2f90cd27d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialize the GUI of the login menu.  <a href="#a5114077865bfc30e8adef2f90cd27d85">More...</a><br /></td></tr>
+<tr class="separator:a5114077865bfc30e8adef2f90cd27d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75303935e17e43388fd4ef3df029944e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a75303935e17e43388fd4ef3df029944e">login</a> (self)</td></tr>
+<tr class="memdesc:a75303935e17e43388fd4ef3df029944e"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method is used to login an existing user.  <a href="#a75303935e17e43388fd4ef3df029944e">More...</a><br /></td></tr>
+<tr class="separator:a75303935e17e43388fd4ef3df029944e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ee6a8dee90f1a94a506400356707ad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#af6ee6a8dee90f1a94a506400356707ad">register</a> (self)</td></tr>
+<tr class="memdesc:af6ee6a8dee90f1a94a506400356707ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method is used to register a new user.  <a href="#af6ee6a8dee90f1a94a506400356707ad">More...</a><br /></td></tr>
+<tr class="separator:af6ee6a8dee90f1a94a506400356707ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -139,7 +141,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a036845330836e34588c87e2d73f53b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a QLineEdit that creates a field the user uses to enter his password <br /></td></tr>
 <tr class="separator:a036845330836e34588c87e2d73f53b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d518012477c43a0d5b77385e2e4209f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a2d518012477c43a0d5b77385e2e4209f">signUpButton</a></td></tr>
-<tr class="memdesc:a2d518012477c43a0d5b77385e2e4209f"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd" title="this method is used to register a new user. ">register()</a> method when clicked.  <a href="#a2d518012477c43a0d5b77385e2e4209f">More...</a><br /></td></tr>
+<tr class="memdesc:a2d518012477c43a0d5b77385e2e4209f"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#af6ee6a8dee90f1a94a506400356707ad" title="this method is used to register a new user. ">register()</a> method when clicked.  <a href="#a2d518012477c43a0d5b77385e2e4209f">More...</a><br /></td></tr>
 <tr class="separator:a2d518012477c43a0d5b77385e2e4209f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce86324539cbf7d5a398d8afba6a439"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#adce86324539cbf7d5a398d8afba6a439">loginTitle</a></td></tr>
 <tr class="memdesc:adce86324539cbf7d5a398d8afba6a439"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a QLabel to show the login Title.  <a href="#adce86324539cbf7d5a398d8afba6a439">More...</a><br /></td></tr>
@@ -151,7 +153,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a6c0c5ab8b48e62ccb26a472e6e7790c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a QLineEdit that creates a field the user uses to enter his password.  <a href="#a6c0c5ab8b48e62ccb26a472e6e7790c9">More...</a><br /></td></tr>
 <tr class="separator:a6c0c5ab8b48e62ccb26a472e6e7790c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e91fe2dc9a5b4bb26019242e84ce986"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6e91fe2dc9a5b4bb26019242e84ce986">loginButton</a></td></tr>
-<tr class="memdesc:a6e91fe2dc9a5b4bb26019242e84ce986"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9098f8834d712331e4d05250a8012370" title="this method is used to login an existing user. ">login()</a> method when clicked.  <a href="#a6e91fe2dc9a5b4bb26019242e84ce986">More...</a><br /></td></tr>
+<tr class="memdesc:a6e91fe2dc9a5b4bb26019242e84ce986"><td class="mdescLeft">&#160;</td><td class="mdescRight">is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a75303935e17e43388fd4ef3df029944e" title="this method is used to login an existing user. ">login()</a> method when clicked.  <a href="#a6e91fe2dc9a5b4bb26019242e84ce986">More...</a><br /></td></tr>
 <tr class="separator:a6e91fe2dc9a5b4bb26019242e84ce986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -169,11 +171,11 @@ Static Public Attributes</h2></td></tr>
 youName: is a LineEdit widget the user uses to enter his name.<br />
 username: is a LineEdit widget the user uses to enter his username at login or signup.<br />
 password: is a LineEdit widget the user uses to enter his password at login or signup.<br />
-signupButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd" title="this method is used to register a new user. ">register()</a> method when clicked.<br />
-loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9098f8834d712331e4d05250a8012370" title="this method is used to login an existing user. ">login()</a> method when clicked.<br />
+signupButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#af6ee6a8dee90f1a94a506400356707ad" title="this method is used to register a new user. ">register()</a> method when clicked.<br />
+loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a75303935e17e43388fd4ef3df029944e" title="this method is used to login an existing user. ">login()</a> method when clicked.<br />
  </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae4f0e6adbb18214711d96acdb924508d"></a>
+<a class="anchor" id="a5114077865bfc30e8adef2f90cd27d85"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -191,7 +193,7 @@ loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.ht
 
 </div>
 </div>
-<a class="anchor" id="a9098f8834d712331e4d05250a8012370"></a>
+<a class="anchor" id="a75303935e17e43388fd4ef3df029944e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -210,7 +212,7 @@ loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.ht
 
 </div>
 </div>
-<a class="anchor" id="a6db28e6b5f4cbc7682518773915c31cd"></a>
+<a class="anchor" id="af6ee6a8dee90f1a94a506400356707ad"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -277,7 +279,7 @@ loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.ht
       </table>
 </div><div class="memdoc">
 
-<p>is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a9098f8834d712331e4d05250a8012370" title="this method is used to login an existing user. ">login()</a> method when clicked. </p>
+<p>is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a75303935e17e43388fd4ef3df029944e" title="this method is used to login an existing user. ">login()</a> method when clicked. </p>
 
 </div>
 </div>
@@ -355,7 +357,7 @@ loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.ht
       </table>
 </div><div class="memdoc">
 
-<p>is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd" title="this method is used to register a new user. ">register()</a> method when clicked. </p>
+<p>is a button that calls the <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.html#af6ee6a8dee90f1a94a506400356707ad" title="this method is used to register a new user. ">register()</a> method when clicked. </p>
 
 </div>
 </div>
@@ -407,7 +409,7 @@ loginButton: calls <a class="el" href="classsrc_1_1login__menu_1_1_login_menu.ht
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -1,0 +1,129 @@
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu}{}\section{src.\+load\+\_\+menu.\+Load\+Menu Class Reference}
+\label{classsrc_1_1load__menu_1_1_load_menu}\index{src.\+load\+\_\+menu.\+Load\+Menu@{src.\+load\+\_\+menu.\+Load\+Menu}}
+
+
+This class is a widget that displays the Load menu.  
+
+
+Inheritance diagram for src.\+load\+\_\+menu.\+Load\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1load__menu_1_1_load_menu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_a6b067e9ede752fd13ed4df84570083b7}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, parent, \hyperlink{classsrc_1_1load__menu_1_1_load_menu_ab1c940f6352015a62d85b668bc6ebb01}{username}, \hyperlink{classsrc_1_1load__menu_1_1_load_menu_a266279b7ed3e68889b07c1785251c806}{previous\+Menu})\label{classsrc_1_1load__menu_1_1_load_menu_a6b067e9ede752fd13ed4df84570083b7}
+
+\item 
+def \hyperlink{classsrc_1_1load__menu_1_1_load_menu_ae10c4104f4245eaba4772a7f29485ff4}{init\+U\+I} (self)
+\begin{DoxyCompactList}\small\item\em This method initialize the G\+U\+I of the Load menu. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1load__menu_1_1_load_menu_ac3ab22ee56c51e7cb02f27344d6bfcbd}{load\+Saved\+Game} (self)
+\begin{DoxyCompactList}\small\item\em emit load\+Saved\+Game\+Signal when called. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1load__menu_1_1_load_menu_af7b9c789c68fb85b2d4e2bfd211e201d}{load\+Saved\+Game\+List} (self)
+\begin{DoxyCompactList}\small\item\em fetch from the database the current user\textquotesingle{}s saved game. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1load__menu_1_1_load_menu_ac1756d59b9d5d3c026d4cb971bb6a657}{back} (self)
+\begin{DoxyCompactList}\small\item\em emit back\+Signal when called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_a266279b7ed3e68889b07c1785251c806}{}\hyperlink{classsrc_1_1load__menu_1_1_load_menu_a266279b7ed3e68889b07c1785251c806}{previous\+Menu}\label{classsrc_1_1load__menu_1_1_load_menu_a266279b7ed3e68889b07c1785251c806}
+
+\begin{DoxyCompactList}\small\item\em int used to keep track of the previous menu \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_ab1c940f6352015a62d85b668bc6ebb01}{}\hyperlink{classsrc_1_1load__menu_1_1_load_menu_ab1c940f6352015a62d85b668bc6ebb01}{username}\label{classsrc_1_1load__menu_1_1_load_menu_ab1c940f6352015a62d85b668bc6ebb01}
+
+\begin{DoxyCompactList}\small\item\em username of the current active user \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1load__menu_1_1_load_menu_af17d0436c9ca2ece0594fbcfd6380162}{game\+List}
+\begin{DoxyCompactList}\small\item\em widget which displays a list from top to bottom. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{classsrc_1_1load__menu_1_1_load_menu_a9f994468ddeb9d648ce5a68c001fbb36}{load\+Saved\+Game\+Signal} = Qt\+Core.\+pyqt\+Signal(str)
+\begin{DoxyCompactList}\small\item\em Signal which will be used to load the game the user chose. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1load__menu_1_1_load_menu_a213d15dc1a4c3b77947ea334896268c5}{back\+Signal} = Qt\+Core.\+pyqt\+Signal(int)
+\begin{DoxyCompactList}\small\item\em Signal which will be used to go back to the previous menu based on an int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a widget that displays the Load menu. 
+
+It includes the following buttons and fields that the user can interact with\+:~\newline
+load\+Button\+: emit load\+Saved\+Game\+Signal when clicked.~\newline
+return\+Button\+: emit back\+Signal when clicked.~\newline
+saved\+Game\+List\+: list of all the saved game of the current active user. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_ac1756d59b9d5d3c026d4cb971bb6a657}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!back@{back}}
+\index{back@{back}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{back}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+load\+\_\+menu.\+Load\+Menu.\+back (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1load__menu_1_1_load_menu_ac1756d59b9d5d3c026d4cb971bb6a657}
+
+
+emit back\+Signal when called. 
+
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_ae10c4104f4245eaba4772a7f29485ff4}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!init\+U\+I@{init\+U\+I}}
+\index{init\+U\+I@{init\+U\+I}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{init\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+load\+\_\+menu.\+Load\+Menu.\+init\+U\+I (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1load__menu_1_1_load_menu_ae10c4104f4245eaba4772a7f29485ff4}
+
+
+This method initialize the G\+U\+I of the Load menu. 
+
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_ac3ab22ee56c51e7cb02f27344d6bfcbd}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!load\+Saved\+Game@{load\+Saved\+Game}}
+\index{load\+Saved\+Game@{load\+Saved\+Game}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{load\+Saved\+Game}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+load\+\_\+menu.\+Load\+Menu.\+load\+Saved\+Game (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1load__menu_1_1_load_menu_ac3ab22ee56c51e7cb02f27344d6bfcbd}
+
+
+emit load\+Saved\+Game\+Signal when called. 
+
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_af7b9c789c68fb85b2d4e2bfd211e201d}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!load\+Saved\+Game\+List@{load\+Saved\+Game\+List}}
+\index{load\+Saved\+Game\+List@{load\+Saved\+Game\+List}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{load\+Saved\+Game\+List}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+load\+\_\+menu.\+Load\+Menu.\+load\+Saved\+Game\+List (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1load__menu_1_1_load_menu_af7b9c789c68fb85b2d4e2bfd211e201d}
+
+
+fetch from the database the current user\textquotesingle{}s saved game. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_a213d15dc1a4c3b77947ea334896268c5}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!back\+Signal@{back\+Signal}}
+\index{back\+Signal@{back\+Signal}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{back\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+load\+\_\+menu.\+Load\+Menu.\+back\+Signal = Qt\+Core.\+pyqt\+Signal(int)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1load__menu_1_1_load_menu_a213d15dc1a4c3b77947ea334896268c5}
+
+
+Signal which will be used to go back to the previous menu based on an int. 
+
+int is set as \textquotesingle{}previous\+Menu\textquotesingle{}. \hypertarget{classsrc_1_1load__menu_1_1_load_menu_af17d0436c9ca2ece0594fbcfd6380162}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!game\+List@{game\+List}}
+\index{game\+List@{game\+List}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{game\+List}]{\setlength{\rightskip}{0pt plus 5cm}src.\+load\+\_\+menu.\+Load\+Menu.\+game\+List}\label{classsrc_1_1load__menu_1_1_load_menu_af17d0436c9ca2ece0594fbcfd6380162}
+
+
+widget which displays a list from top to bottom. 
+
+\hypertarget{classsrc_1_1load__menu_1_1_load_menu_a9f994468ddeb9d648ce5a68c001fbb36}{}\index{src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}!load\+Saved\+Game\+Signal@{load\+Saved\+Game\+Signal}}
+\index{load\+Saved\+Game\+Signal@{load\+Saved\+Game\+Signal}!src\+::load\+\_\+menu\+::\+Load\+Menu@{src\+::load\+\_\+menu\+::\+Load\+Menu}}
+\subsubsection[{load\+Saved\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+load\+\_\+menu.\+Load\+Menu.\+load\+Saved\+Game\+Signal = Qt\+Core.\+pyqt\+Signal(str)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1load__menu_1_1_load_menu_a9f994468ddeb9d648ce5a68c001fbb36}
+
+
+Signal which will be used to load the game the user chose. 
+
+str the name of the game to load. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/load\+\_\+menu.\+py\end{DoxyCompactItemize}

@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,14 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b>(self, parent, username) (defined in <a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a80552690cf6643721ebc00319289468a">backButton</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#af8e8941adda48bb6b2c80065e7847c40">backToMainMenu</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a47dc6e6cb8a9ca5431a32ad73298ed81">backToMainMenu</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a968b438c9430d659dcb90a23689127be">backToMainMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a6ad9267209290b0eaa3ef35191f81d82">changeButton</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a647c9a9f69d6a0e492d7cdc4712294c1">changeSettings</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a10989536edbbe0db4fc03f2e5ccc8271">changeSettings</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a793f0abcc421d4f7e51d6ff02e3e86ea">db</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#af1ec8bde572a5ccb81c8be474f536270">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#aeff3b2a6031f6dd312a66d0f161eeedb">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a7cac3d6c4fd01c1d0c9e6cfcba8e8950">loggedUsername</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#afe50b3829d1054937762620263272c4b">parent</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html#a11ded2b607c6b7e0b756eef17952b1f6">password</a></td><td class="entry"><a class="el" href="classsrc_1_1settings__menu_1_1_account_settings_menu.html">src.settings_menu.AccountSettingsMenu</a></td><td class="entry"></td></tr>
@@ -108,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

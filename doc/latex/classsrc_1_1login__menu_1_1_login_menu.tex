@@ -1,0 +1,188 @@
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu}{}\section{src.\+login\+\_\+menu.\+Login\+Menu Class Reference}
+\label{classsrc_1_1login__menu_1_1_login_menu}\index{src.\+login\+\_\+menu.\+Login\+Menu@{src.\+login\+\_\+menu.\+Login\+Menu}}
+
+
+This class is a widget that displays the login menu.  
+
+
+Inheritance diagram for src.\+login\+\_\+menu.\+Login\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1login__menu_1_1_login_menu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a33638b382a7b9e5c95163bae3900d5b3}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+}\label{classsrc_1_1login__menu_1_1_login_menu_a33638b382a7b9e5c95163bae3900d5b3}
+
+\item 
+def \hyperlink{classsrc_1_1login__menu_1_1_login_menu_a5114077865bfc30e8adef2f90cd27d85}{init\+U\+I} (self)
+\begin{DoxyCompactList}\small\item\em This method initialize the G\+U\+I of the login menu. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1login__menu_1_1_login_menu_a75303935e17e43388fd4ef3df029944e}{login} (self)
+\begin{DoxyCompactList}\small\item\em this method is used to login an existing user. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1login__menu_1_1_login_menu_af6ee6a8dee90f1a94a506400356707ad}{register} (self)
+\begin{DoxyCompactList}\small\item\em this method is used to register a new user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a9a3d5cb39385fb4b3d10f46af5543205}{db}
+\begin{DoxyCompactList}\small\item\em instance of the database. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a07a65e6211f15b49d6e6abc0daac320b}{sign\+Up\+Title}
+\begin{DoxyCompactList}\small\item\em is a Q\+Label to show the signup Title. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a6ba84d7d5a18940588ad710b7f6f964c}{your\+Name}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit that creates a field the user uses to enter his name. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a6b5acd3b5dd7c538b601cf8ab1b1d4cf}{username}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit that creates a field the user uses to enter his username. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a036845330836e34588c87e2d73f53b85}{}\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a036845330836e34588c87e2d73f53b85}{password}\label{classsrc_1_1login__menu_1_1_login_menu_a036845330836e34588c87e2d73f53b85}
+
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit that creates a field the user uses to enter his password \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a2d518012477c43a0d5b77385e2e4209f}{sign\+Up\+Button}
+\begin{DoxyCompactList}\small\item\em is a button that calls the \hyperlink{classsrc_1_1login__menu_1_1_login_menu_af6ee6a8dee90f1a94a506400356707ad}{register()} method when clicked. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_adce86324539cbf7d5a398d8afba6a439}{login\+Title}
+\begin{DoxyCompactList}\small\item\em is a Q\+Label to show the login Title. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a762640516f0435f5764308fd0f00a6c9}{login\+Username}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit that creates a field the user uses to enter his username. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a6c0c5ab8b48e62ccb26a472e6e7790c9}{login\+Password}
+\begin{DoxyCompactList}\small\item\em is a Q\+Line\+Edit that creates a field the user uses to enter his password. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a6e91fe2dc9a5b4bb26019242e84ce986}{login\+Button}
+\begin{DoxyCompactList}\small\item\em is a button that calls the \hyperlink{classsrc_1_1login__menu_1_1_login_menu_a75303935e17e43388fd4ef3df029944e}{login()} method when clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{classsrc_1_1login__menu_1_1_login_menu_a0c7d684b7c11fd92f8de9beee9cf2a9f}{login\+Success\+Signal} = Qt\+Core.\+pyqt\+Signal()
+\begin{DoxyCompactList}\small\item\em Signal which will be used to launch the main menu. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1login__menu_1_1_login_menu_a3c59b83a7a55f2334a015dfc722e86da}{logged\+Username} = None
+\begin{DoxyCompactList}\small\item\em the currently logged in user\textquotesingle{}s username. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a widget that displays the login menu. 
+
+It includes the following buttons and fields that the user can interact with\+:~\newline
+you\+Name\+: is a Line\+Edit widget the user uses to enter his name.~\newline
+username\+: is a Line\+Edit widget the user uses to enter his username at login or signup.~\newline
+password\+: is a Line\+Edit widget the user uses to enter his password at login or signup.~\newline
+signup\+Button\+: calls \hyperlink{classsrc_1_1login__menu_1_1_login_menu_af6ee6a8dee90f1a94a506400356707ad}{register()} method when clicked.~\newline
+login\+Button\+: calls \hyperlink{classsrc_1_1login__menu_1_1_login_menu_a75303935e17e43388fd4ef3df029944e}{login()} method when clicked.~\newline
+ 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a5114077865bfc30e8adef2f90cd27d85}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!init\+U\+I@{init\+U\+I}}
+\index{init\+U\+I@{init\+U\+I}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{init\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+login\+\_\+menu.\+Login\+Menu.\+init\+U\+I (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1login__menu_1_1_login_menu_a5114077865bfc30e8adef2f90cd27d85}
+
+
+This method initialize the G\+U\+I of the login menu. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a75303935e17e43388fd4ef3df029944e}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!login@{login}}
+\index{login@{login}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+login\+\_\+menu.\+Login\+Menu.\+login (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1login__menu_1_1_login_menu_a75303935e17e43388fd4ef3df029944e}
+
+
+this method is used to login an existing user. 
+
+it verifies if the user\textquotesingle{}s information match an existing user account and then emit login\+Success\+Signal. \hypertarget{classsrc_1_1login__menu_1_1_login_menu_af6ee6a8dee90f1a94a506400356707ad}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!register@{register}}
+\index{register@{register}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{register}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+login\+\_\+menu.\+Login\+Menu.\+register (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1login__menu_1_1_login_menu_af6ee6a8dee90f1a94a506400356707ad}
+
+
+this method is used to register a new user. 
+
+It first verifies if the user\textquotesingle{}s username and password follow the restrictions. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a9a3d5cb39385fb4b3d10f46af5543205}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!db@{db}}
+\index{db@{db}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{db}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+db}\label{classsrc_1_1login__menu_1_1_login_menu_a9a3d5cb39385fb4b3d10f46af5543205}
+
+
+instance of the database. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a3c59b83a7a55f2334a015dfc722e86da}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!logged\+Username@{logged\+Username}}
+\index{logged\+Username@{logged\+Username}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{logged\+Username}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+logged\+Username = None\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1login__menu_1_1_login_menu_a3c59b83a7a55f2334a015dfc722e86da}
+
+
+the currently logged in user\textquotesingle{}s username. 
+
+initialized to \textquotesingle{}None\textquotesingle{} if not currently logged in. \hypertarget{classsrc_1_1login__menu_1_1_login_menu_a6e91fe2dc9a5b4bb26019242e84ce986}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!login\+Button@{login\+Button}}
+\index{login\+Button@{login\+Button}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{login\+Button}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+login\+Button}\label{classsrc_1_1login__menu_1_1_login_menu_a6e91fe2dc9a5b4bb26019242e84ce986}
+
+
+is a button that calls the \hyperlink{classsrc_1_1login__menu_1_1_login_menu_a75303935e17e43388fd4ef3df029944e}{login()} method when clicked. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a6c0c5ab8b48e62ccb26a472e6e7790c9}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!login\+Password@{login\+Password}}
+\index{login\+Password@{login\+Password}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{login\+Password}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+login\+Password}\label{classsrc_1_1login__menu_1_1_login_menu_a6c0c5ab8b48e62ccb26a472e6e7790c9}
+
+
+is a Q\+Line\+Edit that creates a field the user uses to enter his password. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a0c7d684b7c11fd92f8de9beee9cf2a9f}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!login\+Success\+Signal@{login\+Success\+Signal}}
+\index{login\+Success\+Signal@{login\+Success\+Signal}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{login\+Success\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+login\+\_\+menu.\+Login\+Menu.\+login\+Success\+Signal = Qt\+Core.\+pyqt\+Signal()\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1login__menu_1_1_login_menu_a0c7d684b7c11fd92f8de9beee9cf2a9f}
+
+
+Signal which will be used to launch the main menu. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_adce86324539cbf7d5a398d8afba6a439}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!login\+Title@{login\+Title}}
+\index{login\+Title@{login\+Title}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{login\+Title}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+login\+Title}\label{classsrc_1_1login__menu_1_1_login_menu_adce86324539cbf7d5a398d8afba6a439}
+
+
+is a Q\+Label to show the login Title. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a762640516f0435f5764308fd0f00a6c9}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!login\+Username@{login\+Username}}
+\index{login\+Username@{login\+Username}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{login\+Username}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+login\+Username}\label{classsrc_1_1login__menu_1_1_login_menu_a762640516f0435f5764308fd0f00a6c9}
+
+
+is a Q\+Line\+Edit that creates a field the user uses to enter his username. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a2d518012477c43a0d5b77385e2e4209f}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!sign\+Up\+Button@{sign\+Up\+Button}}
+\index{sign\+Up\+Button@{sign\+Up\+Button}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{sign\+Up\+Button}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+sign\+Up\+Button}\label{classsrc_1_1login__menu_1_1_login_menu_a2d518012477c43a0d5b77385e2e4209f}
+
+
+is a button that calls the \hyperlink{classsrc_1_1login__menu_1_1_login_menu_af6ee6a8dee90f1a94a506400356707ad}{register()} method when clicked. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a07a65e6211f15b49d6e6abc0daac320b}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!sign\+Up\+Title@{sign\+Up\+Title}}
+\index{sign\+Up\+Title@{sign\+Up\+Title}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{sign\+Up\+Title}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+sign\+Up\+Title}\label{classsrc_1_1login__menu_1_1_login_menu_a07a65e6211f15b49d6e6abc0daac320b}
+
+
+is a Q\+Label to show the signup Title. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a6b5acd3b5dd7c538b601cf8ab1b1d4cf}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!username@{username}}
+\index{username@{username}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{username}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+username}\label{classsrc_1_1login__menu_1_1_login_menu_a6b5acd3b5dd7c538b601cf8ab1b1d4cf}
+
+
+is a Q\+Line\+Edit that creates a field the user uses to enter his username. 
+
+\hypertarget{classsrc_1_1login__menu_1_1_login_menu_a6ba84d7d5a18940588ad710b7f6f964c}{}\index{src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}!your\+Name@{your\+Name}}
+\index{your\+Name@{your\+Name}!src\+::login\+\_\+menu\+::\+Login\+Menu@{src\+::login\+\_\+menu\+::\+Login\+Menu}}
+\subsubsection[{your\+Name}]{\setlength{\rightskip}{0pt plus 5cm}src.\+login\+\_\+menu.\+Login\+Menu.\+your\+Name}\label{classsrc_1_1login__menu_1_1_login_menu_a6ba84d7d5a18940588ad710b7f6f964c}
+
+
+is a Q\+Line\+Edit that creates a field the user uses to enter his name. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/login\+\_\+menu.\+py\end{DoxyCompactItemize}

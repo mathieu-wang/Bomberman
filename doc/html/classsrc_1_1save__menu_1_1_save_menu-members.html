@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,16 +96,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a5d5d8515ced22884dcd1a7f5d1943566">board</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a0673d06683a2c9f326d36958fe339a2a">gameTitle</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a66b95685a36bf0e13d999ff0e1c963a6">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a97cb0d0ac2bcb449471b2eeaba360033">returnToPauseMenu</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a69135ce0e32c0ec25e23f4cea0a0eae8">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a91e3ce3f4563456db3102294459a8c43">returnToPauseMenu</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a91e3384b3ca4264682fd7cc2fce47b0f">returnToPauseMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#abbacb5225acd0f6d3afdd7540e8c98ef">saveGame</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#a318487ca9ed34963dd572faa1ce09c56">saveGame</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#aed6ba9a74fc14066593c5ce7b2ae4691">saveLabel</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html#afa694276e009bcb004df7c7a1a5da217">username</a></td><td class="entry"><a class="el" href="classsrc_1_1save__menu_1_1_save_menu.html">src.save_menu.SaveMenu</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

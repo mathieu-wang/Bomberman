@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src.board.Board Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class displays the board for the gameplay.  
+ <a href="classsrc_1_1board_1_1_board.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for src.board.Board:</div>
 <div class="dyncontent">
@@ -107,108 +112,109 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8571472bb4178812dd941cf3f8e5f7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8571472bb4178812dd941cf3f8e5f7c"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
 <tr class="separator:ae8571472bb4178812dd941cf3f8e5f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21a2d633ba83651a60a7ffd2f24b3797"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21a2d633ba83651a60a7ffd2f24b3797"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>initStatusBar</b></td></tr>
-<tr class="separator:a21a2d633ba83651a60a7ffd2f24b3797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae89a8df74a8b5e6c30d738d1e60aefcf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae89a8df74a8b5e6c30d738d1e60aefcf"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>initBoard</b></td></tr>
-<tr class="separator:ae89a8df74a8b5e6c30d738d1e60aefcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa09d3240add060f59c927df49bbaf853"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa09d3240add060f59c927df49bbaf853"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>initLevel</b></td></tr>
-<tr class="separator:aa09d3240add060f59c927df49bbaf853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed7119b9d194c3ff7af9589264514218"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed7119b9d194c3ff7af9589264514218"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>start</b></td></tr>
-<tr class="separator:aed7119b9d194c3ff7af9589264514218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f89a0825fdfc89286ee2e3f38860f7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f89a0825fdfc89286ee2e3f38860f7d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>pause</b></td></tr>
-<tr class="separator:a1f89a0825fdfc89286ee2e3f38860f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8a66bf9402309a00433b5f3513802ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8a66bf9402309a00433b5f3513802ae"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>death</b></td></tr>
-<tr class="separator:ac8a66bf9402309a00433b5f3513802ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b7b4d7c816b212cd24a4aa6881b0211"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b7b4d7c816b212cd24a4aa6881b0211"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>tileAt</b></td></tr>
-<tr class="separator:a4b7b4d7c816b212cd24a4aa6881b0211"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbf21fc3a38eb00e8718ccc9cf457520"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbf21fc3a38eb00e8718ccc9cf457520"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setTileAt</b></td></tr>
-<tr class="separator:afbf21fc3a38eb00e8718ccc9cf457520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35ead89f71cc90775d60f72ecec2e47"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae35ead89f71cc90775d60f72ecec2e47"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>setTileAtWithoutUpdate</b></td></tr>
-<tr class="separator:ae35ead89f71cc90775d60f72ecec2e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae02bd2e398b1e838d9c874aafc17c68f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae02bd2e398b1e838d9c874aafc17c68f"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>popTileAt</b></td></tr>
-<tr class="separator:ae02bd2e398b1e838d9c874aafc17c68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad99cc8367b082eab43bde486ab0e2624"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad99cc8367b082eab43bde486ab0e2624"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>popTileAtWithoutUpdate</b></td></tr>
-<tr class="separator:ad99cc8367b082eab43bde486ab0e2624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2300430b0461afd5a122108d25f9f93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2300430b0461afd5a122108d25f9f93"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>squareWidth</b></td></tr>
-<tr class="separator:aa2300430b0461afd5a122108d25f9f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6da811ebb1baa57c29c42564d345b55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6da811ebb1baa57c29c42564d345b55"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>squareHeight</b></td></tr>
-<tr class="separator:ab6da811ebb1baa57c29c42564d345b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22d94f0b9cf168530310b9c8f1b91376"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22d94f0b9cf168530310b9c8f1b91376"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>bombLoop</b></td></tr>
-<tr class="separator:a22d94f0b9cf168530310b9c8f1b91376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d6fe108c89b79bedcb20eff2a7fa278"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d6fe108c89b79bedcb20eff2a7fa278"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>paintEvent</b></td></tr>
-<tr class="separator:a6d6fe108c89b79bedcb20eff2a7fa278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaffd7452946f29645bf4477858c6bc2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abaffd7452946f29645bf4477858c6bc2"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>drawImages</b></td></tr>
-<tr class="separator:abaffd7452946f29645bf4477858c6bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8a6bed7e0b45811bda19ed429f0e5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e8a6bed7e0b45811bda19ed429f0e5f"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>drawSquare</b></td></tr>
-<tr class="separator:a8e8a6bed7e0b45811bda19ed429f0e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72c23c7368eee625a0f6a192b289cb3a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a72c23c7368eee625a0f6a192b289cb3a">keyPressEvent</a></td></tr>
-<tr class="memdesc:a72c23c7368eee625a0f6a192b289cb3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method calls methods after keys are pressed.  <a href="#a72c23c7368eee625a0f6a192b289cb3a">More...</a><br /></td></tr>
-<tr class="separator:a72c23c7368eee625a0f6a192b289cb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad540d95ae1e8082d4f7837a2886b59a9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#ad540d95ae1e8082d4f7837a2886b59a9">tryMove</a></td></tr>
-<tr class="memdesc:ad540d95ae1e8082d4f7837a2886b59a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A method that moves bomberman one tile.  <a href="#ad540d95ae1e8082d4f7837a2886b59a9">More...</a><br /></td></tr>
-<tr class="separator:ad540d95ae1e8082d4f7837a2886b59a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0bf5c1fff44cecd5410dcba5a3e75a8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#af0bf5c1fff44cecd5410dcba5a3e75a8">moveEnemy</a></td></tr>
-<tr class="memdesc:af0bf5c1fff44cecd5410dcba5a3e75a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that moves every enemy of a certain speed if able.  <a href="#af0bf5c1fff44cecd5410dcba5a3e75a8">More...</a><br /></td></tr>
-<tr class="separator:af0bf5c1fff44cecd5410dcba5a3e75a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06616b31d53421ff4ab628bc370a3717"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a06616b31d53421ff4ab628bc370a3717">bombermanTriggerCanMove</a></td></tr>
-<tr class="memdesc:a06616b31d53421ff4ab628bc370a3717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that allows bomberman to move.  <a href="#a06616b31d53421ff4ab628bc370a3717">More...</a><br /></td></tr>
-<tr class="separator:a06616b31d53421ff4ab628bc370a3717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21abf126d870b63c6620faf5e9544620"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a21abf126d870b63c6620faf5e9544620">killEnemy</a></td></tr>
-<tr class="memdesc:a21abf126d870b63c6620faf5e9544620"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method kills an enemy if it is at a given coordinate.  <a href="#a21abf126d870b63c6620faf5e9544620">More...</a><br /></td></tr>
-<tr class="separator:a21abf126d870b63c6620faf5e9544620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa69b375e6720c302a475b6e3fa307818"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#aa69b375e6720c302a475b6e3fa307818">detonateBomb</a></td></tr>
-<tr class="memdesc:aa69b375e6720c302a475b6e3fa307818"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method detonates the first bomb in bombQueue.  <a href="#aa69b375e6720c302a475b6e3fa307818">More...</a><br /></td></tr>
-<tr class="separator:aa69b375e6720c302a475b6e3fa307818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add12f1a97d8fb399f3bc2beff010357c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#add12f1a97d8fb399f3bc2beff010357c">startFlash</a></td></tr>
-<tr class="memdesc:add12f1a97d8fb399f3bc2beff010357c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method changes every tile on the flashList to Tile.Flash  The list of tiles to be flashed.  <a href="#add12f1a97d8fb399f3bc2beff010357c">More...</a><br /></td></tr>
-<tr class="separator:add12f1a97d8fb399f3bc2beff010357c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47b036053ac0ecb1aac40c5035aeb11f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a47b036053ac0ecb1aac40c5035aeb11f">endFlash</a></td></tr>
-<tr class="memdesc:a47b036053ac0ecb1aac40c5035aeb11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pops all Tile.Flash from the list flashList.  <a href="#a47b036053ac0ecb1aac40c5035aeb11f">More...</a><br /></td></tr>
-<tr class="separator:a47b036053ac0ecb1aac40c5035aeb11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392550a2ae67a3e6726a4afc83f4fc77"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a392550a2ae67a3e6726a4afc83f4fc77">destroyTiles</a></td></tr>
-<tr class="memdesc:a392550a2ae67a3e6726a4afc83f4fc77"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pops all the tiles on the popList.  <a href="#a392550a2ae67a3e6726a4afc83f4fc77">More...</a><br /></td></tr>
-<tr class="separator:a392550a2ae67a3e6726a4afc83f4fc77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6591f612888730234201162cee1247ee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a6591f612888730234201162cee1247ee">exit</a></td></tr>
-<tr class="memdesc:a6591f612888730234201162cee1247ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method stops timers and ends the game when the exit of level 16 is reached.  <a href="#a6591f612888730234201162cee1247ee">More...</a><br /></td></tr>
-<tr class="separator:a6591f612888730234201162cee1247ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc2ed380897c70960a12925b80cf2b8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a2bc2ed380897c70960a12925b80cf2b8">stopTimers</a></td></tr>
-<tr class="memdesc:a2bc2ed380897c70960a12925b80cf2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method stops all the timers.  <a href="#a2bc2ed380897c70960a12925b80cf2b8">More...</a><br /></td></tr>
-<tr class="separator:a2bc2ed380897c70960a12925b80cf2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34a6889cf6a222ed0a64697301d98fa3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a34a6889cf6a222ed0a64697301d98fa3">restartNextLevel</a></td></tr>
-<tr class="memdesc:a34a6889cf6a222ed0a64697301d98fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialized a new next level.  <a href="#a34a6889cf6a222ed0a64697301d98fa3">More...</a><br /></td></tr>
-<tr class="separator:a34a6889cf6a222ed0a64697301d98fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceab5432b56d92ed4d90120f09215869"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#aceab5432b56d92ed4d90120f09215869">restartSameLevel</a></td></tr>
-<tr class="memdesc:aceab5432b56d92ed4d90120f09215869"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes a new same level.  <a href="#aceab5432b56d92ed4d90120f09215869">More...</a><br /></td></tr>
-<tr class="separator:aceab5432b56d92ed4d90120f09215869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ac2285718bb573f5815284827d2a30d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ac2285718bb573f5815284827d2a30d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>updateScore</b></td></tr>
-<tr class="separator:a1ac2285718bb573f5815284827d2a30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae6596d1345af2690e5cb5c3b210b05"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a1ae6596d1345af2690e5cb5c3b210b05">getScoreOfKilledEnemies</a></td></tr>
-<tr class="memdesc:a1ae6596d1345af2690e5cb5c3b210b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to calculate the score the user gets when a bomb detonates.  <a href="#a1ae6596d1345af2690e5cb5c3b210b05">More...</a><br /></td></tr>
-<tr class="separator:a1ae6596d1345af2690e5cb5c3b210b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bb178d1309da01f9a45bca2d1b03323"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bb178d1309da01f9a45bca2d1b03323"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>saveBomberman</b></td></tr>
-<tr class="separator:a0bb178d1309da01f9a45bca2d1b03323"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9890ecb8ab2ca60eafe3e0c53eabe0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9890ecb8ab2ca60eafe3e0c53eabe0d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>timeoutEvent</b></td></tr>
-<tr class="separator:ac9890ecb8ab2ca60eafe3e0c53eabe0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9088e838b9bb196505af60eb1598495c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a9088e838b9bb196505af60eb1598495c">initStatusBar</a> (self)</td></tr>
+<tr class="memdesc:a9088e838b9bb196505af60eb1598495c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes the status bar.  <a href="#a9088e838b9bb196505af60eb1598495c">More...</a><br /></td></tr>
+<tr class="separator:a9088e838b9bb196505af60eb1598495c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea0ac2d9356f9ebe6a63176b2351b5b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a3ea0ac2d9356f9ebe6a63176b2351b5b">initBoard</a> (self)</td></tr>
+<tr class="memdesc:a3ea0ac2d9356f9ebe6a63176b2351b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes the board.  <a href="#a3ea0ac2d9356f9ebe6a63176b2351b5b">More...</a><br /></td></tr>
+<tr class="separator:a3ea0ac2d9356f9ebe6a63176b2351b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b87c8bc2da1173e07467996e4facbc4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a2b87c8bc2da1173e07467996e4facbc4">initLevel</a> (self)</td></tr>
+<tr class="memdesc:a2b87c8bc2da1173e07467996e4facbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes a new level.  <a href="#a2b87c8bc2da1173e07467996e4facbc4">More...</a><br /></td></tr>
+<tr class="separator:a2b87c8bc2da1173e07467996e4facbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97be76e6fb7312dddd9c86290fc3a1db"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a97be76e6fb7312dddd9c86290fc3a1db">start</a> (self)</td></tr>
+<tr class="memdesc:a97be76e6fb7312dddd9c86290fc3a1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method starts the board.  <a href="#a97be76e6fb7312dddd9c86290fc3a1db">More...</a><br /></td></tr>
+<tr class="separator:a97be76e6fb7312dddd9c86290fc3a1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29473ffbf635f04428be1349d177eedc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a29473ffbf635f04428be1349d177eedc">pause</a> (self)</td></tr>
+<tr class="memdesc:a29473ffbf635f04428be1349d177eedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pauses the game.  <a href="#a29473ffbf635f04428be1349d177eedc">More...</a><br /></td></tr>
+<tr class="separator:a29473ffbf635f04428be1349d177eedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ece335899ccecebb6ecb39c339d180"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a68ece335899ccecebb6ecb39c339d180">death</a> (self)</td></tr>
+<tr class="memdesc:a68ece335899ccecebb6ecb39c339d180"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method takes care of bomberman's death.  <a href="#a68ece335899ccecebb6ecb39c339d180">More...</a><br /></td></tr>
+<tr class="separator:a68ece335899ccecebb6ecb39c339d180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc740240caba216e9b416bdae675aab6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#afc740240caba216e9b416bdae675aab6">tileAt</a> (self, x, y)</td></tr>
+<tr class="memdesc:afc740240caba216e9b416bdae675aab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method the tile which is at specific coordinates.  <a href="#afc740240caba216e9b416bdae675aab6">More...</a><br /></td></tr>
+<tr class="separator:afc740240caba216e9b416bdae675aab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac40120a47f2787cb730e2d945e8833ee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#ac40120a47f2787cb730e2d945e8833ee">setTileAt</a> (self, x, y, tile)</td></tr>
+<tr class="memdesc:ac40120a47f2787cb730e2d945e8833ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pushes a tile and then updates the board.  <a href="#ac40120a47f2787cb730e2d945e8833ee">More...</a><br /></td></tr>
+<tr class="separator:ac40120a47f2787cb730e2d945e8833ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d9960666f0be862cad75c855a38709"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a78d9960666f0be862cad75c855a38709">setTileAtWithoutUpdate</a> (self, x, y, tile)</td></tr>
+<tr class="memdesc:a78d9960666f0be862cad75c855a38709"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pushes a tile without updating the board.  <a href="#a78d9960666f0be862cad75c855a38709">More...</a><br /></td></tr>
+<tr class="separator:a78d9960666f0be862cad75c855a38709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e08aecc48abfbb38dfcc2dbc11b7cd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#af2e08aecc48abfbb38dfcc2dbc11b7cd">popTileAt</a> (self, x, y)</td></tr>
+<tr class="memdesc:af2e08aecc48abfbb38dfcc2dbc11b7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pops a tile at coordinates x and y and then updates the board.  <a href="#af2e08aecc48abfbb38dfcc2dbc11b7cd">More...</a><br /></td></tr>
+<tr class="separator:af2e08aecc48abfbb38dfcc2dbc11b7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84399c357c601a4cf2f64dd096c2adc7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a84399c357c601a4cf2f64dd096c2adc7">popTileAtWithoutUpdate</a> (self, x, y)</td></tr>
+<tr class="memdesc:a84399c357c601a4cf2f64dd096c2adc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pops a tile at coordinates x and y without updating the board.  <a href="#a84399c357c601a4cf2f64dd096c2adc7">More...</a><br /></td></tr>
+<tr class="separator:a84399c357c601a4cf2f64dd096c2adc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d2d336061f0136c40c42f491e11ad02"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a4d2d336061f0136c40c42f491e11ad02">squareWidth</a> (self)</td></tr>
+<tr class="memdesc:a4d2d336061f0136c40c42f491e11ad02"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the width of a single tile.  <a href="#a4d2d336061f0136c40c42f491e11ad02">More...</a><br /></td></tr>
+<tr class="separator:a4d2d336061f0136c40c42f491e11ad02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e964f3382db079501c6b4afa16348e4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a1e964f3382db079501c6b4afa16348e4">squareHeight</a> (self)</td></tr>
+<tr class="memdesc:a1e964f3382db079501c6b4afa16348e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the height of a single tile.  <a href="#a1e964f3382db079501c6b4afa16348e4">More...</a><br /></td></tr>
+<tr class="separator:a1e964f3382db079501c6b4afa16348e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7734f1ae8cb324abbafc0e1af7f4db6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7734f1ae8cb324abbafc0e1af7f4db6f"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>bombLoop</b> (self)</td></tr>
+<tr class="separator:a7734f1ae8cb324abbafc0e1af7f4db6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8bc4036301719acbca3f62aa98e125"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#aea8bc4036301719acbca3f62aa98e125">paintEvent</a> (self, event)</td></tr>
+<tr class="memdesc:aea8bc4036301719acbca3f62aa98e125"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to draw the board.  <a href="#aea8bc4036301719acbca3f62aa98e125">More...</a><br /></td></tr>
+<tr class="separator:aea8bc4036301719acbca3f62aa98e125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85b9f4f5c9a91b200fb7e9e75d69d29"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#ac85b9f4f5c9a91b200fb7e9e75d69d29">drawImages</a> (self, painter, shape, x, y)</td></tr>
+<tr class="memdesc:ac85b9f4f5c9a91b200fb7e9e75d69d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method draws the image to the board.  <a href="#ac85b9f4f5c9a91b200fb7e9e75d69d29">More...</a><br /></td></tr>
+<tr class="separator:ac85b9f4f5c9a91b200fb7e9e75d69d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6978f5baf0f94e864867df77d5c891"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a5e6978f5baf0f94e864867df77d5c891">drawSquare</a> (self, painter, x, y, shape)</td></tr>
+<tr class="memdesc:a5e6978f5baf0f94e864867df77d5c891"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method draws squares the represent Bricks, Concrete and Empty Tiles.  <a href="#a5e6978f5baf0f94e864867df77d5c891">More...</a><br /></td></tr>
+<tr class="separator:a5e6978f5baf0f94e864867df77d5c891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656fb42b7e9a4e4b5aae20c261170fe3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a656fb42b7e9a4e4b5aae20c261170fe3">keyPressEvent</a> (self, event)</td></tr>
+<tr class="memdesc:a656fb42b7e9a4e4b5aae20c261170fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method calls methods after keys are pressed.  <a href="#a656fb42b7e9a4e4b5aae20c261170fe3">More...</a><br /></td></tr>
+<tr class="separator:a656fb42b7e9a4e4b5aae20c261170fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663a599889dead3d876c4e4d79123b8e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a663a599889dead3d876c4e4d79123b8e">tryMove</a> (self, newX, newY)</td></tr>
+<tr class="memdesc:a663a599889dead3d876c4e4d79123b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A method that moves bomberman one tile.  <a href="#a663a599889dead3d876c4e4d79123b8e">More...</a><br /></td></tr>
+<tr class="separator:a663a599889dead3d876c4e4d79123b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf6e3affb8c4b83c6d0ab28e265b4d5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#abcf6e3affb8c4b83c6d0ab28e265b4d5">moveEnemy</a> (self, speed)</td></tr>
+<tr class="memdesc:abcf6e3affb8c4b83c6d0ab28e265b4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that moves every enemy of a certain speed if able.  <a href="#abcf6e3affb8c4b83c6d0ab28e265b4d5">More...</a><br /></td></tr>
+<tr class="separator:abcf6e3affb8c4b83c6d0ab28e265b4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ef4247af25957bcaaa0469eb222ac1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a60ef4247af25957bcaaa0469eb222ac1">bombermanTriggerCanMove</a> (self)</td></tr>
+<tr class="memdesc:a60ef4247af25957bcaaa0469eb222ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that allows bomberman to move.  <a href="#a60ef4247af25957bcaaa0469eb222ac1">More...</a><br /></td></tr>
+<tr class="separator:a60ef4247af25957bcaaa0469eb222ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6bd40bde952bdbe12653269da596f5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a4e6bd40bde952bdbe12653269da596f5">killEnemy</a> (self, x, y)</td></tr>
+<tr class="memdesc:a4e6bd40bde952bdbe12653269da596f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method kills an enemy if it is at a given coordinate.  <a href="#a4e6bd40bde952bdbe12653269da596f5">More...</a><br /></td></tr>
+<tr class="separator:a4e6bd40bde952bdbe12653269da596f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801979e5433ee99d7e36a4c648b3f930"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a801979e5433ee99d7e36a4c648b3f930">detonateBomb</a> (self)</td></tr>
+<tr class="memdesc:a801979e5433ee99d7e36a4c648b3f930"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method detonates the first bomb in bombQueue.  <a href="#a801979e5433ee99d7e36a4c648b3f930">More...</a><br /></td></tr>
+<tr class="separator:a801979e5433ee99d7e36a4c648b3f930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39006efbb358f5be11d11c3a2775a2f0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a39006efbb358f5be11d11c3a2775a2f0">startFlash</a> (self, flashList)</td></tr>
+<tr class="memdesc:a39006efbb358f5be11d11c3a2775a2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method changes every tile on the flashList to Tile.Flash  The list of tiles to be flashed.  <a href="#a39006efbb358f5be11d11c3a2775a2f0">More...</a><br /></td></tr>
+<tr class="separator:a39006efbb358f5be11d11c3a2775a2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a709b1fbf97db6da5740b7aeac1fad8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a1a709b1fbf97db6da5740b7aeac1fad8">endFlash</a> (self, flashList)</td></tr>
+<tr class="memdesc:a1a709b1fbf97db6da5740b7aeac1fad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pops all Tile.Flash from the list flashList.  <a href="#a1a709b1fbf97db6da5740b7aeac1fad8">More...</a><br /></td></tr>
+<tr class="separator:a1a709b1fbf97db6da5740b7aeac1fad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537d8c1c7d64aebc960da0f0b34ef44c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a537d8c1c7d64aebc960da0f0b34ef44c">destroyTiles</a> (self, popList)</td></tr>
+<tr class="memdesc:a537d8c1c7d64aebc960da0f0b34ef44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method pops all the tiles on the popList.  <a href="#a537d8c1c7d64aebc960da0f0b34ef44c">More...</a><br /></td></tr>
+<tr class="separator:a537d8c1c7d64aebc960da0f0b34ef44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718f3d710ba5aa31fb49da72d37c450a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a718f3d710ba5aa31fb49da72d37c450a">exit</a> (self)</td></tr>
+<tr class="memdesc:a718f3d710ba5aa31fb49da72d37c450a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method stops timers and ends the game when the exit of level 16 is reached.  <a href="#a718f3d710ba5aa31fb49da72d37c450a">More...</a><br /></td></tr>
+<tr class="separator:a718f3d710ba5aa31fb49da72d37c450a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218749642f3aec8d8daaaf6be61cf0a9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a218749642f3aec8d8daaaf6be61cf0a9">stopTimers</a> (self)</td></tr>
+<tr class="memdesc:a218749642f3aec8d8daaaf6be61cf0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method stops all the timers.  <a href="#a218749642f3aec8d8daaaf6be61cf0a9">More...</a><br /></td></tr>
+<tr class="separator:a218749642f3aec8d8daaaf6be61cf0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b557053364da15e7a150537bf37757"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#aa7b557053364da15e7a150537bf37757">restartNextLevel</a> (self)</td></tr>
+<tr class="memdesc:aa7b557053364da15e7a150537bf37757"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initialized a new next level.  <a href="#aa7b557053364da15e7a150537bf37757">More...</a><br /></td></tr>
+<tr class="separator:aa7b557053364da15e7a150537bf37757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a962e440ddb9556ca233a686d3d9f1be0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a962e440ddb9556ca233a686d3d9f1be0">restartSameLevel</a> (self)</td></tr>
+<tr class="memdesc:a962e440ddb9556ca233a686d3d9f1be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method initializes a new same level.  <a href="#a962e440ddb9556ca233a686d3d9f1be0">More...</a><br /></td></tr>
+<tr class="separator:a962e440ddb9556ca233a686d3d9f1be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b2b3031f0df523ba3dbeab4bfd3fb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69b2b3031f0df523ba3dbeab4bfd3fb2"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a69b2b3031f0df523ba3dbeab4bfd3fb2">updateScore</a> (self, killedEnemies)</td></tr>
+<tr class="memdesc:a69b2b3031f0df523ba3dbeab4bfd3fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method updates the score in status bar. <br /></td></tr>
+<tr class="separator:a69b2b3031f0df523ba3dbeab4bfd3fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a27183b76d873505d619fc6b78935b9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a6a27183b76d873505d619fc6b78935b9">getScoreOfKilledEnemies</a> (self, killedEnemies)</td></tr>
+<tr class="memdesc:a6a27183b76d873505d619fc6b78935b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to calculate the score the user gets when a bomb detonates.  <a href="#a6a27183b76d873505d619fc6b78935b9">More...</a><br /></td></tr>
+<tr class="separator:a6a27183b76d873505d619fc6b78935b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1320cdff86fe637b41b8973cf6bcb499"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#a1320cdff86fe637b41b8973cf6bcb499">saveBomberman</a> (self)</td></tr>
+<tr class="memdesc:a1320cdff86fe637b41b8973cf6bcb499"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the level.  <a href="#a1320cdff86fe637b41b8973cf6bcb499">More...</a><br /></td></tr>
+<tr class="separator:a1320cdff86fe637b41b8973cf6bcb499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa56e069dac6b7cdc60ba45e91d1745c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1board_1_1_board.html#afa56e069dac6b7cdc60ba45e91d1745c">timeoutEvent</a> (self)</td></tr>
+<tr class="memdesc:afa56e069dac6b7cdc60ba45e91d1745c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method decreses the time by 1 until the time is 0.  <a href="#afa56e069dac6b7cdc60ba45e91d1745c">More...</a><br /></td></tr>
+<tr class="separator:afa56e069dac6b7cdc60ba45e91d1745c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -255,8 +261,11 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>resetTimerSignal</b>
 tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSignal</b> = QtCore.pyqtSignal(int)</td></tr>
 <tr class="separator:adbdb04e00742a09c938f8cb3f751e1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a06616b31d53421ff4ab628bc370a3717"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class displays the board for the gameplay. </p>
+<p>It handles drawing each tile. It also contains timers and methods that allow movement of bomberman and enemies. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a60ef4247af25957bcaaa0469eb222ac1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -275,7 +284,26 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a392550a2ae67a3e6726a4afc83f4fc77"></a>
+<a class="anchor" id="a68ece335899ccecebb6ecb39c339d180"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.death </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method takes care of bomberman's death. </p>
+<p>It stops the timers and removes a life. If lives equals 0 then it ends the game. If not, it reinitializes the current level. </p>
+
+</div>
+</div>
+<a class="anchor" id="a537d8c1c7d64aebc960da0f0b34ef44c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -304,7 +332,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="aa69b375e6720c302a475b6e3fa307818"></a>
+<a class="anchor" id="a801979e5433ee99d7e36a4c648b3f930"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -323,7 +351,101 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a47b036053ac0ecb1aac40c5035aeb11f"></a>
+<a class="anchor" id="ac85b9f4f5c9a91b200fb7e9e75d69d29"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.drawImages </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method draws the image to the board. </p>
+<p>painter  shape The picture that is to be drawn.  x The x coordinate of the drawing.  y The y coordinate of the drawing. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5e6978f5baf0f94e864867df77d5c891"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.drawSquare </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>shape</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method draws squares the represent Bricks, Concrete and Empty Tiles. </p>
+<p>painter  shape The picture that is to be drawn.  x The x coordinate of the drawing.  y The y coordinate of the drawing. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1a709b1fbf97db6da5740b7aeac1fad8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -352,7 +474,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a6591f612888730234201162cee1247ee"></a>
+<a class="anchor" id="a718f3d710ba5aa31fb49da72d37c450a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -370,7 +492,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a1ae6596d1345af2690e5cb5c3b210b05"></a>
+<a class="anchor" id="a6a27183b76d873505d619fc6b78935b9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -404,7 +526,62 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a72c23c7368eee625a0f6a192b289cb3a"></a>
+<a class="anchor" id="a3ea0ac2d9356f9ebe6a63176b2351b5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.initBoard </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method initializes the board. </p>
+<p>It initializes the timers too. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2b87c8bc2da1173e07467996e4facbc4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.initLevel </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method initializes a new level. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9088e838b9bb196505af60eb1598495c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.initStatusBar </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method initializes the status bar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a656fb42b7e9a4e4b5aae20c261170fe3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -431,14 +608,18 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 <p>This method calls methods after keys are pressed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>The key that has been pressed P: self.pause() is called if pause menu isn't open. Arrow keys: <a class="el" href="classsrc_1_1board_1_1_board.html#ad540d95ae1e8082d4f7837a2886b59a9" title="A method that moves bomberman one tile. ">tryMove()</a> is called. Space or Z: setBomb() is called. X or B: <a class="el" href="classsrc_1_1board_1_1_board.html#aa69b375e6720c302a475b6e3fa307818" title="This method detonates the first bomb in bombQueue. ">detonateBomb()</a> is called. </td></tr>
+    <tr><td class="paramname">event</td><td>The key that has been pressed<br />
+ P: self.pause() is called if pause menu isn't open.<br />
+ Arrow keys: <a class="el" href="classsrc_1_1board_1_1_board.html#a663a599889dead3d876c4e4d79123b8e" title="A method that moves bomberman one tile. ">tryMove()</a> is called.<br />
+ Space or Z: setBomb() is called.<br />
+ X or B: <a class="el" href="classsrc_1_1board_1_1_board.html#a801979e5433ee99d7e36a4c648b3f930" title="This method detonates the first bomb in bombQueue. ">detonateBomb()</a> is called. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a21abf126d870b63c6620faf5e9544620"></a>
+<a class="anchor" id="a4e6bd40bde952bdbe12653269da596f5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -479,7 +660,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="af0bf5c1fff44cecd5410dcba5a3e75a8"></a>
+<a class="anchor" id="abcf6e3affb8c4b83c6d0ab28e265b4d5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -513,7 +694,125 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a34a6889cf6a222ed0a64697301d98fa3"></a>
+<a class="anchor" id="aea8bc4036301719acbca3f62aa98e125"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to draw the board. </p>
+<p>event This method uses bomberman's x position to decide what part of the board to draw. It then draws each square in the visible portion of the board. </p>
+
+</div>
+</div>
+<a class="anchor" id="a29473ffbf635f04428be1349d177eedc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.pause </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method pauses the game. </p>
+<p>It stops the timers and sends a signal to open the pauseMenu. </p>
+
+</div>
+</div>
+<a class="anchor" id="af2e08aecc48abfbb38dfcc2dbc11b7cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.popTileAt </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method pops a tile at coordinates x and y and then updates the board. </p>
+<p>x The x coordinate to be popped.  y The y coordinate to be popped. </p>
+
+</div>
+</div>
+<a class="anchor" id="a84399c357c601a4cf2f64dd096c2adc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.popTileAtWithoutUpdate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method pops a tile at coordinates x and y without updating the board. </p>
+<p>x The x coordinate to be popped.  y The y coordinate to be popped. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7b557053364da15e7a150537bf37757"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -531,7 +830,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="aceab5432b56d92ed4d90120f09215869"></a>
+<a class="anchor" id="a962e440ddb9556ca233a686d3d9f1be0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -549,7 +848,162 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="add12f1a97d8fb399f3bc2beff010357c"></a>
+<a class="anchor" id="a1320cdff86fe637b41b8973cf6bcb499"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.saveBomberman </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method returns the level. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac40120a47f2787cb730e2d945e8833ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.setTileAt </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method pushes a tile and then updates the board. </p>
+<p>x The x coordinate to be popped.  y The y coordinate to be popped.  tile The tile that is to be pushed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a78d9960666f0be862cad75c855a38709"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.setTileAtWithoutUpdate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method pushes a tile without updating the board. </p>
+<p>x The x coordinate to be popped.  y The y coordinate to be popped.  tile The tile that is to be pushed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1e964f3382db079501c6b4afa16348e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.squareHeight </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method returns the height of a single tile. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4d2d336061f0136c40c42f491e11ad02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.squareWidth </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method returns the width of a single tile. </p>
+
+</div>
+</div>
+<a class="anchor" id="a97be76e6fb7312dddd9c86290fc3a1db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.start </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method starts the board. </p>
+<p>It sets isPaused to false and allows bomberman to begin moving. It also starts all the timers. </p>
+
+</div>
+</div>
+<a class="anchor" id="a39006efbb358f5be11d11c3a2775a2f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -577,7 +1031,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="a2bc2ed380897c70960a12925b80cf2b8"></a>
+<a class="anchor" id="a218749642f3aec8d8daaaf6be61cf0a9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -595,7 +1049,61 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 
 </div>
 </div>
-<a class="anchor" id="ad540d95ae1e8082d4f7837a2886b59a9"></a>
+<a class="anchor" id="afc740240caba216e9b416bdae675aab6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.tileAt </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method the tile which is at specific coordinates. </p>
+<p>x The x coordinate to be popped.  y The y coordinate to be popped. </p>
+
+</div>
+</div>
+<a class="anchor" id="afa56e069dac6b7cdc60ba45e91d1745c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.board.Board.timeoutEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method decreses the time by 1 until the time is 0. </p>
+<p>When time is equal to 0 setSuperChaos is called and a flag is set so the time does not decrease below 0. </p>
+
+</div>
+</div>
+<a class="anchor" id="a663a599889dead3d876c4e4d79123b8e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -642,7 +1150,7 @@ tuple&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDbSigna
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:16 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

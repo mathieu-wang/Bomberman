@@ -1,0 +1,390 @@
+\hypertarget{classsrc_1_1database_1_1_database}{}\section{src.\+database.\+Database Class Reference}
+\label{classsrc_1_1database_1_1_database}\index{src.\+database.\+Database@{src.\+database.\+Database}}
+
+
+Class that handles the interface with database.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classsrc_1_1database_1_1_database_aab829b3386356e12ed7276c63e168269}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\begin{DoxyCompactList}\small\item\em Constructor that connects to a sqlite database, and gets the \textquotesingle{}user\textquotesingle{} table from it. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a9f2df42cc938c2eb8186104b2831afaa}{create\+User} (self, name, username, password)
+\begin{DoxyCompactList}\small\item\em Create a new user in the database. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a374cf7a2b0dc2d1764fea49ef248544c}{update\+User\+Account} (self, old\+Username, new\+Username, new\+Realname, new\+Password)
+\begin{DoxyCompactList}\small\item\em Update user account information with new username, realname, and password. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_ab38097adf50de7cdc08953819dc59d91}{delete\+Account} (self, username)
+\begin{DoxyCompactList}\small\item\em Delete the account from the database. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a801015f444b4267274d219381e134575}{check\+User} (self, username, password)
+\begin{DoxyCompactList}\small\item\em Check whether the provided credentials correspond to a valid user account in the database. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a12d75fd9334f108d345cdbd3ee8816a9}{has\+User} (self, username)
+\begin{DoxyCompactList}\small\item\em Check whether the provided user name exists in the database. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_ad5f2e607e41b9b4d1e956d1a9a229afa}{is\+Valid\+Username} (self, username)
+\begin{DoxyCompactList}\small\item\em Check whether the username is at least 6 character long. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_ae1b03c0a444fc7600f6d6333b0270437}{is\+Valid\+Password} (self, password)
+\begin{DoxyCompactList}\small\item\em Check whether a password is valid. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1database_1_1_database_a5bcb118c8b6079d851a6adb429eae756}{}def {\bfseries create\+User\+Accounts\+For\+Demo} (self)\label{classsrc_1_1database_1_1_database_a5bcb118c8b6079d851a6adb429eae756}
+
+\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a18158514f653442eb3ff7bb61b5f5213}{get\+User\+Account} (self, username)
+\begin{DoxyCompactList}\small\item\em Get the User\+Account object as a dictionary from the database. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a1e26b95f30986a81d197e118420d0865}{get\+Top\+Ten\+Users} (self)
+\begin{DoxyCompactList}\small\item\em Get top players sorted by cumulative score. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a20befecd8b13cac9a87e59b759a5406a}{get\+Highest\+Unlocked\+Level} (self, username)
+\begin{DoxyCompactList}\small\item\em Get highest unlocked level by the user. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a0910f9e8e11bf94dcf9a24489e6f4dde}{save\+Game} (self, username, gamename, board)
+\begin{DoxyCompactList}\small\item\em Save current game state into a file. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_a8f48d5d1c090840389e7cbc556d635b5}{load\+List\+Saved\+Games} (self, username)
+\begin{DoxyCompactList}\small\item\em Load the list of previously saved games for an user. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_abc4a7e44498f2e3ede0c52a43725526d}{load\+Game} (self, username, gamename)
+\begin{DoxyCompactList}\small\item\em Load a specific game for an user. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_aea1e0de87f1e08cf83d31a2179cf0c12}{update\+User\+Score} (self, username, score\+To\+Add)
+\begin{DoxyCompactList}\small\item\em Update the user\textquotesingle{}s cumulative score in the database. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1database_1_1_database_adf6d7572d1782bedb86e6880c24e8e9e}{increment\+Num\+Of\+Games\+Played} (self, username)
+\begin{DoxyCompactList}\small\item\em Increment the total number of games played for the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1database_1_1_database_a3b1c6af40f8d2c934bf2d63d71e657e5}{}{\bfseries db}\label{classsrc_1_1database_1_1_database_a3b1c6af40f8d2c934bf2d63d71e657e5}
+
+\item 
+\hypertarget{classsrc_1_1database_1_1_database_a7b7d83448ad1895241783bf04a5a1b6c}{}{\bfseries user\+Table}\label{classsrc_1_1database_1_1_database_a7b7d83448ad1895241783bf04a5a1b6c}
+
+\item 
+\hypertarget{classsrc_1_1database_1_1_database_a50ceb943a93153787b40bb9c037049aa}{}{\bfseries game}\label{classsrc_1_1database_1_1_database_a50ceb943a93153787b40bb9c037049aa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that handles the interface with database. 
+
+An instance of this class connects to a local sqlite database with a single table. The table stores each attribute of \hyperlink{classsrc_1_1models_1_1_user_account}{models.\+User\+Account} as a column, with the username being the primary key. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsrc_1_1database_1_1_database_aab829b3386356e12ed7276c63e168269}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{\+\_\+\+\_\+init\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{test = {\ttfamily False}}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_aab829b3386356e12ed7276c63e168269}
+
+
+Constructor that connects to a sqlite database, and gets the \textquotesingle{}user\textquotesingle{} table from it. 
+
+It creates the database and the table if it cannot find them. 
+\begin{DoxyParams}{Parameters}
+{\em test} & By default False. If set to True, the database will be in memory instead of on the file system. Used in unit tests. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1database_1_1_database_a801015f444b4267274d219381e134575}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!check\+User@{check\+User}}
+\index{check\+User@{check\+User}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{check\+User}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+check\+User (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username, }
+\item[{}]{password}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a801015f444b4267274d219381e134575}
+
+
+Check whether the provided credentials correspond to a valid user account in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username to be checked \\
+\hline
+{\em password} & the password to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the username exists, False otherwise 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_a9f2df42cc938c2eb8186104b2831afaa}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!create\+User@{create\+User}}
+\index{create\+User@{create\+User}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{create\+User}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+create\+User (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{name, }
+\item[{}]{username, }
+\item[{}]{password}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a9f2df42cc938c2eb8186104b2831afaa}
+
+
+Create a new user in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the real name \\
+\hline
+{\em username} & the username \\
+\hline
+{\em password} & the password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if user account properly created, False if user already exists 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_ab38097adf50de7cdc08953819dc59d91}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!delete\+Account@{delete\+Account}}
+\index{delete\+Account@{delete\+Account}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{delete\+Account}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+delete\+Account (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_ab38097adf50de7cdc08953819dc59d91}
+
+
+Delete the account from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user we want to delete \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_a20befecd8b13cac9a87e59b759a5406a}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!get\+Highest\+Unlocked\+Level@{get\+Highest\+Unlocked\+Level}}
+\index{get\+Highest\+Unlocked\+Level@{get\+Highest\+Unlocked\+Level}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{get\+Highest\+Unlocked\+Level}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+get\+Highest\+Unlocked\+Level (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a20befecd8b13cac9a87e59b759a5406a}
+
+
+Get highest unlocked level by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user for whom we want to get the highest unlocked level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the highest unlocked level of that user 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_a1e26b95f30986a81d197e118420d0865}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!get\+Top\+Ten\+Users@{get\+Top\+Ten\+Users}}
+\index{get\+Top\+Ten\+Users@{get\+Top\+Ten\+Users}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{get\+Top\+Ten\+Users}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+get\+Top\+Ten\+Users (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a1e26b95f30986a81d197e118420d0865}
+
+
+Get top players sorted by cumulative score. 
+
+Same score is counted as two. Users with the same score are sorted alphabetically (by username). \begin{DoxyReturn}{Returns}
+a iterable list of User\+Account objects as dictionaries 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_a18158514f653442eb3ff7bb61b5f5213}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!get\+User\+Account@{get\+User\+Account}}
+\index{get\+User\+Account@{get\+User\+Account}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{get\+User\+Account}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+get\+User\+Account (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a18158514f653442eb3ff7bb61b5f5213}
+
+
+Get the User\+Account object as a dictionary from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username used as a key to retrieve the User\+Account \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the User\+Account object as a dictionary 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_a12d75fd9334f108d345cdbd3ee8816a9}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!has\+User@{has\+User}}
+\index{has\+User@{has\+User}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{has\+User}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+has\+User (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a12d75fd9334f108d345cdbd3ee8816a9}
+
+
+Check whether the provided user name exists in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username to be checked \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_adf6d7572d1782bedb86e6880c24e8e9e}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!increment\+Num\+Of\+Games\+Played@{increment\+Num\+Of\+Games\+Played}}
+\index{increment\+Num\+Of\+Games\+Played@{increment\+Num\+Of\+Games\+Played}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{increment\+Num\+Of\+Games\+Played}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+increment\+Num\+Of\+Games\+Played (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_adf6d7572d1782bedb86e6880c24e8e9e}
+
+
+Increment the total number of games played for the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user for whom we want to increment the number of games played \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_ae1b03c0a444fc7600f6d6333b0270437}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!is\+Valid\+Password@{is\+Valid\+Password}}
+\index{is\+Valid\+Password@{is\+Valid\+Password}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{is\+Valid\+Password}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+is\+Valid\+Password (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{password}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_ae1b03c0a444fc7600f6d6333b0270437}
+
+
+Check whether a password is valid. 
+
+A valid password must be at least 8 characters long. In addition, it must necessarily include a minimum of 1 Upper case letter, 1 Lower case letter, 1 digits and 1 special character. 
+\begin{DoxyParams}{Parameters}
+{\em password} & the password to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the password is valid, False otherwise 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_ad5f2e607e41b9b4d1e956d1a9a229afa}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!is\+Valid\+Username@{is\+Valid\+Username}}
+\index{is\+Valid\+Username@{is\+Valid\+Username}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{is\+Valid\+Username}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+is\+Valid\+Username (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_ad5f2e607e41b9b4d1e956d1a9a229afa}
+
+
+Check whether the username is at least 6 character long. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the username is valid, False otherwise 
+\end{DoxyReturn}
+\hypertarget{classsrc_1_1database_1_1_database_abc4a7e44498f2e3ede0c52a43725526d}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!load\+Game@{load\+Game}}
+\index{load\+Game@{load\+Game}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{load\+Game}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+load\+Game (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username, }
+\item[{}]{gamename}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_abc4a7e44498f2e3ede0c52a43725526d}
+
+
+Load a specific game for an user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user for whom we want to load the game \\
+\hline
+{\em gamename} & the name of the game we want to load \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_a8f48d5d1c090840389e7cbc556d635b5}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!load\+List\+Saved\+Games@{load\+List\+Saved\+Games}}
+\index{load\+List\+Saved\+Games@{load\+List\+Saved\+Games}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{load\+List\+Saved\+Games}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+load\+List\+Saved\+Games (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a8f48d5d1c090840389e7cbc556d635b5}
+
+
+Load the list of previously saved games for an user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user for whom we want to load the list of saved game \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_a0910f9e8e11bf94dcf9a24489e6f4dde}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!save\+Game@{save\+Game}}
+\index{save\+Game@{save\+Game}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{save\+Game}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+save\+Game (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username, }
+\item[{}]{gamename, }
+\item[{}]{board}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a0910f9e8e11bf94dcf9a24489e6f4dde}
+
+
+Save current game state into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user for whom we want to save the game \\
+\hline
+{\em gamename} & the name of the game we want to save \\
+\hline
+{\em board} & the current board containing all game state that needs to be saved \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_a374cf7a2b0dc2d1764fea49ef248544c}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!update\+User\+Account@{update\+User\+Account}}
+\index{update\+User\+Account@{update\+User\+Account}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{update\+User\+Account}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+update\+User\+Account (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{old\+Username, }
+\item[{}]{new\+Username, }
+\item[{}]{new\+Realname, }
+\item[{}]{new\+Password}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_a374cf7a2b0dc2d1764fea49ef248544c}
+
+
+Update user account information with new username, realname, and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Username} & the old user name with which we retrieve the account \\
+\hline
+{\em new\+Username} & the new user name we want to set \\
+\hline
+{\em new\+Realname} & the new real name we want to set \\
+\hline
+{\em new\+Password} & the new password we want to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1database_1_1_database_aea1e0de87f1e08cf83d31a2179cf0c12}{}\index{src\+::database\+::\+Database@{src\+::database\+::\+Database}!update\+User\+Score@{update\+User\+Score}}
+\index{update\+User\+Score@{update\+User\+Score}!src\+::database\+::\+Database@{src\+::database\+::\+Database}}
+\subsubsection[{update\+User\+Score}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+database.\+Database.\+update\+User\+Score (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{username, }
+\item[{}]{score\+To\+Add}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1database_1_1_database_aea1e0de87f1e08cf83d31a2179cf0c12}
+
+
+Update the user\textquotesingle{}s cumulative score in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the user for whom we want to update the score \\
+\hline
+{\em score\+To\+Add} & the score we want to add to the existing cumulative score in the database \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/database.\+py\end{DoxyCompactItemize}

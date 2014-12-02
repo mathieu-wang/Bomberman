@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,18 +93,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#ab4fe8d2bc18589c5e6c2fa72a86f0101">backToMainMenu</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b>(self, parent, username) (defined in <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a>)</td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a5852c765b18d5e6c28d5fdb7ebf80427">backToMainMenu</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a769225d8895542b2c7118110d7b2ff9d">backToMainMenuSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a3224111dd78be1b15cc943f41daef0cf">db</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a2ac0ca1cba0bbcc90d7bb67f4800c8a2">initUI</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a9d3cad83657dfc56af914d0717f13a3e">startLevel</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a85ba6c3a92e1f256f70186866f2795ac">initUI</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#aafc4b32a91edcdf2a10f5de32efbda2a">startLevel</a>(self, level)</td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a14a5a5bd905bb0d8e732a33bed71ef44">startLevelSignal</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#aee1d2148e23a2908c72c4a8f8ad0a98f">username</a></td><td class="entry"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html">src.level_menu.LevelMenu</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

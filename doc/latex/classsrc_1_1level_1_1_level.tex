@@ -1,0 +1,141 @@
+\hypertarget{classsrc_1_1level_1_1_level}{}\section{src.\+level.\+Level Class Reference}
+\label{classsrc_1_1level_1_1_level}\index{src.\+level.\+Level@{src.\+level.\+Level}}
+
+
+\hyperlink{classsrc_1_1level_1_1_level}{Level} object containing all the attributes and methods necessary to one level of gameplay.  
+
+
+Inheritance diagram for src.\+level.\+Level\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1level_1_1_level}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1level_1_1_level_ab6e52c74e02be818576be2ffd9040fe0}{}def \hyperlink{classsrc_1_1level_1_1_level_ab6e52c74e02be818576be2ffd9040fe0}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classsrc_1_1level_1_1_level_a7ec8be181d4558bc3f7b8c106a6aeb5a}{username}, \hyperlink{classsrc_1_1level_1_1_level_a8b26c1249a2d161c058595e789948bf9}{level\+Num})\label{classsrc_1_1level_1_1_level_ab6e52c74e02be818576be2ffd9040fe0}
+
+\begin{DoxyCompactList}\small\item\em Constructor of a level which takes a username and a level as argument. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a0df76bcc440bbab23e4ce754223177c5}{}def \hyperlink{classsrc_1_1level_1_1_level_a0df76bcc440bbab23e4ce754223177c5}{set\+New\+Level} (self)\label{classsrc_1_1level_1_1_level_a0df76bcc440bbab23e4ce754223177c5}
+
+\begin{DoxyCompactList}\small\item\em Reinitialize all of level\textquotesingle{}s variables and bomberman\textquotesingle{}s variable to start new level. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a9af98db5112ae2fbd4a9f44ae0bcbe83}{}def \hyperlink{classsrc_1_1level_1_1_level_a9af98db5112ae2fbd4a9f44ae0bcbe83}{gain\+Power\+Up} (self)\label{classsrc_1_1level_1_1_level_a9af98db5112ae2fbd4a9f44ae0bcbe83}
+
+\begin{DoxyCompactList}\small\item\em Activates the current level\textquotesingle{}s powerup and add attribute to bomberman. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a9f1a64a223be266425f6100e4728df3a}{}def \hyperlink{classsrc_1_1level_1_1_level_a9f1a64a223be266425f6100e4728df3a}{tile\+At} (self, x, y)\label{classsrc_1_1level_1_1_level_a9f1a64a223be266425f6100e4728df3a}
+
+\begin{DoxyCompactList}\small\item\em Return tile at x and y from the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a1b0a565e03f055cd93abe6faeefd3b4f}{}def \hyperlink{classsrc_1_1level_1_1_level_a1b0a565e03f055cd93abe6faeefd3b4f}{set\+Tile\+At} (self, x, y, tile)\label{classsrc_1_1level_1_1_level_a1b0a565e03f055cd93abe6faeefd3b4f}
+
+\begin{DoxyCompactList}\small\item\em Set tile at x and y on the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a79a922117841f374126a4ab727a65ef1}{}def \hyperlink{classsrc_1_1level_1_1_level_a79a922117841f374126a4ab727a65ef1}{pop\+Tile\+At} (self, x, y)\label{classsrc_1_1level_1_1_level_a79a922117841f374126a4ab727a65ef1}
+
+\begin{DoxyCompactList}\small\item\em Remove tile at x and y on the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_aa1fdbf2a27cb66fffd27bc2598449072}{}def \hyperlink{classsrc_1_1level_1_1_level_aa1fdbf2a27cb66fffd27bc2598449072}{set\+Bomb} (self)\label{classsrc_1_1level_1_1_level_aa1fdbf2a27cb66fffd27bc2598449072}
+
+\begin{DoxyCompactList}\small\item\em Lay a bomb at bomberman\textquotesingle{}s current position. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ab1083324efb6eddfdfc04316a85f7f15}{}def \hyperlink{classsrc_1_1level_1_1_level_ab1083324efb6eddfdfc04316a85f7f15}{clear\+Board} (self)\label{classsrc_1_1level_1_1_level_ab1083324efb6eddfdfc04316a85f7f15}
+
+\begin{DoxyCompactList}\small\item\em Clear all tiles on the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a5cacfb3b893af155c71dfffc3ae042bd}{}def \hyperlink{classsrc_1_1level_1_1_level_a5cacfb3b893af155c71dfffc3ae042bd}{clear\+Bombs} (self)\label{classsrc_1_1level_1_1_level_a5cacfb3b893af155c71dfffc3ae042bd}
+
+\begin{DoxyCompactList}\small\item\em Clear all bombs from the bomb queue. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ad43e3dab276d7ea38b268f22827b0236}{}def \hyperlink{classsrc_1_1level_1_1_level_ad43e3dab276d7ea38b268f22827b0236}{set\+Concrete} (self)\label{classsrc_1_1level_1_1_level_ad43e3dab276d7ea38b268f22827b0236}
+
+\begin{DoxyCompactList}\small\item\em Set concrete tiles systematically on the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a37d135e2fd7961eb5f2921447d1c8243}{}def \hyperlink{classsrc_1_1level_1_1_level_a37d135e2fd7961eb5f2921447d1c8243}{set\+Exit} (self)\label{classsrc_1_1level_1_1_level_a37d135e2fd7961eb5f2921447d1c8243}
+
+\begin{DoxyCompactList}\small\item\em Set exit tile randomly on the board and set a brick on top of it. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a6e5e52649e074784152f5fe8f94ded08}{}def \hyperlink{classsrc_1_1level_1_1_level_a6e5e52649e074784152f5fe8f94ded08}{set\+Level\+Info} (self)\label{classsrc_1_1level_1_1_level_a6e5e52649e074784152f5fe8f94ded08}
+
+\begin{DoxyCompactList}\small\item\em Fetch a the list of enemies and powerup matching the current level number. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a7ab32312eb682ecce07ae83551c051e1}{}def \hyperlink{classsrc_1_1level_1_1_level_a7ab32312eb682ecce07ae83551c051e1}{set\+Powerup} (self)\label{classsrc_1_1level_1_1_level_a7ab32312eb682ecce07ae83551c051e1}
+
+\begin{DoxyCompactList}\small\item\em Set powerup tile randomly on the board and set a brick on top of it. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ae430589f114a19e13c2667e8ef37e266}{}def \hyperlink{classsrc_1_1level_1_1_level_ae430589f114a19e13c2667e8ef37e266}{set\+Brick} (self)\label{classsrc_1_1level_1_1_level_ae430589f114a19e13c2667e8ef37e266}
+
+\begin{DoxyCompactList}\small\item\em Set brick tiles randomly on the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a76cfaab350e8f7699f054e9e9423de6c}{}def \hyperlink{classsrc_1_1level_1_1_level_a76cfaab350e8f7699f054e9e9423de6c}{set\+Bomberman} (self)\label{classsrc_1_1level_1_1_level_a76cfaab350e8f7699f054e9e9423de6c}
+
+\begin{DoxyCompactList}\small\item\em Set bomberman at x and y on the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_af60d85055b9f07935312e581b5316364}{}def \hyperlink{classsrc_1_1level_1_1_level_af60d85055b9f07935312e581b5316364}{set\+Enemies} (self)\label{classsrc_1_1level_1_1_level_af60d85055b9f07935312e581b5316364}
+
+\begin{DoxyCompactList}\small\item\em Set enemies randomly on the map. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_acd226ddc877d5bf1e18c4d2a7e790fb3}{}def \hyperlink{classsrc_1_1level_1_1_level_acd226ddc877d5bf1e18c4d2a7e790fb3}{clear\+Enemies} (self)\label{classsrc_1_1level_1_1_level_acd226ddc877d5bf1e18c4d2a7e790fb3}
+
+\begin{DoxyCompactList}\small\item\em Clear all enemies on the map and in the list of enemies and list of enemies type. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a4b318116c4f5b2bdad46be495e21c53d}{}def \hyperlink{classsrc_1_1level_1_1_level_a4b318116c4f5b2bdad46be495e21c53d}{set\+Chaos} (self)\label{classsrc_1_1level_1_1_level_a4b318116c4f5b2bdad46be495e21c53d}
+
+\begin{DoxyCompactList}\small\item\em Set 8 mega enemies everywhere, used when bomb detonates an exit tile or powerup tile. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_acf03686c3657b7e1a5436bbf1b721bf2}{}def \hyperlink{classsrc_1_1level_1_1_level_acf03686c3657b7e1a5436bbf1b721bf2}{set\+Super\+Chaos} (self)\label{classsrc_1_1level_1_1_level_acf03686c3657b7e1a5436bbf1b721bf2}
+
+\begin{DoxyCompactList}\small\item\em Set 8 maximum level enemies everywhere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1level_1_1_level_a07cb236f1acaa42ea5ad2c20fec75c3b}{}\hyperlink{classsrc_1_1level_1_1_level_a07cb236f1acaa42ea5ad2c20fec75c3b}{bomberman}\label{classsrc_1_1level_1_1_level_a07cb236f1acaa42ea5ad2c20fec75c3b}
+
+\begin{DoxyCompactList}\small\item\em Initialize bomberman. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a7ec8be181d4558bc3f7b8c106a6aeb5a}{}\hyperlink{classsrc_1_1level_1_1_level_a7ec8be181d4558bc3f7b8c106a6aeb5a}{username}\label{classsrc_1_1level_1_1_level_a7ec8be181d4558bc3f7b8c106a6aeb5a}
+
+\begin{DoxyCompactList}\small\item\em String Player\textquotesingle{}s username. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a8b26c1249a2d161c058595e789948bf9}{}\hyperlink{classsrc_1_1level_1_1_level_a8b26c1249a2d161c058595e789948bf9}{level\+Num}\label{classsrc_1_1level_1_1_level_a8b26c1249a2d161c058595e789948bf9}
+
+\begin{DoxyCompactList}\small\item\em Integer the level\textquotesingle{}s number. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a65841b782b1342d40aa32c3a788cf6b0}{}\hyperlink{classsrc_1_1level_1_1_level_a65841b782b1342d40aa32c3a788cf6b0}{is\+Initialized}\label{classsrc_1_1level_1_1_level_a65841b782b1342d40aa32c3a788cf6b0}
+
+\begin{DoxyCompactList}\small\item\em Boolean True if the game has started. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_aa09aade96eec6dbcdf4b04754a3fcf17}{}\hyperlink{classsrc_1_1level_1_1_level_aa09aade96eec6dbcdf4b04754a3fcf17}{board}\label{classsrc_1_1level_1_1_level_aa09aade96eec6dbcdf4b04754a3fcf17}
+
+\begin{DoxyCompactList}\small\item\em Nested List of Tile(s) representing the game board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ad6cc50ff3008c2fd8497b22070d7da64}{}\hyperlink{classsrc_1_1level_1_1_level_ad6cc50ff3008c2fd8497b22070d7da64}{bomb\+Queue}\label{classsrc_1_1level_1_1_level_ad6cc50ff3008c2fd8497b22070d7da64}
+
+\begin{DoxyCompactList}\small\item\em Queue containing the coords and time left of bombs laid by bomberman. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ac6d2065a5cd3ddd4348bb7f6394a0b46}{}\hyperlink{classsrc_1_1level_1_1_level_ac6d2065a5cd3ddd4348bb7f6394a0b46}{flash\+Queue}\label{classsrc_1_1level_1_1_level_ac6d2065a5cd3ddd4348bb7f6394a0b46}
+
+\begin{DoxyCompactList}\small\item\em Queue containing the coords and time left of flame tiles produced by bomb(s) \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a5445bee2b7b93a1caa1a0a5bf3455db9}{}\hyperlink{classsrc_1_1level_1_1_level_a5445bee2b7b93a1caa1a0a5bf3455db9}{power\+Up\+Coord}\label{classsrc_1_1level_1_1_level_a5445bee2b7b93a1caa1a0a5bf3455db9}
+
+\begin{DoxyCompactList}\small\item\em List coordinates of the powerup tile. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ab0595b7e689e25d540f0f486413e0514}{}\hyperlink{classsrc_1_1level_1_1_level_ab0595b7e689e25d540f0f486413e0514}{exit\+Coord}\label{classsrc_1_1level_1_1_level_ab0595b7e689e25d540f0f486413e0514}
+
+\begin{DoxyCompactList}\small\item\em List coordinates of the exit tile. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a50126ed45ccd7be41b5b80a4bf821028}{}\hyperlink{classsrc_1_1level_1_1_level_a50126ed45ccd7be41b5b80a4bf821028}{power\+Up}\label{classsrc_1_1level_1_1_level_a50126ed45ccd7be41b5b80a4bf821028}
+
+\begin{DoxyCompactList}\small\item\em Integer type of powerup. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a0a652366b9fe32851d20915af1dbc0f3}{}\hyperlink{classsrc_1_1level_1_1_level_a0a652366b9fe32851d20915af1dbc0f3}{number\+Enemies}\label{classsrc_1_1level_1_1_level_a0a652366b9fe32851d20915af1dbc0f3}
+
+\begin{DoxyCompactList}\small\item\em Integer number of enemies in the board. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_ad45aaceea3034ea0e83e1627a47ea2d2}{}\hyperlink{classsrc_1_1level_1_1_level_ad45aaceea3034ea0e83e1627a47ea2d2}{list\+Enemies}\label{classsrc_1_1level_1_1_level_ad45aaceea3034ea0e83e1627a47ea2d2}
+
+\begin{DoxyCompactList}\small\item\em List of all enemies in the board. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1level_1_1_level_a198d86791a4f4a570909d80490057ae9}{list\+Type\+Enemies}
+\begin{DoxyCompactList}\small\item\em List of Integer all enemies by type, e.\+g. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a0272ba87f68c6b056d20751096f576d9}{}\hyperlink{classsrc_1_1level_1_1_level_a0272ba87f68c6b056d20751096f576d9}{time\+Left}\label{classsrc_1_1level_1_1_level_a0272ba87f68c6b056d20751096f576d9}
+
+\begin{DoxyCompactList}\small\item\em Integer time left in the game. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_aec7becdb4db743d76dbb993cb22a22bb}{}\hyperlink{classsrc_1_1level_1_1_level_aec7becdb4db743d76dbb993cb22a22bb}{time\+Done}\label{classsrc_1_1level_1_1_level_aec7becdb4db743d76dbb993cb22a22bb}
+
+\begin{DoxyCompactList}\small\item\em Boolean True if time has elapsed. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1level_1_1_level_a91123ee7d794996b5504dcb8550f7684}{}\hyperlink{classsrc_1_1level_1_1_level_a91123ee7d794996b5504dcb8550f7684}{score}\label{classsrc_1_1level_1_1_level_a91123ee7d794996b5504dcb8550f7684}
+
+\begin{DoxyCompactList}\small\item\em Integer player\textquotesingle{}s score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classsrc_1_1level_1_1_level}{Level} object containing all the attributes and methods necessary to one level of gameplay. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classsrc_1_1level_1_1_level_a198d86791a4f4a570909d80490057ae9}{}\index{src\+::level\+::\+Level@{src\+::level\+::\+Level}!list\+Type\+Enemies@{list\+Type\+Enemies}}
+\index{list\+Type\+Enemies@{list\+Type\+Enemies}!src\+::level\+::\+Level@{src\+::level\+::\+Level}}
+\subsubsection[{list\+Type\+Enemies}]{\setlength{\rightskip}{0pt plus 5cm}src.\+level.\+Level.\+list\+Type\+Enemies}\label{classsrc_1_1level_1_1_level_a198d86791a4f4a570909d80490057ae9}
+
+
+List of Integer all enemies by type, e.\+g. 
+
+value at index 0 represents the number of enemies of level 0 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/level.\+py\end{DoxyCompactItemize}

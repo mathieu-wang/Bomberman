@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,18 +109,18 @@ Inheritance diagram for src.leaderboard.Leaderboard:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2244b6bbae494de46daf3ec6ba8e9493"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2244b6bbae494de46daf3ec6ba8e9493"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:a2244b6bbae494de46daf3ec6ba8e9493"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac62f1304f5b4295d74af6d9e65d050c7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ac62f1304f5b4295d74af6d9e65d050c7">initUI</a></td></tr>
-<tr class="memdesc:ac62f1304f5b4295d74af6d9e65d050c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method initiaze the GUI of the leaderboard.  <a href="#ac62f1304f5b4295d74af6d9e65d050c7">More...</a><br /></td></tr>
-<tr class="separator:ac62f1304f5b4295d74af6d9e65d050c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1be63243d5b117e44b308d77bc596ec"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#af1be63243d5b117e44b308d77bc596ec">fillData</a></td></tr>
-<tr class="memdesc:af1be63243d5b117e44b308d77bc596ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">this methods fills the data in the table.  <a href="#af1be63243d5b117e44b308d77bc596ec">More...</a><br /></td></tr>
-<tr class="separator:af1be63243d5b117e44b308d77bc596ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88785a6d31f74d16e5c89d25ef4f00cd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#a88785a6d31f74d16e5c89d25ef4f00cd">back</a></td></tr>
-<tr class="memdesc:a88785a6d31f74d16e5c89d25ef4f00cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backSignal when called.  <a href="#a88785a6d31f74d16e5c89d25ef4f00cd">More...</a><br /></td></tr>
-<tr class="separator:a88785a6d31f74d16e5c89d25ef4f00cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7455e00826b66e77d6d56d0970af18b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7455e00826b66e77d6d56d0970af18b5"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, parent, <a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#abca7271f8092bb5672bf66c04971e04e">previousMenu</a>)</td></tr>
+<tr class="separator:a7455e00826b66e77d6d56d0970af18b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5925cc40678e00c529938ee5105d833"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ad5925cc40678e00c529938ee5105d833">initUI</a> (self)</td></tr>
+<tr class="memdesc:ad5925cc40678e00c529938ee5105d833"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method initiaze the GUI of the leaderboard.  <a href="#ad5925cc40678e00c529938ee5105d833">More...</a><br /></td></tr>
+<tr class="separator:ad5925cc40678e00c529938ee5105d833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf6394bf691c593a05dadf3969536ba"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#a0cf6394bf691c593a05dadf3969536ba">fillData</a> (self)</td></tr>
+<tr class="memdesc:a0cf6394bf691c593a05dadf3969536ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">this methods fills the data in the table.  <a href="#a0cf6394bf691c593a05dadf3969536ba">More...</a><br /></td></tr>
+<tr class="separator:a0cf6394bf691c593a05dadf3969536ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0e52e1b6809df57ea4b1a167c0257b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1leaderboard_1_1_leaderboard.html#ade0e52e1b6809df57ea4b1a167c0257b">back</a> (self)</td></tr>
+<tr class="memdesc:ade0e52e1b6809df57ea4b1a167c0257b"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backSignal when called.  <a href="#ade0e52e1b6809df57ea4b1a167c0257b">More...</a><br /></td></tr>
+<tr class="separator:ade0e52e1b6809df57ea4b1a167c0257b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -150,7 +152,7 @@ Static Public Attributes</h2></td></tr>
 <p>It includes the following buttons and fields that the user can interact with:<br />
 table: is a field that contains the top 10 players sorted by cumulative scores. backButton: emit backSignal when clicked. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a88785a6d31f74d16e5c89d25ef4f00cd"></a>
+<a class="anchor" id="ade0e52e1b6809df57ea4b1a167c0257b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -168,7 +170,7 @@ table: is a field that contains the top 10 players sorted by cumulative scores. 
 
 </div>
 </div>
-<a class="anchor" id="af1be63243d5b117e44b308d77bc596ec"></a>
+<a class="anchor" id="a0cf6394bf691c593a05dadf3969536ba"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -187,7 +189,7 @@ table: is a field that contains the top 10 players sorted by cumulative scores. 
 
 </div>
 </div>
-<a class="anchor" id="ac62f1304f5b4295d74af6d9e65d050c7"></a>
+<a class="anchor" id="ad5925cc40678e00c529938ee5105d833"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -291,7 +293,7 @@ table: is a field that contains the top 10 players sorted by cumulative scores. 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

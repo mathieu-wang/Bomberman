@@ -1,0 +1,129 @@
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard}{}\section{src.\+leaderboard.\+Leaderboard Class Reference}
+\label{classsrc_1_1leaderboard_1_1_leaderboard}\index{src.\+leaderboard.\+Leaderboard@{src.\+leaderboard.\+Leaderboard}}
+
+
+This class is a widget that displays the leader\+Board.  
+
+
+Inheritance diagram for src.\+leaderboard.\+Leaderboard\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1leaderboard_1_1_leaderboard}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_a7455e00826b66e77d6d56d0970af18b5}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, parent, \hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_abca7271f8092bb5672bf66c04971e04e}{previous\+Menu})\label{classsrc_1_1leaderboard_1_1_leaderboard_a7455e00826b66e77d6d56d0970af18b5}
+
+\item 
+def \hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_ad5925cc40678e00c529938ee5105d833}{init\+U\+I} (self)
+\begin{DoxyCompactList}\small\item\em this method initiaze the G\+U\+I of the leaderboard. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_a0cf6394bf691c593a05dadf3969536ba}{fill\+Data} (self)
+\begin{DoxyCompactList}\small\item\em this methods fills the data in the table. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_ade0e52e1b6809df57ea4b1a167c0257b}{back} (self)
+\begin{DoxyCompactList}\small\item\em emit back\+Signal when called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_abca7271f8092bb5672bf66c04971e04e}{previous\+Menu}
+\begin{DoxyCompactList}\small\item\em int used to keep track of the previous menu. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_aa059323abc817556528ae54dd5dbca6b}{db}
+\begin{DoxyCompactList}\small\item\em instance of the database. \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_a48b819acfb54637e30e709361ed32a85}{row\+Count}
+\begin{DoxyCompactList}\small\item\em the number of rows is set to 10. \end{DoxyCompactList}\item 
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_ac02b975859a4e3cb57eabe5206808a46}{}\hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_ac02b975859a4e3cb57eabe5206808a46}{col\+Count}\label{classsrc_1_1leaderboard_1_1_leaderboard_ac02b975859a4e3cb57eabe5206808a46}
+
+\begin{DoxyCompactList}\small\item\em the number of columns is set to 5 \end{DoxyCompactList}\item 
+\hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_a1d9b33cb94b8636038320f10d3d2fe30}{table}
+\begin{DoxyCompactList}\small\item\em Is a table of 5 columns (col\+Count) and 10 rows (row\+Count) which contains the top 10 scores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{classsrc_1_1leaderboard_1_1_leaderboard_a8c170d23c0124efb4c1d885720c926af}{back\+Signal} = Qt\+Core.\+pyqt\+Signal(int)
+\begin{DoxyCompactList}\small\item\em Signal which will be used to go back to the previous menu based on an int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a widget that displays the leader\+Board. 
+
+It includes the following buttons and fields that the user can interact with\+:~\newline
+table\+: is a field that contains the top 10 players sorted by cumulative scores. back\+Button\+: emit back\+Signal when clicked. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_ade0e52e1b6809df57ea4b1a167c0257b}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!back@{back}}
+\index{back@{back}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{back}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+leaderboard.\+Leaderboard.\+back (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1leaderboard_1_1_leaderboard_ade0e52e1b6809df57ea4b1a167c0257b}
+
+
+emit back\+Signal when called. 
+
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_a0cf6394bf691c593a05dadf3969536ba}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!fill\+Data@{fill\+Data}}
+\index{fill\+Data@{fill\+Data}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{fill\+Data}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+leaderboard.\+Leaderboard.\+fill\+Data (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1leaderboard_1_1_leaderboard_a0cf6394bf691c593a05dadf3969536ba}
+
+
+this methods fills the data in the table. 
+
+users\+: contains top 10 players sorted by cumulative scores. \hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_ad5925cc40678e00c529938ee5105d833}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!init\+U\+I@{init\+U\+I}}
+\index{init\+U\+I@{init\+U\+I}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{init\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+leaderboard.\+Leaderboard.\+init\+U\+I (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1leaderboard_1_1_leaderboard_ad5925cc40678e00c529938ee5105d833}
+
+
+this method initiaze the G\+U\+I of the leaderboard. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_a8c170d23c0124efb4c1d885720c926af}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!back\+Signal@{back\+Signal}}
+\index{back\+Signal@{back\+Signal}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{back\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+leaderboard.\+Leaderboard.\+back\+Signal = Qt\+Core.\+pyqt\+Signal(int)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1leaderboard_1_1_leaderboard_a8c170d23c0124efb4c1d885720c926af}
+
+
+Signal which will be used to go back to the previous menu based on an int. 
+
+int is set as \textquotesingle{}previous\+Menu\textquotesingle{} \hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_aa059323abc817556528ae54dd5dbca6b}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!db@{db}}
+\index{db@{db}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{db}]{\setlength{\rightskip}{0pt plus 5cm}src.\+leaderboard.\+Leaderboard.\+db}\label{classsrc_1_1leaderboard_1_1_leaderboard_aa059323abc817556528ae54dd5dbca6b}
+
+
+instance of the database. 
+
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_abca7271f8092bb5672bf66c04971e04e}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!previous\+Menu@{previous\+Menu}}
+\index{previous\+Menu@{previous\+Menu}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{previous\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}src.\+leaderboard.\+Leaderboard.\+previous\+Menu}\label{classsrc_1_1leaderboard_1_1_leaderboard_abca7271f8092bb5672bf66c04971e04e}
+
+
+int used to keep track of the previous menu. 
+
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_a48b819acfb54637e30e709361ed32a85}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{row\+Count}]{\setlength{\rightskip}{0pt plus 5cm}src.\+leaderboard.\+Leaderboard.\+row\+Count}\label{classsrc_1_1leaderboard_1_1_leaderboard_a48b819acfb54637e30e709361ed32a85}
+
+
+the number of rows is set to 10. 
+
+\hypertarget{classsrc_1_1leaderboard_1_1_leaderboard_a1d9b33cb94b8636038320f10d3d2fe30}{}\index{src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}!table@{table}}
+\index{table@{table}!src\+::leaderboard\+::\+Leaderboard@{src\+::leaderboard\+::\+Leaderboard}}
+\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}src.\+leaderboard.\+Leaderboard.\+table}\label{classsrc_1_1leaderboard_1_1_leaderboard_a1d9b33cb94b8636038320f10d3d2fe30}
+
+
+Is a table of 5 columns (col\+Count) and 10 rows (row\+Count) which contains the top 10 scores. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/leaderboard.\+py\end{DoxyCompactItemize}

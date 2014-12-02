@@ -1,0 +1,173 @@
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu}{}\section{src.\+pause\+\_\+menu.\+Pause\+Menu Class Reference}
+\label{classsrc_1_1pause__menu_1_1_pause_menu}\index{src.\+pause\+\_\+menu.\+Pause\+Menu@{src.\+pause\+\_\+menu.\+Pause\+Menu}}
+Inheritance diagram for src.\+pause\+\_\+menu.\+Pause\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsrc_1_1pause__menu_1_1_pause_menu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a50b6571cbb54b07250cf74db412231dd}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+}\label{classsrc_1_1pause__menu_1_1_pause_menu_a50b6571cbb54b07250cf74db412231dd}
+
+\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_a9a5e36aa2482be916deefce1f4f23fcb}{init\+U\+I} (self)
+\begin{DoxyCompactList}\small\item\em this method initialize the G\+U\+I of the pause menu. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_aaf160aa602ebd4ec91e9bc32d6d730f9}{resume} (self)
+\begin{DoxyCompactList}\small\item\em emit resume\+Game\+Signal when called. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_a9f29e275aa812da5fad8730a41746677}{quit} (self)
+\begin{DoxyCompactList}\small\item\em emit quit\+Game\+Signal when called. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_a9e3d8c0c94fdf4af682d6988f123888f}{show\+Leaderboard} (self)
+\begin{DoxyCompactList}\small\item\em emit show\+Leaderboard\+Signal with parameter \textquotesingle{}constant.\+P\+A\+U\+S\+E\+\_\+\+M\+E\+N\+U\textquotesingle{} when called. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_affa6df962a7284b81fa60171119585b1}{back} (self)
+\begin{DoxyCompactList}\small\item\em emit back\+To\+Main\+Menu\+Signal when called. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_a6950e08a6f9a87c87e9b77d606117eef}{save} (self)
+\begin{DoxyCompactList}\small\item\em emit save\+Menu\+Signal when called. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_aa3714c919e9514631cd66c6714c1e243}{load} (self)
+\begin{DoxyCompactList}\small\item\em emit load\+Menu\+Signal with parameter \textquotesingle{}constant.\+P\+A\+U\+S\+E\+\_\+\+M\+E\+N\+U\textquotesingle{} when called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_a0b97feb3939cd6be81c71ba6dbe67669}{resume\+Game\+Signal} = Qt\+Core.\+pyqt\+Signal()
+\begin{DoxyCompactList}\small\item\em Signal which will be used to resume the current game. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_aea554e6749ca45f516618711530a1acd}{quit\+Game\+Signal} = Qt\+Core.\+pyqt\+Signal()
+\begin{DoxyCompactList}\small\item\em Signal which will be used to quit the whole application. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_abaa0c6d5831d9bfb1d99d7431e47a981}{show\+Leaderboard\+Signal} = Qt\+Core.\+pyqt\+Signal(int)
+\begin{DoxyCompactList}\small\item\em Signal which will be used to launch the leaderboard. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_a48613202c1a9051758755bf8fcdd2ecc}{save\+Menu\+Signal} = Qt\+Core.\+pyqt\+Signal()
+\begin{DoxyCompactList}\small\item\em Signal which will be used to launch save menu. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_ae1851c6cab071ed1a4473320110432d8}{load\+Menu\+Signal} = Qt\+Core.\+pyqt\+Signal(int)
+\begin{DoxyCompactList}\small\item\em Signal which will be used to launch load menu. \end{DoxyCompactList}\item 
+tuple \hyperlink{classsrc_1_1pause__menu_1_1_pause_menu_adc8bc5514ba8991d100512319659d24e}{back\+To\+Main\+Menu\+Signal} = Qt\+Core.\+pyqt\+Signal()
+\begin{DoxyCompactList}\small\item\em Signal which will be used to go back to the main menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_affa6df962a7284b81fa60171119585b1}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!back@{back}}
+\index{back@{back}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{back}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+back (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_affa6df962a7284b81fa60171119585b1}
+
+
+emit back\+To\+Main\+Menu\+Signal when called. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a9a5e36aa2482be916deefce1f4f23fcb}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!init\+U\+I@{init\+U\+I}}
+\index{init\+U\+I@{init\+U\+I}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{init\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+init\+U\+I (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_a9a5e36aa2482be916deefce1f4f23fcb}
+
+
+this method initialize the G\+U\+I of the pause menu. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_aa3714c919e9514631cd66c6714c1e243}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!load@{load}}
+\index{load@{load}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+load (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_aa3714c919e9514631cd66c6714c1e243}
+
+
+emit load\+Menu\+Signal with parameter \textquotesingle{}constant.\+P\+A\+U\+S\+E\+\_\+\+M\+E\+N\+U\textquotesingle{} when called. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a9f29e275aa812da5fad8730a41746677}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!quit@{quit}}
+\index{quit@{quit}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{quit}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+quit (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_a9f29e275aa812da5fad8730a41746677}
+
+
+emit quit\+Game\+Signal when called. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_aaf160aa602ebd4ec91e9bc32d6d730f9}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!resume@{resume}}
+\index{resume@{resume}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+resume (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_aaf160aa602ebd4ec91e9bc32d6d730f9}
+
+
+emit resume\+Game\+Signal when called. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a6950e08a6f9a87c87e9b77d606117eef}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!save@{save}}
+\index{save@{save}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+save (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_a6950e08a6f9a87c87e9b77d606117eef}
+
+
+emit save\+Menu\+Signal when called. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a9e3d8c0c94fdf4af682d6988f123888f}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!show\+Leaderboard@{show\+Leaderboard}}
+\index{show\+Leaderboard@{show\+Leaderboard}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{show\+Leaderboard}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+pause\+\_\+menu.\+Pause\+Menu.\+show\+Leaderboard (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1pause__menu_1_1_pause_menu_a9e3d8c0c94fdf4af682d6988f123888f}
+
+
+emit show\+Leaderboard\+Signal with parameter \textquotesingle{}constant.\+P\+A\+U\+S\+E\+\_\+\+M\+E\+N\+U\textquotesingle{} when called. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_adc8bc5514ba8991d100512319659d24e}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!back\+To\+Main\+Menu\+Signal@{back\+To\+Main\+Menu\+Signal}}
+\index{back\+To\+Main\+Menu\+Signal@{back\+To\+Main\+Menu\+Signal}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{back\+To\+Main\+Menu\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+pause\+\_\+menu.\+Pause\+Menu.\+back\+To\+Main\+Menu\+Signal = Qt\+Core.\+pyqt\+Signal()\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1pause__menu_1_1_pause_menu_adc8bc5514ba8991d100512319659d24e}
+
+
+Signal which will be used to go back to the main menu. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_ae1851c6cab071ed1a4473320110432d8}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!load\+Menu\+Signal@{load\+Menu\+Signal}}
+\index{load\+Menu\+Signal@{load\+Menu\+Signal}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{load\+Menu\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+pause\+\_\+menu.\+Pause\+Menu.\+load\+Menu\+Signal = Qt\+Core.\+pyqt\+Signal(int)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1pause__menu_1_1_pause_menu_ae1851c6cab071ed1a4473320110432d8}
+
+
+Signal which will be used to launch load menu. 
+
+int is set as \textquotesingle{}constant.\+P\+A\+U\+S\+E\+\_\+\+M\+E\+N\+U\textquotesingle{}. \hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_aea554e6749ca45f516618711530a1acd}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!quit\+Game\+Signal@{quit\+Game\+Signal}}
+\index{quit\+Game\+Signal@{quit\+Game\+Signal}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{quit\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+pause\+\_\+menu.\+Pause\+Menu.\+quit\+Game\+Signal = Qt\+Core.\+pyqt\+Signal()\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1pause__menu_1_1_pause_menu_aea554e6749ca45f516618711530a1acd}
+
+
+Signal which will be used to quit the whole application. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a0b97feb3939cd6be81c71ba6dbe67669}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!resume\+Game\+Signal@{resume\+Game\+Signal}}
+\index{resume\+Game\+Signal@{resume\+Game\+Signal}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{resume\+Game\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+pause\+\_\+menu.\+Pause\+Menu.\+resume\+Game\+Signal = Qt\+Core.\+pyqt\+Signal()\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1pause__menu_1_1_pause_menu_a0b97feb3939cd6be81c71ba6dbe67669}
+
+
+Signal which will be used to resume the current game. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_a48613202c1a9051758755bf8fcdd2ecc}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!save\+Menu\+Signal@{save\+Menu\+Signal}}
+\index{save\+Menu\+Signal@{save\+Menu\+Signal}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{save\+Menu\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+pause\+\_\+menu.\+Pause\+Menu.\+save\+Menu\+Signal = Qt\+Core.\+pyqt\+Signal()\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1pause__menu_1_1_pause_menu_a48613202c1a9051758755bf8fcdd2ecc}
+
+
+Signal which will be used to launch save menu. 
+
+\hypertarget{classsrc_1_1pause__menu_1_1_pause_menu_abaa0c6d5831d9bfb1d99d7431e47a981}{}\index{src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}!show\+Leaderboard\+Signal@{show\+Leaderboard\+Signal}}
+\index{show\+Leaderboard\+Signal@{show\+Leaderboard\+Signal}!src\+::pause\+\_\+menu\+::\+Pause\+Menu@{src\+::pause\+\_\+menu\+::\+Pause\+Menu}}
+\subsubsection[{show\+Leaderboard\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}tuple src.\+pause\+\_\+menu.\+Pause\+Menu.\+show\+Leaderboard\+Signal = Qt\+Core.\+pyqt\+Signal(int)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1pause__menu_1_1_pause_menu_abaa0c6d5831d9bfb1d99d7431e47a981}
+
+
+Signal which will be used to launch the leaderboard. 
+
+int is set as \textquotesingle{}constant.\+P\+A\+U\+S\+E\+\_\+\+M\+E\+N\+U\textquotesingle{}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pause\+\_\+menu.\+py\end{DoxyCompactItemize}

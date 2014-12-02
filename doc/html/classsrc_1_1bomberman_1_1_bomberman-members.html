@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,25 +93,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>__init__</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>bombPass</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>canMove</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>curX</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>curY</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>death</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>flamePass</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>hasDetonator</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>invincible</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>lives</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>numBombs</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>rangeOfBombs</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>reset</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>speed</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>wallPass</b> (defined in <a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a>)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ad9cdb2bcd44e1aaec299743531de5473">__init__</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#aca70e55b92691117f315e82d444188d4">bombPass</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a71c03f3d45e6d025a1dc65d1933abb0a">canMove</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ade28c12524be42994d93b74bddc92647">curX</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ab163853c4ad07078948a14fc3b6ad1e7">curY</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#ae596075451ff8d73d59ff2cf9e4f7848">death</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a04139259920ddb2447a762bcbc8a53c4">flamePass</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#af3633e53e0443adbc59816892d516065">hasDetonator</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a6a139150d8425b6bf1a8431a991fc0f1">invincible</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a139e60f5380a184bd42d356afab660ef">lives</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a2cb3572c62ccccb8eb2383145d0d4f2e">numBombs</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a60e8708ab7b666aa01aeb3cf0660db92">rangeOfBombs</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a7d6de2893ff7ce0bed4cd72f15e9eb20">reset</a>(self)</td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a6ac3e76b884ce72178bd068a4c40c05b">speed</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html#a8f1c6898c8d82b94228c5d4361c389a4">wallPass</a></td><td class="entry"><a class="el" href="classsrc_1_1bomberman_1_1_bomberman.html">src.bomberman.Bomberman</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:16 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src.game.Game Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main controller.  
+ <a href="classsrc_1_1game_1_1_game.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for src.game.Game:</div>
 <div class="dyncontent">
@@ -103,63 +108,77 @@ Inheritance diagram for src.game.Game:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56a28235b9d21d6bb127c42cdc3187bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56a28235b9d21d6bb127c42cdc3187bf"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:a56a28235b9d21d6bb127c42cdc3187bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade13769638b64de5af50e07e859d1434"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade13769638b64de5af50e07e859d1434"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>initUI</b></td></tr>
-<tr class="separator:ade13769638b64de5af50e07e859d1434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed21fd562360874f0264e32be392a56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeed21fd562360874f0264e32be392a56"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showLoginMenu</b></td></tr>
-<tr class="separator:aeed21fd562360874f0264e32be392a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16759ee9c164fe518080139ea25086e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16759ee9c164fe518080139ea25086e0"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showMainMenu</b></td></tr>
-<tr class="separator:a16759ee9c164fe518080139ea25086e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a281d0d5faca43cf2d0946ab971281735"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a281d0d5faca43cf2d0946ab971281735"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showLevelMenu</b></td></tr>
-<tr class="separator:a281d0d5faca43cf2d0946ab971281735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a570dba568ad9dd3b9745e0f10a4b29a8"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showBoard</b></td></tr>
+<tr class="memitem:a15684812af57df03feb870c9b4b380a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15684812af57df03feb870c9b4b380a2"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a15684812af57df03feb870c9b4b380a2">__init__</a> (self)</td></tr>
+<tr class="memdesc:a15684812af57df03feb870c9b4b380a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, initializes UI. <br /></td></tr>
+<tr class="separator:a15684812af57df03feb870c9b4b380a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89ba31b71efebcc9b2f43227d833e38f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89ba31b71efebcc9b2f43227d833e38f"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a89ba31b71efebcc9b2f43227d833e38f">initUI</a> (self)</td></tr>
+<tr class="memdesc:a89ba31b71efebcc9b2f43227d833e38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize UI and center the window. <br /></td></tr>
+<tr class="separator:a89ba31b71efebcc9b2f43227d833e38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a14788a82ebc0d4b4b821ac1489a7a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a14788a82ebc0d4b4b821ac1489a7a0"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a7a14788a82ebc0d4b4b821ac1489a7a0">showLoginMenu</a> (self)</td></tr>
+<tr class="memdesc:a7a14788a82ebc0d4b4b821ac1489a7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display login menu. <br /></td></tr>
+<tr class="separator:a7a14788a82ebc0d4b4b821ac1489a7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218f9c8c6e86a19fa9d3155ce43068a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a218f9c8c6e86a19fa9d3155ce43068a0"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a218f9c8c6e86a19fa9d3155ce43068a0">showMainMenu</a> (self)</td></tr>
+<tr class="memdesc:a218f9c8c6e86a19fa9d3155ce43068a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display login menu after login. <br /></td></tr>
+<tr class="separator:a218f9c8c6e86a19fa9d3155ce43068a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe69a6fa066d92365c226aff1c903e90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe69a6fa066d92365c226aff1c903e90"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#afe69a6fa066d92365c226aff1c903e90">showLevelMenu</a> (self)</td></tr>
+<tr class="memdesc:afe69a6fa066d92365c226aff1c903e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display level menu where player is asked to select level to play. <br /></td></tr>
+<tr class="separator:afe69a6fa066d92365c226aff1c903e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a570dba568ad9dd3b9745e0f10a4b29a8">showBoard</a></td></tr>
+<tr class="memdesc:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display bomberman game.  <a href="#a570dba568ad9dd3b9745e0f10a4b29a8">More...</a><br /></td></tr>
 <tr class="separator:a570dba568ad9dd3b9745e0f10a4b29a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5998c86374c68278133a28fc86a7f71d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5998c86374c68278133a28fc86a7f71d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showLeaderboard</b></td></tr>
-<tr class="separator:a5998c86374c68278133a28fc86a7f71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd8bf94bd7676c2942df14ed0404055a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd8bf94bd7676c2942df14ed0404055a"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showPauseMenu</b></td></tr>
-<tr class="separator:acd8bf94bd7676c2942df14ed0404055a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a808603504aca0c767ece9b422a76ecbb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a808603504aca0c767ece9b422a76ecbb"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showSaveMenu</b></td></tr>
-<tr class="separator:a808603504aca0c767ece9b422a76ecbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9f00ac625aa0a9027c3eddfe00e1e51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9f00ac625aa0a9027c3eddfe00e1e51"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showLoadMenu</b></td></tr>
-<tr class="separator:ac9f00ac625aa0a9027c3eddfe00e1e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252b2ec6612780aec8655dfdd4cf8259"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a252b2ec6612780aec8655dfdd4cf8259"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>showAccountSettingsMenu</b></td></tr>
-<tr class="separator:a252b2ec6612780aec8655dfdd4cf8259"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5bd7707485097c34b145e947f33201c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5bd7707485097c34b145e947f33201c"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>center</b></td></tr>
-<tr class="separator:ad5bd7707485097c34b145e947f33201c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09118068e27878ad17bb2d58d13d1a8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09118068e27878ad17bb2d58d13d1a8e"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>quit</b></td></tr>
-<tr class="separator:a09118068e27878ad17bb2d58d13d1a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d29b77bdab0f65b719d8346fe20fb99"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d29b77bdab0f65b719d8346fe20fb99"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>resumeToGame</b></td></tr>
-<tr class="separator:a1d29b77bdab0f65b719d8346fe20fb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7bd3d1e95c485aadf0e6f3fc491d1dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7bd3d1e95c485aadf0e6f3fc491d1dc"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>resumeToPauseMenu</b></td></tr>
-<tr class="separator:aa7bd3d1e95c485aadf0e6f3fc491d1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fa03d050e014c54f122315f8e98d441"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fa03d050e014c54f122315f8e98d441"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>loadSavedGame</b></td></tr>
-<tr class="separator:a1fa03d050e014c54f122315f8e98d441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a884c2309f069058047dc88f7089519e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a884c2309f069058047dc88f7089519e6"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>gameOver</b></td></tr>
-<tr class="separator:a884c2309f069058047dc88f7089519e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad671c0a5819b1eaae158dd3a23e5e80b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad671c0a5819b1eaae158dd3a23e5e80b"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDb</b></td></tr>
-<tr class="separator:ad671c0a5819b1eaae158dd3a23e5e80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6761faa058096df0e2df9724906c6287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6761faa058096df0e2df9724906c6287"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>updateGamesPlayedInDb</b></td></tr>
-<tr class="separator:a6761faa058096df0e2df9724906c6287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a6d564b3397c8c520b0b23e99d0880"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13a6d564b3397c8c520b0b23e99d0880"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a13a6d564b3397c8c520b0b23e99d0880">showLeaderboard</a> (self, previousMenu)</td></tr>
+<tr class="memdesc:a13a6d564b3397c8c520b0b23e99d0880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display leaderboard. <br /></td></tr>
+<tr class="separator:a13a6d564b3397c8c520b0b23e99d0880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e17658d314189179aa5be0bfdc185da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e17658d314189179aa5be0bfdc185da"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a0e17658d314189179aa5be0bfdc185da">showPauseMenu</a> (self)</td></tr>
+<tr class="memdesc:a0e17658d314189179aa5be0bfdc185da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display pause menu. <br /></td></tr>
+<tr class="separator:a0e17658d314189179aa5be0bfdc185da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ee6b88570e0af0686050a2268f687b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02ee6b88570e0af0686050a2268f687b"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a02ee6b88570e0af0686050a2268f687b">showSaveMenu</a> (self)</td></tr>
+<tr class="memdesc:a02ee6b88570e0af0686050a2268f687b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display menu to save game. <br /></td></tr>
+<tr class="separator:a02ee6b88570e0af0686050a2268f687b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c38f9b4c2f4e81a49e25632dccd8622"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c38f9b4c2f4e81a49e25632dccd8622"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a4c38f9b4c2f4e81a49e25632dccd8622">showLoadMenu</a> (self, previousMenu)</td></tr>
+<tr class="memdesc:a4c38f9b4c2f4e81a49e25632dccd8622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display menu to load game. <br /></td></tr>
+<tr class="separator:a4c38f9b4c2f4e81a49e25632dccd8622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b40336207a65cb12910ae7d1a4175d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42b40336207a65cb12910ae7d1a4175d"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a42b40336207a65cb12910ae7d1a4175d">showAccountSettingsMenu</a> (self)</td></tr>
+<tr class="memdesc:a42b40336207a65cb12910ae7d1a4175d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display account settings menu. <br /></td></tr>
+<tr class="separator:a42b40336207a65cb12910ae7d1a4175d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243a1df9b63a0f081b90fa29146a4af6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a243a1df9b63a0f081b90fa29146a4af6"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a243a1df9b63a0f081b90fa29146a4af6">center</a> (self)</td></tr>
+<tr class="memdesc:a243a1df9b63a0f081b90fa29146a4af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Center the current window. <br /></td></tr>
+<tr class="separator:a243a1df9b63a0f081b90fa29146a4af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7856f8d00f279cc139d131cb2e8d8ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7856f8d00f279cc139d131cb2e8d8ea"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#aa7856f8d00f279cc139d131cb2e8d8ea">quit</a> (self)</td></tr>
+<tr class="memdesc:aa7856f8d00f279cc139d131cb2e8d8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exit entirely the process. <br /></td></tr>
+<tr class="separator:aa7856f8d00f279cc139d131cb2e8d8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d0646df1f0cb57f8262412487d5270"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19d0646df1f0cb57f8262412487d5270"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#a19d0646df1f0cb57f8262412487d5270">resumeToGame</a> (self)</td></tr>
+<tr class="memdesc:a19d0646df1f0cb57f8262412487d5270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume the game after pause. <br /></td></tr>
+<tr class="separator:a19d0646df1f0cb57f8262412487d5270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2df3ddda7fa333cadb6fcfa060eaef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add2df3ddda7fa333cadb6fcfa060eaef"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1game_1_1_game.html#add2df3ddda7fa333cadb6fcfa060eaef">resumeToPauseMenu</a> (self)</td></tr>
+<tr class="memdesc:add2df3ddda7fa333cadb6fcfa060eaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigate back to pause menu. <br /></td></tr>
+<tr class="separator:add2df3ddda7fa333cadb6fcfa060eaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e215b6533b7fa858334453633e12e6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e215b6533b7fa858334453633e12e6e"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>loadSavedGame</b> (self, gamename)</td></tr>
+<tr class="separator:a8e215b6533b7fa858334453633e12e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae864ef349cf3b094874543fab2210a37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae864ef349cf3b094874543fab2210a37"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>gameOver</b> (self)</td></tr>
+<tr class="separator:ae864ef349cf3b094874543fab2210a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c98d60278dc78a465e40b5e3c57579"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85c98d60278dc78a465e40b5e3c57579"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>updateScoreInDb</b> (self, incrementalScore)</td></tr>
+<tr class="separator:a85c98d60278dc78a465e40b5e3c57579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45770f3f952d2738b599e04ade877296"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45770f3f952d2738b599e04ade877296"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>updateGamesPlayedInDb</b> (self)</td></tr>
+<tr class="separator:a45770f3f952d2738b599e04ade877296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -197,13 +216,57 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>accountSettingsMenuWidget</b></td></tr>
 <tr class="separator:a27cf07a0e4ce7f3469cf682df11244e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main controller. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a570dba568ad9dd3b9745e0f10a4b29a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.game.Game.showBoard </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>levelNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>level</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display bomberman game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">levelNum</td><td>Integer the level number </td></tr>
+    <tr><td class="paramname">level</td><td>Level object containing all the information necessary to run the game </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/game.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,42 +107,42 @@ Inheritance diagram for src.tile.Tile:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a0b6f120a03e296c3af500933d91d88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a0b6f120a03e296c3af500933d91d88"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:a6a0b6f120a03e296c3af500933d91d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21f16afbb5f5be4204b66be2624e3fc1"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isEmpty</b></td></tr>
-<tr class="separator:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa968da9f37f05ba08ccfe7a44b2bf776"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa968da9f37f05ba08ccfe7a44b2bf776"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>push</b></td></tr>
-<tr class="separator:aa968da9f37f05ba08ccfe7a44b2bf776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4cf13c5976824347b38961f7c3511c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4cf13c5976824347b38961f7c3511c1"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>peek</b></td></tr>
-<tr class="separator:ab4cf13c5976824347b38961f7c3511c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9707b7fe25e606192be87b3dd9957cd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9707b7fe25e606192be87b3dd9957cd9"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b></td></tr>
-<tr class="separator:a9707b7fe25e606192be87b3dd9957cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3770faf89f08cecc2ba9aab54bbee50b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3770faf89f08cecc2ba9aab54bbee50b"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
-<tr class="separator:a3770faf89f08cecc2ba9aab54bbee50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9976e652dac509c6aee814af20a6cabb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9976e652dac509c6aee814af20a6cabb"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self)</td></tr>
+<tr class="separator:a9976e652dac509c6aee814af20a6cabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad77febc9fbb4fa5fd2f13449d1c80da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad77febc9fbb4fa5fd2f13449d1c80da"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>isEmpty</b> (self)</td></tr>
+<tr class="separator:aad77febc9fbb4fa5fd2f13449d1c80da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab682d4a8d92f6dbe5380c21e8c27114a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab682d4a8d92f6dbe5380c21e8c27114a"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>push</b> (self, tile)</td></tr>
+<tr class="separator:ab682d4a8d92f6dbe5380c21e8c27114a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a8402816b245a69773305cc6d86f16d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a8402816b245a69773305cc6d86f16d"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>peek</b> (self)</td></tr>
+<tr class="separator:a0a8402816b245a69773305cc6d86f16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f31d367515d3259f21b90d6be44db8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0f31d367515d3259f21b90d6be44db8"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> (self)</td></tr>
+<tr class="separator:ae0f31d367515d3259f21b90d6be44db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f0ddf090f58449aa74611a239e1458"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9f0ddf090f58449aa74611a239e1458"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> (self)</td></tr>
+<tr class="separator:ac9f0ddf090f58449aa74611a239e1458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21f16afbb5f5be4204b66be2624e3fc1"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isEmpty</b></td></tr>
-<tr class="separator:a21f16afbb5f5be4204b66be2624e3fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28d16325ef82c53165ac9b3369f7b10a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28d16325ef82c53165ac9b3369f7b10a"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isEnemy</b></td></tr>
-<tr class="separator:a28d16325ef82c53165ac9b3369f7b10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a2590141c388d7afbcd2a8b6a6c68d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a2590141c388d7afbcd2a8b6a6c68d9"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isBomberman</b></td></tr>
-<tr class="separator:a6a2590141c388d7afbcd2a8b6a6c68d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae53e0f1d5c13b809d6090a1a61e88175"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae53e0f1d5c13b809d6090a1a61e88175"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isExit</b></td></tr>
-<tr class="separator:ae53e0f1d5c13b809d6090a1a61e88175"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a671e9633ec0c3dd2ef39aa0082c776fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a671e9633ec0c3dd2ef39aa0082c776fe"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isPowerup</b></td></tr>
-<tr class="separator:a671e9633ec0c3dd2ef39aa0082c776fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402644908c005daf8f452078a8498884"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a402644908c005daf8f452078a8498884"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>isEmpty</b> (tile)</td></tr>
+<tr class="separator:a402644908c005daf8f452078a8498884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d5b3272e8b49c400420bfb80f2367e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26d5b3272e8b49c400420bfb80f2367e"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>isEnemy</b> (tile)</td></tr>
+<tr class="separator:a26d5b3272e8b49c400420bfb80f2367e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6a8c872f4e0d314bedb157c5d05f88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe6a8c872f4e0d314bedb157c5d05f88"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>isBomberman</b> (tile)</td></tr>
+<tr class="separator:abe6a8c872f4e0d314bedb157c5d05f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e3ba4c45f3defa624c6d5cd080dab6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81e3ba4c45f3defa624c6d5cd080dab6"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>isExit</b> (tile)</td></tr>
+<tr class="separator:a81e3ba4c45f3defa624c6d5cd080dab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464b874776619a4388f7bc8a5a57eee1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a464b874776619a4388f7bc8a5a57eee1"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>isPowerup</b> (tile)</td></tr>
+<tr class="separator:a464b874776619a4388f7bc8a5a57eee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -205,7 +207,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Pontan</b> = 15</td></
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:54 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

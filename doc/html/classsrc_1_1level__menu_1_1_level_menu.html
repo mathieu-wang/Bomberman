@@ -9,9 +9,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,6 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Bomberman
    </div>
+   <div id="projectbrief">A single-player Bomberman game with local leaderboard.</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,18 +109,18 @@ Inheritance diagram for src.level_menu.LevelMenu:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7a8b94d081a19792110eac3242ae77d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7a8b94d081a19792110eac3242ae77d"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
-<tr class="separator:ac7a8b94d081a19792110eac3242ae77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac0ca1cba0bbcc90d7bb67f4800c8a2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a2ac0ca1cba0bbcc90d7bb67f4800c8a2">initUI</a></td></tr>
-<tr class="memdesc:a2ac0ca1cba0bbcc90d7bb67f4800c8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method initialize the GUI of the level menu.  <a href="#a2ac0ca1cba0bbcc90d7bb67f4800c8a2">More...</a><br /></td></tr>
-<tr class="separator:a2ac0ca1cba0bbcc90d7bb67f4800c8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4fe8d2bc18589c5e6c2fa72a86f0101"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#ab4fe8d2bc18589c5e6c2fa72a86f0101">backToMainMenu</a></td></tr>
-<tr class="memdesc:ab4fe8d2bc18589c5e6c2fa72a86f0101"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backToMainMenuSignal when called.  <a href="#ab4fe8d2bc18589c5e6c2fa72a86f0101">More...</a><br /></td></tr>
-<tr class="separator:ab4fe8d2bc18589c5e6c2fa72a86f0101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d3cad83657dfc56af914d0717f13a3e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a9d3cad83657dfc56af914d0717f13a3e">startLevel</a></td></tr>
-<tr class="memdesc:a9d3cad83657dfc56af914d0717f13a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit startLevelSignal when called.  <a href="#a9d3cad83657dfc56af914d0717f13a3e">More...</a><br /></td></tr>
-<tr class="separator:a9d3cad83657dfc56af914d0717f13a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fd7912eb9a473b0fb03b5ae1bd0d84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39fd7912eb9a473b0fb03b5ae1bd0d84"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, parent, <a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#aee1d2148e23a2908c72c4a8f8ad0a98f">username</a>)</td></tr>
+<tr class="separator:a39fd7912eb9a473b0fb03b5ae1bd0d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ba6c3a92e1f256f70186866f2795ac"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a85ba6c3a92e1f256f70186866f2795ac">initUI</a> (self)</td></tr>
+<tr class="memdesc:a85ba6c3a92e1f256f70186866f2795ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method initialize the GUI of the level menu.  <a href="#a85ba6c3a92e1f256f70186866f2795ac">More...</a><br /></td></tr>
+<tr class="separator:a85ba6c3a92e1f256f70186866f2795ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5852c765b18d5e6c28d5fdb7ebf80427"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#a5852c765b18d5e6c28d5fdb7ebf80427">backToMainMenu</a> (self)</td></tr>
+<tr class="memdesc:a5852c765b18d5e6c28d5fdb7ebf80427"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit backToMainMenuSignal when called.  <a href="#a5852c765b18d5e6c28d5fdb7ebf80427">More...</a><br /></td></tr>
+<tr class="separator:a5852c765b18d5e6c28d5fdb7ebf80427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc4b32a91edcdf2a10f5de32efbda2a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1level__menu_1_1_level_menu.html#aafc4b32a91edcdf2a10f5de32efbda2a">startLevel</a> (self, level)</td></tr>
+<tr class="memdesc:aafc4b32a91edcdf2a10f5de32efbda2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit startLevelSignal when called.  <a href="#aafc4b32a91edcdf2a10f5de32efbda2a">More...</a><br /></td></tr>
+<tr class="separator:aafc4b32a91edcdf2a10f5de32efbda2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -142,7 +144,7 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><p>this class is a widget that displays the level menu. </p>
 <p>It includes buttons that the user can interact with. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab4fe8d2bc18589c5e6c2fa72a86f0101"></a>
+<a class="anchor" id="a5852c765b18d5e6c28d5fdb7ebf80427"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -160,7 +162,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2ac0ca1cba0bbcc90d7bb67f4800c8a2"></a>
+<a class="anchor" id="a85ba6c3a92e1f256f70186866f2795ac"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -178,7 +180,7 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9d3cad83657dfc56af914d0717f13a3e"></a>
+<a class="anchor" id="aafc4b32a91edcdf2a10f5de32efbda2a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -286,7 +288,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 23:55:17 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:25:53 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
