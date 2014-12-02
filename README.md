@@ -45,7 +45,7 @@ This program was developed and tested on the following platforms with the follow
 - Mac OS X Mavericks - Sublime Text 2
 
 ##########
-How to run the game
+##How to run the game
 
 `python game.py` on the command line (INSIDE the `src/` directory)
 
