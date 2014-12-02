@@ -32,37 +32,37 @@ class TestBoard(unittest.TestCase):
     def tearDownClass(cls):
         app.quit()
 
-    def test_initialize_board_with_concrete_walls(self):
+    def testInitializeBoardWithConcreteWalls(self):
         self.assertEqual(self.board.bomberman.board[0][0].peek(), Tile.Concrete, "Corner tile should be Concrete, board not initialized properly")
 
-    def test_initialize_board_with_exactly_one_bomberman(self):
-        number_of_bomberman_on_the_board = 0
+    def testInitializeBoardWithExactlyOneBomberman(self):
+        numberOfBombermanOnTheBoard = 0
         board = self.board.bomberman.board
         for i in range(len(board)):
             for j in range(len(board[i])):
                 if board[i][j].peek() == Tile.Bomberman:
-                    number_of_bomberman_on_the_board += 1
+                    numberOfBombermanOnTheBoard += 1
 
-        self.assertEqual(number_of_bomberman_on_the_board, 1, "Did not see exactly one bomberman on the board")
+        self.assertEqual(numberOfBombermanOnTheBoard, 1, "Did not see exactly one bomberman on the board")
 
-    def test_setTileAt(self):
+    def testSetTileAt(self):
         self.assertEqual(self.board.bomberman.board[1][1].peek(), Tile.Empty)
         self.board.setTileAt(1, 1, Tile.Brick)
         self.assertEqual(self.board.bomberman.board[1][1].peek(), Tile.Brick)
 
-    def test_tileAt(self):
+    def testTileAt(self):
         for i in range(len(self.board.bomberman.board)):
             for j in range(len(self.board.bomberman.board[i])):
                 self.assertEqual(self.board.tileAt(j, i), self.board.bomberman.board[i][j].peek())
 
-    def test_setBomberman(self):
+    def testSetBomberman(self):
         self.assertNotEqual(self.board.tileAt(1, 2), Tile.Bomberman)
         self.board.bomberman.curX = 1
         self.board.bomberman.curY = 2
         self.board.bomberman.setBomberman()
         self.assertEqual(self.board.tileAt(1, 2), Tile.Bomberman)
 
-    def test_setBomb(self):
+    def testSetBomb(self):
         self.assertNotEqual(self.board.tileAt(1, 2), Tile.Bomb)
         self.board.bomberman.curX = 1
         self.board.bomberman.curY = 2
@@ -76,7 +76,7 @@ class TestBoard(unittest.TestCase):
         self.board.popTileAt(1, 2)
         self.assertEqual(self.board.tileAt(1, 2), Tile.Bomb, "There is no bomb underneath Bomberman")
 
-    def test_detonateBomb(self):
+    def testDetonateBomb(self):
         self.board.bomberman.curX = 1
         self.board.bomberman.curY = 1
         self.board.bomberman.setBomberman()
@@ -87,7 +87,7 @@ class TestBoard(unittest.TestCase):
         self.board.popTileAt(1, 1) #pop Bomberman
         self.assertNotEqual(self.board.tileAt(1, 1), Tile.Bomb, "Bomb did not explode")
 
-    def test_detonateBomb_has_no_effect_on_concrete(self):
+    def testDetonateBombHasNoEffectOnConcrete(self):
         self.board.curX = 1
         self.board.curY = 1
         self.board.bomberman.setBomberman()
@@ -98,7 +98,7 @@ class TestBoard(unittest.TestCase):
         self.board.popTileAt(1, 1) #pop Bomberman
         self.assertEqual(self.board.tileAt(1, 0), Tile.Concrete, "Concrete got destroyed by bomb")
 
-    def test_detonateBomb_destroys_brick(self):
+    def testDetonateBombDestroysBrick(self):
         self.board.setTileAt(1, 3, Tile.Brick)
         self.board.bomberman.curX = 1
         self.board.bomberman.curY = 1
@@ -109,7 +109,7 @@ class TestBoard(unittest.TestCase):
 
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "Brick did not get destroyed by bomb")
 
-    def test_detonateBomb_destroys_multiple_bricks(self):
+    def testDetonateBombDestroysOnlyClosestBrickInTheSameDirection(self):
         self.board.setTileAt(1, 2, Tile.Brick)
         self.board.setTileAt(1, 3, Tile.Brick)
         self.board.bomberman.curX = 1
@@ -122,7 +122,7 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "Closer Brick did not get destroyed by bomb")
         self.assertEqual(self.board.tileAt(1, 3), Tile.Brick, "Further Brick got destroyed by bomb")
 
-    def test_detonateBomb_destroys_only_closest_brick_in_the_same_direction(self):
+    def testDetonateBombDestroysMultipleBricks(self):
         self.board.setTileAt(1, 2, Tile.Brick)
         self.board.setTileAt(2, 1, Tile.Brick)
         self.board.bomberman.curX = 1
@@ -137,18 +137,160 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "One of the Bricks did not get destroyed by bomb")
         self.assertEqual(self.board.tileAt(2, 1), Tile.Empty, "One of the Bricks did not get destroyed by bomb")
 
+    def testDetonateBombSpawnsEnemiesWhenExitIsHit(self):
+        self.board.setTileAt(1, 2, Tile.Exit)
 
-    def test_try_move_to_concrete(self):
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
+
+        self.board.bomberman.rangeOfBombs = 3
+
+        self.board.detonateBomb()
+
+        count = 0
+
+        for i in range(self.bomberman.numberEnemies):
+            if (self.bomberman.listTypeEnemies[i] != 0):
+                count += 1
+
+        self.assertEqual(count, 1, "Not all enemies are the same type when the exit is hit")
+        self.assertEqual(len(self.bomberman.listEnemies), 8, "The number of enemies when the exit is hit is not 8")
+
+    def testDetonateBombSpawnsEnemiesWhenPowerupIsHit(self):
+        self.board.setTileAt(1, 2, Tile.Powerup)
+
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
+
+        self.board.bomberman.rangeOfBombs = 3
+
+        self.board.detonateBomb()
+
+        count = 0
+
+        for i in range(self.bomberman.numberEnemies):
+            if (self.bomberman.listTypeEnemies[i] != 0):
+                count += 1
+
+        self.assertEqual(count, 1, "Not all enemies are the same type when the powerup is hit")
+        self.assertEqual(len(self.bomberman.listEnemies), 8, "The number of enemies when the powerup is hit is not 8")
+
+    def testTryMoveToConcrete(self):
         self.board.setTileAt(0, 0, Tile.Concrete)
         self.assertFalse(self.board.tryMove(0, 0), "Was able to move to a concrete tile")
 
-    def test_try_move_to_brick(self):
+    def testTryMoveToBrick(self):
         self.board.setTileAt(1, 1, Tile.Brick)
         self.assertFalse(self.board.tryMove(1, 1), "Was able to move to a brick tile")
 
-    def test_try_move_to_brick(self):
+    def testTryMoveToBrick(self):
         self.board.setTileAt(2, 2, Tile.Empty)
         self.assertTrue(self.board.tryMove(2, 2), "Was not able to move to an empty tile")
+
+    def testMoveEnemyWithIntelligence1(self):
+        self.bomberman.clearEnemies()
+        self.board.setTileAt(2, 1, Tile.Balloom)
+        self.board.setTileAt(1, 1, Tile.Empty)
+
+        tempList = [2, 1, 3, 8]
+        self.bomberman.listEnemies.append(tempList)
+
+        self.bomberman.numberEnemies = 1
+        self.bomberman.listTypeEnemies[0] = 1
+
+        self.board.moveEnemy(constant.SPEED_SLOW)
+
+        self.assertEqual(self.board.tileAt(1, 1), Tile.Balloom, "Enemy did not move")
+        
+    def testMoveEnemyWithIntelligence2(self):
+        self.bomberman.clearEnemies()
+        self.board.setTileAt(2, 1, Tile.Oneal)
+        self.board.setTileAt(1, 1, Tile.Empty)
+        self.board.setTileAt(3, 1, Tile.Empty)
+        self.board.setTileAt(2, 0, Tile.Empty)
+        self.board.setTileAt(2, 2, Tile.Empty)
+
+        tempList = [2, 1, 3, 9]
+        self.bomberman.listEnemies.append(tempList)
+
+        self.bomberman.numberEnemies = 1
+        self.bomberman.listTypeEnemies[0] = 1
+
+        self.board.moveEnemy(constant.SPEED_NORMAL)
+
+        check = False
+        if (self.board.tileAt(1, 1) == Tile.Oneal or self.board.tileAt(3, 1) == Tile.Oneal or self.board.tileAt(2, 0) == Tile.Oneal or self.board.tileAt(2, 2) == Tile.Oneal):
+            check = True
+        self.assertTrue(check, "Enemy did not move")
+
+    def testMoveEnemyWithIntelligence3(self):
+        self.bomberman.clearEnemies()
+        self.board.setTileAt(2, 1, Tile.Kondoria)
+        self.board.setTileAt(1, 1, Tile.Empty)
+        self.board.setTileAt(3, 1, Tile.Empty)
+        self.board.setTileAt(2, 0, Tile.Empty)
+        self.board.setTileAt(2, 2, Tile.Empty)
+
+        tempList = [2, 1, 3, 12]
+        self.bomberman.listEnemies.append(tempList)
+
+        self.bomberman.numberEnemies = 1
+        self.bomberman.listTypeEnemies[0] = 1
+
+        self.board.moveEnemy(constant.SPEED_SLOWEST)
+
+        check = False
+        if (self.board.tileAt(1, 1) == Tile.Kondoria or self.board.tileAt(3, 1) == Tile.Kondoria or self.board.tileAt(2, 0) == Tile.Kondoria or self.board.tileAt(2, 2) == Tile.Kondoria):
+            check = True
+        self.assertTrue(check, "Enemy did not move")
+
+    def testDetonateBombKillsBomberman(self):
+        self.bomberman.lives = 3
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
+
+        self.board.tryMove(1, 2)
+
+        self.board.detonateBomb()
+
+        self.assertEqual(2, self.bomberman.lives, "Bomberman did not lose a life when hit by a bomb")
+
+    def testDeathWhenEnemyMovesToBomberman(self):
+        self.bomberman.lives = 3
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+
+        self.bomberman.clearEnemies()
+        self.board.setTileAt(2, 1, Tile.Balloom)
+        self.bomberman.numberEnemies = 1
+
+        tempList = [2, 1, 3, 8]
+        self.bomberman.listEnemies.append(tempList)
+
+        self.bomberman.listTypeEnemies[0] = 1
+
+        self.board.moveEnemy(constant.SPEED_SLOW)
+
+        self.assertEqual(2, self.bomberman.lives, "Bomberman did not lose a life when an enemy moves into him")
+
+    def testDeathWhenBombermanMovesToEnemy(self):
+        self.bomberman.lives = 3
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.setTileAt(1, 2, Tile.Balloom)
+
+        self.board.tryMove(1, 2)
+
+        self.assertEqual(2, self.bomberman.lives, "Bomberman did not lose a life when he moves into an enemy")
+
 
 if __name__ == '__main__':
 
