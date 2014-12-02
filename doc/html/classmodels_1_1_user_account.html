@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,11 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">models.UserAccount Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Instances of this class represent all information relevant to a specific user account.  
+ <a href="classmodels_1_1_user_account.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adf5a346d241755cc6199633b2c1cfbc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf5a346d241755cc6199633b2c1cfbc1"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
+<tr class="memitem:adf5a346d241755cc6199633b2c1cfbc1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodels_1_1_user_account.html#adf5a346d241755cc6199633b2c1cfbc1">__init__</a></td></tr>
+<tr class="memdesc:adf5a346d241755cc6199633b2c1cfbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with three required parameters: username, realname, and password.  <a href="#adf5a346d241755cc6199633b2c1cfbc1">More...</a><br /></td></tr>
 <tr class="separator:adf5a346d241755cc6199633b2c1cfbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -119,17 +123,86 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab8fb0a90e628708d2f85b190719957fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8fb0a90e628708d2f85b190719957fb"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>numGamesPlayed</b></td></tr>
 <tr class="separator:ab8fb0a90e628708d2f85b190719957fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ffd4db104270e9f44684d9117e6ecb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ffd4db104270e9f44684d9117e6ecb8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>savedGames</b></td></tr>
-<tr class="separator:a2ffd4db104270e9f44684d9117e6ecb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Instances of this class represent all information relevant to a specific user account. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="adf5a346d241755cc6199633b2c1cfbc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def models.UserAccount.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>realname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maxLevelReached</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cumulativeScore</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>numGamesPlayed</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor with three required parameters: username, realname, and password. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Required. The username associated to the account. Used as key to retrieve all other fields from the database </td></tr>
+    <tr><td class="paramname">realname</td><td>Required. The real name of the user </td></tr>
+    <tr><td class="paramname">password</td><td>Required. The password of the user </td></tr>
+    <tr><td class="paramname">maxLevelReached</td><td>Default is 1. Used to initialize the user account with a specific unlocked level </td></tr>
+    <tr><td class="paramname">cumulativeScore</td><td>Default is 0. Used to initialize the user account with a specific cumulative score </td></tr>
+    <tr><td class="paramname">numGamesPlayed</td><td>Default is 0. Used to initialize the user account with a specific number of games played </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>models.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 17:04:10 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 1 2014 22:06:34 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

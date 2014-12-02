@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['database',['Database',['../classdatabase_1_1_database.html',1,'database']]]
+  ['accountsettingsmenu',['AccountSettingsMenu',['../classsettings__menu_1_1_account_settings_menu.html',1,'settings_menu']]]
 ];

@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,54 +93,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">database.Database Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that handles the interface with database.  
+ <a href="classdatabase_1_1_database.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5c97f7273b18f6e38ac0e228198ed2d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c97f7273b18f6e38ac0e228198ed2d9"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
+<tr class="memitem:a5c97f7273b18f6e38ac0e228198ed2d9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a5c97f7273b18f6e38ac0e228198ed2d9">__init__</a></td></tr>
+<tr class="memdesc:a5c97f7273b18f6e38ac0e228198ed2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that connects to a sqlite database, and gets the 'user' table from it.  <a href="#a5c97f7273b18f6e38ac0e228198ed2d9">More...</a><br /></td></tr>
 <tr class="separator:a5c97f7273b18f6e38ac0e228198ed2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a941c78daaf542d2a35981a3975f4c42c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a941c78daaf542d2a35981a3975f4c42c"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>createUser</b></td></tr>
+<tr class="memitem:a941c78daaf542d2a35981a3975f4c42c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a941c78daaf542d2a35981a3975f4c42c">createUser</a></td></tr>
+<tr class="memdesc:a941c78daaf542d2a35981a3975f4c42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new user in the database.  <a href="#a941c78daaf542d2a35981a3975f4c42c">More...</a><br /></td></tr>
 <tr class="separator:a941c78daaf542d2a35981a3975f4c42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0d32ef6d2e7fcfb2b2b146f4654bf4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b0d32ef6d2e7fcfb2b2b146f4654bf4"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>checkUser</b></td></tr>
+<tr class="memitem:aa85c5885a4aa876deba8298e19842bfe"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#aa85c5885a4aa876deba8298e19842bfe">updateUserAccount</a></td></tr>
+<tr class="memdesc:aa85c5885a4aa876deba8298e19842bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update user account information with new username, realname, and password.  <a href="#aa85c5885a4aa876deba8298e19842bfe">More...</a><br /></td></tr>
+<tr class="separator:aa85c5885a4aa876deba8298e19842bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5d98eb84176eaffd7ab3e099f1c4f6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a4c5d98eb84176eaffd7ab3e099f1c4f6">deleteAccount</a></td></tr>
+<tr class="memdesc:a4c5d98eb84176eaffd7ab3e099f1c4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the account from the database.  <a href="#a4c5d98eb84176eaffd7ab3e099f1c4f6">More...</a><br /></td></tr>
+<tr class="separator:a4c5d98eb84176eaffd7ab3e099f1c4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0d32ef6d2e7fcfb2b2b146f4654bf4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a2b0d32ef6d2e7fcfb2b2b146f4654bf4">checkUser</a></td></tr>
+<tr class="memdesc:a2b0d32ef6d2e7fcfb2b2b146f4654bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided credentials correspond to a valid user account in the database.  <a href="#a2b0d32ef6d2e7fcfb2b2b146f4654bf4">More...</a><br /></td></tr>
 <tr class="separator:a2b0d32ef6d2e7fcfb2b2b146f4654bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e1b9a3e3d47cb8e9fcbe349f6eb789"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2e1b9a3e3d47cb8e9fcbe349f6eb789"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>hasUser</b></td></tr>
+<tr class="memitem:ae2e1b9a3e3d47cb8e9fcbe349f6eb789"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#ae2e1b9a3e3d47cb8e9fcbe349f6eb789">hasUser</a></td></tr>
+<tr class="memdesc:ae2e1b9a3e3d47cb8e9fcbe349f6eb789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided user name exists in the database.  <a href="#ae2e1b9a3e3d47cb8e9fcbe349f6eb789">More...</a><br /></td></tr>
 <tr class="separator:ae2e1b9a3e3d47cb8e9fcbe349f6eb789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e27daf2ed6db4dc277245c1877b489"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79e27daf2ed6db4dc277245c1877b489"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isValidUsername</b></td></tr>
+<tr class="memitem:a79e27daf2ed6db4dc277245c1877b489"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a79e27daf2ed6db4dc277245c1877b489">isValidUsername</a></td></tr>
+<tr class="memdesc:a79e27daf2ed6db4dc277245c1877b489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the username is at least 6 character long.  <a href="#a79e27daf2ed6db4dc277245c1877b489">More...</a><br /></td></tr>
 <tr class="separator:a79e27daf2ed6db4dc277245c1877b489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d1cce3f129942df3d4e7a72fa409529"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d1cce3f129942df3d4e7a72fa409529"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>isValidPassword</b></td></tr>
+<tr class="memitem:a5d1cce3f129942df3d4e7a72fa409529"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a5d1cce3f129942df3d4e7a72fa409529">isValidPassword</a></td></tr>
+<tr class="memdesc:a5d1cce3f129942df3d4e7a72fa409529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a password is valid.  <a href="#a5d1cce3f129942df3d4e7a72fa409529">More...</a><br /></td></tr>
 <tr class="separator:a5d1cce3f129942df3d4e7a72fa409529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8bbdd3f2fbec153980591723c252374"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8bbdd3f2fbec153980591723c252374"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>createUserAccountsForDemo</b></td></tr>
 <tr class="separator:af8bbdd3f2fbec153980591723c252374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07cdd150bdfd11706af63b571f8a06c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07cdd150bdfd11706af63b571f8a06c9"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>getUserAccount</b></td></tr>
+<tr class="memitem:a07cdd150bdfd11706af63b571f8a06c9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a07cdd150bdfd11706af63b571f8a06c9">getUserAccount</a></td></tr>
+<tr class="memdesc:a07cdd150bdfd11706af63b571f8a06c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the UserAccount object as a dictionary from the database.  <a href="#a07cdd150bdfd11706af63b571f8a06c9">More...</a><br /></td></tr>
 <tr class="separator:a07cdd150bdfd11706af63b571f8a06c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2db4de384a85320602584b1c00f1970"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2db4de384a85320602584b1c00f1970"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>getTopTenUsers</b></td></tr>
+<tr class="memitem:aa2db4de384a85320602584b1c00f1970"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#aa2db4de384a85320602584b1c00f1970">getTopTenUsers</a></td></tr>
+<tr class="memdesc:aa2db4de384a85320602584b1c00f1970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get top players sorted by cumulative score.  <a href="#aa2db4de384a85320602584b1c00f1970">More...</a><br /></td></tr>
 <tr class="separator:aa2db4de384a85320602584b1c00f1970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7db8afcdd356f061f2db90d8fe2c6ce5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7db8afcdd356f061f2db90d8fe2c6ce5"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>getHighestUnlockedLevel</b></td></tr>
+<tr class="memitem:a7db8afcdd356f061f2db90d8fe2c6ce5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a7db8afcdd356f061f2db90d8fe2c6ce5">getHighestUnlockedLevel</a></td></tr>
+<tr class="memdesc:a7db8afcdd356f061f2db90d8fe2c6ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get highest unlocked level by the user.  <a href="#a7db8afcdd356f061f2db90d8fe2c6ce5">More...</a><br /></td></tr>
 <tr class="separator:a7db8afcdd356f061f2db90d8fe2c6ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f70e183abae163f9249eda624559ae7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f70e183abae163f9249eda624559ae7"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>saveGame</b></td></tr>
+<tr class="memitem:a4f70e183abae163f9249eda624559ae7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a4f70e183abae163f9249eda624559ae7">saveGame</a></td></tr>
+<tr class="memdesc:a4f70e183abae163f9249eda624559ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save current game state into a file.  <a href="#a4f70e183abae163f9249eda624559ae7">More...</a><br /></td></tr>
 <tr class="separator:a4f70e183abae163f9249eda624559ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79c090baa5047a3ed34c684f4878a7f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79c090baa5047a3ed34c684f4878a7f5"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>loadListSavedGames</b></td></tr>
+<tr class="memitem:a79c090baa5047a3ed34c684f4878a7f5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a79c090baa5047a3ed34c684f4878a7f5">loadListSavedGames</a></td></tr>
+<tr class="memdesc:a79c090baa5047a3ed34c684f4878a7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the list of previously saved games for an user.  <a href="#a79c090baa5047a3ed34c684f4878a7f5">More...</a><br /></td></tr>
 <tr class="separator:a79c090baa5047a3ed34c684f4878a7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5598cc79b045d68df560cac5cb8de162"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5598cc79b045d68df560cac5cb8de162"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>loadGame</b></td></tr>
+<tr class="memitem:a5598cc79b045d68df560cac5cb8de162"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a5598cc79b045d68df560cac5cb8de162">loadGame</a></td></tr>
+<tr class="memdesc:a5598cc79b045d68df560cac5cb8de162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a specific game for an user.  <a href="#a5598cc79b045d68df560cac5cb8de162">More...</a><br /></td></tr>
 <tr class="separator:a5598cc79b045d68df560cac5cb8de162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ac2c87eed2941bb4b52a66f484d7de4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ac2c87eed2941bb4b52a66f484d7de4"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>updateUserScore</b></td></tr>
+<tr class="memitem:a7ac2c87eed2941bb4b52a66f484d7de4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a7ac2c87eed2941bb4b52a66f484d7de4">updateUserScore</a></td></tr>
+<tr class="memdesc:a7ac2c87eed2941bb4b52a66f484d7de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the user's cumulative score in the database.  <a href="#a7ac2c87eed2941bb4b52a66f484d7de4">More...</a><br /></td></tr>
 <tr class="separator:a7ac2c87eed2941bb4b52a66f484d7de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9198e5ac2342c54ee100d633ee3903d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9198e5ac2342c54ee100d633ee3903d6"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>updateNumGamesPlayed</b></td></tr>
-<tr class="separator:a9198e5ac2342c54ee100d633ee3903d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258263bbd1cec1a941211b0d622b3542"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatabase_1_1_database.html#a258263bbd1cec1a941211b0d622b3542">incrementNumOfGamesPlayed</a></td></tr>
+<tr class="memdesc:a258263bbd1cec1a941211b0d622b3542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the total number of games played for the user.  <a href="#a258263bbd1cec1a941211b0d622b3542">More...</a><br /></td></tr>
+<tr class="separator:a258263bbd1cec1a941211b0d622b3542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -153,13 +163,623 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>game</b></td></tr>
 <tr class="separator:ab5509c7b2858bc100302710aef4fdc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that handles the interface with database. </p>
+<p>An instance of this class connects to a local sqlite database with a single table. The table stores each attribute of <a class="el" href="classmodels_1_1_user_account.html" title="Instances of this class represent all information relevant to a specific user account. ">models.UserAccount</a> as a column, with the username being the primary key. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5c97f7273b18f6e38ac0e228198ed2d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>test</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor that connects to a sqlite database, and gets the 'user' table from it. </p>
+<p>It creates the database and the table if it cannot find them. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">test</td><td>By default False. If set to True, the database will be in memory instead of on the file system. Used in unit tests. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2b0d32ef6d2e7fcfb2b2b146f4654bf4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.checkUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the provided credentials correspond to a valid user account in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the username to be checked </td></tr>
+    <tr><td class="paramname">password</td><td>the password to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the username exists, False otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a941c78daaf542d2a35981a3975f4c42c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.createUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new user in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the real name </td></tr>
+    <tr><td class="paramname">username</td><td>the username </td></tr>
+    <tr><td class="paramname">password</td><td>the password </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if user account properly created, False if user already exists </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4c5d98eb84176eaffd7ab3e099f1c4f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.deleteAccount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete the account from the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user we want to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7db8afcdd356f061f2db90d8fe2c6ce5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.getHighestUnlockedLevel </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get highest unlocked level by the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user for whom we want to get the highest unlocked level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the highest unlocked level of that user </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa2db4de384a85320602584b1c00f1970"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.getTopTenUsers </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get top players sorted by cumulative score. </p>
+<p>Same score is counted as two. Users with the same score are sorted alphabetically (by username). </p><dl class="section return"><dt>Returns</dt><dd>a iterable list of UserAccount objects as dictionaries </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a07cdd150bdfd11706af63b571f8a06c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.getUserAccount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the UserAccount object as a dictionary from the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the username used as a key to retrieve the UserAccount </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the UserAccount object as a dictionary </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2e1b9a3e3d47cb8e9fcbe349f6eb789"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.hasUser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the provided user name exists in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the username to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a258263bbd1cec1a941211b0d622b3542"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.incrementNumOfGamesPlayed </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increment the total number of games played for the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user for whom we want to increment the number of games played </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5d1cce3f129942df3d4e7a72fa409529"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.isValidPassword </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether a password is valid. </p>
+<p>A valid password must be at least 8 characters long. In addition, it must necessarily include a minimum of 1 Upper case letter, 1 Lower case letter, 1 digits and 1 special character. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">password</td><td>the password to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the password is valid, False otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a79e27daf2ed6db4dc277245c1877b489"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.isValidUsername </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the username is at least 6 character long. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the username to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the username is valid, False otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5598cc79b045d68df560cac5cb8de162"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.loadGame </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>gamename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load a specific game for an user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user for whom we want to load the game </td></tr>
+    <tr><td class="paramname">gamename</td><td>the name of the game we want to load </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a79c090baa5047a3ed34c684f4878a7f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.loadListSavedGames </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load the list of previously saved games for an user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user for whom we want to load the list of saved game </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f70e183abae163f9249eda624559ae7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.saveGame </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>gamename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save current game state into a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user for whom we want to save the game </td></tr>
+    <tr><td class="paramname">gamename</td><td>the name of the game we want to save </td></tr>
+    <tr><td class="paramname">board</td><td>the current board containing all game state that needs to be saved </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa85c5885a4aa876deba8298e19842bfe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.updateUserAccount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>oldUsername</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>newUsername</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>newRealname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>newPassword</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update user account information with new username, realname, and password. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldUsername</td><td>the old user name with which we retrieve the account </td></tr>
+    <tr><td class="paramname">newUsername</td><td>the new user name we want to set </td></tr>
+    <tr><td class="paramname">newRealname</td><td>the new real name we want to set </td></tr>
+    <tr><td class="paramname">newPassword</td><td>the new password we want to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ac2c87eed2941bb4b52a66f484d7de4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def database.Database.updateUserScore </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>scoreToAdd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the user's cumulative score in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>the user for whom we want to update the score </td></tr>
+    <tr><td class="paramname">scoreToAdd</td><td>the score we want to add to the existing cumulative score in the database </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>database.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 17:04:10 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 1 2014 22:06:34 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
