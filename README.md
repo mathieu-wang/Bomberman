@@ -6,13 +6,13 @@ Team 12 Bomberman
 
 All rights reserved ©
 
-Gabriel Gibeault-Girard, gabriel.gibeault-girard@mail.mcgill.ca
+Gabriel Gibeault-Girard gabriel.gibeault-girard@mail.mcgill.ca
 
-Mathieu Wang, mathieu.wang@mail.mcgill.ca
+Mathieu Wang mathieu.wang@mail.mcgill.ca
 
-Stefan Tihanyi, stefan.tihanyi@mail.mcgill.ca
+Stefan Tihanyi stefan.tihanyi@mail.mcgill.ca
 
-Michael Ho, micheal.ho@mail.mcgill.ca
+Michael Ho micheal.ho@mail.mcgill.ca
 
 ##########
 ###Project location
