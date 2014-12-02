@@ -23,7 +23,7 @@ class LevelMenu(QtGui.QWidget):
         self.db = Database()
         self.initUI()
 
-    ##thsi method initialize the GUI of the level menu.
+    ##this method initialize the GUI of the level menu.
     def initUI(self):
         grid = QtGui.QGridLayout()
         self.setLayout(grid)

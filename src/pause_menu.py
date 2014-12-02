@@ -4,7 +4,7 @@ from PyQt4 import QtCore, QtGui
 #that the user can interact with:\n
 #resumeButton: emit resumeGameSignal when clicked.\n
 #saveButton: emit saveMenuSignal when clicked.\n
-#laodButton: emit loadMenuSignal when clicked.\n
+#loadButton: emit loadMenuSignal when clicked.\n
 #showLeaderboardButton: emit showLeaderboardSignal when clicked.\n
 #backButton: emit backToMainMenuSignal when clicked.\n
 #quitButton: emit quitGameSignal when clicked.

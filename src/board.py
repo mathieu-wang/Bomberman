@@ -64,7 +64,7 @@ class Board(QtGui.QFrame):
         self.slowestTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_SLOWEST))
 
         self.coundownTimer = QtCore.QTimer(self)
-        self.coundownTimer.timeout.connect(self.timeout_event)
+        self.coundownTimer.timeout.connect(self.timeoutEvent)
 
         if not self.level.isInitialized:
             self.initLevel()
@@ -369,7 +369,10 @@ class Board(QtGui.QFrame):
         self.globalTimer.singleShot(self.level.bomberman.speed, self.bombermanTriggerCanMove)
 
         return True
-
+    ## Method that moves every enemy of a certain speed if able.
+    # @param speed
+    # Each enemy on the map is checked to see if their speed is equal to the
+    # speed that is passed. If the intelligence of the enemy is 2 or 3 than
     def moveEnemy(self, speed):
         for i in range(self.level.numberEnemies):
             if (Enemy.getEnemy(self.level.listEnemies[i][3])['speed'] == speed):
@@ -683,7 +686,7 @@ class Board(QtGui.QFrame):
     def saveBomberman(self):
         return self.level
 
-    def timeout_event(self):
+    def timeoutEvent(self):
         if (self.level.timeLeft == 0 and self.level.timeDone == False):
             self.level.timeDone = True
             self.level.setSuperChaos()

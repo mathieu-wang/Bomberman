@@ -118,6 +118,8 @@ class TestGameplay(unittest.TestCase):
         self.board.level.setBomberman()
         self.board.level.setBomb()
 
+        self.board.level.bomberman.rangeOfBombs = 3
+
         self.board.detonateBomb()
 
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "Closer Brick did not get destroyed by bomb")
@@ -155,7 +157,8 @@ class TestGameplay(unittest.TestCase):
 
         self.board.detonateBomb()
 
-        self.assertEqual(0, self.level.numberEnemies, "Bomb detonation did not kill enemy")
+        self.assertEqual(self.board.tileAt(2, 1), Tile.Empty, "Bomb detonation did not kill enemy")
+        self.assertEqual(0, self.level.numberEnemies, "Enemy was not removed from map")
 
     def testDetonateBombSpawnsEnemiesWhenExitIsHit(self):
         self.board.setTileAt(1, 2, Tile.Exit)
@@ -202,7 +205,7 @@ class TestGameplay(unittest.TestCase):
     def testTimeRunsOut(self):
         self.level.timeLeft = 0
         self.level.timeDone = False
-        self.board.timeout_event()
+        self.board.timeoutEvent()
 
         check = False
 

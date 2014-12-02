@@ -70,7 +70,7 @@ class Level(object):
         if(self.powerUp == 2):
             self.bomberman.rangeOfBombs += 1
         if(self.powerUp == 3):
-            self.bomberman.speed = 400
+            self.bomberman.speed = constant.TIME_FAST
         if(self.powerUp == 4):
             self.bomberman.wallPass = True
         if(self.powerUp == 5):
