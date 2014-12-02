@@ -156,6 +156,8 @@ class TestGameplay(unittest.TestCase):
         self.level.listTypeEnemies[0] = 1
         self.board.level.bomberman.rangeOfBombs = 3
 
+        self.board.tryMove(1, 2)
+
         self.board.detonateBomb()
 
         self.assertEqual(self.board.tileAt(2, 1), Tile.Empty, "Bomb detonation did not kill enemy")
@@ -363,11 +365,6 @@ class TestGameplay(unittest.TestCase):
                                                                     + 8*Enemy.getEnemy(Tile.Ovapi)['points']
                                                                     + 16*Enemy.getEnemy(Tile.Ovapi)['points']
                                                                     + 32*Enemy.getEnemy(Tile.Pontan)['points'])
-
-
-
-        enemies = [[Tile.Balloom, Tile.Oneal], [], [Tile.Doll]]
-
 
 if __name__ == '__main__':
 
