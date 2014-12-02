@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['save',['save',['../classpause__menu_1_1_pause_menu.html#ae00560114f81e754d7f8c5871167251f',1,'pause_menu::PauseMenu']]],
-  ['savegame',['saveGame',['../classdatabase_1_1_database.html#a4f70e183abae163f9249eda624559ae7',1,'database.Database.saveGame()'],['../classsave__menu_1_1_save_menu.html#a831fd03c4d5e511c493c7fa2ba7e4866',1,'save_menu.SaveMenu.saveGame()']]],
-  ['savelabel',['saveLabel',['../classsave__menu_1_1_save_menu.html#aa355ca847bb9b975fcad19563511aacd',1,'save_menu::SaveMenu']]],
-  ['savemenu',['SaveMenu',['../classsave__menu_1_1_save_menu.html',1,'save_menu']]],
-  ['savemenusignal',['saveMenuSignal',['../classpause__menu_1_1_pause_menu.html#ac2b63083632aedb988886ab2f03ebca9',1,'pause_menu::PauseMenu']]],
-  ['showaccountsettingsmenu',['showAccountSettingsMenu',['../classmain__menu_1_1_main_menu.html#aca87007eb9a67a8ee92ccd8fd2653f50',1,'main_menu::MainMenu']]],
-  ['showleaderboard',['showLeaderboard',['../classmain__menu_1_1_main_menu.html#a0bc076779c0b910a00134f0d3fa0f486',1,'main_menu.MainMenu.showLeaderboard()'],['../classpause__menu_1_1_pause_menu.html#a9084c6d030d6da15a50a49baea5413b2',1,'pause_menu.PauseMenu.showLeaderboard()']]],
-  ['showleaderboardsignal',['showLeaderboardSignal',['../classmain__menu_1_1_main_menu.html#a5d60ef20710f525a8db80eb58b2f16ad',1,'main_menu.MainMenu.showLeaderboardSignal()'],['../classpause__menu_1_1_pause_menu.html#aa1ccc17fc26732d359e2091306f73804',1,'pause_menu.PauseMenu.showLeaderboardSignal()']]],
-  ['signupbutton',['signUpButton',['../classlogin__menu_1_1_login_menu.html#a5bd7d805fbc375882489c2b5714aadcc',1,'login_menu::LoginMenu']]],
-  ['signuptitle',['signUpTitle',['../classlogin__menu_1_1_login_menu.html#a563eabc4f2ca6ec05e1a282147ffc377',1,'login_menu::LoginMenu']]],
-  ['startlevel',['startLevel',['../classlevel__menu_1_1_level_menu.html#aa7daa1d1dfeecae0839061bcf131b71f',1,'level_menu::LevelMenu']]],
-  ['startlevelsignal',['startLevelSignal',['../classlevel__menu_1_1_level_menu.html#a573a049f9a9114db44ac7c34cbdabc05',1,'level_menu::LevelMenu']]],
-  ['statusbar',['StatusBar',['../classboard_1_1_status_bar.html',1,'board']]]
+  ['register',['register',['../classsrc_1_1login__menu_1_1_login_menu.html#a6db28e6b5f4cbc7682518773915c31cd',1,'src::login_menu::LoginMenu']]],
+  ['restartnextlevel',['restartNextLevel',['../classsrc_1_1board_1_1_board.html#a34a6889cf6a222ed0a64697301d98fa3',1,'src::board::Board']]],
+  ['restartsamelevel',['restartSameLevel',['../classsrc_1_1board_1_1_board.html#aceab5432b56d92ed4d90120f09215869',1,'src::board::Board']]],
+  ['resume',['resume',['../classsrc_1_1pause__menu_1_1_pause_menu.html#a3c7297c8c855b2acdcf1c88038c9610d',1,'src::pause_menu::PauseMenu']]],
+  ['resumegamesignal',['resumeGameSignal',['../classsrc_1_1pause__menu_1_1_pause_menu.html#a0b97feb3939cd6be81c71ba6dbe67669',1,'src::pause_menu::PauseMenu']]],
+  ['returntopausemenu',['returnToPauseMenu',['../classsrc_1_1save__menu_1_1_save_menu.html#a97cb0d0ac2bcb449471b2eeaba360033',1,'src::save_menu::SaveMenu']]],
+  ['returntopausemenusignal',['returnToPauseMenuSignal',['../classsrc_1_1save__menu_1_1_save_menu.html#a91e3384b3ca4264682fd7cc2fce47b0f',1,'src::save_menu::SaveMenu']]],
+  ['rowcount',['rowCount',['../classsrc_1_1leaderboard_1_1_leaderboard.html#a48b819acfb54637e30e709361ed32a85',1,'src::leaderboard::Leaderboard']]]
 ];

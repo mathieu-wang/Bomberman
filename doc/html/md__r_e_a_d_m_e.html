@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -62,7 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -77,28 +76,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Team 12 Bomberman </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Python package dependencies:</p><ul>
+<div class="textblock"><h6></h6>
+<p>Authors &amp; Copyright notice</p>
+<p>All rights reserved ©</p>
+<p>Gabriel Gibeault-Girard, <a href="#" onclick="location.href='mai'+'lto:'+'gab'+'ri'+'el.'+'gi'+'bea'+'ul'+'t-g'+'ir'+'ard'+'@m'+'ail'+'.m'+'cgi'+'ll'+'.ca'; return false;">gabri<span style="display: none;">.nosp@m.</span>el.g<span style="display: none;">.nosp@m.</span>ibeau<span style="display: none;">.nosp@m.</span>lt-g<span style="display: none;">.nosp@m.</span>irard<span style="display: none;">.nosp@m.</span>@mai<span style="display: none;">.nosp@m.</span>l.mcg<span style="display: none;">.nosp@m.</span>ill.<span style="display: none;">.nosp@m.</span>ca</a> Mathieu Wang, <a href="#" onclick="location.href='mai'+'lto:'+'mat'+'hi'+'eu.'+'wa'+'ng@'+'ma'+'il.'+'mc'+'gil'+'l.'+'ca'; return false;">mathi<span style="display: none;">.nosp@m.</span>eu.w<span style="display: none;">.nosp@m.</span>ang@m<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>mcgil<span style="display: none;">.nosp@m.</span>l.ca</a> Stefan Tihanyi, <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'fa'+'n.t'+'ih'+'any'+'i@'+'mai'+'l.'+'mcg'+'il'+'l.c'+'a'; return false;">stefa<span style="display: none;">.nosp@m.</span>n.ti<span style="display: none;">.nosp@m.</span>hanyi<span style="display: none;">.nosp@m.</span>@mai<span style="display: none;">.nosp@m.</span>l.mcg<span style="display: none;">.nosp@m.</span>ill.<span style="display: none;">.nosp@m.</span>ca</a> Michael Ho, <a href="#" onclick="location.href='mai'+'lto:'+'mic'+'he'+'al.'+'ho'+'@ma'+'il'+'.mc'+'gi'+'ll.'+'ca'; return false;">miche<span style="display: none;">.nosp@m.</span>al.h<span style="display: none;">.nosp@m.</span>o@mai<span style="display: none;">.nosp@m.</span>l.mc<span style="display: none;">.nosp@m.</span>gill.<span style="display: none;">.nosp@m.</span>ca</a></p>
+<h6></h6>
+<p>URLs</p>
+<p>github's url: <a href="https://github.com/mcgill-ecse321/Team-12">https://github.com/mcgill-ecse321/Team-12</a> git clone's url: <a href="#" onclick="location.href='mai'+'lto:'+'git'+'@g'+'ith'+'ub'+'.co'+'m'; return false;">git@g<span style="display: none;">.nosp@m.</span>ithu<span style="display: none;">.nosp@m.</span>b.com</a>:mcgill-ecse321/Team-12.git</p>
+<h6></h6>
+<p>Dependencies</p>
+<p>Programming language: Python</p>
+<p>Python package dependencies:</p><ul>
 <li>SIP</li>
 <li>Qt4</li>
 <li>PyQt4</li>
 <li>dataset</li>
 </ul>
-<h1>How to run</h1>
-<p>``` python game.py ```</p>
-<h1>Installation</h1>
-<h2>Mac OS X</h2>
-<p>Install the <a href="http://brew.sh/">brew package manager</a> if not already present ``` ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ``` Install Python 2.7 using brew if not already present (the native Apple Python is not compatible) ``` brew install python ``` Add the brew PYTHONPATH to your environment variables by adding the following line to .bash_profile ``` export PATH=/usr/local/bin:$PATH ``` Install the pip package manager if not already present ``` sudo easy_install pip ``` Install qt ``` brew install Qt ``` Install SIP ``` brew install sip ``` Install PyQt ``` brew install pyqt ``` Install Dataset ``` pip install dataset ```</p>
-<h2>Ubuntu</h2>
-<p>Install SIP and PyQt using aptitude ``` sudo apt-get install python-sip python-qt4 ``` Install the pip package manager if not already present ``` sudo apt-get install python-pip ``` Install Dataset ``` pip install dataset ```</p>
-<h3>Run on Ubuntu 12.04 without installation using virtualenv</h3>
-<p>Inside the root directory, activate the python virtual environment: ``` source venv/bin/activate ```</p>
-<p>Now <code>(venv)</code> should appear in front of your prompt. To start the game, run: ``` python game.py ```</p>
-<h3>Unit tests</h3>
-<p>Inside the root directory run: ``` python -m unittest discover ``` </p>
-</div></div><!-- contents -->
+<p>Installation instruction given below.</p>
+<h6></h6>
+<p>Platforms</p>
+<p>This program was developed and tested on the following platforms: </p><pre class="fragment">-Ubuntu, Sublime Text 2
+-Ubuntu, PyCharm
+-Mac OS X, PyCharm
+</pre><h6></h6>
+<p>How to run the game</p>
+<p>Just type: "python game.py" in the command line without the quote (INSIDE the src/ directory)</p>
+<h6></h6>
+<p>Installation</p>
+<h1>Mac OS X: </h1>
+<p>1) Install the <a href="http://brew.sh/">brew package manager</a> if not already present</p>
+<p>2) ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</p>
+<p>3) Install Python 2.7 using brew if not already present (the native Apple Python is not compatible) </p><pre class="fragment">    brew install python
+</pre><p>5) Add the brew PYTHONPATH to your environment variables by adding the following line to .bash_profile </p><pre class="fragment">    export PATH=/usr/local/bin:$PATH
+</pre><p>6) Install the pip package manager if not already present </p><pre class="fragment">    sudo easy_install pip
+</pre><p>7) Install qt </p><pre class="fragment">    brew install Qt
+</pre><p>8) Install SIP </p><pre class="fragment">    brew install sip
+</pre><p>9) Install PyQt </p><pre class="fragment">    brew install pyqt
+</pre><p>10) Install Dataset </p><pre class="fragment">    pip install dataset
+</pre><h1>Ubuntu: </h1>
+<p>1) Install SIP and PyQt using aptitude </p><pre class="fragment">    sudo apt-get install python-sip python-qt4
+</pre><p>2) Install the pip package manager if not already present </p><pre class="fragment">    sudo apt-get install python-pip
+
+    install Dataset
+
+    pip install dataset
+</pre><h6></h6>
+<p>Unit tests</p>
+<p>1) Inside the root directory run: </p><pre class="fragment">    python -m unittest discover</pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 22:06:34 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 1 2014 23:54:35 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

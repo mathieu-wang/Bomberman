@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hasuser',['hasUser',['../classdatabase_1_1_database.html#ae2e1b9a3e3d47cb8e9fcbe349f6eb789',1,'database::Database']]]
+  ['hasuser',['hasUser',['../classsrc_1_1database_1_1_database.html#aa664b6b94bb39e9f5fe3186f72ee44ff',1,'src::database::Database']]]
 ];

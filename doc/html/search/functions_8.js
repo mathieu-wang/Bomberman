@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['load',['load',['../classmain__menu_1_1_main_menu.html#a79e063792504600d3dcea1bdd6b1d443',1,'main_menu.MainMenu.load()'],['../classpause__menu_1_1_pause_menu.html#afd932e45dd5e2a4fbcf1a962796bad15',1,'pause_menu.PauseMenu.load()']]],
-  ['loadgame',['loadGame',['../classdatabase_1_1_database.html#a5598cc79b045d68df560cac5cb8de162',1,'database::Database']]],
-  ['loadlistsavedgames',['loadListSavedGames',['../classdatabase_1_1_database.html#a79c090baa5047a3ed34c684f4878a7f5',1,'database::Database']]],
-  ['loadsavedgame',['loadSavedGame',['../classload__menu_1_1_load_menu.html#a2edc2ec164549f33361c58cb45f9eaa5',1,'load_menu::LoadMenu']]],
-  ['loadsavedgamelist',['loadSavedGameList',['../classload__menu_1_1_load_menu.html#a44772f9baaa42e6aa82a0a68dcad6457',1,'load_menu::LoadMenu']]],
-  ['login',['login',['../classlogin__menu_1_1_login_menu.html#ac3e5665477576f241c5934f330f83470',1,'login_menu::LoginMenu']]],
-  ['logout',['logout',['../classmain__menu_1_1_main_menu.html#a9a174f52445f1a7a5a8aaf5a15a5b6d3',1,'main_menu::MainMenu']]]
+  ['incrementnumofgamesplayed',['incrementNumOfGamesPlayed',['../classsrc_1_1database_1_1_database.html#a640ebedb267940c09228ea6c51fcf8e2',1,'src::database::Database']]],
+  ['initui',['initUI',['../classsrc_1_1leaderboard_1_1_leaderboard.html#ac62f1304f5b4295d74af6d9e65d050c7',1,'src.leaderboard.Leaderboard.initUI()'],['../classsrc_1_1level__menu_1_1_level_menu.html#a2ac0ca1cba0bbcc90d7bb67f4800c8a2',1,'src.level_menu.LevelMenu.initUI()'],['../classsrc_1_1load__menu_1_1_load_menu.html#a2e32e2e1f422ac727cb97cc27b7c138d',1,'src.load_menu.LoadMenu.initUI()'],['../classsrc_1_1login__menu_1_1_login_menu.html#ae4f0e6adbb18214711d96acdb924508d',1,'src.login_menu.LoginMenu.initUI()'],['../classsrc_1_1main__menu_1_1_main_menu.html#a3113abc9c3a207f22ccc9ae7a83cf37d',1,'src.main_menu.MainMenu.initUI()'],['../classsrc_1_1pause__menu_1_1_pause_menu.html#a62e8c72521fecf6445dca451b0935f2e',1,'src.pause_menu.PauseMenu.initUI()'],['../classsrc_1_1save__menu_1_1_save_menu.html#a66b95685a36bf0e13d999ff0e1c963a6',1,'src.save_menu.SaveMenu.initUI()'],['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#af1ec8bde572a5ccb81c8be474f536270',1,'src.settings_menu.AccountSettingsMenu.initUI()']]],
+  ['isvalidpassword',['isValidPassword',['../classsrc_1_1database_1_1_database.html#a8613fbb0fd5056043b89385351742ba7',1,'src::database::Database']]],
+  ['isvalidusername',['isValidUsername',['../classsrc_1_1database_1_1_database.html#aa1414e3de9a7737c155bfe79249267f8',1,'src::database::Database']]]
 ];
