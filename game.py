@@ -11,7 +11,7 @@ from save_menu import SaveMenu
 from load_menu import LoadMenu
 from settings_menu import AccountSettingsMenu
 from database import Database
-from bomberman import Bomberman
+from level import Level
 import constant
 
 class Game(QtGui.QMainWindow):
@@ -71,12 +71,12 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Choose Level')
         self.center()
 
-    def showBoard(self, level, bomberman=None):
+    def showBoard(self, levelNum, level=None):
 
-        if not bomberman:
-            bomberman = Bomberman(self.username,level)
+        if not level:
+            level = Level(self.username,levelNum)
         
-        self.board_widget = Board(bomberman, self)
+        self.board_widget = Board(level, self)
 
         self.board_widget.pauseGameSignal.connect(self.showPauseMenu)
         self.board_widget.gameOverSignal.connect(self.gameOver)
@@ -182,9 +182,9 @@ class Game(QtGui.QMainWindow):
     def loadSavedGame(self, gamename):
 
         db = Database()
-        bomberman = db.loadGame(self.username, str(gamename))
+        level = db.loadGame(self.username, str(gamename))
 
-        self.showBoard(1, bomberman)
+        self.showBoard(1, level)
 
     def gameOver(self):
         print 'Game over!'
@@ -193,7 +193,7 @@ class Game(QtGui.QMainWindow):
 
     def updateScoreInDb(self, incrementalScore):
         db = Database()
-        db.updateUserScore(self.loginWidget.loggedUsername, self.board_widget.bomberman.score + incrementalScore)
+        db.updateUserScore(self.loginWidget.loggedUsername, self.board_widget.level.score + incrementalScore)
 
     def updateGamesPlayedInDb(self):
         db = Database()
