@@ -7,6 +7,7 @@ from src.board import Board
 from src.level import Level
 from src.tile import Tile
 from src.game import Game
+from src.enemy import Enemy
 from src import constant
 
 class TestGameplay(unittest.TestCase):
@@ -328,6 +329,44 @@ class TestGameplay(unittest.TestCase):
         self.board.tryMove(1, 2)
 
         self.assertEqual(2, self.level.bomberman.lives, "Bomberman did not lose a life when he moves into an enemy")
+
+    def testGetScoreOfKilledEnemies(self):
+        # No enemies:
+        enemies = [[], [], []]
+        self.assertEquals(self.board.getScoreOfKilledEnemies(enemies), 0)
+
+        # 1 enemy at distance 1, with bomb range 1
+        enemies = [[Tile.Balloom]]
+        self.assertEqual(self.board.getScoreOfKilledEnemies(enemies), Enemy.getEnemy(Tile.Balloom)['points'])
+
+        # 1 enemy at distance 1, with bomb range >1
+        enemies = [[Tile.Balloom], [], []]
+        self.assertEqual(self.board.getScoreOfKilledEnemies(enemies), Enemy.getEnemy(Tile.Balloom)['points'])
+
+        # 1 enemy at distance >1
+        enemies = [[], [Tile.Balloom], []]
+        self.assertEqual(self.board.getScoreOfKilledEnemies(enemies), Enemy.getEnemy(Tile.Balloom)['points'])
+
+        # 2 enemies at different distance
+        enemies = [[Tile.Balloom], [], [Tile.Doll]]
+        self.assertEqual(self.board.getScoreOfKilledEnemies(enemies), Enemy.getEnemy(Tile.Balloom)['points'] + 2*Enemy.getEnemy(Tile.Doll)['points'])
+
+        # 2 enemies at same distance
+        enemies = [[Tile.Doll, Tile.Balloom], [], []]
+        self.assertEqual(self.board.getScoreOfKilledEnemies(enemies), Enemy.getEnemy(Tile.Balloom)['points'] + 2*Enemy.getEnemy(Tile.Doll)['points'])
+
+        # multiple enemies at multiple distances
+        enemies = [[Tile.Doll, Tile.Balloom, Tile.Doll], [], [Tile.Ovapi, Tile.Ovapi], [Tile.Pontan]]
+        self.assertEqual(self.board.getScoreOfKilledEnemies(enemies), Enemy.getEnemy(Tile.Balloom)['points']
+                                                                    + 2*Enemy.getEnemy(Tile.Doll)['points']
+                                                                    + 4*Enemy.getEnemy(Tile.Doll)['points']
+                                                                    + 8*Enemy.getEnemy(Tile.Ovapi)['points']
+                                                                    + 16*Enemy.getEnemy(Tile.Ovapi)['points']
+                                                                    + 32*Enemy.getEnemy(Tile.Pontan)['points'])
+
+
+
+        enemies = [[Tile.Balloom, Tile.Oneal], [], [Tile.Doll]]
 
 
 if __name__ == '__main__':

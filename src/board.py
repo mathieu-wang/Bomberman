@@ -275,6 +275,12 @@ class Board(QtGui.QFrame):
             painter.drawLine(x + self.squareWidth() - 1,
                              y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
 
+    ## This method calls methods after keys are pressed.
+    # @param event The key that has been pressed
+    # P: self.pause() is called if pause menu isn't open.
+    # Arrow keys: tryMove() is called.
+    # Space or Z: setBomb() is called.
+    # X or B: detonateBomb() is called.
     def keyPressEvent(self, event):
 
         key = event.key()
@@ -324,6 +330,12 @@ class Board(QtGui.QFrame):
         else:
             super(Board, self).keyPressEvent(event)
 
+    ## A method that moves bomberman one tile.
+    # @param newX The x coordinate to move to
+    # @param newY The y coordinate to move to
+    # This method checks whether bomberman is allowed to move to the tile
+    # that is specified by newX and newY. If he is, it pops the current
+    # tile he is on and pushes a bomberman tile to newX and newY.
     def tryMove(self, newX, newY):
         if (self.isPaused):
             return False
@@ -369,10 +381,16 @@ class Board(QtGui.QFrame):
         self.globalTimer.singleShot(self.level.bomberman.speed, self.bombermanTriggerCanMove)
 
         return True
+
     ## Method that moves every enemy of a certain speed if able.
-    # @param speed
+    # @param speed The speed of the enemies that will be moving.
     # Each enemy on the map is checked to see if their speed is equal to the
-    # speed that is passed. If the intelligence of the enemy is 2 or 3 than
+    # speed that is passed. If the intelligence of the enemy is 2 or 3 then the
+    # 4 adjacent tiles are checked to see if bomberman is on them. If yes, the
+    # enemy moves onto bomberman. If no, there is a chance based on the
+    # intelligence level of the enemy that it changes direction. The enemy will
+    # reverse its direction is there is an obstacle in its path. If
+    # there is no obstacle in front of the enemy it moves forward one tile.
     def moveEnemy(self, speed):
         for i in range(self.level.numberEnemies):
             if (Enemy.getEnemy(self.level.listEnemies[i][3])['speed'] == speed):
@@ -493,9 +511,17 @@ class Board(QtGui.QFrame):
                             self.death()
                             return False
 
+    ## Method that allows bomberman to move. Triggers after a set amount of time.
     def bombermanTriggerCanMove(self):
         self.level.bomberman.canMove = not self.level.bomberman.canMove
-            
+
+    ## This method kills an enemy if it is at a given coordinate.
+    # @param x The x coordinate
+    # @param y The y coordinate
+    # This method checks to see if there is an enemy at a given coordinate
+    # and if there is, it pops the tile that the enemy is at, removes it
+    # from listEnemies, and decrements both number of enemies and
+    # listTypeEnemies.
     def killEnemy(self, x, y):
         for i in range (self.level.numberEnemies):
             if (x == self.level.listEnemies[i][0] and y ==  self.level.listEnemies[i][1]):
@@ -505,6 +531,13 @@ class Board(QtGui.QFrame):
                 self.level.listTypeEnemies[i] -= 1
                 break
 
+    ## This method detonates the first bomb in bombQueue.
+    #  flashList is a list of tiles that are turned orange after the
+    #  bomb is detonated. popList is a list of tiles to be popped.
+    #  killedEnemies is a list of tiles where enemies are to be killed.
+    #  This method checks the four cardinal directions from the bomb for
+    #  bricks that aren't empty or concrete and acts according to the
+    #  tile type.
     def detonateBomb(self):
         x, y, z = self.level.bombQueue.pop(0)
         if (self.tileAt(x,y) == Tile.Bomberman):
@@ -610,19 +643,26 @@ class Board(QtGui.QFrame):
         self.destroyTiles(popList)
         self.updateScore(killedEnemies)
 
+    ## This method changes every tile on the flashList to Tile.Flash
+    #  @flashList The list of tiles to be flashed.
     def startFlash(self, flashList):
         for x,y in flashList:
             self.setTileAt(x,y,Tile.Flash)
             self.level.flashQueue.append([x,y, constant.TIME_FLASH])
 
+    ## This method pops all Tile.Flash from the list flashList.
+    #  @parim flashList The list of tiles to be popped.
     def endFlash(self, flashList):
         for x,y in flashList:
             self.popTileAtWithoutUpdate(x,y)
 
+    ## This method pops all the tiles on the popList.
+    #  @parim popList The list of tiles to be popped.
     def destroyTiles(self,popList):
         for x,y in popList:
             self.popTileAt(x,y)
 
+    ## This method stops timers and ends the game when the exit of level 16 is reached.
     def exit(self):
         if self.level.levelNum == 16:
             winningMessage = '''Congratulations!!! You won the game!!!'''
@@ -635,6 +675,7 @@ class Board(QtGui.QFrame):
         # IMPORTANT sleep a few millisecond to avoid level timer overlap
         QtCore.QTimer.singleShot(self.level.bomberman.speed, self.restartNextLevel)
 
+    ## This method stops all the timers.
     def stopTimers(self):
         self.isPaused = True
         self.globalTimer.stop()
@@ -644,6 +685,7 @@ class Board(QtGui.QFrame):
         self.slowestTimer.stop()
         self.coundownTimer.stop()
 
+    ## This method initialized a new next level.
     def restartNextLevel(self):
         # Increment level
         self.level.levelNum += 1
@@ -651,6 +693,7 @@ class Board(QtGui.QFrame):
         self.initLevel()
         self.start()
 
+    ## This method initializes a new same level.
     def restartSameLevel(self):
         self.initBoard()
         self.initLevel()
