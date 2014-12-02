@@ -12,6 +12,7 @@ class MainMenu(QtGui.QWidget):
     quitGameSignal = QtCore.pyqtSignal()
     showLeaderboardSignal = QtCore.pyqtSignal(int)
     loadMenuSignal = QtCore.pyqtSignal(int)
+    changeSettingsSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(MainMenu, self).__init__(parent)
@@ -33,25 +34,33 @@ class MainMenu(QtGui.QWidget):
         playButton.move(buttonStartXCoordinate, 139)
         playButton.clicked.connect(self.play)
 
-        logoutButton = QtGui.QPushButton('Logout', self)
-        logoutButton.setFixedWidth(buttonWidth)
-        logoutButton.move(buttonStartXCoordinate, 259)
-        logoutButton.clicked.connect(self.logout)
 
         loadButton = QtGui.QPushButton('Load Game', self)
         loadButton.setFixedWidth(buttonWidth)
         loadButton.move(buttonStartXCoordinate, 179)
         loadButton.clicked.connect(self.load)
 
-        quitButton = QtGui.QPushButton('Quit', self)
-        quitButton.setFixedWidth(buttonWidth)
-        quitButton.move(buttonStartXCoordinate, 299)
-        quitButton.clicked.connect(self.quit)
-
         showLeaderboardButton = QtGui.QPushButton('Leaderboard', self)
         showLeaderboardButton.setFixedWidth(buttonWidth)
         showLeaderboardButton.move(buttonStartXCoordinate, 219)
         showLeaderboardButton.clicked.connect(self.showLeaderboard)
+
+        logoutButton = QtGui.QPushButton('Logout', self)
+        logoutButton.setFixedWidth(buttonWidth)
+        logoutButton.move(buttonStartXCoordinate, 259)
+        logoutButton.clicked.connect(self.logout)
+
+        changeSettingsButton = QtGui.QPushButton('Account Settings', self)
+        changeSettingsButton.setFixedWidth(buttonWidth)
+        changeSettingsButton.move(buttonStartXCoordinate, 299)
+        changeSettingsButton.clicked.connect(self.showAccountSettingsMenu)
+
+        quitButton = QtGui.QPushButton('Quit', self)
+        quitButton.setFixedWidth(buttonWidth)
+        quitButton.move(buttonStartXCoordinate, 339)
+        quitButton.clicked.connect(self.quit)
+
+
 
         self.setFixedHeight(468)
         self.setFixedWidth(468)
@@ -69,6 +78,9 @@ class MainMenu(QtGui.QWidget):
 
     def showLeaderboard(self):
         self.showLeaderboardSignal.emit(constant.MAIN_MENU)
+
+    def showAccountSettingsMenu(self):
+        self.changeSettingsSignal.emit()
 
     def load(self):
         self.loadMenuSignal.emit(constant.MAIN_MENU)
