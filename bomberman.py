@@ -75,6 +75,9 @@ class Bomberman(object):
         self.setEnemies()
         self.setBomberman()
 
+        self.timeLeft = 200
+
+
     def gainPowerUp(self):
         if(self.powerUp == 1):
             self.numBombs += 1
