@@ -1,3 +1,4 @@
+## This class stores the types of enemies and how many there are in each level.
 class Enemy(object):
 
     def __init__(self, points, speed, intelligence, wallpass, direction, canMove):
@@ -9,6 +10,10 @@ class Enemy(object):
         self.canMove = canMove
 
     @staticmethod
+    ## This method is a dictionary that returns information for the different enemy types.
+    #  @parim type The type of enemy for which information will be returned.
+    #  The information that can be returned is the enemies' points, speed, intelligence,
+    #  wallpass and direction.
     def getEnemy(type):
         if type == 8:
             return dict(points=100, speed=2, intelligence=1, wallpass=False, direction=0)
@@ -28,6 +33,8 @@ class Enemy(object):
             return dict(points=8000, speed=4, intelligence=3, wallpass=True, direction=0)
 
     @staticmethod
+    ## This method returns a list of the number of each enemy and the powerup for each level.
+    #  @parim level The level for which information is to be returned. 
     def getEnemyListAndPowerUp(level):
         if level == 1:
             NumEnemies = [6, 0, 0, 0, 0, 0, 0, 0]
