@@ -1,8 +1,3 @@
-import constant
-
-from tile import Tile
-from enemy import Enemy
-
 class Bomberman(object):
 
     def __init__(self):

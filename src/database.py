@@ -1,7 +1,9 @@
-import dataset
 import cPickle as pickle
 
-from models import UserAccount
+import dataset
+
+from src.models import UserAccount
+
 
 
 ## Class that handles the interface with database

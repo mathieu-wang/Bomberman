@@ -1,9 +1,10 @@
 import random
-import constant
 
+from src import constant
 from tile import Tile
 from enemy import Enemy
 from bomberman import Bomberman
+
 
 class Level(object):
 

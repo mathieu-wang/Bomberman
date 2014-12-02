@@ -1,6 +1,6 @@
 from PyQt4 import QtCore, QtGui
 
-from database import Database
+from src.database import Database
 
 ##This class is a widget that displays the leaderBoard. It includes the following buttons
 #and fields that the user can interact with:\n

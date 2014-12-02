@@ -1,7 +1,5 @@
 from PyQt4 import QtCore, QtGui
 
-import constant
-
 ## This class is a widget that displays the Main menu. It includes the following buttons
 # that the user can interact with:\n
 # playButton: emit playGameSignal when clicked.\n
@@ -11,6 +9,9 @@ import constant
 # showLeaderboardButton: emit showLeaderboardSignal when clicked.
 # changeSettingsButton: emit changeSettingsSignal when clicked
 #
+from src import constant
+
+
 class MainMenu(QtGui.QWidget):
 
     ##Signal which will be used to launch the game.

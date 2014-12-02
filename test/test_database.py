@@ -1,5 +1,7 @@
 import unittest
-from database import Database
+
+from src.database import Database
+
 
 class TestDatabase(unittest.TestCase):
     TestRealName = "Test User"

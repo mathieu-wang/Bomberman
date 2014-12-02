@@ -1,7 +1,8 @@
+from functools import partial
+
 from PyQt4 import QtCore, QtGui
 
-from database import Database
-from functools import partial
+from src.database import Database
 
 ##this class is a widget that displays the level menu. It includes buttons 
 #that the user can interact with.

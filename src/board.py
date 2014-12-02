@@ -1,9 +1,11 @@
-from PyQt4 import QtCore, QtGui
 import random
-import constant
 
+from PyQt4 import QtCore, QtGui
+
+from src import constant
 from tile import Tile
 from enemy import Enemy
+
 
 class StatusBar(QtGui.QDockWidget):
     def __init__(self, parent=None):
@@ -608,7 +610,7 @@ class Board(QtGui.QFrame):
     def startFlash(self, flashList):
         for x,y in flashList:
             self.setTileAt(x,y,Tile.Flash)
-            self.level.flashQueue.append([x,y,constant.TIME_FLASH])
+            self.level.flashQueue.append([x,y, constant.TIME_FLASH])
 
     def endFlash(self, flashList):
         for x,y in flashList:

@@ -1,5 +1,4 @@
 from PyQt4 import QtCore, QtGui
-import constant
 
 ##This class is a widget that displays the pause menu. It includes the following buttons
 #that the user can interact with:\n
@@ -9,6 +8,9 @@ import constant
 #showLeaderboardButton: emit showLeaderboardSignal when clicked.\n
 #backButton: emit backToMainMenuSignal when clicked.\n
 #quitButton: emit quitGameSignal when clicked.
+from src import constant
+
+
 class PauseMenu(QtGui.QWidget):
 
     ##Signal which will be used to resume the current game.

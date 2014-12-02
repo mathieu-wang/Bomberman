@@ -3,12 +3,11 @@ import sys
 
 from PyQt4 import QtGui
 
-from board import Board
-from level import Level
-from tile import Tile
-from game import Game
-import constant
-
+from src.board import Board
+from src.level import Level
+from src.tile import Tile
+from src.game import Game
+from src import constant
 
 class TestGameplay(unittest.TestCase):
     app = None
