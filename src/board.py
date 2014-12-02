@@ -55,9 +55,9 @@ class Board(QtGui.QFrame):
     ## This method initializes the board.
     #  It initializes the timers too.
     def initBoard(self):
-
-        print "Username: " + str(self.level.username)
-        print "Board level: " + str(self.level.levelNum)
+        #
+        # print "Username: " + str(self.level.username)
+        # print "Board level: " + str(self.level.levelNum)
 
         self.isPaused = True
 

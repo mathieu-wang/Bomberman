@@ -28,6 +28,9 @@ class IntegrationTest(unittest.TestCase):
 
     def tearDown(self):
         self.db.deleteAccount(IntegrationTest.TestUserName)
+        self.game.board_widget.stopTimers()
+        self.game.board_widget.statusBar.destroy()
+        self.game.board_widget.exit()
         self.game.board_widget.destroy()
         self.game.destroy()
 
