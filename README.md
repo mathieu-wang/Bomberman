@@ -47,13 +47,12 @@ This program was developed and tested on the following platforms with the follow
 ##########
 How to run the game
 
-`python game.py` in the command line (INSIDE the `src/` directory)
+`python game.py` on the command line (INSIDE the `src/` directory)
 
 ##########
 ##Installation
 
 ###Mac OS X
-=========
 
 1)  Install the [brew package manager](http://brew.sh/) if not already present
 
@@ -89,7 +88,6 @@ How to run the game
 
 
 ###Ubuntu
-==========
 
 1)  Install SIP and PyQt using aptitude
 
