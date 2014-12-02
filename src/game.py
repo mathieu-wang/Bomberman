@@ -15,13 +15,15 @@ from database import Database
 from level import Level
 import constant
 
-
+## Main controller
 class Game(QtGui.QMainWindow):
     
+    ## Constructor, initializes UI
     def __init__(self):
         super(Game, self).__init__()
         self.initUI()
-        
+    
+    ## Initialize UI and center the window
     def initUI(self):    
 
         self.centralWidget = QtGui.QStackedWidget()
@@ -29,6 +31,7 @@ class Game(QtGui.QMainWindow):
 
         self.showLoginMenu()
 
+    ## Display login menu
     def showLoginMenu(self):
 
         self.loginWidget = LoginMenu(self)
@@ -41,6 +44,7 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Login')
         self.center()
 
+    ## Display login menu after login
     def showMainMenu(self):
 
         self.username = self.loginWidget.loggedUsername
@@ -60,6 +64,7 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Main Menu')
         self.center()
 
+    ## Display level menu where player is asked to select level to play
     def showLevelMenu(self):
 
         self.levelMenuWidget = LevelMenu(self, self.username)
@@ -73,6 +78,9 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Choose Level')
         self.center()
 
+    ## Display bomberman game
+    # @param levelNum: Integer the level number
+    # @param level: Level object containing all the information necessary to run the game
     def showBoard(self, levelNum, level=None):
 
         if not level:
@@ -92,6 +100,7 @@ class Game(QtGui.QMainWindow):
         self.resize(468, 468)
         self.setWindowTitle('Bomberman')
 
+    ## Display leaderboard
     def showLeaderboard(self, previousMenu):
 
         self.leaderboardWidget = Leaderboard(self, previousMenu)
@@ -107,6 +116,7 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Leaderboard')
         self.center()
 
+    ## Display pause menu
     def showPauseMenu(self):
 
         self.pauseMenuWidget = PauseMenu(self)
@@ -124,6 +134,7 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Pause')
         self.center()
 
+    ## Display menu to save game
     def showSaveMenu(self):
         
         self.saveMenuWidget = SaveMenu(self.username, self.board_widget.saveBomberman(), self)
@@ -136,6 +147,7 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Save Game Menu')
         self.center()
 
+    ## Display menu to load game
     def showLoadMenu(self, previousMenu):
         
         self.loadMenuWidget = LoadMenu(self, self.loginWidget.loggedUsername, previousMenu)
@@ -153,6 +165,7 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Load Game Menu')
         self.center()
 
+    ## Display account settings menu
     def showAccountSettingsMenu(self):
 
         self.accountSettingsMenuWidget = AccountSettingsMenu(self, self.loginWidget.loggedUsername)
@@ -163,20 +176,24 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Account Settings')
         self.center()
 
+    ## Center the current window
     def center(self):
         screen = QtGui.QDesktopWidget().screenGeometry()
         size = self.geometry()
         self.move((screen.width()-size.width())/2, 
             (screen.height()-size.height())/2)
 
+    ## Exit entirely the process
     def quit(self):
         sys.exit()
 
+    ## Resume the game after pause
     def resumeToGame(self):
 
         self.centralWidget.setCurrentWidget(self.board_widget)
         self.board_widget.start()
 
+    ## Navigate back to pause menu 
     def resumeToPauseMenu(self):
 
         self.centralWidget.setCurrentWidget(self.pauseMenuWidget)
