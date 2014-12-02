@@ -13,7 +13,7 @@ class LoadMenu(QtGui.QWidget):
     #@Param str the name of the game to load.
     loadSavedGameSignal = QtCore.pyqtSignal(str)
     ##Signal which will be used to go back to the previous menu based on an int.
-    #@Param int set as 'previousMenu'.
+    #@Param int is set as 'previousMenu'.
     backSignal = QtCore.pyqtSignal(int)
 
     def __init__(self, parent, username, previousMenu):
