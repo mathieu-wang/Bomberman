@@ -40,7 +40,7 @@ class Board(QtGui.QFrame):
 
     def __init__(self, level, parent=None):
         super(Board, self).__init__(parent)
-        self.level = level # Initialize level attributes
+        self.level = level
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.initStatusBar()
         self.initBoard()
