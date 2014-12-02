@@ -6,7 +6,11 @@ import constant
 from tile import Tile
 from enemy import Enemy
 
-
+## This class is a widget which displays the game information while playing.
+#  It includes the following labels:
+#  livesLabel: Displays number of remaining lives.
+#  timesLabel: Displays time left.
+#  scoreLabel: Displays the player's score.
 class StatusBar(QtGui.QDockWidget):
     def __init__(self, parent=None):
         super(StatusBar, self).__init__(parent)
@@ -22,6 +26,9 @@ class StatusBar(QtGui.QDockWidget):
         self.scoreLabel.setFixedWidth(200)
         self.scoreLabel.move(300, 0)
 
+## This class displays the board for the gameplay.
+#  It handles drawing each tile. It also contains timers and
+#  methods that allow movement of bomberman and enemies.
 class Board(QtGui.QFrame):
 
     pauseGameSignal = QtCore.pyqtSignal()
@@ -38,12 +45,15 @@ class Board(QtGui.QFrame):
         self.initStatusBar()
         self.initBoard()
 
+    ## This method initializes the status bar.
     def initStatusBar(self):
 
         self.statusBar = StatusBar(self)
         self.statusBar.setFixedWidth(468)
         self.statusBar.resize(100, 468)
 
+    ## This method initializes the board.
+    #  It initializes the timers too.
     def initBoard(self):
 
         print "Username: " + str(self.level.username)
@@ -69,11 +79,15 @@ class Board(QtGui.QFrame):
         if not self.level.isInitialized:
             self.initLevel()
 
+    ## This method initializes a new level.
     def initLevel(self):
 
         self.level.isInitialized = True
         self.level.setNewLevel()
 
+    ## This method starts the board.
+    #  It sets isPaused to false and allows bomberman to begin moving.
+    #  It also starts all the timers.
     def start(self):
 
         self.isPaused = False
@@ -86,7 +100,8 @@ class Board(QtGui.QFrame):
         self.slowestTimer.start(constant.TIME_SLOWEST)
         self.coundownTimer.start(constant.TIME_COUNTDOWN)
 
-
+    ## This method pauses the game.
+    #  It stops the timers and sends a signal to open the pauseMenu.
     def pause(self):
 
         self.isPaused = True
@@ -97,6 +112,9 @@ class Board(QtGui.QFrame):
 
         self.update()
 
+    ## This method takes care of bomberman's death.
+    #  It stops the timers and removes a life. If lives equals 0 then it ends
+    #  the game. If not, it reinitializes the current level.
     def death(self):
 
         if self.level.bomberman.invincible:
@@ -122,26 +140,45 @@ class Board(QtGui.QFrame):
         # IMPORTANT sleep a few millisecond to avoid level timer overlap
         QtCore.QTimer.singleShot(self.level.bomberman.speed, self.restartSameLevel)
 
+    ## This method the tile which is at specific coordinates.
+    #  @parim x The x coordinate to be popped.
+    #  @parim y The y coordinate to be popped.
     def tileAt(self, x, y):
         return self.level.board[y][x].peek()
 
+    ## This method pushes a tile and then updates the board.
+    #  @parim x The x coordinate to be popped.
+    #  @parim y The y coordinate to be popped.
+    #  @parim tile The tile that is to be pushed.
     def setTileAt(self, x, y, tile):
         self.level.board[y][x].push(tile)
         self.update()
 
+    ## This method pushes a tile without updating the board.
+    #  @parim x The x coordinate to be popped.
+    #  @parim y The y coordinate to be popped.
+    #  @parim tile The tile that is to be pushed.
     def setTileAtWithoutUpdate(self, x, y, tile):
         self.level.board[y][x].push(tile)
 
+    ## This method pops a tile at coordinates x and y and then updates the board.
+    #  @parim x The x coordinate to be popped.
+    #  @parim y The y coordinate to be popped.
     def popTileAt(self, x, y):
         self.level.board[y][x].pop()
         self.update()
 
+    ## This method pops a tile at coordinates x and y without updating the board.
+    #  @parim x The x coordinate to be popped.
+    #  @parim y The y coordinate to be popped.
     def popTileAtWithoutUpdate(self, x, y):
         self.level.board[y][x].pop()
 
+    ## This method returns the width of a single tile.
     def squareWidth(self):
         return self.contentsRect().width() / constant.VIEW_WIDTH
 
+    ## This method returns the height of a single tile.
     def squareHeight(self):
         return self.contentsRect().height() / constant.VIEW_HEIGHT
 
@@ -174,6 +211,10 @@ class Board(QtGui.QFrame):
         if (detonate):
             self.detonateBomb()
 
+    ## This method is used to draw the board.
+    #  @parim event
+    #  This method uses bomberman's x position to decide what part of the board
+    #  to draw. It then draws each square in the visible portion of the board.
     def paintEvent(self, event):
 
         # Check for level X pos for moving viewPort
@@ -244,11 +285,21 @@ class Board(QtGui.QFrame):
                                     rect.left() + (j-viewXFirst) * self.squareWidth(),
                                     boardTop + i * self.squareHeight(), shape)
 
+    ## This method draws the image to the board.
+    #  @parim painter
+    #  @parim shape The picture that is to be drawn.
+    #  @parim x The x coordinate of the drawing.
+    #  @parim y The y coordinate of the drawing.
     def drawImages(self, painter, shape, x, y):
         shapePix = QtGui.QPixmap('../res/images/' + shape + '.png')
         scaledShapePix = QtGui.QPixmap.scaled(shapePix,self.squareWidth() + 1,self.squareHeight() + 1,0)
         painter.drawPixmap( x, y, scaledShapePix)
 
+    ## This method draws squares the represent Bricks, Concrete and Empty Tiles.
+    #  @parim painter
+    #  @parim shape The picture that is to be drawn.
+    #  @parim x The x coordinate of the drawing.
+    #  @parim y The y coordinate of the drawing.
     def drawSquare(self, painter, x, y, shape):
 
         colorTable = [0x009700, 0x999999, 0x996633, 0xCC0000,
@@ -699,7 +750,7 @@ class Board(QtGui.QFrame):
         self.initLevel()
         self.start()       
 
-    # update score in status bar
+    ## This method updates the score in status bar
     def updateScore(self, killedEnemies):
         incrementalScore = self.getScoreOfKilledEnemies(killedEnemies)
         self.updateScoreInDbSignal.emit(incrementalScore)
@@ -726,9 +777,13 @@ class Board(QtGui.QFrame):
 
         return score
 
+    ## This method returns the level.
     def saveBomberman(self):
         return self.level
 
+    ## This method decreses the time by 1 until the time is 0.
+    #  When time is equal to 0 setSuperChaos is called and a flag is
+    #  set so the time does not decrease below 0.
     def timeoutEvent(self):
         if (self.level.timeLeft == 0 and self.level.timeDone == False):
             self.level.timeDone = True
