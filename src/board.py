@@ -182,6 +182,9 @@ class Board(QtGui.QFrame):
     def squareHeight(self):
         return self.contentsRect().height() / constant.VIEW_HEIGHT
 
+    ## This method continuously iterates with the global timer to monitor every bomb and flame tile until they reach expiration time
+    # When a bomb's expiration time is reached, it detonates
+    # When a flame's expiration time is reached, it disappears
     def bombLoop(self):
         indexToDecrement = []
         detonate = False
