@@ -327,10 +327,10 @@ class Board(QtGui.QFrame):
                              y + self.squareHeight() - 1, x + self.squareWidth() - 1, y + 1)
 
     ## This method calls methods after keys are pressed.
-    # @param event The key that has been pressed
-    # P: self.pause() is called if pause menu isn't open.
-    # Arrow keys: tryMove() is called.
-    # Space or Z: setBomb() is called.
+    # @param event The key that has been pressed\n
+    # P: self.pause() is called if pause menu isn't open.\n
+    # Arrow keys: tryMove() is called.\n
+    # Space or Z: setBomb() is called.\n
     # X or B: detonateBomb() is called.
     def keyPressEvent(self, event):
 
