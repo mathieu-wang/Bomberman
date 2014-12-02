@@ -134,9 +134,6 @@ class Board(QtGui.QFrame):
 
         self.statusBar.livesLabel.setText('Lives: ' + str(self.level.bomberman.lives))
 
-        deathMessage = '''You lost a life!'''
-        QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
-
         # IMPORTANT sleep a few millisecond to avoid level timer overlap
         QtCore.QTimer.singleShot(self.level.bomberman.speed, self.restartSameLevel)
 

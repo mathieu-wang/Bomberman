@@ -22,6 +22,7 @@ class TestGameplay(unittest.TestCase):
         self.game = Game()
         self.level = Level("testUser", 1)
         self.board = Board(self.level, self.game)
+        self.clearBricks()
         self.board.start()
 
     def tearDown(self):
@@ -365,6 +366,12 @@ class TestGameplay(unittest.TestCase):
                                                                     + 8*Enemy.getEnemy(Tile.Ovapi)['points']
                                                                     + 16*Enemy.getEnemy(Tile.Ovapi)['points']
                                                                     + 32*Enemy.getEnemy(Tile.Pontan)['points'])
+
+    def clearBricks(self):
+        for x in range(constant.BOARD_WIDTH):
+            for y in range(constant.BOARD_HEIGHT):
+                if self.board.tileAt(x, y) == Tile.Brick:
+                    self.board.popTileAt(x, y)
 
 if __name__ == '__main__':
 
