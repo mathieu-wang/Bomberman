@@ -61,7 +61,7 @@ class Board(QtGui.QFrame):
         self.slowestTimer = QtCore.QTimer(self)
         self.slowestTimer.timeout.connect(lambda : self.moveEnemy(constant.SPEED_SLOWEST))
 
-        self.coundownTimer = QtCore.QTimer()
+        self.coundownTimer = QtCore.QTimer(self)
         self.coundownTimer.timeout.connect(self.timeout_event)
 
         if not self.bomberman.isInitialized:
