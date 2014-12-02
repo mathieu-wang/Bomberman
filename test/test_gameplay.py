@@ -149,7 +149,7 @@ class TestGameplay(unittest.TestCase):
         self.board.level.setBomberman()
         self.board.level.setBomb()
 
-        tempList = [2, 1, 3, 8]
+        tempList = [2, 1, constant.DIRECTION_WEST, Tile.Balloom]
         self.level.listEnemies.append(tempList)
 
         self.level.numberEnemies = 1
@@ -235,7 +235,7 @@ class TestGameplay(unittest.TestCase):
         self.board.setTileAt(2, 1, Tile.Balloom)
         self.board.setTileAt(1, 1, Tile.Empty)
 
-        tempList = [2, 1, 3, 8]
+        tempList = [2, 1, constant.DIRECTION_WEST, Tile.Balloom]
         self.level.listEnemies.append(tempList)
 
         self.level.numberEnemies = 1
@@ -253,7 +253,7 @@ class TestGameplay(unittest.TestCase):
         self.board.setTileAt(2, 0, Tile.Empty)
         self.board.setTileAt(2, 2, Tile.Empty)
 
-        tempList = [2, 1, 3, 9]
+        tempList = [2, 1, constant.DIRECTION_WEST, Tile.Oneal]
         self.level.listEnemies.append(tempList)
 
         self.level.numberEnemies = 1
@@ -274,7 +274,7 @@ class TestGameplay(unittest.TestCase):
         self.board.setTileAt(2, 0, Tile.Empty)
         self.board.setTileAt(2, 2, Tile.Empty)
 
-        tempList = [2, 1, 3, 12]
+        tempList = [2, 1, constant.DIRECTION_WEST, Tile.Kondoria]
         self.level.listEnemies.append(tempList)
 
         self.level.numberEnemies = 1
@@ -310,7 +310,7 @@ class TestGameplay(unittest.TestCase):
         self.board.setTileAt(2, 1, Tile.Balloom)
         self.level.numberEnemies = 1
 
-        tempList = [2, 1, 3, 8]
+        tempList = [2, 1, constant.DIRECTION_WEST, Tile.Balloom]
         self.level.listEnemies.append(tempList)
 
         self.level.listTypeEnemies[0] = 1
