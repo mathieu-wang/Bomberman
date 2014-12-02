@@ -1,6 +1,6 @@
 import random
 
-from src import constant
+import constant
 from tile import Tile
 from enemy import Enemy
 from bomberman import Bomberman

@@ -8,7 +8,7 @@ from PyQt4 import QtCore, QtGui
 #showLeaderboardButton: emit showLeaderboardSignal when clicked.\n
 #backButton: emit backToMainMenuSignal when clicked.\n
 #quitButton: emit quitGameSignal when clicked.
-from src import constant
+import constant
 
 
 class PauseMenu(QtGui.QWidget):

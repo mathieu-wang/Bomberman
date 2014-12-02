@@ -6,7 +6,7 @@ from board import Board
 from login_menu import LoginMenu
 from main_menu import MainMenu
 from leaderboard import Leaderboard
-from src.pause_menu import PauseMenu
+from pause_menu import PauseMenu
 from level_menu import LevelMenu
 from save_menu import SaveMenu
 from load_menu import LoadMenu

@@ -2,7 +2,7 @@ import cPickle as pickle
 
 import dataset
 
-from src.models import UserAccount
+from models import UserAccount
 
 
 

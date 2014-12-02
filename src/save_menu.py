@@ -2,7 +2,7 @@ import datetime
 
 from PyQt4 import QtCore, QtGui
 
-from src.database import Database
+from database import Database
 
 ##this class is a widget that displays the save menu. It includes the following buttons
 #and fields that the user can interact with:\n

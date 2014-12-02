@@ -9,7 +9,7 @@ from PyQt4 import QtCore, QtGui
 # showLeaderboardButton: emit showLeaderboardSignal when clicked.
 # changeSettingsButton: emit changeSettingsSignal when clicked
 #
-from src import constant
+import constant
 
 
 class MainMenu(QtGui.QWidget):
