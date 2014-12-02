@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['updateuseraccount',['updateUserAccount',['../classdatabase_1_1_database.html#aa85c5885a4aa876deba8298e19842bfe',1,'database::Database']]],
-  ['updateuserscore',['updateUserScore',['../classdatabase_1_1_database.html#a7ac2c87eed2941bb4b52a66f484d7de4',1,'database::Database']]]
+  ['quit',['quit',['../classsrc_1_1main__menu_1_1_main_menu.html#ad4889fe8c4fdecfc7582172653a01004',1,'src.main_menu.MainMenu.quit()'],['../classsrc_1_1pause__menu_1_1_pause_menu.html#a7f5c8ff0f8ce14cf43036125aa7cc0f1',1,'src.pause_menu.PauseMenu.quit()']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['table',['table',['../classleaderboard_1_1_leaderboard.html#a65135df1a47398bede51e626e67e88e9',1,'leaderboard::Leaderboard']]],
-  ['title',['title',['../classsettings__menu_1_1_account_settings_menu.html#a91266e501b1380560e02b4aa95ce934f',1,'settings_menu::AccountSettingsMenu']]]
+  ['table',['table',['../classsrc_1_1leaderboard_1_1_leaderboard.html#a1d9b33cb94b8636038320f10d3d2fe30',1,'src::leaderboard::Leaderboard']]],
+  ['title',['title',['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#a6f5f05b647982a9776c96ea5ca254068',1,'src::settings_menu::AccountSettingsMenu']]]
 ];
