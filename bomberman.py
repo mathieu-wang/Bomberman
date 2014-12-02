@@ -20,6 +20,7 @@ class Bomberman(object):
         self.curY = 11
         self.board = []
         self.bombQueue = []
+        self.flashQueue = []
         self.lives = 3
         self.speed = 300
         self.canMove = True
@@ -51,6 +52,7 @@ class Bomberman(object):
         self.curY = 11
         self.board = []
         self.bombQueue = []
+        self.flashQueue = []
         # self.lives = 3
         self.speed = 300
         self.canMove = True

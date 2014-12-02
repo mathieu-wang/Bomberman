@@ -36,6 +36,10 @@ class Tile(object):
         return len(self.stack)
 
     @staticmethod
+    def isEmpty(tile):
+        return tile == Tile.Empty
+
+    @staticmethod
     def isEnemy(tile):
         return 8 <= tile <=15
 
