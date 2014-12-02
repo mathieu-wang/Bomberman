@@ -9,7 +9,7 @@ class Level(object):
 
     def __init__(self, username, levelNum):
 
-        # Initialize bomberman
+        # Initialize level
         self.bomberman = Bomberman()
 
         # Game info

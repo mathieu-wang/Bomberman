@@ -31,7 +31,7 @@ class Board(QtGui.QFrame):
 
     def __init__(self, level, parent=None):
         super(Board, self).__init__(parent)
-        self.level = level # Initialize bomberman attributes
+        self.level = level # Initialize level attributes
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.initStatusBar()
         self.initBoard()
@@ -117,7 +117,7 @@ class Board(QtGui.QFrame):
         deathMessage = '''You lost a life!'''
         QtGui.QMessageBox.warning(self,'BOOM!',deathMessage,QtGui.QMessageBox.Ok)
 
-        # IMPORTANT sleep a few millisecond to avoid bomberman timer overlap
+        # IMPORTANT sleep a few millisecond to avoid level timer overlap
         QtCore.QTimer.singleShot(self.level.bomberman.speed, self.restartSameLevel)
 
     def tileAt(self, x, y):
@@ -174,7 +174,7 @@ class Board(QtGui.QFrame):
 
     def paintEvent(self, event):
 
-        # Check for bomberman X pos for moving viewPort
+        # Check for level X pos for moving viewPort
         if self.level.bomberman.curX <= 6:
             viewXFirst = 0
             viewXLast = 12
@@ -342,7 +342,7 @@ class Board(QtGui.QFrame):
             self.death()
             return False
 
-        # Pop bomberman at current pos
+        # Pop level at current pos
         self.popTileAt(self.level.bomberman.curX,self.level.bomberman.curY)
 
         # Compute new position
@@ -359,10 +359,10 @@ class Board(QtGui.QFrame):
             self.exit()
             return # IMPORTANT
 
-        # Set bomberman to new pos
+        # Set level to new pos
         self.setTileAt(self.level.bomberman.curX,self.level.bomberman.curY,Tile.Bomberman)
 
-        # Limit bomberman move speed
+        # Limit level move speed
         self.bombermanTriggerCanMove()
         self.globalTimer.singleShot(self.level.bomberman.speed, self.bombermanTriggerCanMove)
 
@@ -627,7 +627,7 @@ class Board(QtGui.QFrame):
         # Stop the game
         self.stopTimers()
 
-        # IMPORTANT sleep a few millisecond to avoid bomberman timer overlap
+        # IMPORTANT sleep a few millisecond to avoid level timer overlap
         QtCore.QTimer.singleShot(self.level.bomberman.speed, self.restartNextLevel)
 
     def stopTimers(self):
