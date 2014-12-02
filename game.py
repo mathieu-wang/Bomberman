@@ -9,6 +9,7 @@ from pause_menu import PauseMenu
 from level_menu import LevelMenu
 from save_menu import SaveMenu
 from load_menu import LoadMenu
+from settings_menu import AccountSettingsMenu
 from database import Database
 from bomberman import Bomberman
 import constant
@@ -49,6 +50,7 @@ class Game(QtGui.QMainWindow):
         self.mainMenuWidget.quitGameSignal.connect(self.quit)
         self.mainMenuWidget.showLeaderboardSignal.connect(self.showLeaderboard)
         self.mainMenuWidget.loadMenuSignal.connect(self.showLoadMenu)
+        self.mainMenuWidget.changeSettingsSignal.connect(self.showAccountSettingsMenu)
 
         self.centralWidget.addWidget(self.mainMenuWidget)
         self.centralWidget.setCurrentWidget(self.mainMenuWidget)
@@ -149,6 +151,15 @@ class Game(QtGui.QMainWindow):
         self.setWindowTitle('Load Game Menu')
         self.center()
 
+    def showAccountSettingsMenu(self):
+
+        self.accountSettingsMenuWidget = AccountSettingsMenu(self, self.loginWidget.loggedUsername)
+        self.accountSettingsMenuWidget.backToMainMenuSignal.connect(self.showMainMenu)
+        self.centralWidget.addWidget(self.accountSettingsMenuWidget)
+        self.centralWidget.setCurrentWidget(self.accountSettingsMenuWidget)
+
+        self.setWindowTitle('Account Settings')
+        self.center()
 
     def center(self):
         screen = QtGui.QDesktopWidget().screenGeometry()

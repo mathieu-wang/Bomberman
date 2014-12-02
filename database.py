@@ -40,6 +40,30 @@ class Database:
         if self.userTable.insert(userAccount.__dict__):
             return True
 
+    ## Update user account information with new username, realname, and password
+    # @param oldUsername the old user name with which we retrieve the account
+    # @param newUsername the new user name we want to set
+    # @param newRealname the new real name we want to set
+    # @param newPassword the new password we want to set
+    def updateUserAccount(self, oldUsername, newUsername, newRealname, newPassword):
+        # Check if user already exists
+        if self.userTable.find_one(username=newUsername):
+            return False
+
+        userAccount = self.userTable.find_one(username=oldUsername)
+        userAccount['username'] = newUsername
+        userAccount['realname'] = newRealname
+        userAccount['password'] = newPassword
+
+        self.userTable.delete(username=oldUsername)
+        self.userTable.insert(userAccount)
+        return True
+
+    ## Delete the account from the database
+    # @param username the user we want to delete
+    def deleteAccount(self, username):
+        self.userTable.delete(username=username)
+
     ## Check whether the provided credentials correspond to a valid user account in the database
     # @param username the username to be checked
     # @param password the password to be checked

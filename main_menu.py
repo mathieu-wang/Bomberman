@@ -9,21 +9,29 @@ import constant
 # loadButton: emit loadMenuSignal when clicked.\n
 # quitButton: emit quitGameSignal when clicked.\n
 # showLeaderboardButton: emit showLeaderboardSignal when clicked.
+# changeSettingsButton: emit changeSettingsSignal when clicked
 #
 class MainMenu(QtGui.QWidget):
 
     ##Signal which will be used to launch the game.
     playGameSignal = QtCore.pyqtSignal()
+
     ##Signal which will be used to exit the current user and send it back to login menu.
     logoutGameSignal = QtCore.pyqtSignal()
+
     ##Signal which will be used to quit the whole application.
     quitGameSignal = QtCore.pyqtSignal()
+
     ##Signal which will be used to to launch the leaderboard. Also emit the int 'previousMenu'
     # to keep track of the menu it was called from.
     showLeaderboardSignal = QtCore.pyqtSignal(int)
+
     ##Signal which will launch the load menu. Also emit the int 'previousMenu'
     #to keep track of the menu it was called from.
     loadMenuSignal = QtCore.pyqtSignal(int)
+
+    ##Signal which will launch the account settings menu.
+    changeSettingsSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(MainMenu, self).__init__(parent)
@@ -39,25 +47,33 @@ class MainMenu(QtGui.QWidget):
         playButton.move(buttonStartXCoordinate, 139)
         playButton.clicked.connect(self.play)
 
-        logoutButton = QtGui.QPushButton('Logout', self)
-        logoutButton.setFixedWidth(buttonWidth)
-        logoutButton.move(buttonStartXCoordinate, 259)
-        logoutButton.clicked.connect(self.logout)
 
         loadButton = QtGui.QPushButton('Load Game', self)
         loadButton.setFixedWidth(buttonWidth)
         loadButton.move(buttonStartXCoordinate, 179)
         loadButton.clicked.connect(self.load)
 
-        quitButton = QtGui.QPushButton('Quit', self)
-        quitButton.setFixedWidth(buttonWidth)
-        quitButton.move(buttonStartXCoordinate, 299)
-        quitButton.clicked.connect(self.quit)
-
         showLeaderboardButton = QtGui.QPushButton('Leaderboard', self)
         showLeaderboardButton.setFixedWidth(buttonWidth)
         showLeaderboardButton.move(buttonStartXCoordinate, 219)
         showLeaderboardButton.clicked.connect(self.showLeaderboard)
+
+        logoutButton = QtGui.QPushButton('Logout', self)
+        logoutButton.setFixedWidth(buttonWidth)
+        logoutButton.move(buttonStartXCoordinate, 259)
+        logoutButton.clicked.connect(self.logout)
+
+        changeSettingsButton = QtGui.QPushButton('Account Settings', self)
+        changeSettingsButton.setFixedWidth(buttonWidth)
+        changeSettingsButton.move(buttonStartXCoordinate, 299)
+        changeSettingsButton.clicked.connect(self.showAccountSettingsMenu)
+
+        quitButton = QtGui.QPushButton('Quit', self)
+        quitButton.setFixedWidth(buttonWidth)
+        quitButton.move(buttonStartXCoordinate, 339)
+        quitButton.clicked.connect(self.quit)
+
+
 
         self.setFixedHeight(468)
         self.setFixedWidth(468)
@@ -76,6 +92,11 @@ class MainMenu(QtGui.QWidget):
     ##emit showLeaderboardSignal when called.
     def showLeaderboard(self):
         self.showLeaderboardSignal.emit(constant.MAIN_MENU)
+
+    ##emit changeSettingsSignal when called
+    def showAccountSettingsMenu(self):
+        self.changeSettingsSignal.emit()
+
     ##emit loadMenuSignal when called.
     def load(self):
         self.loadMenuSignal.emit(constant.MAIN_MENU)
