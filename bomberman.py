@@ -3,6 +3,7 @@ import constant
 from tile import Tile
 from enemy import Enemy
 
+## Bomberman object containing all the attributes describing the current state of bomberman
 class Bomberman(object):
 
     ## Constructor of a bomberman unit with attributes

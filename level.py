@@ -5,6 +5,7 @@ from tile import Tile
 from enemy import Enemy
 from bomberman import Bomberman
 
+## Level object containing all the attributes and methods necessary to one level of gameplay
 class Level(object):
 
     ## Constructor of a level which takes a username and a level as argument
