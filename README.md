@@ -2,52 +2,57 @@ Team 12 Bomberman
 =================
 
 ##########
-Authors & Copyright notice
+###Authors & Copyright notice
 
 All rights reserved ©
 
 Gabriel Gibeault-Girard, gabriel.gibeault-girard@mail.mcgill.ca
+
 Mathieu Wang, mathieu.wang@mail.mcgill.ca
+
 Stefan Tihanyi, stefan.tihanyi@mail.mcgill.ca
+
 Michael Ho, micheal.ho@mail.mcgill.ca
 
 ##########
-URLs
+###Project location
 
-github's url: https://github.com/mcgill-ecse321/Team-12
+GitHub url: https://github.com/mcgill-ecse321/Team-12
+
 git clone's url: git@github.com:mcgill-ecse321/Team-12.git
 
 ##########
-Dependencies
+### Dependencies
 
-Programming language: Python
+Programming language: Python 2.7.5
 
 Python package dependencies:
-	- SIP
-	- Qt4
-    - PyQt4
-	- dataset
+- SIP
+- Qt4
+- PyQt4
+- dataset
+- sqlite3 (Packaged inside Python 2.7 core)
 
 Installation instruction given below.
 
 ##########
-Platforms
+###Platforms
 
-This program was developed and tested on the following platforms:
-
-    -Ubuntu, Sublime Text 2
-    -Ubuntu, PyCharm
-    -Mac OS X, PyCharm
+This program was developed and tested on the following platforms with the following tools:
+- Ubuntu 12.04 - Sublime Text 2
+- Ubuntu 12.04 - PyCharm
+- Mac OS X Yosemite - PyCharm
+- Mac OS X Mavericks - Sublime Text 2
 
 ##########
 How to run the game
 
-Just type: "python game.py" in the command line without the quote (INSIDE the src/ directory)
+`python game.py` in the command line (INSIDE the `src/` directory)
 
 ##########
-Installation
+##Installation
 
-Mac OS X:
+###Mac OS X
 =========
 
 1)  Install the [brew package manager](http://brew.sh/) if not already present
@@ -83,8 +88,8 @@ Mac OS X:
         pip install dataset
 
 
-Ubuntu:
-=======
+###Ubuntu
+==========
 
 1)  Install SIP and PyQt using aptitude
 
@@ -99,7 +104,7 @@ Ubuntu:
         pip install dataset
 
 ##########
-Unit tests
+##Unit tests
 
 1)  Inside the root directory run:
 
