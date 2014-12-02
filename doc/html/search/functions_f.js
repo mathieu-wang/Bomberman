@@ -25,6 +25,7 @@ var searchData=
   ['showmainmenu',['showMainMenu',['../classsrc_1_1game_1_1_game.html#a218f9c8c6e86a19fa9d3155ce43068a0',1,'src::game::Game']]],
   ['showpausemenu',['showPauseMenu',['../classsrc_1_1game_1_1_game.html#a0e17658d314189179aa5be0bfdc185da',1,'src::game::Game']]],
   ['showsavemenu',['showSaveMenu',['../classsrc_1_1game_1_1_game.html#a02ee6b88570e0af0686050a2268f687b',1,'src::game::Game']]],
+  ['size',['size',['../classsrc_1_1tile_1_1_tile.html#ac9f0ddf090f58449aa74611a239e1458',1,'src::tile::Tile']]],
   ['squareheight',['squareHeight',['../classsrc_1_1board_1_1_board.html#a1e964f3382db079501c6b4afa16348e4',1,'src::board::Board']]],
   ['squarewidth',['squareWidth',['../classsrc_1_1board_1_1_board.html#a4d2d336061f0136c40c42f491e11ad02',1,'src::board::Board']]],
   ['start',['start',['../classsrc_1_1board_1_1_board.html#a97be76e6fb7312dddd9c86290fc3a1db',1,'src::board::Board']]],

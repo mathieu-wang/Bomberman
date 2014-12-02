@@ -26,7 +26,7 @@ class StatusBar(QtGui.QDockWidget):
         self.scoreLabel.setFixedWidth(200)
         self.scoreLabel.move(300, 0)
 
-## This class displays the board for the gameplay.
+## This class displays the board for the gameplay and is the main gameplay controller.
 #  It handles drawing each tile. It also contains timers and
 #  methods that allow movement of bomberman and enemies.
 class Board(QtGui.QFrame):

@@ -3,7 +3,7 @@ import constant
 from tile import Tile
 from enemy import Enemy
 
-## Bomberman object containing all the attributes describing the current state of bomberman
+## This class Bomberman contains all the attributes describing the current state of bomberman
 class Bomberman(object):
 
     ## Constructor of a bomberman unit with attributes
@@ -24,7 +24,7 @@ class Bomberman(object):
 
         # Power ups
 
-        ## Integer powerup maximum number of bombs bomberman can lay
+        ## Integer states maximum number of bombs bomberman can lay
         self.numBombs = 1 #
         ## Integer powerup the range in terms of tiles, the bomb can reach
         self.rangeOfBombs = 1 #

@@ -1,5 +1,10 @@
 \hypertarget{classsrc_1_1tile_1_1_tile}{}\section{src.\+tile.\+Tile Class Reference}
 \label{classsrc_1_1tile_1_1_tile}\index{src.\+tile.\+Tile@{src.\+tile.\+Tile}}
+
+
+This class stores tiles as stacks and provides methods for them.  
+
+
 Inheritance diagram for src.\+tile.\+Tile\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,39 +17,29 @@ Inheritance diagram for src.\+tile.\+Tile\+:\begin{figure}[H]
 \hypertarget{classsrc_1_1tile_1_1_tile_a9976e652dac509c6aee814af20a6cabb}{}def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)\label{classsrc_1_1tile_1_1_tile_a9976e652dac509c6aee814af20a6cabb}
 
 \item 
-\hypertarget{classsrc_1_1tile_1_1_tile_aad77febc9fbb4fa5fd2f13449d1c80da}{}def {\bfseries is\+Empty} (self)\label{classsrc_1_1tile_1_1_tile_aad77febc9fbb4fa5fd2f13449d1c80da}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_ab682d4a8d92f6dbe5380c21e8c27114a}{}def {\bfseries push} (self, tile)\label{classsrc_1_1tile_1_1_tile_ab682d4a8d92f6dbe5380c21e8c27114a}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_a0a8402816b245a69773305cc6d86f16d}{}def {\bfseries peek} (self)\label{classsrc_1_1tile_1_1_tile_a0a8402816b245a69773305cc6d86f16d}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_ae0f31d367515d3259f21b90d6be44db8}{}def {\bfseries pop} (self)\label{classsrc_1_1tile_1_1_tile_ae0f31d367515d3259f21b90d6be44db8}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_ac9f0ddf090f58449aa74611a239e1458}{}def {\bfseries size} (self)\label{classsrc_1_1tile_1_1_tile_ac9f0ddf090f58449aa74611a239e1458}
-
-\end{DoxyCompactItemize}
+def \hyperlink{classsrc_1_1tile_1_1_tile_aad77febc9fbb4fa5fd2f13449d1c80da}{is\+Empty} (self)
+\begin{DoxyCompactList}\small\item\em This method returns True if the tile on top of the stack is Empty. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_ab682d4a8d92f6dbe5380c21e8c27114a}{push} (self, tile)
+\begin{DoxyCompactList}\small\item\em This method pushes a new tile on the stack. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_a0a8402816b245a69773305cc6d86f16d}{peek} (self)
+\begin{DoxyCompactList}\small\item\em This method returns the tile on the top of the stack. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_ae0f31d367515d3259f21b90d6be44db8}{pop} (self)
+\begin{DoxyCompactList}\small\item\em This methods removes the tile on top of the stack. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_ac9f0ddf090f58449aa74611a239e1458}{size} (self)
+\begin{DoxyCompactList}\small\item\em This method returns the number of tiles in the stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classsrc_1_1tile_1_1_tile_a402644908c005daf8f452078a8498884}{}def {\bfseries is\+Empty} (tile)\label{classsrc_1_1tile_1_1_tile_a402644908c005daf8f452078a8498884}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_a26d5b3272e8b49c400420bfb80f2367e}{}def {\bfseries is\+Enemy} (tile)\label{classsrc_1_1tile_1_1_tile_a26d5b3272e8b49c400420bfb80f2367e}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_abe6a8c872f4e0d314bedb157c5d05f88}{}def {\bfseries is\+Bomberman} (tile)\label{classsrc_1_1tile_1_1_tile_abe6a8c872f4e0d314bedb157c5d05f88}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_a81e3ba4c45f3defa624c6d5cd080dab6}{}def {\bfseries is\+Exit} (tile)\label{classsrc_1_1tile_1_1_tile_a81e3ba4c45f3defa624c6d5cd080dab6}
-
-\item 
-\hypertarget{classsrc_1_1tile_1_1_tile_a464b874776619a4388f7bc8a5a57eee1}{}def {\bfseries is\+Powerup} (tile)\label{classsrc_1_1tile_1_1_tile_a464b874776619a4388f7bc8a5a57eee1}
-
-\end{DoxyCompactItemize}
+def \hyperlink{classsrc_1_1tile_1_1_tile_a402644908c005daf8f452078a8498884}{is\+Empty} (tile)
+\begin{DoxyCompactList}\small\item\em This element returns True if the topmost tile is Empty. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_a26d5b3272e8b49c400420bfb80f2367e}{is\+Enemy} (tile)
+\begin{DoxyCompactList}\small\item\em This element returns True if the topmost tile is Enemy. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_abe6a8c872f4e0d314bedb157c5d05f88}{is\+Bomberman} (tile)
+\begin{DoxyCompactList}\small\item\em This element returns True if the topmost tile is Bomberman. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_a81e3ba4c45f3defa624c6d5cd080dab6}{is\+Exit} (tile)
+\begin{DoxyCompactList}\small\item\em This element returns True if the topmost tile is Exit. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1tile_1_1_tile_a464b874776619a4388f7bc8a5a57eee1}{is\+Powerup} (tile)
+\begin{DoxyCompactList}\small\item\em This element returns True if the topmost tile is Powerup. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,6 +97,155 @@ Inheritance diagram for src.\+tile.\+Tile\+:\begin{figure}[H]
 \hypertarget{classsrc_1_1tile_1_1_tile_a63e8749a3f0bca1c933dc2213ad519ba}{}int {\bfseries Pontan} = 15\label{classsrc_1_1tile_1_1_tile_a63e8749a3f0bca1c933dc2213ad519ba}
 
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class stores tiles as stacks and provides methods for them. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1tile_1_1_tile_abe6a8c872f4e0d314bedb157c5d05f88}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!is\+Bomberman@{is\+Bomberman}}
+\index{is\+Bomberman@{is\+Bomberman}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{is\+Bomberman}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+is\+Bomberman (
+\begin{DoxyParamCaption}
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1tile_1_1_tile_abe6a8c872f4e0d314bedb157c5d05f88}
+
+
+This element returns True if the topmost tile is Bomberman. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & the tile to be checked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1tile_1_1_tile_aad77febc9fbb4fa5fd2f13449d1c80da}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+is\+Empty (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1tile_1_1_tile_aad77febc9fbb4fa5fd2f13449d1c80da}
+
+
+This method returns True if the tile on top of the stack is Empty. 
+
+\hypertarget{classsrc_1_1tile_1_1_tile_a402644908c005daf8f452078a8498884}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+is\+Empty (
+\begin{DoxyParamCaption}
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1tile_1_1_tile_a402644908c005daf8f452078a8498884}
+
+
+This element returns True if the topmost tile is Empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & the tile to be checked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1tile_1_1_tile_a26d5b3272e8b49c400420bfb80f2367e}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!is\+Enemy@{is\+Enemy}}
+\index{is\+Enemy@{is\+Enemy}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{is\+Enemy}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+is\+Enemy (
+\begin{DoxyParamCaption}
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1tile_1_1_tile_a26d5b3272e8b49c400420bfb80f2367e}
+
+
+This element returns True if the topmost tile is Enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & the tile to be checked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1tile_1_1_tile_a81e3ba4c45f3defa624c6d5cd080dab6}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!is\+Exit@{is\+Exit}}
+\index{is\+Exit@{is\+Exit}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{is\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+is\+Exit (
+\begin{DoxyParamCaption}
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1tile_1_1_tile_a81e3ba4c45f3defa624c6d5cd080dab6}
+
+
+This element returns True if the topmost tile is Exit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & the tile to be checked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1tile_1_1_tile_a464b874776619a4388f7bc8a5a57eee1}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!is\+Powerup@{is\+Powerup}}
+\index{is\+Powerup@{is\+Powerup}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{is\+Powerup}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+is\+Powerup (
+\begin{DoxyParamCaption}
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1tile_1_1_tile_a464b874776619a4388f7bc8a5a57eee1}
+
+
+This element returns True if the topmost tile is Powerup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & the tile to be checked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1tile_1_1_tile_a0a8402816b245a69773305cc6d86f16d}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!peek@{peek}}
+\index{peek@{peek}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{peek}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+peek (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1tile_1_1_tile_a0a8402816b245a69773305cc6d86f16d}
+
+
+This method returns the tile on the top of the stack. 
+
+\hypertarget{classsrc_1_1tile_1_1_tile_ae0f31d367515d3259f21b90d6be44db8}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!pop@{pop}}
+\index{pop@{pop}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+pop (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1tile_1_1_tile_ae0f31d367515d3259f21b90d6be44db8}
+
+
+This methods removes the tile on top of the stack. 
+
+\hypertarget{classsrc_1_1tile_1_1_tile_ab682d4a8d92f6dbe5380c21e8c27114a}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!push@{push}}
+\index{push@{push}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+push (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{tile}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1tile_1_1_tile_ab682d4a8d92f6dbe5380c21e8c27114a}
+
+
+This method pushes a new tile on the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & The tile to be pushed on the stack. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsrc_1_1tile_1_1_tile_ac9f0ddf090f58449aa74611a239e1458}{}\index{src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}!size@{size}}
+\index{size@{size}!src\+::tile\+::\+Tile@{src\+::tile\+::\+Tile}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+tile.\+Tile.\+size (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{classsrc_1_1tile_1_1_tile_ac9f0ddf090f58449aa74611a239e1458}
+
+
+This method returns the number of tiles in the stack. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

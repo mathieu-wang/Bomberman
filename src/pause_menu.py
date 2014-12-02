@@ -1,38 +1,38 @@
 from PyQt4 import QtCore, QtGui
 
-##This class is a widget that displays the pause menu. It includes the following buttons
-#that the user can interact with:\n
-#resumeButton: emit resumeGameSignal when clicked.\n
-#saveButton: emit saveMenuSignal when clicked.\n
-#loadButton: emit loadMenuSignal when clicked.\n
-#showLeaderboardButton: emit showLeaderboardSignal when clicked.\n
-#backButton: emit backToMainMenuSignal when clicked.\n
-#quitButton: emit quitGameSignal when clicked.
+## This class is a widget that displays the pause menu. It includes the following buttons
+# that the user can interact with:\n
+# resumeButton: emit resumeGameSignal when clicked.\n
+# saveButton: emit saveMenuSignal when clicked.\n
+# loadButton: emit loadMenuSignal when clicked.\n
+# showLeaderboardButton: emit showLeaderboardSignal when clicked.\n
+# backButton: emit backToMainMenuSignal when clicked.\n
+# quitButton: emit quitGameSignal when clicked.
 import constant
 
 
 class PauseMenu(QtGui.QWidget):
 
-    ##Signal which will be used to resume the current game.
+    ## Signal which will be used to resume the current game.
     resumeGameSignal = QtCore.pyqtSignal()
-    ##Signal which will be used to quit the whole application.
+    ## Signal which will be used to quit the whole application.
     quitGameSignal = QtCore.pyqtSignal()
-    ##Signal which will be used to launch the leaderboard.
-    #@Param int is set as 'constant.PAUSE_MENU'.
+    ## Signal which will be used to launch the leaderboard.
+    # @Param int is set as 'constant.PAUSE_MENU'.
     showLeaderboardSignal = QtCore.pyqtSignal(int)
-    ##Signal which will be used to launch save menu.
+    ## Signal which will be used to launch save menu.
     saveMenuSignal = QtCore.pyqtSignal()
-    ##Signal which will be used to launch load menu.
-    #@Param int is set as 'constant.PAUSE_MENU'.
+    ## Signal which will be used to launch load menu.
+    # @Param int is set as 'constant.PAUSE_MENU'.
     loadMenuSignal = QtCore.pyqtSignal(int)
-    ##Signal which will be used to go back to the main menu.
+    ## Signal which will be used to go back to the main menu.
     backToMainMenuSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(PauseMenu, self).__init__(parent)
         self.initUI()
 
-    ##this method initialize the GUI of the pause menu.
+    ## This method initialize the GUI of the pause menu.
     def initUI(self):
         buttonWidth = 150
         buttonStartXCoordinate = 159
@@ -72,21 +72,21 @@ class PauseMenu(QtGui.QWidget):
 
         self.show()
 
-    ##emit resumeGameSignal when called.
+    ## emit resumeGameSignal when called.
     def resume(self):
         self.resumeGameSignal.emit()
-    ##emit quitGameSignal when called.
+    ## emit quitGameSignal when called.
     def quit(self):
         self.quitGameSignal.emit()
-    ##emit showLeaderboardSignal with parameter 'constant.PAUSE_MENU' when called.
+    ## emit showLeaderboardSignal with parameter 'constant.PAUSE_MENU' when called.
     def showLeaderboard(self):
         self.showLeaderboardSignal.emit(constant.PAUSE_MENU)
-    ##emit backToMainMenuSignal when called.
+    ## emit backToMainMenuSignal when called.
     def back(self):
         self.backToMainMenuSignal.emit()
-    ##emit saveMenuSignal when called.
+    ## emit saveMenuSignal when called.
     def save(self):
         self.saveMenuSignal.emit()
-    ##emit loadMenuSignal with parameter 'constant.PAUSE_MENU' when called.
+    ## emit loadMenuSignal with parameter 'constant.PAUSE_MENU' when called.
     def load(self):
         self.loadMenuSignal.emit(constant.PAUSE_MENU)

@@ -15,7 +15,7 @@ from database import Database
 from level import Level
 import constant
 
-## Main controller
+## This class is the main controller of all subcontrollers for menus
 class Game(QtGui.QMainWindow):
     
     ## Constructor, initializes UI

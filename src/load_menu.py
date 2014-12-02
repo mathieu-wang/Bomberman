@@ -2,18 +2,18 @@ from PyQt4 import QtCore, QtGui
 
 from database import Database
 
-##This class is a widget that displays the Load menu. It includes the following buttons
-#and fields that the user can interact with:\n
-#loadButton: emit loadSavedGameSignal when clicked.\n
-#returnButton: emit backSignal when clicked.\n
-#savedGameList: list of all the saved game of the current active user.
+## This class is a widget that displays the Load menu. It includes the following buttons
+# and fields that the user can interact with:\n
+# loadButton: emit loadSavedGameSignal when clicked.\n
+# returnButton: emit backSignal when clicked.\n
+# savedGameList: list of all the saved game of the current active user.
 class LoadMenu(QtGui.QWidget):
 
-    ##Signal which will be used to load the game the user chose.
-    #@Param str the name of the game to load.
+    ## Signal which will be used to load the game the user chose.
+    # @Param str the name of the game to load.
     loadSavedGameSignal = QtCore.pyqtSignal(str)
-    ##Signal which will be used to go back to the previous menu based on an int.
-    #@Param int is set as 'previousMenu'.
+    ## Signal which will be used to go back to the previous menu based on an int.
+    # @Param int is set as 'previousMenu'.
     backSignal = QtCore.pyqtSignal(int)
 
     def __init__(self, parent, username, previousMenu):
@@ -25,7 +25,7 @@ class LoadMenu(QtGui.QWidget):
 
         self.initUI()
 
-    ##This method initialize the GUI of the Load menu.
+    ## This method initialize the GUI of the Load menu.
     def initUI(self):
 
         buttonWidth = 150
@@ -36,7 +36,7 @@ class LoadMenu(QtGui.QWidget):
 
         savedGameList = self.loadSavedGameList()
 
-        ##widget which displays a list from top to bottom.
+        ## This is a widget which displays a list from top to bottom.
         self.gameList = QtGui.QListWidget(self)
 
         for savedGame in savedGameList:
@@ -60,10 +60,10 @@ class LoadMenu(QtGui.QWidget):
 
         self.show()
 
-    ##emit loadSavedGameSignal when called.
+    ## emit loadSavedGameSignal when called.
     def loadSavedGame(self):
         self.loadSavedGameSignal.emit(str(self.gameList.currentItem().text()))
-    ##fetch from the database the current user's saved game.
+    ## This method fetches from the database the current user's saved game.
     def loadSavedGameList(self):
         db = Database()
         return db.loadListSavedGames(self.username)

@@ -4,26 +4,26 @@ from PyQt4 import QtCore, QtGui
 
 from database import Database
 
-##this class is a widget that displays the level menu. It includes buttons 
-#that the user can interact with.
+## This class is a widget that displays the level menu. It includes buttons 
+# that the user can interact with.
 class LevelMenu(QtGui.QWidget):
 
-    ##Signal which will be used to go back to the main menu.
+    ## Signal which will be used to go back to the main menu.
     backToMainMenuSignal = QtCore.pyqtSignal()
-    ##Signal which will be used to start the game.
-    #@Param int is the number representing the level chosen by the user.
+    ## Signal which will be used to start the game.
+    # @Param Integer is the number representing the level chosen by the user.
     startLevelSignal = QtCore.pyqtSignal(int)
 
     def __init__(self, parent, username):
         super(LevelMenu, self).__init__(parent)
         print "Initializing level menu for user: " + str(username)
-        ##the currently active user's username.
+        ## This is the currently active user's username.
         self.username = username
-        ##instance of the database.
+        ## Instance of the database.
         self.db = Database()
         self.initUI()
 
-    ##this method initialize the GUI of the level menu.
+    ## This method initialize the GUI of the level menu.
     def initUI(self):
         grid = QtGui.QGridLayout()
         self.setLayout(grid)
@@ -44,9 +44,9 @@ class LevelMenu(QtGui.QWidget):
         backButton.clicked.connect(self.backToMainMenu)
         grid.addWidget(backButton)
 
-    ##emit backToMainMenuSignal when called.
+    ## emit backToMainMenuSignal when called.
     def backToMainMenu(self):
         self.backToMainMenuSignal.emit()
-    ##emit startLevelSignal when called.
+    ## emit startLevelSignal when called.
     def startLevel(self, level):
         self.startLevelSignal.emit(level)
