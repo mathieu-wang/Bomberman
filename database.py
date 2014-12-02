@@ -3,18 +3,32 @@ import cPickle as pickle
 
 from models import UserAccount
 
+
+## Class that handles the interface with database
+#
+# An instance of this class connects to a local sqlite database with a single table.
+# The table stores each attribute of models.UserAccount as a column, with the username being the primary key.
 class Database:
 
+    ## Constructor that connects to a sqlite database, and gets the 'user' table from it.
+    #
+    # It creates the database and the table if it cannot find them.
+    # @param test By default False.
+    # If set to True, the database will be in memory instead of on the file system. Used in unit tests.
     def __init__(self, test=False):
-
-        if (test):
-            self.db = dataset.connect('sqlite:///:memory:') # Create a database in RAM
+        if test:
+            self.db = dataset.connect('sqlite:///:memory:')  # Create a database in RAM
         else:
             self.db = dataset.connect('sqlite:///db.sqlite')  # Connecting to a SQLite database
 
         # Get the table of user/password
         self.userTable = self.db['user']
 
+    ## Create a new user in the database
+    # @param name the real name
+    # @param username the username
+    # @param password the password
+    # @return True if user account properly created, False if user already exists
     def createUser(self, name, username, password):
         userAccount = UserAccount(username, name, password)
 
@@ -26,6 +40,10 @@ class Database:
         if self.userTable.insert(userAccount.__dict__):
             return True
 
+    ## Check whether the provided credentials correspond to a valid user account in the database
+    # @param username the username to be checked
+    # @param password the password to be checked
+    # @return True if the username exists, False otherwise
     def checkUser(self, username, password):
 
         # Fetch user from table
@@ -41,6 +59,8 @@ class Database:
 
         return False
 
+    ## Check whether the provided user name exists in the database
+    # @param username the username to be checked
     def hasUser(self, username):
         user = self.userTable.find_one(username=username)
 
@@ -50,8 +70,9 @@ class Database:
         else:
             return True
 
-    # Usernames must be at least 6 character long.
-    # It must only contains UTF-8 characters and digits excluding all accented latin characters.
+    ## Check whether the username is at least 6 character long.
+    # @param username the username to be checked
+    # @return True if the username is valid, False otherwise
     def isValidUsername(self, username):
 
         # At least 6 characters long
@@ -60,8 +81,11 @@ class Database:
 
         return True
 
-    ## A password must be at least 8 character long with the same character constraints as a username.
+    ## Check whether a password is valid.
+    # A valid password must be at least 8 characters long.
     # In addition, it must necessarily include a minimum of 1 Upper case letter, 1 Lower case letter, 1 digits and 1 special character.
+    # @param password the password to be checked
+    # @return True if the password is valid, False otherwise
     def isValidPassword(self, password):
 
         # At least 8 characters long
@@ -109,18 +133,29 @@ class Database:
             if not self.hasUser(userAccount.username):
                 self.userTable.insert(userAccount.__dict__)
 
+    ## Get the UserAccount object as a dictionary from the database
+    # @param username the username used as a key to retrieve the UserAccount
+    # @return the UserAccount object as a dictionary
     def getUserAccount(self, username):
         return self.userTable.find_one(username=username)
 
     ## Get top players sorted by cumulative score.
     # Same score is counted as two. Users with the same score are sorted alphabetically (by username).
+    # @return a iterable list of UserAccount objects as dictionaries
     def getTopTenUsers(self):
         return self.userTable.find(_limit=10, order_by=['-cumulativeScore', 'username'])
 
+    ## Get highest unlocked level by the user.
+    # @param username the user for whom we want to get the highest unlocked level
+    # @return the highest unlocked level of that user
     def getHighestUnlockedLevel(self, username):
         userAccount = self.getUserAccount(username)
         return userAccount['maxLevelReached']
 
+    ## Save current game state into a file
+    # @param username the user for whom we want to save the game
+    # @param gamename the name of the game we want to save
+    # @param board the current board containing all game state that needs to be saved
     def saveGame(self, username, gamename, board):
 
         try:
@@ -144,6 +179,8 @@ class Database:
         pickle.dump(self.game, f, protocol=pickle.HIGHEST_PROTOCOL)
         f.close()
 
+    ## Load the list of previously saved games for an user
+    # @param username the user for whom we want to load the list of saved game
     def loadListSavedGames(self, username):
 
         try:
@@ -166,6 +203,9 @@ class Database:
 
         return gameList
 
+    ## Load a specific game for an user
+    # @param username the user for whom we want to load the game
+    # @param gamename the name of the game we want to load
     def loadGame(self, username, gamename):
 
         try:
@@ -185,15 +225,17 @@ class Database:
 
         return self.game[username][gamename]
 
-
+    ## Update the user's cumulative score in the database
+    # @param username the user for whom we want to update the score
+    # @param scoreToAdd the score we want to add to the existing cumulative score in the database
     def updateUserScore(self, username, scoreToAdd):
         user = self.userTable.find_one(username=username)
-        print user
         user['cumulativeScore'] += scoreToAdd
-        print user
         self.userTable.update(user, ['username'])
 
-    def updateNumGamesPlayed(self, username):
+    ## Increment the total number of games played for the user
+    # @param username the user for whom we want to increment the number of games played
+    def incrementNumOfGamesPlayed(self, username):
         user = self.userTable.find_one(username=username)
         user['numGamesPlayed'] += 1
         self.userTable.update(user, ['username'])

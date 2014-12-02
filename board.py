@@ -344,7 +344,7 @@ class Board(QtGui.QFrame):
             self.bomberman.gainPowerUp()
 
         # Check if new pos is exit
-        if (self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit):
+        if ((self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit) and self.bomberman.numberEnemies == 0):
             self.exit()
             return # IMPORTANT
 
@@ -666,5 +666,11 @@ class Board(QtGui.QFrame):
         return self.bomberman
 
     def timeout_event(self):
-        self.bomberman.timeLeft -= 1
-        self.statusBar.timesLabel.setText('Time Left: ' + str(self.bomberman.timeLeft))
+        if (self.bomberman.timeLeft == 0 and self.bomberman.timeDone == False):
+            self.bomberman.timeDone = True
+            self.bomberman.setSuperChaos()
+        elif (self.bomberman.timeDone == True):
+            pass
+        else:
+            self.bomberman.timeLeft -= 1
+            self.statusBar.timesLabel.setText('Time Left: ' + str(self.bomberman.timeLeft))
