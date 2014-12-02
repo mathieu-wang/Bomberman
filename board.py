@@ -156,10 +156,26 @@ class Board(QtGui.QFrame):
                 detonate = True
             else:
                 indexToDecrement.append(i)
-        if (detonate):
-            self.detonateBomb()
         for i in xrange(len(indexToDecrement)):
             self.bomberman.bombQueue[i] = (self.bomberman.bombQueue[i][0],self.bomberman.bombQueue[i][1],self.bomberman.bombQueue[i][2] - constant.TIME_GLOBAL)
+
+        # Loop flashQueue
+        coordsToEndFlash = []
+        numToEndFlash = 0
+        for i in xrange(len(self.bomberman.flashQueue)):
+            if (self.bomberman.flashQueue[i][2] <= 0):
+                x,y,z = self.bomberman.flashQueue[i]
+                coordsToEndFlash.append((x,y))
+                numToEndFlash += 1
+            else:
+                self.bomberman.flashQueue[i][2] -= constant.TIME_GLOBAL
+        for j in range(numToEndFlash):
+            self.bomberman.flashQueue.pop(0)
+        for x,y in coordsToEndFlash:
+            self.popTileAtWithoutUpdate(x,y)
+
+        if (detonate):
+            self.detonateBomb()
 
     def paintEvent(self, event):
 
@@ -344,7 +360,7 @@ class Board(QtGui.QFrame):
             self.bomberman.gainPowerUp()
 
         # Check if new pos is exit
-        if (self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit):
+        if ((self.tileAt(self.bomberman.curX,self.bomberman.curY) == Tile.Exit) and self.bomberman.numberEnemies == 0):
             self.exit()
             return # IMPORTANT
 
@@ -509,7 +525,8 @@ class Board(QtGui.QFrame):
                 northTile = self.tileAt(x,modY)
                 if (northTile == Tile.Concrete or northTile == Tile.Bomb):
                     break
-                flashList.append((x,modY))
+                if (Tile.isEmpty(northTile)):
+                    flashList.append((x,modY))
                 if (northTile == Tile.Brick):
                     popList.append((x,modY))
                     break
@@ -530,7 +547,8 @@ class Board(QtGui.QFrame):
                 southTile = self.tileAt(x,modY)
                 if (southTile == Tile.Concrete or southTile == Tile.Bomb):
                     break
-                flashList.append((x,modY))
+                if (Tile.isEmpty(southTile)):
+                    flashList.append((x,modY))
                 if (southTile == Tile.Brick):
                     popList.append((x,modY))
                     break
@@ -551,7 +569,8 @@ class Board(QtGui.QFrame):
                 eastTile = self.tileAt(modX,y)
                 if (eastTile == Tile.Concrete or eastTile == Tile.Bomb):
                     break
-                flashList.append((modX,y))
+                if (Tile.isEmpty(eastTile)):
+                    flashList.append((modX,y))
                 if (eastTile == Tile.Brick):
                     popList.append((modX,y))
                     break
@@ -572,7 +591,8 @@ class Board(QtGui.QFrame):
                 westTile = self.tileAt(modX,y)
                 if (westTile == Tile.Concrete or westTile == Tile.Bomb):
                     break
-                flashList.append((modX,y))
+                if (Tile.isEmpty(westTile)):
+                    flashList.append((modX,y))
                 if (westTile == Tile.Brick):
                     popList.append((modX,y))
                     break
@@ -585,7 +605,7 @@ class Board(QtGui.QFrame):
                     self.bomberman.setChaos()
                     break
 
-        # self.startFlash(flashList)
+        self.startFlash(flashList)
         # self.endFlash(flashList)
         self.destroyTiles(popList)
         self.updateScore(killedEnemies)
@@ -593,6 +613,7 @@ class Board(QtGui.QFrame):
     def startFlash(self, flashList):
         for x,y in flashList:
             self.setTileAt(x,y,Tile.Flash)
+            self.bomberman.flashQueue.append([x,y,constant.TIME_FLASH])
 
     def endFlash(self, flashList):
         for x,y in flashList:
@@ -666,5 +687,11 @@ class Board(QtGui.QFrame):
         return self.bomberman
 
     def timeout_event(self):
-        self.bomberman.timeLeft -= 1
-        self.statusBar.timesLabel.setText('Time Left: ' + str(self.bomberman.timeLeft))
+        if (self.bomberman.timeLeft == 0 and self.bomberman.timeDone == False):
+            self.bomberman.timeDone = True
+            self.bomberman.setSuperChaos()
+        elif (self.bomberman.timeDone == True):
+            pass
+        else:
+            self.bomberman.timeLeft -= 1
+            self.statusBar.timesLabel.setText('Time Left: ' + str(self.bomberman.timeLeft))

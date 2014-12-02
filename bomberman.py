@@ -20,6 +20,7 @@ class Bomberman(object):
         self.curY = 11
         self.board = []
         self.bombQueue = []
+        self.flashQueue = []
         self.lives = 3
         self.speed = 300
         self.canMove = True
@@ -42,6 +43,7 @@ class Bomberman(object):
 
         # Status bar info
         self.timeLeft = 200
+        self.timeDone = False
         self.score = 0
 
     def setNewLevel(self):
@@ -50,6 +52,7 @@ class Bomberman(object):
         self.curY = 11
         self.board = []
         self.bombQueue = []
+        self.flashQueue = []
         # self.lives = 3
         self.speed = 300
         self.canMove = True
@@ -169,7 +172,7 @@ class Bomberman(object):
 
                     if (self.tileAt(tempX, tempY) == Tile.Empty and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 2) and not (tempX == 1 and tempY == constant.BOARD_HEIGHT - 3) and not (tempX == 2 and tempY == constant.BOARD_HEIGHT - 2)):
                         self.setTileAt(tempX, tempY, i + 8)
-                        tempList = [tempX, tempY, random.randint(1,4), i + 8]
+                        tempList = [tempX, tempY, random.randint(0, 3), i + 8]
                         self.listEnemies.append(tempList)
                         self.numberEnemies += 1
                         break
@@ -182,7 +185,6 @@ class Bomberman(object):
         self.listTypeEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
 
     def setChaos(self):
-
         highestIndex = 0
         self.setLevelInfo()
         for x in xrange(len(self.listTypeEnemies)):
@@ -196,3 +198,11 @@ class Bomberman(object):
 
         self.setEnemies()
 
+    def setSuperChaos(self):
+        self.setLevelInfo()
+
+        self.clearEnemies()
+
+        self.listTypeEnemies[7] = 8
+
+        self.setEnemies()

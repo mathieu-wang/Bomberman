@@ -2,29 +2,42 @@ from PyQt4 import QtCore, QtGui
 
 import constant
 
-## This class is a widget that displays the Main menu.\n It includes buttons
-# that the user can interact with.
+## This class is a widget that displays the Main menu. It includes the following buttons
+# that the user can interact with:\n
+# playButton: emit playGameSignal when clicked.\n
+# logoutButton: emit logoutGameSignal when clicked.\n
+# loadButton: emit loadMenuSignal when clicked.\n
+# quitButton: emit quitGameSignal when clicked.\n
+# showLeaderboardButton: emit showLeaderboardSignal when clicked.
+# changeSettingsButton: emit changeSettingsSignal when clicked
 #
 class MainMenu(QtGui.QWidget):
 
+    ##Signal which will be used to launch the game.
     playGameSignal = QtCore.pyqtSignal()
+
+    ##Signal which will be used to exit the current user and send it back to login menu.
     logoutGameSignal = QtCore.pyqtSignal()
+
+    ##Signal which will be used to quit the whole application.
     quitGameSignal = QtCore.pyqtSignal()
+
+    ##Signal which will be used to to launch the leaderboard. Also emit the int 'previousMenu'
+    # to keep track of the menu it was called from.
     showLeaderboardSignal = QtCore.pyqtSignal(int)
+
+    ##Signal which will launch the load menu. Also emit the int 'previousMenu'
+    #to keep track of the menu it was called from.
     loadMenuSignal = QtCore.pyqtSignal(int)
+
+    ##Signal which will launch the account settings menu.
     changeSettingsSignal = QtCore.pyqtSignal()
 
     def __init__(self, parent=None):
         super(MainMenu, self).__init__(parent)
         self.initUI()
 
-    ## This method initialize the GUI of Main menu.
-    # Play Bomberman button: emit playGameSignal when clicked which will be used to launch
-    #       the game in game.py
-    # Logout button: emit logoutGameSignal when clicked which will be used to exit the current
-    #       user and send it back to the login menu
-    #Load Game button: emit 
-    #
+    ##This method initialize the GUI of Main menu.
     def initUI(self):
         buttonWidth = 150
         buttonStartXCoordinate = 159
@@ -67,20 +80,23 @@ class MainMenu(QtGui.QWidget):
 
         self.show()
 
+    ##emit playGameSignal when called.
     def play(self):
         self.playGameSignal.emit()
-
+    ##emit logoutGameSignal when called.
     def logout(self):
         self.logoutGameSignal.emit()
-
+    ##emit quitGameSignal when called.
     def quit(self):
         self.quitGameSignal.emit()
-
+    ##emit showLeaderboardSignal when called.
     def showLeaderboard(self):
         self.showLeaderboardSignal.emit(constant.MAIN_MENU)
 
+    ##emit changeSettingsSignal when called
     def showAccountSettingsMenu(self):
         self.changeSettingsSignal.emit()
 
+    ##emit loadMenuSignal when called.
     def load(self):
         self.loadMenuSignal.emit(constant.MAIN_MENU)
