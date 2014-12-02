@@ -107,7 +107,8 @@ class LoginMenu(QtGui.QWidget):
             invalidPasswordMessage = '''Invalid password. The password must be at least 8 characters long and contain the following:\n - 1 Upper case letter\n - 1 Lower case letter\n - 1 Digit\n - 1 Special character'''
             QtGui.QMessageBox.warning(self,'Warning!',invalidPasswordMessage,QtGui.QMessageBox.Ok)
         elif self.db.createUser(name,username,password):
-            registerSuccessMessage = '''Your account has been successfully registered. Please login using the right side menu.'''
+            registerSuccessMessage = '''Your account has been successfully registered.'''
             QtGui.QMessageBox.information(self,'Success!',registerSuccessMessage,QtGui.QMessageBox.Ok);
+            self.loginSuccessSignal.emit()
         else:
             QtGui.QMessageBox.warning(self,'Warning!','The username has been taken',QtGui.QMessageBox.Ok)
