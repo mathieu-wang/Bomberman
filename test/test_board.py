@@ -99,11 +99,13 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(self.board.tileAt(1, 0), Tile.Concrete, "Concrete got destroyed by bomb")
 
     def testDetonateBombDestroysBrick(self):
-        self.board.setTileAt(1, 3, Tile.Brick)
+        self.board.setTileAt(1, 2, Tile.Brick)
         self.board.bomberman.curX = 1
         self.board.bomberman.curY = 1
         self.board.bomberman.setBomberman()
         self.board.bomberman.setBomb()
+        
+        self.board.bomberman.rangeOfBombs = 3
 
         self.board.detonateBomb()
 
@@ -136,6 +138,25 @@ class TestBoard(unittest.TestCase):
 
         self.assertEqual(self.board.tileAt(1, 2), Tile.Empty, "One of the Bricks did not get destroyed by bomb")
         self.assertEqual(self.board.tileAt(2, 1), Tile.Empty, "One of the Bricks did not get destroyed by bomb")
+
+    def testDetonateBombKillsEnemies(self):
+        self.bomberman.clearEnemies()
+        self.board.setTileAt(2, 1, Tile.Balloom)
+        self.board.bomberman.curX = 1
+        self.board.bomberman.curY = 1
+        self.board.bomberman.setBomberman()
+        self.board.bomberman.setBomb()
+
+        tempList = [2, 1, 3, 8]
+        self.bomberman.listEnemies.append(tempList)
+
+        self.bomberman.numberEnemies = 1
+        self.bomberman.listTypeEnemies[0] = 1
+        self.board.bomberman.rangeOfBombs = 3
+
+        self.board.detonateBomb()
+
+        self.assertEqual(0, self.bomberman.numberEnemies, "Bomb detonation did not kill enemy")
 
     def testDetonateBombSpawnsEnemiesWhenExitIsHit(self):
         self.board.setTileAt(1, 2, Tile.Exit)
@@ -178,6 +199,21 @@ class TestBoard(unittest.TestCase):
 
         self.assertEqual(count, 1, "Not all enemies are the same type when the powerup is hit")
         self.assertEqual(len(self.bomberman.listEnemies), 8, "The number of enemies when the powerup is hit is not 8")
+
+    def testTimeRunsOut(self):
+        self.bomberman.timeLeft = 0
+        self.bomberman.timeDone = False
+        self.board.timeout_event()
+
+        check = False
+
+        for i in range(7):
+            if (self.bomberman.listTypeEnemies[i] != 0):
+                check = True
+
+        self.assertEqual(self.bomberman.numberEnemies, 8, "Number of enemies is not equal to 8")
+        self.assertFalse(check, "At least one enemy is not a Pontan")
+
 
     def testTryMoveToConcrete(self):
         self.board.setTileAt(0, 0, Tile.Concrete)
