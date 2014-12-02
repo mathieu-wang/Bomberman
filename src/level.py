@@ -82,7 +82,7 @@ class Level(object):
         self.setEnemies()
         self.setBomberman()
 
-    ## Activates the current level's powerup and add attribute to bomberman
+    ## This method activates the current level's powerup and add attribute to bomberman
     def gainPowerUp(self):
         if(self.powerUp == 1):
             self.bomberman.numBombs += 1
@@ -101,19 +101,19 @@ class Level(object):
         if(self.powerUp == 8):
             self.bomberman.invincible = True
 
-    ## Return tile at x and y from the board
+    ## This method returns the tile at x and y from the board
     def tileAt(self, x, y):
         return self.board[y][x].peek()
 
-    ## Set tile at x and y on the board
+    ## This method sets tile at x and y on the board
     def setTileAt(self, x, y, tile):
         self.board[y][x].push(tile)
 
-    ## Remove tile at x and y on the board
+    ## This method removes the tile at x and y from the board
     def popTileAt(self, x, y):
         self.board[y][x].pop()
 
-    ## Lay a bomb at bomberman's current position
+    ## This method lays a bomb at bomberman's current position
     def setBomb(self):
         self.bombQueue.append((self.bomberman.curX, self.bomberman.curY, constant.TIME_BOMB))
         tempTile = self.tileAt(self.bomberman.curX, self.bomberman.curY)
@@ -123,15 +123,15 @@ class Level(object):
 
     # LEVEL SETUP
 
-    ## Clear all tiles on the board
+    ## This method clears all tiles on the board
     def clearBoard(self):
         self.board = [[Tile() for x in range(constant.BOARD_WIDTH)] for y in range(constant.BOARD_HEIGHT)]
 
-    ## Clear all bombs from the bomb queue
+    ## This method clears all bombs from the bomb queue
     def clearBombs(self):
         self.bombQueue = []
 
-    ## Set concrete tiles systematically on the board
+    ## This method sets concrete tiles systematically on the board
     def setConcrete(self):
         for y in range(constant.BOARD_HEIGHT):
             for x in range(constant.BOARD_WIDTH):
@@ -140,7 +140,7 @@ class Level(object):
                 elif x % 2 == 0 and y % 2 == 0:
                     self.setTileAt(x,y,Tile.Concrete)
 
-    ## Set exit tile randomly on the board and set a brick on top of it
+    ## This method sets an exit tile randomly on the board and set a brick on top of it
     def setExit(self):
         while True:
             tempX = random.randint(1, constant.BOARD_WIDTH) - 1
@@ -153,11 +153,11 @@ class Level(object):
                 self.exitCoord[1] = tempY
                 break
 
-    ## Fetch a the list of enemies and powerup matching the current level number
+    ## This method fetches a the list of enemies and powerup matching the current level number
     def setLevelInfo(self):
         self.listTypeEnemies, self.powerUp = Enemy.getEnemyListAndPowerUp(self.levelNum)
 
-    ## Set powerup tile randomly on the board and set a brick on top of it
+    ## This method sets a powerup tile randomly on the board and set a brick on top of it
     def setPowerup(self):
         while True:
             tempX = random.randint(1, constant.BOARD_WIDTH) - 1
@@ -170,7 +170,7 @@ class Level(object):
                 self.powerUpCoord[1] = tempY
                 break
 
-    ## Set brick tiles randomly on the board
+    ## This method sets brick tiles randomly on the board
     def setBrick(self):
         for y in range(constant.BOARD_HEIGHT):
             for x in range (constant.BOARD_WIDTH):
@@ -178,11 +178,11 @@ class Level(object):
                     if (random.random() <= constant.PERCENT_BRICK):
                         self.setTileAt(x, y, Tile.Brick)
 
-    ## Set bomberman at x and y on the board
+    ## This method sets bomberman at x and y on the board
     def setBomberman(self):
         self.setTileAt(self.bomberman.curX,self.bomberman.curY,Tile.Bomberman)
 
-    ## Set enemies randomly on the map
+    ## This method sets enemies randomly on the map
     def setEnemies(self):
         # print self.listTypeEnemies
         for i in range(8):
@@ -198,7 +198,7 @@ class Level(object):
                         self.numberEnemies += 1
                         break
 
-    ## Clear all enemies on the map and in the list of enemies and list of enemies type
+    ## This method clears all enemies on the map and in the list of enemies and list of enemies type
     def clearEnemies(self):
         for enemy in self.listEnemies:
             self.popTileAt(enemy[0],enemy[1])
@@ -206,7 +206,7 @@ class Level(object):
         self.listEnemies = []
         self.listTypeEnemies = [0, 0, 0, 0, 0, 0, 0, 0]
 
-    ## Set 8 mega enemies everywhere, used when bomb detonates an exit tile or powerup tile
+    ## This method sets 8 mega enemies everywhere, used when bomb detonates an exit tile or powerup tile
     def setChaos(self):
         highestIndex = 0
         self.setLevelInfo()
@@ -221,7 +221,7 @@ class Level(object):
 
         self.setEnemies()
 
-    ## Set 8 maximum level enemies everywhere
+    ## This method sets 8 maximum level enemies everywhere
     def setSuperChaos(self):
         self.setLevelInfo()
 

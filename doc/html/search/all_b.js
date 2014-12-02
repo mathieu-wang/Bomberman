@@ -12,7 +12,7 @@ var searchData=
   ['loadlistsavedgames',['loadListSavedGames',['../classsrc_1_1database_1_1_database.html#a8f48d5d1c090840389e7cbc556d635b5',1,'src::database::Database']]],
   ['loadmenu',['LoadMenu',['../classsrc_1_1load__menu_1_1_load_menu.html',1,'src::load_menu']]],
   ['loadmenusignal',['loadMenuSignal',['../classsrc_1_1main__menu_1_1_main_menu.html#a51466fb736e3368249412c501aa18741',1,'src.main_menu.MainMenu.loadMenuSignal()'],['../classsrc_1_1pause__menu_1_1_pause_menu.html#ae1851c6cab071ed1a4473320110432d8',1,'src.pause_menu.PauseMenu.loadMenuSignal()']]],
-  ['loadsavedgame',['loadSavedGame',['../classsrc_1_1load__menu_1_1_load_menu.html#ac3ab22ee56c51e7cb02f27344d6bfcbd',1,'src::load_menu::LoadMenu']]],
+  ['loadsavedgame',['loadSavedGame',['../classsrc_1_1game_1_1_game.html#a8e215b6533b7fa858334453633e12e6e',1,'src.game.Game.loadSavedGame()'],['../classsrc_1_1load__menu_1_1_load_menu.html#ac3ab22ee56c51e7cb02f27344d6bfcbd',1,'src.load_menu.LoadMenu.loadSavedGame()']]],
   ['loadsavedgamelist',['loadSavedGameList',['../classsrc_1_1load__menu_1_1_load_menu.html#af7b9c789c68fb85b2d4e2bfd211e201d',1,'src::load_menu::LoadMenu']]],
   ['loadsavedgamesignal',['loadSavedGameSignal',['../classsrc_1_1load__menu_1_1_load_menu.html#a9f994468ddeb9d648ce5a68c001fbb36',1,'src::load_menu::LoadMenu']]],
   ['loggedusername',['loggedUsername',['../classsrc_1_1login__menu_1_1_login_menu.html#a3c59b83a7a55f2334a015dfc722e86da',1,'src.login_menu.LoginMenu.loggedUsername()'],['../classsrc_1_1settings__menu_1_1_account_settings_menu.html#a7cac3d6c4fd01c1d0c9e6cfcba8e8950',1,'src.settings_menu.AccountSettingsMenu.loggedUsername()']]],

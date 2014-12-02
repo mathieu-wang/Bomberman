@@ -28,18 +28,18 @@ class Bomberman(object):
         self.numBombs = 1 #
         ## Integer powerup the range in terms of tiles, the bomb can reach
         self.rangeOfBombs = 1 #
-        ## Boolean powerup true if bomberman can pass through bricks
+        ## Boolean powerup True if bomberman can pass through bricks
         self.wallPass = False #
-        ## Boolean powerup true if bomberman has a detonator powerup
+        ## Boolean powerup True if bomberman has a detonator powerup
         self.hasDetonator = False
-        ## Boolean powerup true if bomberman can pass through bombs
+        ## Boolean powerup True if bomberman can pass through bombs
         self.bombPass = False #
-        ## Boolean powerup true if bomberman does not die when touching flames
+        ## Boolean powerup True if bomberman does not die when touching flames
         self.flamePass = False #
-        ## Boolean powerup true if bomberman cannot die
+        ## Boolean powerup True if bomberman cannot die
         self.invincible = False #
 
-    ## Reset bomberman's attribute at the start of a new level or a new game
+    ## This method resets Bomberman's attribute at the start of a new level or a new game
     def reset(self):
 
         self.curX = 1
@@ -48,7 +48,7 @@ class Bomberman(object):
         self.speed = 300
         self.canMove = True
 
-    ## Reset bomberman's attributes as well a its powerup and reduce its lives by 1
+    ## This method resets Bomberman's attributes as well a its powerup and reduce its lives by 1
     def death(self):
         # Take off one life
         self.lives -= 1

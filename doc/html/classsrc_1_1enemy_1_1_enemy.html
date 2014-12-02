@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src.enemy.Enemy Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class stores the types of enemies and how many there are in each level.  
+ <a href="classsrc_1_1enemy_1_1_enemy.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for src.enemy.Enemy:</div>
 <div class="dyncontent">
@@ -112,11 +115,11 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, po
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4476f5bc0be70d26bebece6abcb7bdad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4476f5bc0be70d26bebece6abcb7bdad"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>getEnemy</b> (type)</td></tr>
+<tr class="memitem:a4476f5bc0be70d26bebece6abcb7bdad"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a4476f5bc0be70d26bebece6abcb7bdad">getEnemy</a> (type)</td></tr>
+<tr class="memdesc:a4476f5bc0be70d26bebece6abcb7bdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is a dictionary that returns information for the different enemy types.  <a href="#a4476f5bc0be70d26bebece6abcb7bdad">More...</a><br /></td></tr>
 <tr class="separator:a4476f5bc0be70d26bebece6abcb7bdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01da6a5d5f8eb5db75323749a80fc3a0"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>getEnemyListAndPowerUp</b> (level)</td></tr>
+<tr class="memitem:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1enemy_1_1_enemy.html#a01da6a5d5f8eb5db75323749a80fc3a0">getEnemyListAndPowerUp</a> (level)</td></tr>
+<tr class="memdesc:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns a list of the number of each enemy and the powerup for each level.  <a href="#a01da6a5d5f8eb5db75323749a80fc3a0">More...</a><br /></td></tr>
 <tr class="separator:a01da6a5d5f8eb5db75323749a80fc3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -140,13 +143,70 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>canMove</b></td></tr>
 <tr class="separator:aca96a4793e02437f1f33a1c3cbefd133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class stores the types of enemies and how many there are in each level. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4476f5bc0be70d26bebece6abcb7bdad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.enemy.Enemy.getEnemy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is a dictionary that returns information for the different enemy types. </p>
+<p>type The type of enemy for which information will be returned. The information that can be returned is the enemies' points, speed, intelligence, wallpass and direction. </p>
+
+</div>
+</div>
+<a class="anchor" id="a01da6a5d5f8eb5db75323749a80fc3a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.enemy.Enemy.getEnemyListAndPowerUp </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method returns a list of the number of each enemy and the powerup for each level. </p>
+<p>level The level for which information is to be returned. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/enemy.py</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2014 01:25:52 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 2 2014 01:45:10 for Bomberman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

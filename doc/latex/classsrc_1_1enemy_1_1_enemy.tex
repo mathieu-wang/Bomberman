@@ -1,5 +1,10 @@
 \hypertarget{classsrc_1_1enemy_1_1_enemy}{}\section{src.\+enemy.\+Enemy Class Reference}
 \label{classsrc_1_1enemy_1_1_enemy}\index{src.\+enemy.\+Enemy@{src.\+enemy.\+Enemy}}
+
+
+This class stores the types of enemies and how many there are in each level.  
+
+
 Inheritance diagram for src.\+enemy.\+Enemy\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,12 +20,10 @@ Inheritance diagram for src.\+enemy.\+Enemy\+:\begin{figure}[H]
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classsrc_1_1enemy_1_1_enemy_a4476f5bc0be70d26bebece6abcb7bdad}{}def {\bfseries get\+Enemy} (type)\label{classsrc_1_1enemy_1_1_enemy_a4476f5bc0be70d26bebece6abcb7bdad}
-
-\item 
-\hypertarget{classsrc_1_1enemy_1_1_enemy_a01da6a5d5f8eb5db75323749a80fc3a0}{}def {\bfseries get\+Enemy\+List\+And\+Power\+Up} (level)\label{classsrc_1_1enemy_1_1_enemy_a01da6a5d5f8eb5db75323749a80fc3a0}
-
-\end{DoxyCompactItemize}
+def \hyperlink{classsrc_1_1enemy_1_1_enemy_a4476f5bc0be70d26bebece6abcb7bdad}{get\+Enemy} (type)
+\begin{DoxyCompactList}\small\item\em This method is a dictionary that returns information for the different enemy types. \end{DoxyCompactList}\item 
+def \hyperlink{classsrc_1_1enemy_1_1_enemy_a01da6a5d5f8eb5db75323749a80fc3a0}{get\+Enemy\+List\+And\+Power\+Up} (level)
+\begin{DoxyCompactList}\small\item\em This method returns a list of the number of each enemy and the powerup for each level. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,6 +46,36 @@ Inheritance diagram for src.\+enemy.\+Enemy\+:\begin{figure}[H]
 
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class stores the types of enemies and how many there are in each level. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsrc_1_1enemy_1_1_enemy_a4476f5bc0be70d26bebece6abcb7bdad}{}\index{src\+::enemy\+::\+Enemy@{src\+::enemy\+::\+Enemy}!get\+Enemy@{get\+Enemy}}
+\index{get\+Enemy@{get\+Enemy}!src\+::enemy\+::\+Enemy@{src\+::enemy\+::\+Enemy}}
+\subsubsection[{get\+Enemy}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+enemy.\+Enemy.\+get\+Enemy (
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1enemy_1_1_enemy_a4476f5bc0be70d26bebece6abcb7bdad}
+
+
+This method is a dictionary that returns information for the different enemy types. 
+
+type The type of enemy for which information will be returned. The information that can be returned is the enemies\textquotesingle{} points, speed, intelligence, wallpass and direction. \hypertarget{classsrc_1_1enemy_1_1_enemy_a01da6a5d5f8eb5db75323749a80fc3a0}{}\index{src\+::enemy\+::\+Enemy@{src\+::enemy\+::\+Enemy}!get\+Enemy\+List\+And\+Power\+Up@{get\+Enemy\+List\+And\+Power\+Up}}
+\index{get\+Enemy\+List\+And\+Power\+Up@{get\+Enemy\+List\+And\+Power\+Up}!src\+::enemy\+::\+Enemy@{src\+::enemy\+::\+Enemy}}
+\subsubsection[{get\+Enemy\+List\+And\+Power\+Up}]{\setlength{\rightskip}{0pt plus 5cm}def src.\+enemy.\+Enemy.\+get\+Enemy\+List\+And\+Power\+Up (
+\begin{DoxyParamCaption}
+\item[{}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classsrc_1_1enemy_1_1_enemy_a01da6a5d5f8eb5db75323749a80fc3a0}
+
+
+This method returns a list of the number of each enemy and the powerup for each level. 
+
+level The level for which information is to be returned. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
