@@ -1,4 +1,4 @@
-Team 12 Bomberman
+Bomberman
 =================
 
 ##########
@@ -108,3 +108,4 @@ This program was developed and tested on the following platforms with the follow
 
         python -m unittest discover
 
+=======
